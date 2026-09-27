@@ -20,6 +20,10 @@ namespace D_Dev.InteractableSystem
         [FoldoutGroup("Events")]
         [ShowIf(nameof(_canBeStopped))]
         public UnityEvent OnInteractStop;
+        [FoldoutGroup("Events")]
+        public UnityEvent<GameObject> OnFocused;
+        [FoldoutGroup("Events")]
+        public UnityEvent<GameObject> OnUnfocused;
         [FoldoutGroup("Debug")]
         [SerializeField] protected bool _debug;
         
@@ -29,6 +33,7 @@ namespace D_Dev.InteractableSystem
 
         public GameObject GameObject => gameObject;
         public bool IsInteracting { get; protected set; }
+        public bool IsFocused { get; protected set; }
         public bool CanBeStopped => _canBeStopped;
         public bool IsDistanceBased => _isDistanceBased;
 
@@ -89,8 +94,36 @@ namespace D_Dev.InteractableSystem
                 Debug.Log($"[Interactable : {gameObject.name}] <color=red> Stop interacting with </color> {interactor.name}");
         }
 
+        public void Focus(GameObject interactor)
+        {
+            if (IsFocused)
+                return;
+
+            IsFocused = true;
+            OnFocus(interactor);
+            OnFocused?.Invoke(interactor);
+
+            if(_debug)
+                Debug.Log($"[Interactable : {gameObject.name}] <color=cyan> Focused by </color> {interactor.name}");
+        }
+
+        public void Unfocus(GameObject interactor)
+        {
+            if (!IsFocused)
+                return;
+
+            IsFocused = false;
+            OnUnfocus(interactor);
+            OnUnfocused?.Invoke(interactor);
+
+            if(_debug)
+                Debug.Log($"[Interactable : {gameObject.name}] <color=cyan> Unfocused by </color> {interactor.name}");
+        }
+
         protected virtual void OnInteract(GameObject interactor) {}
         protected virtual void OnStopInteract(GameObject interactor) {}
+        protected virtual void OnFocus(GameObject interactor) {}
+        protected virtual void OnUnfocus(GameObject interactor) {}
 
         #endregion
 

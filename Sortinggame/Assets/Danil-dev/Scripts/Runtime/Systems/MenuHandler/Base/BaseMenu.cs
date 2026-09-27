@@ -1,3 +1,4 @@
+using System;
 using Cysharp.Threading.Tasks;
 using Sirenix.OdinInspector;
 using UnityEngine;
@@ -15,27 +16,33 @@ namespace D_Dev.MenuHandler
         [OnValueChanged(nameof(ActiveColor))]
         [GUIColor(nameof(ActiveColor))]
         [SerializeField, ReadOnly] private bool _isOpen;
-        [Title("Animations")] 
+        [Title("Animations")]
         [SerializeField] private bool _hasOpenAnimation;
         [SerializeField] private bool _hasCloseAniation;
         [ShowIf(nameof(_hasCloseAniation))]
         [SerializeField] private bool _disableObjectOnComplete;
 #if DOTWEEN
-        [ShowIf(nameof(_hasOpenAnimation))] 
+        [ShowIf(nameof(_hasOpenAnimation))]
         [SerializeField] private TweenPlayable _openAnimation;
 
-        [ShowIf(nameof(_hasCloseAniation))] 
+        [ShowIf(nameof(_hasCloseAniation))]
         [SerializeField] private TweenPlayable _closeAnimation;
 #endif
         [FoldoutGroup("Events")]
         public UnityEvent OnOpenEvent;
         [FoldoutGroup("Events")]
         public UnityEvent OnCloseEvent;
-        
+
+        private bool _isTargetOpen;
+        private int _transitionId;
+        private Action _cancelTransition;
+
         #endregion
 
         #region Properties
         public bool IsOpen => _isOpen;
+        public bool IsOpening => _isTargetOpen && !_isOpen;
+        public bool IsClosing => !_isTargetOpen && _isOpen;
 
         #endregion
 
@@ -47,59 +54,45 @@ namespace D_Dev.MenuHandler
 
         #region Public
 
-public async void Open()
+        public async void Open()
         {
-            if(IsOpen)
+            if(_isTargetOpen)
                 return;
-            
+
+            var wasOpen = _isOpen;
+            var transitionId = BeginTransition(true);
             gameObject.SetActive(true);
 #if DOTWEEN
+            _closeAnimation?.Kill();
             if (_hasOpenAnimation && _openAnimation != null)
             {
-                var tcs = new UniTaskCompletionSource();
-                
-                void OnComplete()
-                {
-                    _openAnimation.OnComplete -= OnComplete;
-                    tcs.TrySetResult();
-                }
-                
-                _openAnimation.OnComplete += OnComplete;
-                _openAnimation.Play();
-                
-                await tcs.Task;
-                _isOpen = true;
-                OnOpenEvent?.Invoke();
-                return;
+                if (!await PlayAnimation(_openAnimation, transitionId))
+                    return;
             }
 #endif
             _isOpen = true;
-            OnOpenEvent?.Invoke();
+            if (!wasOpen)
+                OnOpenEvent?.Invoke();
         }
 
         public async void Close()
         {
-            if(!IsOpen)
+            if(!_isTargetOpen)
                 return;
-            
+
+            var wasOpen = _isOpen;
+            var transitionId = BeginTransition(false);
 #if DOTWEEN
+            _openAnimation?.Kill();
             if (_hasCloseAniation && _closeAnimation != null)
             {
-                var tcs = new UniTaskCompletionSource();
-                
-                void OnComplete()
-                {
-                    _closeAnimation.OnComplete -= OnComplete;
-                    tcs.TrySetResult();
-                }
-                
-                _closeAnimation.OnComplete += OnComplete;
-                _closeAnimation.Play();
-                
-                await tcs.Task;
+                if (!await PlayAnimation(_closeAnimation, transitionId))
+                    return;
+
                 _isOpen = false;
                 gameObject.SetActive(!_disableObjectOnComplete);
-                OnCloseEvent?.Invoke();
+                if (wasOpen)
+                    OnCloseEvent?.Invoke();
                 return;
             }
 #endif
@@ -108,12 +101,16 @@ public async void Open()
 
         public void ForceOpen()
         {
+            BeginTransition(true);
+            KillAnimations();
             _isOpen = true;
             gameObject.SetActive(IsOpen);
         }
 
         public void ForceClose()
         {
+            BeginTransition(false);
+            KillAnimations();
             _isOpen = false;
             gameObject.SetActive(IsOpen);
             OnCloseEvent?.Invoke();
@@ -128,6 +125,44 @@ public async void Open()
         #endregion
 
         #region Private
+
+        private int BeginTransition(bool isTargetOpen)
+        {
+            _isTargetOpen = isTargetOpen;
+            _transitionId++;
+
+            var cancelTransition = _cancelTransition;
+            _cancelTransition = null;
+            cancelTransition?.Invoke();
+
+            return _transitionId;
+        }
+
+        private void KillAnimations()
+        {
+#if DOTWEEN
+            _openAnimation?.Kill();
+            _closeAnimation?.Kill();
+#endif
+        }
+
+#if DOTWEEN
+        private async UniTask<bool> PlayAnimation(TweenPlayable animation, int transitionId)
+        {
+            var tcs = new UniTaskCompletionSource();
+
+            void OnComplete() => tcs.TrySetResult();
+
+            animation.OnComplete += OnComplete;
+            _cancelTransition = OnComplete;
+            animation.Play();
+
+            await tcs.Task;
+            animation.OnComplete -= OnComplete;
+
+            return transitionId == _transitionId;
+        }
+#endif
 
         private Color ActiveColor() => _isOpen ? Color.green : Color.red;
 

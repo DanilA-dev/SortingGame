@@ -344,6 +344,37 @@ Transform:
   - {fileID: 6982989398599089103}
   m_Father: {fileID: 7624906871845726300}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2451769615908934871
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5474812981895806397}
+  m_Layer: 3
+  m_Name: ItemsPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: -5487077368411116049, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5474812981895806397
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2451769615908934871}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.452, y: 1.313, z: 0.608}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7624906871845726300}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2539203170594059792
 GameObject:
   m_ObjectHideFlags: 0
@@ -637,6 +668,7 @@ Transform:
   - {fileID: 6063115550617834303}
   - {fileID: 2898917107102666014}
   - {fileID: 3397705229956267384}
+  - {fileID: 5474812981895806397}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!143 &5824734601842318458
@@ -765,7 +797,7 @@ MonoBehaviour:
   _updateRate: 0.1
   _raycaster:
     _castType: 0
-    _distance: 1
+    _distance: 5
     _collidersBuffer: 10
     _radius: 0.5
     _halfExtents: {x: 0.5, y: 0.5, z: 0.5}
@@ -782,7 +814,7 @@ MonoBehaviour:
         m_Bits: 0
       _checkTag: 1
       _checkTags:
-      - {fileID: 11400000, guid: 9cf0585fc99b28242a1eee7dbf83fad2, type: 2}
+      - {fileID: 11400000, guid: e58f48d373dacbc4d9512fa242efb5be, type: 2}
       _ignoreTrigger: 0
       _ignoreColliders: 1
       _ignoredColliders:
@@ -797,12 +829,8 @@ MonoBehaviour:
       _debugColliders: 0
     _drawGizmos: 0
     _debugColor: {r: 0, g: 1, b: 0, a: 1}
-  OnInteractableFound:
-    m_PersistentCalls:
-      m_Calls: []
-  OnInteractableLost:
-    m_PersistentCalls:
-      m_Calls: []
+  _focusedOutput:
+    rid: 1932282358920643246
   references:
     version: 2
     RefIds:
@@ -832,3 +860,7 @@ MonoBehaviour:
       type: {class: TransformConstantValue, ns: D_Dev.PolymorphicValueSystem, asm: D-Dev.PolymorphicValueSystem}
       data:
         _value: {fileID: 2898917107102666014}
+    - rid: 1932282358920643246
+      type: {class: GameObjectScriptableVariableValue, ns: D_Dev.PolymorphicValueSystem, asm: D-Dev.PolymorphicValueSystem}
+      data:
+        _variable: {fileID: 11400000, guid: bb2b441ae14fa084e9c3b338b63b2dee, type: 2}

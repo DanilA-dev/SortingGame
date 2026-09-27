@@ -4,7 +4,6 @@ using D_Dev.ColliderEvents;
 using D_Dev.PolymorphicValueSystem;
 using Sirenix.OdinInspector;
 using UnityEngine;
-using UnityEngine.Events;
 
 namespace D_Dev.InteractableSystem.InteractableDetector
 {
@@ -30,12 +29,7 @@ namespace D_Dev.InteractableSystem.InteractableDetector
         [ShowIf(nameof(_interactableDetectType), InteractableDetectType.Raycaster)]
         [HideLabel]
         [SerializeField] private Raycaster.Raycaster _raycaster;
-        [SerializeReference] private PolymorphicValue<GameObject> _currentInteractableOutput = new GameObjectConstantValue();
-
-        [FoldoutGroup("Events")]
-        public UnityEvent<GameObject> OnInteractableFound;
-        [FoldoutGroup("Events")]
-        public UnityEvent OnInteractableLost;
+        [SerializeReference] private PolymorphicValue<GameObject> _focusedOutput = new GameObjectConstantValue();
 
         private IInteractable _currentInteractable;
         private WaitForSeconds _interval;
@@ -137,16 +131,21 @@ namespace D_Dev.InteractableSystem.InteractableDetector
             if (ReferenceEquals(_currentInteractable, interactable))
                 return;
 
+            var previous = _currentInteractable;
             _currentInteractable = interactable;
-            var target = interactable?.GameObject;
 
-            if (_currentInteractableOutput != null)
-                _currentInteractableOutput.Value = target;
+            if (IsAlive(previous))
+                previous.Unfocus(gameObject);
 
-            if (target != null)
-                OnInteractableFound?.Invoke(target);
-            else
-                OnInteractableLost?.Invoke();
+            if (_focusedOutput != null)
+                _focusedOutput.Value = _currentInteractable?.GameObject;
+
+            _currentInteractable?.Focus(gameObject);
+        }
+
+        private static bool IsAlive(IInteractable interactable)
+        {
+            return interactable is Object unityObject ? unityObject != null : interactable != null;
         }
 
         #endregion

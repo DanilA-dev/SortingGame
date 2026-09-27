@@ -10,5 +10,7 @@ namespace D_Dev.Base
         public void StartInteract(GameObject interactor);
         public void StopInteract(GameObject interactor);
         public bool CanInteract(GameObject interactor);
+        public void Focus(GameObject interactor);
+        public void Unfocus(GameObject interactor);
     }
 }

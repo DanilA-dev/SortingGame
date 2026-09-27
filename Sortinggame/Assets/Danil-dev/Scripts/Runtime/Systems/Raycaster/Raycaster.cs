@@ -44,6 +44,9 @@ namespace D_Dev.Raycaster
         [SerializeField] private bool _drawGizmos;
         [SerializeField] private Color _debugColor = Color.green;
 
+        private static readonly IComparer<RaycastHit> HitDistanceComparer =
+            Comparer<RaycastHit>.Create((a, b) => a.distance.CompareTo(b.distance));
+
         private Ray _ray = new();
         private RaycastHit[] _hits;
 
@@ -106,6 +109,9 @@ namespace D_Dev.Raycaster
                     hitCount = 0;
                     break;
             }
+
+            if (hitCount > 1)
+                System.Array.Sort(_hits, 0, hitCount, HitDistanceComparer);
 
             return hitCount;
         }
