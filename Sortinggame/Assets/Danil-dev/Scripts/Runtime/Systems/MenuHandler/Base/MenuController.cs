@@ -14,7 +14,7 @@ namespace D_Dev.MenuHandler
         [SerializeField] private bool _createMenusOnEnable;
         [SerializeField] private RectTransform _overlayCanvas;
         [SerializeField] private RectTransform _cameraCanvas;
-        [SerializeField] private List<MenuInfo> _menuInfos = new();
+        [SerializeField] private MenuInfosContainer _menuInfosContainer;
 
         private Dictionary<MenuInfo,BaseMenu> _createdMenus = new();
 
@@ -48,13 +48,13 @@ namespace D_Dev.MenuHandler
 
         public async void CreateMenus()
         {
-            if (_menuInfos.Count <= 0)
+            if (_menuInfosContainer.ProjectMenus.Count <= 0)
             {
                 Debug.LogError($"No menu infos found");
                 return;
             }
 
-            foreach (var menuInfo in _menuInfos)
+            foreach (var menuInfo in _menuInfosContainer.ProjectMenus)
             {
                 var newMenu = await CreateMenu(menuInfo);
                 if(menuInfo.OpenOnCreate)

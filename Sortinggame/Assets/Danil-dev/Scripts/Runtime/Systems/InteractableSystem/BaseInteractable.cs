@@ -27,6 +27,7 @@ namespace D_Dev.InteractableSystem
 
         #region Properties
 
+        public GameObject GameObject => gameObject;
         public bool IsInteracting { get; protected set; }
         public bool CanBeStopped => _canBeStopped;
         public bool IsDistanceBased => _isDistanceBased;
@@ -97,8 +98,11 @@ namespace D_Dev.InteractableSystem
 
         protected virtual void OnDrawGizmosSelected()
         {
-            Gizmos.color = Color.green;
-            Gizmos.DrawWireSphere(transform.position, _interactionDistance);
+            if (_isDistanceBased)
+            {
+                Gizmos.color = Color.green;
+                Gizmos.DrawWireSphere(transform.position, _interactionDistance);
+            }
         }
 
         #endregion

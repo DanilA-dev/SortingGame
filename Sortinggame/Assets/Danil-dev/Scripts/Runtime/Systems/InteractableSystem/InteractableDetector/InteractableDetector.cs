@@ -1,6 +1,7 @@
-﻿using System.Collections;
+using System.Collections;
 using D_Dev.Base;
 using D_Dev.ColliderEvents;
+using D_Dev.PolymorphicValueSystem;
 using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.Events;
@@ -18,7 +19,7 @@ namespace D_Dev.InteractableSystem.InteractableDetector
         }
 
         #endregion
-        
+
         #region Fields
 
         [SerializeField] private InteractableDetectType _interactableDetectType;
@@ -29,14 +30,16 @@ namespace D_Dev.InteractableSystem.InteractableDetector
         [ShowIf(nameof(_interactableDetectType), InteractableDetectType.Raycaster)]
         [HideLabel]
         [SerializeField] private Raycaster.Raycaster _raycaster;
+        [SerializeReference] private PolymorphicValue<GameObject> _currentInteractableOutput = new GameObjectConstantValue();
 
         [FoldoutGroup("Events")]
-        public UnityEvent<IInteractable> OnInteractableFound;
+        public UnityEvent<GameObject> OnInteractableFound;
         [FoldoutGroup("Events")]
         public UnityEvent OnInteractableLost;
 
         private IInteractable _currentInteractable;
         private WaitForSeconds _interval;
+        private Coroutine _detectRoutine;
 
         #endregion
 
@@ -51,20 +54,29 @@ namespace D_Dev.InteractableSystem.InteractableDetector
         private void Awake()
         {
             _interval = new WaitForSeconds(_updateRate);
-            _triggerColliderObservable?.OnEnter.AddListener(OnTriggerInteractableEnter);
-            _triggerColliderObservable?.OnExit.AddListener(OnTriggerInteractableExit);
         }
 
-        private void Start()
+        private void OnEnable()
         {
+            _triggerColliderObservable?.OnEnter.AddListener(OnTriggerInteractableEnter);
+            _triggerColliderObservable?.OnExit.AddListener(OnTriggerInteractableExit);
+
             if(_interactableDetectType == InteractableDetectType.Raycaster)
-                StartCoroutine(DetectInteractableRoutine());
+                _detectRoutine = StartCoroutine(DetectInteractableRoutine());
         }
 
         private void OnDisable()
         {
             _triggerColliderObservable?.OnEnter.RemoveListener(OnTriggerInteractableEnter);
             _triggerColliderObservable?.OnExit.RemoveListener(OnTriggerInteractableExit);
+
+            if (_detectRoutine != null)
+            {
+                StopCoroutine(_detectRoutine);
+                _detectRoutine = null;
+            }
+
+            SetCurrent(null);
         }
 
         #endregion
@@ -86,40 +98,55 @@ namespace D_Dev.InteractableSystem.InteractableDetector
 
         private void OnTriggerInteractableEnter(Collider collider)
         {
-            SetInteractable(collider);
+            var interactable = GetInteractable(collider);
+            if (interactable != null)
+                SetCurrent(interactable);
         }
 
         private void OnTriggerInteractableExit(Collider collider)
         {
-            ResetInteractable();
+            if (_currentInteractable == null)
+                return;
+
+            if (collider.TryGetComponent(out IInteractable interactable) &&
+                ReferenceEquals(interactable, _currentInteractable))
+                SetCurrent(null);
         }
 
         #endregion
-        
+
         #region Private
 
         private void DetectInteractable()
         {
-            if (_raycaster.IsHit(out RaycastHit hit))
-                SetInteractable(hit.collider);
-            else
-                ResetInteractable();
+            var interactable = _raycaster.IsHit(out RaycastHit hit) ? GetInteractable(hit.collider) : null;
+            SetCurrent(interactable);
         }
 
-        private void SetInteractable(Collider collider)
+        private IInteractable GetInteractable(Collider collider)
         {
             if (collider.TryGetComponent(out IInteractable interactable) &&
                 interactable.CanInteract(gameObject))
-            {
-                _currentInteractable = interactable;
-                OnInteractableFound?.Invoke(_currentInteractable);
-            }
+                return interactable;
+
+            return null;
         }
-        
-        private void ResetInteractable()
+
+        private void SetCurrent(IInteractable interactable)
         {
-            _currentInteractable = null;
-            OnInteractableLost?.Invoke();
+            if (ReferenceEquals(_currentInteractable, interactable))
+                return;
+
+            _currentInteractable = interactable;
+            var target = interactable?.GameObject;
+
+            if (_currentInteractableOutput != null)
+                _currentInteractableOutput.Value = target;
+
+            if (target != null)
+                OnInteractableFound?.Invoke(target);
+            else
+                OnInteractableLost?.Invoke();
         }
 
         #endregion

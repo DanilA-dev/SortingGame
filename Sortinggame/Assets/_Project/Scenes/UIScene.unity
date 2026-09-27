@@ -132,8 +132,16 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2246870445093473854, guid: 914182b0e1e986f4f8283fc61a9d263b, type: 3}
-      propertyPath: _menuInfos.Array.size
+      propertyPath: _menuInfosContainer
+      value: 
+      objectReference: {fileID: 11400000, guid: 8f8d7dca8f287a34e93fa4d8f3ccf00b, type: 2}
+    - target: {fileID: 2246870445093473854, guid: 914182b0e1e986f4f8283fc61a9d263b, type: 3}
+      propertyPath: _createMenusOnEnable
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2246870445093473854, guid: 914182b0e1e986f4f8283fc61a9d263b, type: 3}
+      propertyPath: _menuInfos.Array.size
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2246870445093473854, guid: 914182b0e1e986f4f8283fc61a9d263b, type: 3}
       propertyPath: '_menuInfos.Array.data[0]'

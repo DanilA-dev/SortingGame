@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace D_Dev.MenuHandler
 {
-    [CreateAssetMenu(menuName = "D-Dev/Info/MenuInfo")]
+    [CreateAssetMenu(menuName = "D-Dev/Info/Menu/MenuInfo")]
     public class MenuInfo : ScriptableObject
     {
         #region Enums

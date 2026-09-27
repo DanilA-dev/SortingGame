@@ -613,6 +613,7 @@ GameObject:
   - component: {fileID: 7954502312663035469}
   - component: {fileID: 1673187466131067249}
   - component: {fileID: 9171465542281879858}
+  - component: {fileID: 4794096811496763701}
   m_Layer: 3
   m_Name: Player_Prefab
   m_TagString: Player
@@ -747,3 +748,87 @@ MonoBehaviour:
         _characterController: {fileID: 5824734601842318458}
         _useGravity: 1
         _gravityModifier: 1
+--- !u!114 &4794096811496763701
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3641577891075875498}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73d1d60f48ae494aba9965a3459d2b9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: D-Dev.InteractableDetector::D_Dev.InteractableSystem.InteractableDetector.InteractableDetector
+  _interactableDetectType: 0
+  _triggerColliderObservable: {fileID: 0}
+  _updateRate: 0.1
+  _raycaster:
+    _castType: 0
+    _distance: 1
+    _collidersBuffer: 10
+    _radius: 0.5
+    _halfExtents: {x: 0.5, y: 0.5, z: 0.5}
+    _origin:
+      rid: 1932282358920642924
+    _direction:
+      rid: 1932282358920642926
+    _queryTriggerInteraction: 0
+    _colliderChecker:
+      _collisionDimension: 0
+      _checkLayer: 0
+      _checkLayerMask:
+        serializedVersion: 2
+        m_Bits: 0
+      _checkTag: 1
+      _checkTags:
+      - {fileID: 11400000, guid: 9cf0585fc99b28242a1eee7dbf83fad2, type: 2}
+      _ignoreTrigger: 0
+      _ignoreColliders: 1
+      _ignoredColliders:
+      - {fileID: 5824734601842318458}
+      _ignoredColliders2D: []
+      _ignoreLayer: 0
+      _ignoreLayerMask:
+        serializedVersion: 2
+        m_Bits: 0
+      _ignoreTag: 0
+      _ignoreTags: []
+      _debugColliders: 0
+    _drawGizmos: 0
+    _debugColor: {r: 0, g: 1, b: 0, a: 1}
+  OnInteractableFound:
+    m_PersistentCalls:
+      m_Calls: []
+  OnInteractableLost:
+    m_PersistentCalls:
+      m_Calls: []
+  references:
+    version: 2
+    RefIds:
+    - rid: 1932282358920642924
+      type: {class: TransformPositionSettings, ns: D_Dev.PositionRotationConfig, asm: D-Dev.PositionRotationSettings}
+      data:
+        _useRandomSphere: 0
+        _radius: 0
+        _axis: 7
+        _value:
+          rid: 1932282358920642925
+        _isLocal: 0
+    - rid: 1932282358920642925
+      type: {class: TransformConstantValue, ns: D_Dev.PolymorphicValueSystem, asm: D-Dev.PolymorphicValueSystem}
+      data:
+        _value: {fileID: 2898917107102666014}
+    - rid: 1932282358920642926
+      type: {class: TransformLocalDirectionPositionSettings, ns: D_Dev.PositionRotationConfig, asm: D-Dev.PositionRotationSettings}
+      data:
+        _useRandomSphere: 0
+        _radius: 0
+        _axis: 7
+        _value:
+          rid: 1932282358920642927
+        _direction: 4
+    - rid: 1932282358920642927
+      type: {class: TransformConstantValue, ns: D_Dev.PolymorphicValueSystem, asm: D-Dev.PolymorphicValueSystem}
+      data:
+        _value: {fileID: 2898917107102666014}

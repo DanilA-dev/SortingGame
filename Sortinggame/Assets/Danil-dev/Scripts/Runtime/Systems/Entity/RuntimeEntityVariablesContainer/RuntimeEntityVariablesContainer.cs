@@ -84,6 +84,18 @@ namespace D_Dev.RuntimeEntityVariables
             return null;
         }
 
+        public bool TryGetVariable<T>(StringScriptableVariable variableID, out T variable) where T : BaseEntityVariable
+        {
+            if (variableID != null && _variableMap.TryGetValue(variableID, out var baseVariable))
+            {
+                variable = baseVariable as T;
+                return variable != null;
+            }
+
+            variable = null;
+            return false;
+        }
+
         public bool TryGetValue<T>(StringScriptableVariable variableID, out T value)
             where T : BaseEntityVariable
         {

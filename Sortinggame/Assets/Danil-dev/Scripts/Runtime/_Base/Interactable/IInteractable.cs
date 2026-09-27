@@ -4,6 +4,7 @@ namespace D_Dev.Base
 {
     public interface IInteractable
     {
+        public GameObject GameObject { get; }
         public bool CanBeStopped { get; }
         public bool IsDistanceBased { get; }
         public void StartInteract(GameObject interactor);

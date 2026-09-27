@@ -103,7 +103,7 @@ GameObject:
   - component: {fileID: 5318475311809403501}
   - component: {fileID: 3386224551574386743}
   m_Layer: 0
-  m_Name: PlayerFreeLook_Camera_Prefab
+  m_Name: Player_Camera_Prefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

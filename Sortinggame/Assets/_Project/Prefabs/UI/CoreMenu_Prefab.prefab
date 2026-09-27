@@ -87,6 +87,7 @@ GameObject:
   - component: {fileID: 8895014447150393099}
   - component: {fileID: 9186893806334106299}
   - component: {fileID: 7764843646368777188}
+  - component: {fileID: 7473183519947759828}
   m_Layer: 0
   m_Name: CoreMenu_Prefab
   m_TagString: Untagged
@@ -177,3 +178,36 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 55
+--- !u!114 &7473183519947759828
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4736265040275234083}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af4889dbbc8c450eb47db90946bc598d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: D-Dev.Menu::D_Dev.MenuHandler.BaseMenu
+  _isOpen: 0
+  _hasOpenAnimation: 0
+  _hasCloseAniation: 0
+  _disableObjectOnComplete: 0
+  _openAnimation:
+    _playMode: 0
+    _ignoreTimeScale: 0
+    _tweens: []
+  _closeAnimation:
+    _playMode: 0
+    _ignoreTimeScale: 0
+    _tweens: []
+  OnOpenEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  OnCloseEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  references:
+    version: 2
+    RefIds: []
