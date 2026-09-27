@@ -1,0 +1,19 @@
+{
+    "name": "D-Dev.Explodable",
+    "rootNamespace": "",
+    "references": [
+        "GUID:6198492fcc5b62748893cb317967c90f",
+        "GUID:ba7d088f93a8e1649b9edc0955fab802",
+        "GUID:6efb4fdd415a3304aae591e808eb8d6c",
+        "GUID:bb00ce5d32a0ba74cbd0bde18e5eaefe"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

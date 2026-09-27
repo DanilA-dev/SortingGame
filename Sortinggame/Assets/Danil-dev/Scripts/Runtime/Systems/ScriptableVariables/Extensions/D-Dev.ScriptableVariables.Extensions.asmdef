@@ -1,0 +1,19 @@
+{
+    "name": "D-Dev.ScriptableVariables.Extensions",
+    "rootNamespace": "",
+    "references": [
+        "GUID:d789ad2b695405b409ea35b65e2bfca9",
+        "GUID:6d0199508f23afb4692c5fcd34c5ce08",
+        "GUID:80b1b562c598898438372094811cc127",
+        "GUID:cb1a05c32f5d5744bb2273b8970ae954"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

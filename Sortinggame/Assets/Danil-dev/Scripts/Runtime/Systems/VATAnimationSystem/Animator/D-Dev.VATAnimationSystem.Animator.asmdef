@@ -1,0 +1,21 @@
+{
+    "name": "D-Dev.VATAnimationSystem.Extensions",
+    "rootNamespace": "",
+    "references": [
+        "GUID:7fadc1833ab6de24da791089a28df58c",
+        "GUID:6d0199508f23afb4692c5fcd34c5ce08",
+        "GUID:ba7d088f93a8e1649b9edc0955fab802",
+        "GUID:afd511e9df38c4a4a9b7414410d3bc6a",
+        "GUID:a947a454b8df3474d81c9577867188ff",
+        "GUID:065a78a0216aa82418e1b0dca57790f4"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

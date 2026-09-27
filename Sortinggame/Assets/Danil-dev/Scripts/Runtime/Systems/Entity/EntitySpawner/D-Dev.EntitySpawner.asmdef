@@ -1,0 +1,24 @@
+{
+    "name": "D-Dev.EntitySpawner",
+    "rootNamespace": "",
+    "references": [
+        "GUID:8f7d4ec3caeccbb4e81592a534a0fdf6",
+        "GUID:e281149ec50211a44bff4d8585edd25c",
+        "GUID:a0f06407a79e8734a94202f0d6b4d6b2",
+        "GUID:ea2556969bd3c4d43a76b6d609c961b3",
+        "GUID:5456a4bccc05d9848a04f774d86763b4",
+        "GUID:f51ebe6a0ceec4240a699833d6309b23",
+        "GUID:1d36efb7d24523b41b598aa02555bb7a",
+        "GUID:ba7d088f93a8e1649b9edc0955fab802",
+        "GUID:b41434098798a8243b72aa96edda19ca"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

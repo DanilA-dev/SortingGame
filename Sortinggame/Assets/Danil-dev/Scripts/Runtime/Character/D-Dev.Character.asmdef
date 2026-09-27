@@ -1,0 +1,22 @@
+{
+    "name": "D-Dev.Character",
+    "rootNamespace": "",
+    "references": [
+        "GUID:041725febddb7524bae1e365476ff4c3",
+        "GUID:6a50307629a80fd4090ca6d93dbe1f7e",
+        "GUID:6d0199508f23afb4692c5fcd34c5ce08",
+        "GUID:fb3c1de10bcdb204eac8e09171bbc93a",
+        "GUID:e1891072a17d62e42bb8c10c14d59156",
+        "GUID:e281149ec50211a44bff4d8585edd25c",
+        "GUID:ba7d088f93a8e1649b9edc0955fab802"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

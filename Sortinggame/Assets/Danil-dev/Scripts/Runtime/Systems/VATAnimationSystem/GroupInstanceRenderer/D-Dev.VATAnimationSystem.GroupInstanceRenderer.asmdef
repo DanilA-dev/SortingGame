@@ -1,0 +1,19 @@
+{
+    "name": "D-Dev.VATAnimationSystem.GroupInstanceRenderer",
+    "rootNamespace": "",
+    "references": [
+        "GUID:a947a454b8df3474d81c9577867188ff",
+        "GUID:afd511e9df38c4a4a9b7414410d3bc6a",
+        "GUID:7fadc1833ab6de24da791089a28df58c",
+        "GUID:ba7d088f93a8e1649b9edc0955fab802"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

@@ -1,0 +1,16 @@
+{
+    "name": "D-Dev.ColliderChecker",
+    "rootNamespace": "",
+    "references": [
+        "GUID:bb00ce5d32a0ba74cbd0bde18e5eaefe"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

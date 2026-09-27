@@ -1,0 +1,22 @@
+{
+    "name": "D-Dev.PlayerUtilities",
+    "rootNamespace": "",
+    "references": [
+        "GUID:d789ad2b695405b409ea35b65e2bfca9",
+        "GUID:6d0199508f23afb4692c5fcd34c5ce08",
+        "GUID:ba7d088f93a8e1649b9edc0955fab802",
+        "GUID:e1891072a17d62e42bb8c10c14d59156",
+        "GUID:6a50307629a80fd4090ca6d93dbe1f7e",
+        "GUID:adf3757dee9f5eb4580f73a8545c7603",
+        "D-Dev.MovementHandler"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

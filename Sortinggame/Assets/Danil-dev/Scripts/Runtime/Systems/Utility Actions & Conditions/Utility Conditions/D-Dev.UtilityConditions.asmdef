@@ -1,0 +1,20 @@
+{
+    "name": "D-Dev.UtilityConditions",
+    "rootNamespace": "",
+    "references": [
+        "GUID:6d0199508f23afb4692c5fcd34c5ce08",
+        "GUID:d789ad2b695405b409ea35b65e2bfca9",
+        "GUID:62e2659ebbd69444892cd9aa256f8240",
+        "GUID:e281149ec50211a44bff4d8585edd25c",
+        "GUID:ba7d088f93a8e1649b9edc0955fab802"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

@@ -1,0 +1,24 @@
+{
+    "name": "D-Dev.Menu",
+    "rootNamespace": "",
+    "references": [
+        "GUID:f51ebe6a0ceec4240a699833d6309b23",
+        "GUID:560b04d1a97f54a4e82edc0cbbb69285",
+        "GUID:d789ad2b695405b409ea35b65e2bfca9",
+        "GUID:cb1a05c32f5d5744bb2273b8970ae954",
+        "GUID:605f1a751ab411e4caebb830a5ad05fd",
+        "GUID:0c083109b251161418234030b436a9b6",
+        "GUID:05da580bf895a0b4f836ba90d6454ce9",
+        "GUID:a947a454b8df3474d81c9577867188ff",
+        "GUID:5456a4bccc05d9848a04f774d86763b4"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

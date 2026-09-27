@@ -1,0 +1,16 @@
+{
+    "name": "D-Dev.InteractableSystem",
+    "rootNamespace": "",
+    "references": [
+        "GUID:d789ad2b695405b409ea35b65e2bfca9"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

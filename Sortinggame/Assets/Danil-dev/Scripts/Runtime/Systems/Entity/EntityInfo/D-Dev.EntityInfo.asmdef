@@ -1,0 +1,17 @@
+{
+    "name": "D-Dev.EntityInfo",
+    "rootNamespace": "",
+    "references": [
+        "GUID:ea2556969bd3c4d43a76b6d609c961b3",
+        "GUID:5456a4bccc05d9848a04f774d86763b4"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

@@ -1,0 +1,21 @@
+{
+    "name": "D-Dev.RuntimeEntityVariablesContainer.Extensions",
+    "rootNamespace": "",
+    "references": [
+        "GUID:6d0199508f23afb4692c5fcd34c5ce08",
+        "GUID:ba7d088f93a8e1649b9edc0955fab802",
+        "GUID:1d36efb7d24523b41b598aa02555bb7a",
+        "GUID:a0f06407a79e8734a94202f0d6b4d6b2",
+        "GUID:b41434098798a8243b72aa96edda19ca",
+        "GUID:ea2556969bd3c4d43a76b6d609c961b3"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

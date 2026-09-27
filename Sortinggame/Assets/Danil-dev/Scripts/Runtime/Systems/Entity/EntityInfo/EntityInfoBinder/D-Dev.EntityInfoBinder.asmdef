@@ -1,0 +1,20 @@
+{
+    "name": "D-Dev.EntityInfoBinder",
+    "rootNamespace": "",
+    "references": [
+        "GUID:1d36efb7d24523b41b598aa02555bb7a",
+        "GUID:ea2556969bd3c4d43a76b6d609c961b3",
+        "GUID:b41434098798a8243b72aa96edda19ca",
+        "GUID:a0f06407a79e8734a94202f0d6b4d6b2",
+        "GUID:ba7d088f93a8e1649b9edc0955fab802"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

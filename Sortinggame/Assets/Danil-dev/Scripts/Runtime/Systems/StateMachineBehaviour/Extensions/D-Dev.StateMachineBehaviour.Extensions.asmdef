@@ -1,0 +1,18 @@
+{
+    "name": "D-Dev.StateMachineBehaviour.Extensions",
+    "rootNamespace": "",
+    "references": [
+        "GUID:041725febddb7524bae1e365476ff4c3",
+        "GUID:6a50307629a80fd4090ca6d93dbe1f7e",
+        "GUID:afd511e9df38c4a4a9b7414410d3bc6a"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

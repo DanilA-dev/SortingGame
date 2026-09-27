@@ -1,0 +1,17 @@
+{
+    "name": "D-Dev.ActionFlow",
+    "rootNamespace": "",
+    "references": [
+        "GUID:d789ad2b695405b409ea35b65e2bfca9",
+        "GUID:d63384b0f36cfd743b5856734492b7dd"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

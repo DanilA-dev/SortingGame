@@ -1,0 +1,16 @@
+{
+    "name": "D-Dev.TimeScaleManager",
+    "rootNamespace": "",
+    "references": [
+        "GUID:a947a454b8df3474d81c9577867188ff"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

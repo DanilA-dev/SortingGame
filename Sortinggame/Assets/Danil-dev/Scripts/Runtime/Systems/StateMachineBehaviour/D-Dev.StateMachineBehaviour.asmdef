@@ -1,0 +1,20 @@
+{
+    "name": "D-Dev.StateMachineBehaviour",
+    "rootNamespace": "",
+    "references": [
+        "GUID:041725febddb7524bae1e365476ff4c3",
+        "GUID:d789ad2b695405b409ea35b65e2bfca9",
+        "GUID:f51ebe6a0ceec4240a699833d6309b23",
+        "GUID:ba7d088f93a8e1649b9edc0955fab802",
+        "GUID:560b04d1a97f54a4e82edc0cbbb69285"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

@@ -1,0 +1,18 @@
+{
+    "name": "D-Dev.InteractableDetector",
+    "rootNamespace": "",
+    "references": [
+        "GUID:62e2659ebbd69444892cd9aa256f8240",
+        "GUID:d789ad2b695405b409ea35b65e2bfca9",
+        "GUID:eb1128c4553b424459decb2e805d743e"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

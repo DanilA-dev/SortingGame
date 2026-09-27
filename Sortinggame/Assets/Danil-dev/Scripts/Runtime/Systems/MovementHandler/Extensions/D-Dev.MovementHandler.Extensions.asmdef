@@ -1,0 +1,17 @@
+{
+    "name": "D-Dev.MovementHandler.Extensions",
+    "rootNamespace": "",
+    "references": [
+        "GUID:fb3c1de10bcdb204eac8e09171bbc93a",
+        "GUID:afd511e9df38c4a4a9b7414410d3bc6a"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

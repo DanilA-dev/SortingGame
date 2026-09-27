@@ -1,0 +1,17 @@
+{
+    "name": "D-Dev.EntityPuller",
+    "rootNamespace": "",
+    "references": [
+        "GUID:e281149ec50211a44bff4d8585edd25c",
+        "GUID:ba7d088f93a8e1649b9edc0955fab802"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

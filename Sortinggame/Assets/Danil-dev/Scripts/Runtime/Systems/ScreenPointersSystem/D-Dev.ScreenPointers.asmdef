@@ -1,0 +1,19 @@
+{
+    "name": "D-Dev.ScreenPointers",
+    "rootNamespace": "",
+    "references": [
+        "GUID:ba7d088f93a8e1649b9edc0955fab802",
+        "GUID:b59af2f7183c8e247b483975b05e400f",
+        "GUID:afd511e9df38c4a4a9b7414410d3bc6a",
+        "GUID:605f1a751ab411e4caebb830a5ad05fd"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

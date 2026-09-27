@@ -1,0 +1,18 @@
+{
+    "name": "D-Dev.ColliderEvents",
+    "rootNamespace": "",
+    "references": [
+        "GUID:6efb4fdd415a3304aae591e808eb8d6c",
+        "GUID:560b04d1a97f54a4e82edc0cbbb69285",
+        "GUID:bb00ce5d32a0ba74cbd0bde18e5eaefe"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

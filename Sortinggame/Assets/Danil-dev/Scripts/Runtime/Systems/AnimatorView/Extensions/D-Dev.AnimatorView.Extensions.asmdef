@@ -1,0 +1,20 @@
+{
+    "name": "D-Dev.AnimatorView.Extensions",
+    "rootNamespace": "",
+    "references": [
+        "GUID:4843394e01b07b0449752c7b3f1649ce",
+        "GUID:ba7d088f93a8e1649b9edc0955fab802",
+        "GUID:ea2556969bd3c4d43a76b6d609c961b3",
+        "GUID:6d0199508f23afb4692c5fcd34c5ce08",
+        "GUID:1d36efb7d24523b41b598aa02555bb7a"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

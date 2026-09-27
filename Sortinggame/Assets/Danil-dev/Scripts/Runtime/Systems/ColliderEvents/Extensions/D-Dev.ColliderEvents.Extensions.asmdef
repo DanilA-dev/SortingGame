@@ -1,0 +1,21 @@
+{
+    "name": "D-Dev.ColliderEvents.Extensions",
+    "rootNamespace": "",
+    "references": [
+        "GUID:eb1128c4553b424459decb2e805d743e",
+        "GUID:ba7d088f93a8e1649b9edc0955fab802",
+        "GUID:6d0199508f23afb4692c5fcd34c5ce08",
+        "GUID:ea2556969bd3c4d43a76b6d609c961b3",
+        "GUID:1d36efb7d24523b41b598aa02555bb7a",
+        "GUID:d789ad2b695405b409ea35b65e2bfca9"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

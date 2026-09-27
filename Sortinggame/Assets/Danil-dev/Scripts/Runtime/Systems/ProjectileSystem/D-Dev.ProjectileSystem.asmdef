@@ -1,0 +1,25 @@
+{
+    "name": "D-Dev.ProjectileSystem",
+    "rootNamespace": "",
+    "references": [
+        "GUID:6198492fcc5b62748893cb317967c90f",
+        "GUID:bb00ce5d32a0ba74cbd0bde18e5eaefe",
+        "GUID:eb1128c4553b424459decb2e805d743e",
+        "GUID:ba7d088f93a8e1649b9edc0955fab802",
+        "GUID:1d36efb7d24523b41b598aa02555bb7a",
+        "GUID:afd511e9df38c4a4a9b7414410d3bc6a",
+        "GUID:b59af2f7183c8e247b483975b05e400f",
+        "GUID:e1891072a17d62e42bb8c10c14d59156",
+        "GUID:6efb4fdd415a3304aae591e808eb8d6c",
+        "GUID:7b69a8ff26bc0024fa6e42def227750b"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

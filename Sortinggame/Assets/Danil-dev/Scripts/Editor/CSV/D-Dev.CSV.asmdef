@@ -1,0 +1,18 @@
+{
+    "name": "D-Dev.CSV",
+    "rootNamespace": "",
+    "references": [
+        "GUID:74cacc66adaa63e41931e373163dfd62"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

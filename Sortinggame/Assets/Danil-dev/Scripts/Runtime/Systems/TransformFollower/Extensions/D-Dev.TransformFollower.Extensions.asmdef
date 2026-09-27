@@ -1,0 +1,17 @@
+{
+    "name": "D-Dev.TransformFollower.Extensions",
+    "rootNamespace": "",
+    "references": [
+        "GUID:df6d59e70c8252b40a134dc03f9352a2",
+        "GUID:afd511e9df38c4a4a9b7414410d3bc6a"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

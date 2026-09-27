@@ -1,0 +1,18 @@
+{
+    "name": "D-Dev.CurrencySystem.CurrencyViewProvider",
+    "rootNamespace": "",
+    "references": [
+        "GUID:0ce9d49e8045908448905aba67046949",
+        "GUID:80b1b562c598898438372094811cc127",
+        "GUID:cb1a05c32f5d5744bb2273b8970ae954"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

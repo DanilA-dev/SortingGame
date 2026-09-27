@@ -1,0 +1,19 @@
+{
+    "name": "D-Dev.TimerSystem.Extensions",
+    "rootNamespace": "",
+    "references": [
+        "GUID:d789ad2b695405b409ea35b65e2bfca9",
+        "GUID:b59af2f7183c8e247b483975b05e400f",
+        "GUID:ba7d088f93a8e1649b9edc0955fab802",
+        "GUID:afd511e9df38c4a4a9b7414410d3bc6a"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

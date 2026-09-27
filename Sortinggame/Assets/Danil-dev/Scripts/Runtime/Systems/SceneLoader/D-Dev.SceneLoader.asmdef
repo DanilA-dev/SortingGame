@@ -1,0 +1,25 @@
+{
+    "name": "D-Dev.SceneLoader",
+    "rootNamespace": "",
+    "references": [
+        "GUID:d789ad2b695405b409ea35b65e2bfca9",
+        "GUID:605f1a751ab411e4caebb830a5ad05fd",
+        "GUID:05da580bf895a0b4f836ba90d6454ce9",
+        "GUID:a947a454b8df3474d81c9577867188ff",
+        "GUID:f51ebe6a0ceec4240a699833d6309b23",
+        "GUID:5456a4bccc05d9848a04f774d86763b4",
+        "GUID:9e24947de15b9834991c9d8411ea37cf",
+        "GUID:84651a3751eca9349aac36a66bba901b",
+        "GUID:69448af7b92c7f342b298e06a37122aa",
+        "GUID:593a5b492d29ac6448b1ebf7f035ef33"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
