@@ -36,7 +36,7 @@ namespace D_Dev.MovementHandler
 
             if (_useGravity)
             {
-                if (_characterController.isGrounded)
+                if (_characterController.isGrounded && _verticalVelocity <= 0f)
                     _verticalVelocity = -0.5f;
                 else
                     _verticalVelocity += Physics.gravity.y * _gravityModifier * Time.deltaTime;
@@ -62,6 +62,14 @@ namespace D_Dev.MovementHandler
         #endregion
 
         #region Public
+
+        public Vector3 Velocity => _currentVelocity + Vector3.up * _verticalVelocity;
+
+        public void SetVelocity(Vector3 velocity)
+        {
+            _currentVelocity = new Vector3(velocity.x, 0f, velocity.z);
+            _verticalVelocity = velocity.y;
+        }
 
         public void SetGravity(bool enabled) => _useGravity = enabled;
         public void SetGravityModifier(float modifier) => _gravityModifier = modifier;

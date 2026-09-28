@@ -5,32 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c7e8f329-2cc1-4157-9309-86340ee94883" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/ItemInteractable.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/ItemInteractable.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Danil-dev/Assets/Prefabs/PlayerTemplate.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Danil-dev/Assets/Prefabs/UI/MenuHandler_Prefab.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Danil-dev/Assets/Prefabs/UI/MenuHandler_Prefab.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Danil-dev/Scripts/Runtime/Systems/Entity/RuntimeEntityVariablesContainer/RuntimeEntityVariablesContainer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Danil-dev/Scripts/Runtime/Systems/Entity/RuntimeEntityVariablesContainer/RuntimeEntityVariablesContainer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Danil-dev/Scripts/Runtime/Systems/InputSystem/InputActions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Danil-dev/Scripts/Runtime/Systems/InputSystem/InputActions.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Sortinggame/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Sortinggame/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Danil-dev/Scripts/Runtime/Systems/InteractableSystem/BaseInteractable.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Danil-dev/Scripts/Runtime/Systems/InteractableSystem/BaseInteractable.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Danil-dev/Scripts/Runtime/Systems/InteractableSystem/InteractableDetector/D-Dev.InteractableDetector.asmdef" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Danil-dev/Scripts/Runtime/Systems/InteractableSystem/InteractableDetector/D-Dev.InteractableDetector.asmdef" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Danil-dev/Scripts/Runtime/Systems/InteractableSystem/InteractableDetector/InteractableDetector.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Danil-dev/Scripts/Runtime/Systems/InteractableSystem/InteractableDetector/InteractableDetector.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Danil-dev/Scripts/Runtime/Systems/MenuHandler/Base/MenuController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Danil-dev/Scripts/Runtime/Systems/MenuHandler/Base/MenuController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Danil-dev/Scripts/Runtime/Systems/MenuHandler/Base/MenuInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Danil-dev/Scripts/Runtime/Systems/MenuHandler/Base/MenuInfo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Danil-dev/Scripts/Runtime/Systems/InteractableSystem/Interactor/Interactor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Danil-dev/Scripts/Runtime/Systems/InteractableSystem/Interactor/Interactor.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Danil-dev/Scripts/Runtime/_Base/Interactable/IInteractable.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Danil-dev/Scripts/Runtime/_Base/Interactable/IInteractable.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/Prefabs/Player/PlayerFreeLook_Camera_Prefab.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/Prefabs/Player/PlayerFreeLook_Camera_Prefab.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Art/Fonts/RifficFree-Bold SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Art/Fonts/RifficFree-Bold SDF.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Project/Prefabs/Player/Player_Prefab.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Prefabs/Player/Player_Prefab.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/Prefabs/TestProps.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/Prefabs/TestProps/CapsuleProp_Prefab.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/Prefabs/TestProps/CapsuleProp_Prefab.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/Prefabs/TestProps/CubeProp_Prefab.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/Prefabs/TestProps/CubeProp_Prefab.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/Prefabs/TestProps/SphereProp_Prefab.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/Prefabs/TestProps/SphereProp_Prefab.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/Prefabs/UI/CoreMenu_Prefab.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Prefabs/UI/CoreMenu_Prefab.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scenes/MainScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scenes/MainScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scenes/SystemsScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scenes/SystemsScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scenes/UIScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scenes/UIScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Prefabs/TestItems/BaseItem_Prefab.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Prefabs/TestItems/BaseItem_Prefab.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/ScriptableObjects/Variables/Player/InteractInput_BoolVariable.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/ScriptableObjects/Variables/Player/InteractInput_BoolVariable.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/Core/ItemInteractable.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/Core/ItemInteractable.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/Core/PickedItemsContainer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/Core/PickedItemsContainer.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -41,28 +26,31 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 5
-}]]></component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/_Project/Scripts/Core/PickedItemsContainer.cs" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 5
+}</component>
   <component name="ProjectId" id="3JuvTR0MdkRYrC31EjHG6TLfacG" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "main",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
     <configuration name="Start Unity" type="RunUnityExe" factoryName="Unity Executable">
       <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\6000.3.18f1\Editor\Unity.exe" />
@@ -115,7 +103,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1790523774356</updated>
-      <workItem from="1790523775641" duration="6278000" />
+      <workItem from="1790523775641" duration="15448000" />
+      <workItem from="1790601044617" duration="6238000" />
     </task>
     <servers />
   </component>

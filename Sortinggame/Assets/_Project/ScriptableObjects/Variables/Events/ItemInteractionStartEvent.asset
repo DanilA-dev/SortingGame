@@ -9,8 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e87ccfc8b907a9d4abb8da082d48bd34, type: 3}
-  m_Name: InteractInput_BoolVariable
-  m_EditorClassIdentifier: D-Dev.ScriptableVariables::D_Dev.ScriptableVariables.BoolScriptableVariable
-  _value: 0
-  _resetOnEnterRuntime: 1
+  m_Script: {fileID: 11500000, guid: 110277e40058401b9d8b93347d0123d7, type: 3}
+  m_Name: ItemInteractionStartEvent
+  m_EditorClassIdentifier: D-Dev.ScriptableVariables::D_Dev.ScriptableVariables.StringScriptableVariable
+  _value: 
+  _resetOnEnterRuntime: 0

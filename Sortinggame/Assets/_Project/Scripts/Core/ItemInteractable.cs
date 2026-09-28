@@ -17,6 +17,11 @@ namespace _Project.Scripts
         [SerializeField] private Rigidbody _rigidbody;
         [SerializeField] private Collider _collider;
         [SerializeReference] private PolymorphicValue<float> _sleepDelay = new FloatConstantValue();
+        [Space]
+        [Title("Stop Interact Settings")] 
+        [SerializeReference] private PolymorphicValue<float> _pushForce = new FloatConstantValue();
+        [SerializeField] private ForceMode _forceMode;
+        [Space]
         [Title("Events Variables")] 
         [SerializeField] private StringScriptableVariable _onInteractStartEventName;
         [SerializeField] private StringScriptableVariable _onInteractStopEventName;
@@ -26,6 +31,7 @@ namespace _Project.Scripts
         #region Properties
 
         public bool IsSorted { get; private set; }
+        public bool IsPicked { get; private set; }
 
         #endregion
 
@@ -71,12 +77,27 @@ namespace _Project.Scripts
 
         protected override void OnInteract(GameObject interactor)
         {
+            if(IsSorted || IsPicked)
+                return;
+            
+            IsPicked = true;
             EventManager.Invoke(_onInteractStartEventName.ToString(), this);
         }
 
         protected override void OnStopInteract(GameObject interactor)
         {
+            if(IsSorted || !IsPicked)
+                return;
+            
             EventManager.Invoke(_onInteractStopEventName.ToString(), this);
+            transform.SetParent(null);
+            
+            var dir = (interactor.transform.position - transform.position).normalized;
+            _rigidbody.isKinematic = false;
+            _rigidbody.AddForce(dir * _pushForce.Value, _forceMode);
+
+            IsPicked = false;
+            CoroutineManager.Run(SleepRoutine());
         }
 
         #endregion

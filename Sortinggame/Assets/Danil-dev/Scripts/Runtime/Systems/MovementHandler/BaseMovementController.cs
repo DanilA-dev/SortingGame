@@ -20,6 +20,7 @@ namespace D_Dev.MovementHandler
         protected bool IsStopped => _isStopped;
 
         public Rigidbody Rigidbody => _movementHandler?.Rigidbody;
+        public BaseMovementHandler MovementHandler => _movementHandler;
 
         public float UpdateInterval
         {

@@ -325,9 +325,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Game.Core::_Project.Scripts.ItemInteractable
   _isInteractable: 1
+  _interactMode: 0
+  _holdTime:
+    rid: 1932282381251117812
+  _holdProgress:
+    rid: 1932282381251117813
   _isDistanceBased: 0
   _interactionDistance: 2
   _canBeStopped: 1
+  _stopOnFocusLost: 0
   OnInteractStart:
     m_PersistentCalls:
       m_Calls: []
@@ -395,6 +401,11 @@ MonoBehaviour:
   _collider: {fileID: 6963323781123029201}
   _sleepDelay:
     rid: 1932282358920643001
+  _pushForce:
+    rid: 1932282381251117618
+  _forceMode: 0
+  _onInteractStartEventName: {fileID: 11400000, guid: f0f67b96c95e1b04993d02fbb9a4772a, type: 2}
+  _onInteractStopEventName: {fileID: 11400000, guid: b2229797fc4127c498ff5eecaf96be9a, type: 2}
   references:
     version: 2
     RefIds:
@@ -402,6 +413,18 @@ MonoBehaviour:
       type: {class: FloatConstantValue, ns: D_Dev.PolymorphicValueSystem, asm: D-Dev.PolymorphicValueSystem}
       data:
         _value: 1.5
+    - rid: 1932282381251117618
+      type: {class: FloatConstantValue, ns: D_Dev.PolymorphicValueSystem, asm: D-Dev.PolymorphicValueSystem}
+      data:
+        _value: 5
+    - rid: 1932282381251117812
+      type: {class: FloatConstantValue, ns: D_Dev.PolymorphicValueSystem, asm: D-Dev.PolymorphicValueSystem}
+      data:
+        _value: 0
+    - rid: 1932282381251117813
+      type: {class: FloatConstantValue, ns: D_Dev.PolymorphicValueSystem, asm: D-Dev.PolymorphicValueSystem}
+      data:
+        _value: 0
 --- !u!114 &686823432555963283
 MonoBehaviour:
   m_ObjectHideFlags: 0

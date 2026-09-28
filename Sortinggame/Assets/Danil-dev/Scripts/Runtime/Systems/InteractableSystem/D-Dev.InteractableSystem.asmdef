@@ -2,7 +2,8 @@
     "name": "D-Dev.InteractableSystem",
     "rootNamespace": "",
     "references": [
-        "GUID:d789ad2b695405b409ea35b65e2bfca9"
+        "GUID:d789ad2b695405b409ea35b65e2bfca9",
+        "GUID:ba7d088f93a8e1649b9edc0955fab802"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],
