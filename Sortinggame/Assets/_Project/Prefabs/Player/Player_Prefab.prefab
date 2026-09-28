@@ -645,6 +645,7 @@ GameObject:
   - component: {fileID: 1673187466131067249}
   - component: {fileID: 9171465542281879858}
   - component: {fileID: 4794096811496763701}
+  - component: {fileID: 2100305034605706281}
   m_Layer: 3
   m_Name: Player_Prefab
   m_TagString: Player
@@ -729,15 +730,42 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _inputRouter: {fileID: 11400000, guid: b299fe18b864a6a448ae3ab79bd7d358, type: 2}
-  _rawInputDirection:
-    rid: 1932282345740042341
+  _bindings:
+  - rid: 1932282358920643379
+  - rid: 1932282358920643436
+  - rid: 1932282358920643439
   references:
     version: 2
     RefIds:
-    - rid: 1932282345740042341
+    - rid: 1932282358920643379
+      type: {class: MoveInputBinding, ns: D_Dev.PlayerStateController.InputBindings, asm: D-Dev.PlayerUtilities}
+      data:
+        _output:
+          rid: 1932282358920643381
+    - rid: 1932282358920643381
       type: {class: Vector3ScriptableVariableValue, ns: D_Dev.PolymorphicValueSystem, asm: D-Dev.PolymorphicValueSystem}
       data:
         _variable: {fileID: 11400000, guid: f3be20f8f595e724e9c03c2a008351ea, type: 2}
+    - rid: 1932282358920643436
+      type: {class: ButtonInputBinding, ns: D_Dev.PlayerStateController.InputBindings, asm: D-Dev.PlayerUtilities}
+      data:
+        _button: 4
+        _output:
+          rid: 1932282358920643438
+    - rid: 1932282358920643438
+      type: {class: BoolScriptableVariableValue, ns: D_Dev.PolymorphicValueSystem, asm: D-Dev.PolymorphicValueSystem}
+      data:
+        _variable: {fileID: 11400000, guid: dc56fb487ac1c9c468a262976d47fcd0, type: 2}
+    - rid: 1932282358920643439
+      type: {class: ButtonInputBinding, ns: D_Dev.PlayerStateController.InputBindings, asm: D-Dev.PlayerUtilities}
+      data:
+        _button: 5
+        _output:
+          rid: 1932282358920643440
+    - rid: 1932282358920643440
+      type: {class: BoolScriptableVariableValue, ns: D_Dev.PolymorphicValueSystem, asm: D-Dev.PolymorphicValueSystem}
+      data:
+        _variable: {fileID: 11400000, guid: dc56fb487ac1c9c468a262976d47fcd0, type: 2}
 --- !u!114 &9171465542281879858
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -864,3 +892,39 @@ MonoBehaviour:
       type: {class: GameObjectScriptableVariableValue, ns: D_Dev.PolymorphicValueSystem, asm: D-Dev.PolymorphicValueSystem}
       data:
         _variable: {fileID: 11400000, guid: bb2b441ae14fa084e9c3b338b63b2dee, type: 2}
+--- !u!114 &2100305034605706281
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3641577891075875498}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ccd96d0fa4780214c906fcae6956593d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: D-Dev.Interactor::D_Dev.InteractableSystem.Interactor.Interactor
+  _detector: {fileID: 4794096811496763701}
+  _interactInput:
+    rid: 1932282358920643410
+  _inputMode: 2
+  _holdTime:
+    rid: 1932282358920643408
+  _holdProgress:
+    rid: 1932282358920643409
+  _debug: 1
+  references:
+    version: 2
+    RefIds:
+    - rid: 1932282358920643408
+      type: {class: FloatConstantValue, ns: D_Dev.PolymorphicValueSystem, asm: D-Dev.PolymorphicValueSystem}
+      data:
+        _value: 0
+    - rid: 1932282358920643409
+      type: {class: FloatConstantValue, ns: D_Dev.PolymorphicValueSystem, asm: D-Dev.PolymorphicValueSystem}
+      data:
+        _value: 0
+    - rid: 1932282358920643410
+      type: {class: BoolScriptableVariableValue, ns: D_Dev.PolymorphicValueSystem, asm: D-Dev.PolymorphicValueSystem}
+      data:
+        _variable: {fileID: 11400000, guid: dc56fb487ac1c9c468a262976d47fcd0, type: 2}

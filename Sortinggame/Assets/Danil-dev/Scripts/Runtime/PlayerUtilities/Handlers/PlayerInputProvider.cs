@@ -1,5 +1,6 @@
-﻿using D_Dev.InputSystem;
-using D_Dev.PolymorphicValueSystem;
+using System.Collections.Generic;
+using D_Dev.InputSystem;
+using D_Dev.PlayerStateController.InputBindings;
 using UnityEngine;
 
 namespace D_Dev.PlayerStateController
@@ -9,7 +10,7 @@ namespace D_Dev.PlayerStateController
         #region Fields
 
         [SerializeField] private InputRouter _inputRouter;
-        [SerializeReference] private PolymorphicValue<Vector3> _rawInputDirection = new Vector3ConstantValue();
+        [SerializeReference] private List<BaseInputBinding> _bindings = new() { new MoveInputBinding() };
 
         #endregion
 
@@ -23,13 +24,22 @@ namespace D_Dev.PlayerStateController
 
         private void Awake()
         {
+            if (_inputRouter == null)
+                return;
+
             _inputRouter.Enable();
-            _inputRouter.Move += OnMove;
+
+            foreach (var binding in _bindings)
+                binding?.Bind(_inputRouter);
         }
 
         private void OnDestroy()
         {
-            _inputRouter.Move -= OnMove;
+            if (_inputRouter == null)
+                return;
+
+            foreach (var binding in _bindings)
+                binding?.Unbind(_inputRouter);
         }
 
         #endregion
@@ -39,11 +49,5 @@ namespace D_Dev.PlayerStateController
         public void DisableInput() => _inputRouter?.Disable();
 
         #endregion
-        
-        #region Listeners
-
-        private void OnMove(Vector2 dir) => _rawInputDirection.Value = new Vector3(dir.x, 0f, dir.y);
-
-        #endregion
     }
-}   
+}

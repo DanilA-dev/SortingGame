@@ -1,9 +1,11 @@
+using System;
 using System.Collections;
 using D_Dev.Base;
 using D_Dev.ColliderEvents;
 using D_Dev.PolymorphicValueSystem;
 using Sirenix.OdinInspector;
 using UnityEngine;
+using Object = UnityEngine.Object;
 
 namespace D_Dev.InteractableSystem.InteractableDetector
 {
@@ -30,6 +32,8 @@ namespace D_Dev.InteractableSystem.InteractableDetector
         [HideLabel]
         [SerializeField] private Raycaster.Raycaster _raycaster;
         [SerializeReference] private PolymorphicValue<GameObject> _focusedOutput = new GameObjectConstantValue();
+
+        public event Action<IInteractable> OnFocusChanged;
 
         private IInteractable _currentInteractable;
         private WaitForSeconds _interval;
@@ -141,6 +145,7 @@ namespace D_Dev.InteractableSystem.InteractableDetector
                 _focusedOutput.Value = _currentInteractable?.GameObject;
 
             _currentInteractable?.Focus(gameObject);
+            OnFocusChanged?.Invoke(_currentInteractable);
         }
 
         private static bool IsAlive(IInteractable interactable)

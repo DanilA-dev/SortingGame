@@ -1,7 +1,10 @@
 ﻿using System.Collections;
 using D_Dev.CoroutineManagerSystem;
+using D_Dev.CustomEventManager;
 using D_Dev.InteractableSystem;
 using D_Dev.PolymorphicValueSystem;
+using D_Dev.ScriptableVariables;
+using Sirenix.OdinInspector;
 using UnityEngine;
 
 namespace _Project.Scripts
@@ -10,9 +13,13 @@ namespace _Project.Scripts
     {
         #region Fields
 
+        [Title("Base Settings")]
         [SerializeField] private Rigidbody _rigidbody;
         [SerializeField] private Collider _collider;
         [SerializeReference] private PolymorphicValue<float> _sleepDelay = new FloatConstantValue();
+        [Title("Events Variables")] 
+        [SerializeField] private StringScriptableVariable _onInteractStartEventName;
+        [SerializeField] private StringScriptableVariable _onInteractStopEventName;
         
         #endregion
 
@@ -64,12 +71,12 @@ namespace _Project.Scripts
 
         protected override void OnInteract(GameObject interactor)
         {
-            Debug.Log($"interaction start, name is {interactor.name}");
+            EventManager.Invoke(_onInteractStartEventName.ToString(), this);
         }
 
         protected override void OnStopInteract(GameObject interactor)
         {
-            Debug.Log($"interaction end, name is {interactor.name}");
+            EventManager.Invoke(_onInteractStopEventName.ToString(), this);
         }
 
         #endregion
