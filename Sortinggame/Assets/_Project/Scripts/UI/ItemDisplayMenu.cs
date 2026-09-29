@@ -11,12 +11,12 @@ using UnityEngine;
 
 namespace _Project.Scripts.UI
 {
-    public class ItemInteractableMenu : BaseMenu
+    public class ItemDisplayMenu : BaseMenu
     {
         #region Fields
 
         [Title("Components")]
-        [SerializeReference] private PolymorphicValue<GameObject> _lastInteractableItem = new GameObjectConstantValue();
+        [SerializeReference] private PolymorphicValue<GameObject> _itemToDisplay = new GameObjectConstantValue();
         [SerializeField] private Tag[] _itemTags;
 
         [Title("Variable Id's")] 
@@ -36,16 +36,16 @@ namespace _Project.Scripts.UI
                 
         private void OnEnable()
         {
-            if(_lastInteractableItem == null)
+            if(_itemToDisplay == null)
                 return;
 
-            _lastInteractableItem.OnValueChanged += OnLastInteractableChanged;
-            UpdateItemInfo(_lastInteractableItem.Value);
+            _itemToDisplay.OnValueChanged += OnChanged;
+            UpdateItemInfo(_itemToDisplay.Value);
         }
 
         private void OnDisable()
         {
-            _lastInteractableItem.OnValueChanged -= OnLastInteractableChanged;
+            _itemToDisplay.OnValueChanged -= OnChanged;
             _itemVariablesContainer = null;
         }
 
@@ -53,7 +53,7 @@ namespace _Project.Scripts.UI
 
         #region Listeners
 
-        private void OnLastInteractableChanged(GameObject interactable)
+        private void OnChanged(GameObject interactable)
         {
             if(interactable == null) 
                 Close();

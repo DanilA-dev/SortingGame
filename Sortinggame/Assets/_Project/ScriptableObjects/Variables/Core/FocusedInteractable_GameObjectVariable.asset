@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5adfb267a13a45dfbc8bdbcbafadca81, type: 3}
-  m_Name: LastActiveInteractable_GameObjectVariable
+  m_Name: FocusedInteractable_GameObjectVariable
   m_EditorClassIdentifier: D-Dev.ScriptableVariables::D_Dev.ScriptableVariables.GameObjectScriptableVariable
   _value: {fileID: 0}
-  _resetOnEnterRuntime: 0
+  _resetOnEnterRuntime: 1

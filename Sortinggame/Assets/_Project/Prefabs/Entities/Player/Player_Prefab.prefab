@@ -749,7 +749,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &6063115550617834303
 Transform:
   m_ObjectHideFlags: 0
@@ -778,6 +778,7 @@ GameObject:
   - component: {fileID: 5474812981895806397}
   - component: {fileID: 5841027801463457775}
   - component: {fileID: 4094382501324063925}
+  - component: {fileID: 2769559356741396809}
   m_Layer: 3
   m_Name: ItemsContainer
   m_TagString: Untagged
@@ -814,11 +815,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: Game.Core::_Project.Scripts.PickedItemsContainer
   _rootPoint: {fileID: 5474812981895806397}
   _itemStep: {x: 0, y: 0.3, z: 0}
-  _maxCapacity:
-    rid: 1932282381251117132
-  _currentCapacity:
-    rid: 1932282381251117133
+  _absoluteMaxCapaicty:
+    rid: 1932282386981061114
+  _currentMaxCapacity:
+    rid: 1932282386981061170
+  _currentItemsAmount:
+    rid: 1932282386981061171
   _onItemInteractStartEventName: {fileID: 11400000, guid: f0f67b96c95e1b04993d02fbb9a4772a, type: 2}
+  _selectedItem:
+    rid: 1932282386981060903
   _duration:
     rid: 1932282381251117059
   _jumpPower:
@@ -842,14 +847,6 @@ MonoBehaviour:
       type: {class: FloatConstantValue, ns: D_Dev.PolymorphicValueSystem, asm: D-Dev.PolymorphicValueSystem}
       data:
         _value: 0.5
-    - rid: 1932282381251117132
-      type: {class: IntConstantValue, ns: D_Dev.PolymorphicValueSystem, asm: D-Dev.PolymorphicValueSystem}
-      data:
-        _value: 15
-    - rid: 1932282381251117133
-      type: {class: IntConstantValue, ns: D_Dev.PolymorphicValueSystem, asm: D-Dev.PolymorphicValueSystem}
-      data:
-        _value: 3
     - rid: 1932282381251117134
       type: {class: FloatConstantValue, ns: D_Dev.PolymorphicValueSystem, asm: D-Dev.PolymorphicValueSystem}
       data:
@@ -858,6 +855,22 @@ MonoBehaviour:
       type: {class: IntConstantValue, ns: D_Dev.PolymorphicValueSystem, asm: D-Dev.PolymorphicValueSystem}
       data:
         _value: 1
+    - rid: 1932282386981060903
+      type: {class: GameObjectScriptableVariableValue, ns: D_Dev.PolymorphicValueSystem, asm: D-Dev.PolymorphicValueSystem}
+      data:
+        _variable: {fileID: 11400000, guid: 2df0936c87ebd4741bc9a5422a28b436, type: 2}
+    - rid: 1932282386981061114
+      type: {class: IntConstantValue, ns: D_Dev.PolymorphicValueSystem, asm: D-Dev.PolymorphicValueSystem}
+      data:
+        _value: 15
+    - rid: 1932282386981061170
+      type: {class: IntScriptableVariableValue, ns: D_Dev.PolymorphicValueSystem, asm: D-Dev.PolymorphicValueSystem}
+      data:
+        _variable: {fileID: 11400000, guid: 5320ddf586519e145a1165c3222657f9, type: 2}
+    - rid: 1932282386981061171
+      type: {class: IntScriptableVariableValue, ns: D_Dev.PolymorphicValueSystem, asm: D-Dev.PolymorphicValueSystem}
+      data:
+        _variable: {fileID: 11400000, guid: b7fb52aaa5665f04e80a9075c3dc1604, type: 2}
 --- !u!114 &4094382501324063925
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -876,8 +889,8 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 5841027801463457775}
         m_TargetAssemblyTypeName: _Project.Scripts.PickedItemsContainer, Game.Core
-        m_MethodName: TryRemoveLastItem
-        m_Mode: 1
+        m_MethodName: OnDropInput
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -886,6 +899,28 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &2769559356741396809
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2451769615908934871}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0214b4e38c248dea85135449051f198, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Game.UI::_Project.Scripts.UI.SelectedItemDisplayListener
+  _selectedItemToDisplay:
+    rid: 1932282386981061010
+  _selectedMenuInfo: {fileID: 11400000, guid: 2c724b7682a30c8448f355539274c836, type: 2}
+  references:
+    version: 2
+    RefIds:
+    - rid: 1932282386981061010
+      type: {class: GameObjectScriptableVariableValue, ns: D_Dev.PolymorphicValueSystem, asm: D-Dev.PolymorphicValueSystem}
+      data:
+        _variable: {fileID: 11400000, guid: 2df0936c87ebd4741bc9a5422a28b436, type: 2}
 --- !u!1 &2539203170594059792
 GameObject:
   m_ObjectHideFlags: 0
@@ -1183,6 +1218,7 @@ Transform:
   - {fileID: 2898917107102666014}
   - {fileID: 3397705229956267384}
   - {fileID: 907784217545572169}
+  - {fileID: 3621044774616372212}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!143 &5824734601842318458
@@ -1450,6 +1486,37 @@ MonoBehaviour:
       type: {class: BoolScriptableVariableValue, ns: D_Dev.PolymorphicValueSystem, asm: D-Dev.PolymorphicValueSystem}
       data:
         _variable: {fileID: 11400000, guid: dc56fb487ac1c9c468a262976d47fcd0, type: 2}
+--- !u!1 &5908720655796975918
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3621044774616372212}
+  m_Layer: 3
+  m_Name: Events
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3621044774616372212
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5908720655796975918}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7624906871845726300}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8662303737437014132
 GameObject:
   m_ObjectHideFlags: 0

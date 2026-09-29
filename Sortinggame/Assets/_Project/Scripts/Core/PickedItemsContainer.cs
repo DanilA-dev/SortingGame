@@ -17,19 +17,21 @@ namespace _Project.Scripts
 
         [Title("Base Settings")]
         [SerializeField] private Transform _rootPoint;
-        [SerializeReference] private Vector3 _itemStep;
-        [SerializeReference] private PolymorphicValue<int> _maxCapacity = new IntConstantValue();
-        [SerializeReference] private PolymorphicValue<int> _currentCapacity = new IntConstantValue();
-        [Title("Events Variables")] 
+        [SerializeField] private Vector3 _itemStep;
+        [SerializeReference] private PolymorphicValue<int> _absoluteMaxCapaicty = new IntConstantValue();
+        [SerializeReference] private PolymorphicValue<int> _currentMaxCapacity = new IntConstantValue();
+        [SerializeReference] private PolymorphicValue<int> _currentItemsAmount = new IntConstantValue();
+        [Title("Variables")]
         [SerializeField] private StringScriptableVariable _onItemInteractStartEventName;
+        [SerializeReference] private PolymorphicValue<GameObject> _selectedItem = new GameObjectConstantValue();
 
-        [FoldoutGroup("Item Animation Tween")] 
+        [FoldoutGroup("Item Animation Tween")]
         [SerializeReference] private PolymorphicValue<float> _duration = new FloatConstantValue();
-        [FoldoutGroup("Item Animation Tween")] 
+        [FoldoutGroup("Item Animation Tween")]
         [SerializeReference] private PolymorphicValue<float> _jumpPower = new FloatConstantValue();
-        [FoldoutGroup("Item Animation Tween")] 
+        [FoldoutGroup("Item Animation Tween")]
         [SerializeReference] private PolymorphicValue<int> _jumpsNum = new IntConstantValue();
-        [FoldoutGroup("Item Animation Tween")] 
+        [FoldoutGroup("Item Animation Tween")]
         [SerializeField] private Ease _jumpEase;
         [FoldoutGroup("Events")]
         public UnityEvent OnFullCapacity;
@@ -38,32 +40,51 @@ namespace _Project.Scripts
         [FoldoutGroup("Events")]
         public UnityEvent OnItemDropped;
 
-        private List<IInteractable> _currentItems = new();
-        private List<Transform> _createdPoints = new();
-        private Vector3 _lastStep;
-        private int _posIndex;
+        private List<GameObjectSlot> _createdSlots = new();
 
-        private Sequence _seq;
-        
+        private Dictionary<GameObjectSlot, IInteractable> _pickedItems = new();
+
         #endregion
 
         #region Properties
 
-        public List<IInteractable> CurrentItems => _currentItems;
+        private int Capacity => Mathf.Min(_currentMaxCapacity.Value, _createdSlots.Count);
 
         #endregion
 
         #region Monobehaviour
 
+        private void Awake()
+        {
+            InitPositions();
+        }
+
         private void OnEnable()
         {
+            if (_onItemInteractStartEventName == null)
+            {
+                Debug.LogError($"[PickedItemsContainer : {gameObject.name}] Event name variable is not assigned");
+                return;
+            }
+
             EventManager.AddListener<IInteractable>(_onItemInteractStartEventName.ToString(), OnItemStartInteraction);
-            InitPositions();
         }
 
         private void OnDisable()
         {
+            if (_onItemInteractStartEventName == null)
+                return;
+
             EventManager.RemoveListener<IInteractable>(_onItemInteractStartEventName.ToString(), OnItemStartInteraction);
+        }
+
+        private void OnDestroy()
+        {
+            foreach (var item in _pickedItems.Values)
+            {
+                if (item?.GameObject != null)
+                    DOTween.Kill(item.GameObject.transform);
+            }
         }
 
         #endregion
@@ -72,28 +93,35 @@ namespace _Project.Scripts
 
         public void TryRemoveLastItem()
         {
-            var last = GetLastItem();
-            if(last == null)
-                return;
-            
-            _currentItems.Remove(last);
-            if(_posIndex > 0)
-                _posIndex--;
-            
-            last.StopInteract(gameObject);
-            OnItemDropped?.Invoke();
+            TryRemoveItem(GetLastBusySlot());
+        }
+
+        public void TryRemoveFirstItem()
+        {
+            if (TryRemoveItem(GetFirstBusySlot()))
+                ShiftItemsDown();
+        }
+
+        public void OnDropInput(bool isPressed)
+        {
+            if (isPressed)
+                TryRemoveFirstItem();
         }
 
         public IInteractable GetLastItem()
         {
-            if (_currentItems.Count <= 0)
-                return null;
-
-            return _currentItems.Last();
+            var slot = GetLastBusySlot();
+            return slot != null ? _pickedItems[slot] : null;
         }
-        
+
+        public IInteractable GetFirstItem()
+        {
+            var slot = GetFirstBusySlot();
+            return slot != null ? _pickedItems[slot] : null;
+        }
+
         #endregion
-        
+
         #region Listeners
 
         private void OnItemStartInteraction(IInteractable interactable)
@@ -106,49 +134,141 @@ namespace _Project.Scripts
         #region Private
         private void InitPositions()
         {
-            _lastStep = _rootPoint.position;
-            for (int i = 0; i < _maxCapacity.Value; i++)
+            var root = _rootPoint != null ? _rootPoint : transform;
+
+            foreach (var point in _createdSlots)
+            {
+                if (point != null)
+                    Destroy(point.gameObject);
+            }
+            _createdSlots.Clear();
+
+            for (int i = 0; i < _absoluteMaxCapaicty.Value; i++)
             {
                 GameObject newItemPoint = new GameObject("ItemStep");
-                newItemPoint.transform.SetParent(transform);
-                newItemPoint.transform.localPosition = i == 0? Vector3.zero : _lastStep;
-                _lastStep = new Vector3(0, _itemStep.y + newItemPoint.transform.localPosition.y, 0);
-                _createdPoints.Add(newItemPoint.transform);
+                var slot = newItemPoint.AddComponent<GameObjectSlot>();
+                newItemPoint.transform.SetParent(root, false);
+                newItemPoint.transform.localPosition = _itemStep * i;
+                _createdSlots.Add(slot);
             }
         }
         
+        private GameObjectSlot GetFirstBusySlot() => _createdSlots.FirstOrDefault(s => s.IsBusy);
+        private GameObjectSlot GetLastBusySlot() => _createdSlots.LastOrDefault(s => s.IsBusy);
+        private GameObjectSlot GetFirstFreeSlot() => _createdSlots.Take(Capacity).FirstOrDefault(s => !s.IsBusy);
+
+        private bool TryRemoveItem(GameObjectSlot slot)
+        {
+            if (slot == null)
+                return false;
+
+            var item = _pickedItems[slot];
+            if (DOTween.IsTweening(item.GameObject.transform))
+                return false;
+
+            FreeSlot(slot);
+            item.StopInteract(gameObject);
+            UpdateSelectedItem();
+            
+            if(_currentItemsAmount.Value > 0)
+                _currentItemsAmount.Value--;
+            
+            OnItemDropped?.Invoke();
+            return true;
+        }
+
+        private bool TryPutToSlot(GameObjectSlot slot, IInteractable item)
+        {
+            if (!slot.TryPutItem(item.GameObject, true))
+                return false;
+
+            _pickedItems[slot] = item;
+            return true;
+        }
+
+        private void FreeSlot(GameObjectSlot slot)
+        {
+            slot.FreeSlot();
+            _pickedItems.Remove(slot);
+        }
+
+        private void ShiftItemsDown()
+        {
+            int targetIndex = 0;
+            for (int i = 0; i < _createdSlots.Count; i++)
+            {
+                var slot = _createdSlots[i];
+                if (!slot.IsBusy)
+                    continue;
+
+                if (i != targetIndex)
+                {
+                    var item = _pickedItems[slot];
+                    FreeSlot(slot);
+                    if (TryPutToSlot(_createdSlots[targetIndex], item))
+                        AnimateShift(item);
+                }
+                targetIndex++;
+            }
+            UpdateSelectedItem();
+        }
+
+        private void UpdateSelectedItem()
+        {
+            var first = GetFirstItem();
+            _selectedItem.Value = null;
+            _selectedItem.Value = first != null ? first.GameObject : null;
+        }
+
         private void TryPickItem(IInteractable interactable)
         {
-            if (_currentItems.Count >= _currentCapacity.Value)
+            if (interactable == null || _pickedItems.ContainsValue(interactable))
+                return;
+
+            var slot = GetFirstFreeSlot();
+            if (slot == null)
             {
+                if (interactable is ItemInteractable item)
+                    item.CancelPick();
+
                 OnFullCapacity?.Invoke();
                 return;
             }
-            
-            if(!_currentItems.Contains(interactable))
-                _currentItems.Add(interactable);
-            
+
+            if (!TryPutToSlot(slot, interactable))
+                return;
+
             AnimatePick(interactable);
+            UpdateSelectedItem();
+            
+            if (_currentItemsAmount.Value < _currentMaxCapacity.Value)
+                _currentItemsAmount.Value++;
+            
             OnItemPicked?.Invoke();
         }
 
         private void AnimatePick(IInteractable interactable)
         {
-            var pos = _createdPoints[_posIndex];
-            interactable.GameObject.transform.SetParent(pos);
-            interactable.CanBeStopped = false;
-            _seq = DOTween.Sequence();
-            _seq.Kill();
-            _seq.Append(interactable.GameObject.transform.DOLocalJump(Vector3.zero, _jumpPower.Value, _jumpsNum.Value, _duration.Value)
+            var itemTransform = interactable.GameObject.transform;
+            DOTween.Kill(itemTransform);
+
+            DOTween.Sequence()
+                .Join(itemTransform.DOLocalJump(Vector3.zero, _jumpPower.Value, _jumpsNum.Value, _duration.Value)
                     .SetEase(_jumpEase))
-                .Join(interactable.GameObject.transform.DOLocalRotate(Vector3.zero, _duration.Value))
-                .OnComplete(() =>
-                {
-                    if(_posIndex < _createdPoints.Count)
-                        _posIndex++;
-                    
-                    interactable.CanBeStopped = true;
-                })
+                .Join(itemTransform.DOLocalRotate(Vector3.zero, _duration.Value))
+                .SetTarget(itemTransform)
+                .SetAutoKill(true);
+        }
+
+        private void AnimateShift(IInteractable interactable)
+        {
+            var itemTransform = interactable.GameObject.transform;
+            DOTween.Kill(itemTransform);
+
+            DOTween.Sequence()
+                .Join(itemTransform.DOLocalMove(Vector3.zero, _duration.Value).SetEase(Ease.OutQuad))
+                .Join(itemTransform.DOLocalRotate(Vector3.zero, _duration.Value))
+                .SetTarget(itemTransform)
                 .SetAutoKill(true);
         }
 

@@ -785,7 +785,7 @@ GameObject:
   - component: {fileID: 9074834149000827928}
   - component: {fileID: 645817578762229899}
   m_Layer: 0
-  m_Name: ItemInteractableMenu_Prefab
+  m_Name: FocusedItemMenu_Prefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -906,8 +906,8 @@ MonoBehaviour:
   OnCloseEvent:
     m_PersistentCalls:
       m_Calls: []
-  _lastInteractableItem:
-    rid: 1932282358920643119
+  _itemToDisplay:
+    rid: 1932282386981060900
   _itemTags:
   - {fileID: 11400000, guid: 9cf0585fc99b28242a1eee7dbf83fad2, type: 2}
   _itemNameVariableId: {fileID: 11400000, guid: 25252b1a58a22724bbc53f5d257d864a, type: 2}
@@ -917,10 +917,6 @@ MonoBehaviour:
   references:
     version: 2
     RefIds:
-    - rid: 1932282358920643119
-      type: {class: GameObjectScriptableVariableValue, ns: D_Dev.PolymorphicValueSystem, asm: D-Dev.PolymorphicValueSystem}
-      data:
-        _variable: {fileID: 11400000, guid: bb2b441ae14fa084e9c3b338b63b2dee, type: 2}
     - rid: 1932282358920643277
       type: {class: FadeTween, ns: D_Dev.TweenAnimations.Types, asm: D-Dev.TweenAnimations}
       data:
@@ -965,6 +961,10 @@ MonoBehaviour:
         _spriteRenderer: {fileID: 0}
         _startValue: 1
         _endValue: 0
+    - rid: 1932282386981060900
+      type: {class: GameObjectScriptableVariableValue, ns: D_Dev.PolymorphicValueSystem, asm: D-Dev.PolymorphicValueSystem}
+      data:
+        _variable: {fileID: 11400000, guid: bb2b441ae14fa084e9c3b338b63b2dee, type: 2}
 --- !u!225 &645817578762229899
 CanvasGroup:
   m_ObjectHideFlags: 0

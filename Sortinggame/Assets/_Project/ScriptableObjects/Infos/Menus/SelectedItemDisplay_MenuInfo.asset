@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b4f5dd28871c43cab726ddf879627531, type: 3}
-  m_Name: ItemInteractable_MenuInfo
+  m_Name: SelectedItemDisplay_MenuInfo
   m_EditorClassIdentifier: D-Dev.Menu::D_Dev.MenuHandler.MenuInfo
   _canvas: 0
   _menuPrefab:
     _makeAddressable: 0
-    _asset: {fileID: 4736265040275234083, guid: 02cb78e86ccba554d8d6ff3bd2026817, type: 3}
+    _asset: {fileID: 4736265040275234083, guid: caf5bb8cb7a979b488fd71c7826e8e70, type: 3}
     _assetReference:
       m_AssetGUID: 
       m_SubObjectName: 

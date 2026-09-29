@@ -22,7 +22,18 @@ MonoBehaviour:
       m_SubObjectType: 
       m_SubObjectGUID: 
       m_EditorAssetChanged: 0
-  _variables: []
+  _variables:
+  - rid: 1932282381251117881
   references:
     version: 2
-    RefIds: []
+    RefIds:
+    - rid: 1932282381251117881
+      type: {class: FloatEntityVariable, ns: D_Dev.EntityVariable.Types, asm: D-Dev.EntityVariable}
+      data:
+        _variableID: {fileID: 11400000, guid: db02c8d4eddd92a4e97a946784bddbd7, type: 2}
+        _value:
+          rid: 1932282381251117882
+    - rid: 1932282381251117882
+      type: {class: FloatScriptableVariableValue, ns: D_Dev.PolymorphicValueSystem, asm: D-Dev.PolymorphicValueSystem}
+      data:
+        _variable: {fileID: 11400000, guid: 071686952c3973c4baabc7790c6b7998, type: 2}
