@@ -23,9 +23,12 @@ namespace _Project.Scripts
         [Space]
         [FoldoutGroup("Item Set Animation")] 
         [SerializeField] private MoveAnimationTween _moveAnimationTween;
+
         [Space]
         [FoldoutGroup("Slot Events")]
-        public UnityEvent OnItemSet;
+        public UnityEvent OnItemPlacing;
+        [FoldoutGroup("Slot Events")]
+        public UnityEvent OnItemPlaced;
         
         private Tag _slotTag;
         private MeshFilter _activeItemMeshFilter;
@@ -95,9 +98,10 @@ namespace _Project.Scripts
                 return;
 
             var item = _currentActiveItem.Value;
-            _gameObjectSlot.TryPutItem(item, true);
-            OnItemSet?.Invoke();
 
+            OnItemPlacing?.Invoke();
+            _gameObjectSlot.TryPutItem(item, true);
+            OnItemPlaced?.Invoke();
             if(item.TryGetComponent(out ItemInteractable itemInteractable))
                 itemInteractable.SetSorted();
             

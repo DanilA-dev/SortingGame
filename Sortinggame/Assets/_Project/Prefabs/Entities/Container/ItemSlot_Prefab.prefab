@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &2157916289779047076
+--- !u!1 &1235435226277962035
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,30 +8,54 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1683668020766013873}
+  - component: {fileID: 6859691356730842212}
+  - component: {fileID: 7129542921588807703}
   m_Layer: 0
-  m_Name: Invokers
+  m_Name: OnSlotInteracted
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &1683668020766013873
+--- !u!4 &6859691356730842212
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2157916289779047076}
+  m_GameObject: {fileID: 1235435226277962035}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 5145591907097150782}
-  m_Father: {fileID: 7266573136033787472}
+  m_Children: []
+  m_Father: {fileID: 929928858227117781}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7129542921588807703
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1235435226277962035}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55962e55d7934bfcaf9652b09ecb0f6f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: D-Dev.EventBehaviours::D_Dev.CustomEventManager.EventInvoker
+  _eventNameTypes:
+  - rid: 1932282403192832439
+  _invokeOnStart: 0
+  _invokeOnlyOnce: 0
+  _debug: 0
+  references:
+    version: 2
+    RefIds:
+    - rid: 1932282403192832439
+      type: {class: StringVariableEventNameType, ns: D_Dev.CustomEventManager, asm: D-Dev.EventBehaviours}
+      data:
+        _variable: {fileID: 11400000, guid: 8e9d444533cf6f64fab303544bc41835, type: 2}
 --- !u!1 &2834025505702617631
 GameObject:
   m_ObjectHideFlags: 0
@@ -67,7 +91,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 7266573136033787472}
+  - {fileID: 929928858227117781}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &5489503420463557638
@@ -233,10 +257,10 @@ MonoBehaviour:
     _punch: {x: 1, y: 1, z: 1}
     _vibratoPunch: 10
     _elasticityPunch: 1
-  OnItemSet:
+  OnItemPlacing:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8327710848202199532}
+      - m_Target: {fileID: 7129542921588807703}
         m_TargetAssemblyTypeName: D_Dev.CustomEventManager.EventInvoker, D-Dev.EventBehaviours
         m_MethodName: Raise
         m_Mode: 1
@@ -245,9 +269,12 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument:
           m_BoolArgument: 0
         m_CallState: 2
+  OnItemPlaced:
+    m_PersistentCalls:
+      m_Calls: []
   references:
     version: 2
     RefIds:
@@ -285,7 +312,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: D-Dev.TagSystem::D_Dev.TagSystem.TagComponent
   _tags:
   - {fileID: 11400000, guid: e58f48d373dacbc4d9512fa242efb5be, type: 2}
---- !u!1 &6855941165174175643
+--- !u!1 &6015676802117446159
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -293,7 +320,7 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 7266573136033787472}
+  - component: {fileID: 929928858227117781}
   m_Layer: 0
   m_Name: Events
   m_TagString: Untagged
@@ -301,75 +328,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &7266573136033787472
+--- !u!4 &929928858227117781
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6855941165174175643}
+  m_GameObject: {fileID: 6015676802117446159}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1683668020766013873}
+  - {fileID: 6859691356730842212}
   m_Father: {fileID: 898061857332866423}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &8585614560289326222
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 5145591907097150782}
-  - component: {fileID: 8327710848202199532}
-  m_Layer: 0
-  m_Name: InvokeSlotItemInteractEvent
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &5145591907097150782
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8585614560289326222}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1683668020766013873}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8327710848202199532
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8585614560289326222}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 55962e55d7934bfcaf9652b09ecb0f6f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: D-Dev.EventBehaviours::D_Dev.CustomEventManager.EventInvoker
-  _eventNameTypes:
-  - rid: 1932282386981061620
-  _invokeOnStart: 0
-  _invokeOnlyOnce: 0
-  _debug: 0
-  references:
-    version: 2
-    RefIds:
-    - rid: 1932282386981061620
-      type: {class: StringVariableEventNameType, ns: D_Dev.CustomEventManager, asm: D-Dev.EventBehaviours}
-      data:
-        _variable: {fileID: 11400000, guid: 8e9d444533cf6f64fab303544bc41835, type: 2}

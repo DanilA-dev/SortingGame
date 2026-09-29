@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using D_Dev.PolymorphicValueSystem;
 using D_Dev.PositionRotationConfig;
 using Sirenix.OdinInspector;
 using UnityEngine;
@@ -24,20 +25,16 @@ namespace D_Dev.Raycaster
 
         [Title("Cast settings")]
         [SerializeField] private CastType _castType;
-        [ValidateInput("@this._distance > 0", "Distance must be greater than 0")]
-        [SerializeField] private float _distance = 1f;
-        [ValidateInput("@this._collidersBuffer > 0", "Colliders buffer must be greater than 0")]
+        [SerializeReference] private PolymorphicValue<float> _distance = new FloatConstantValue() { Value = 1 };
         [SerializeField] private int _collidersBuffer = 10;
         [ShowIf("@this._castType == CastType.Sphere", Animate = false)]
-        [ValidateInput("@this._castType != CastType.Sphere || this._radius > 0", "Radius must be greater than 0 for Sphere cast")]
-        [SerializeField] private float _radius = 0.5f;
+        [SerializeReference] private PolymorphicValue<float> _radius = new FloatConstantValue() { Value = 0.5f };
         [ShowIf("@this._castType == CastType.Box", Animate = false)]
         [SerializeField] private Vector3 _halfExtents = Vector3.one * 0.5f;
         [SerializeReference] private BasePositionSettings _origin = new();
         [SerializeReference] private BasePositionSettings _direction = new();
         [SerializeField] private QueryTriggerInteraction _queryTriggerInteraction;
         [Title("Collider checker")]
-        [ValidateInput("@this._colliderChecker != null", "ColliderChecker cannot be null")]
         [SerializeField] private ColliderChecker.ColliderChecker _colliderChecker;
         [Space]
         [Title("Gizmos")]
@@ -68,8 +65,8 @@ namespace D_Dev.Raycaster
 
         public float Distance
         {
-            get => _distance;
-            set => _distance = value;
+            get => _distance.Value;
+            set => _distance.Value = value;
         }
 
         public int CollidersBuffer
@@ -94,15 +91,15 @@ namespace D_Dev.Raycaster
                 case CastType.Ray:
                     _ray.origin = origin;
                     _ray.direction = direction;
-                    hitCount = Physics.RaycastNonAlloc(_ray, _hits, _distance, layerMask, _queryTriggerInteraction);
+                    hitCount = Physics.RaycastNonAlloc(_ray, _hits, _distance.Value, layerMask, _queryTriggerInteraction);
                     break;
 
                 case CastType.Sphere:
-                    hitCount = Physics.SphereCastNonAlloc(origin, _radius, direction, _hits, _distance, layerMask, _queryTriggerInteraction);
+                    hitCount = Physics.SphereCastNonAlloc(origin, _radius.Value, direction, _hits, _distance.Value, layerMask, _queryTriggerInteraction);
                     break;
 
                 case CastType.Box:
-                    hitCount = Physics.BoxCastNonAlloc(origin, _halfExtents, direction, _hits, Quaternion.identity, _distance, layerMask, _queryTriggerInteraction);
+                    hitCount = Physics.BoxCastNonAlloc(origin, _halfExtents, direction, _hits, Quaternion.identity, _distance.Value, layerMask, _queryTriggerInteraction);
                     break;
 
                 default:
@@ -373,17 +370,17 @@ namespace D_Dev.Raycaster
             switch (_castType)
             {
                 case CastType.Ray:
-                    Gizmos.DrawRay(originPoint, directionVector * _distance);
+                    Gizmos.DrawRay(originPoint, directionVector * _distance.Value);
                     break;
 
                 case CastType.Sphere:
-                    var endPoint = originPoint + directionVector * _distance;
-                    Gizmos.DrawWireSphere(endPoint, _radius);
+                    var endPoint = originPoint + directionVector * _distance.Value;
+                    Gizmos.DrawWireSphere(endPoint, _radius.Value);
                     Gizmos.DrawLine(originPoint, endPoint);
                     break;
 
                 case CastType.Box:
-                    var boxEndPoint = originPoint + directionVector * _distance;
+                    var boxEndPoint = originPoint + directionVector * _distance.Value;
                     Gizmos.DrawWireCube(boxEndPoint, _halfExtents * 2f);
                     Gizmos.DrawLine(originPoint, boxEndPoint);
                     break;

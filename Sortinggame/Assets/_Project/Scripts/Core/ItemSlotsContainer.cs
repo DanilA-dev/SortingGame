@@ -64,7 +64,7 @@ namespace _Project.Scripts
             foreach (var itemSlotInteractable in _slots)
             {
                 itemSlotInteractable.Init(_itemTag);
-                itemSlotInteractable.OnItemSet.AddListener(CheckSlotsState);
+                itemSlotInteractable.OnItemPlaced.AddListener(CheckSlotsState);
             }
         }
 
@@ -74,7 +74,7 @@ namespace _Project.Scripts
                 return;
 
             foreach (var itemSlotInteractable in _slots)
-                itemSlotInteractable.OnItemSet.RemoveListener(CheckSlotsState);
+                itemSlotInteractable.OnItemPlaced.RemoveListener(CheckSlotsState);
         }
 
         private void SetSorted()

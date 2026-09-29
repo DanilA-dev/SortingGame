@@ -102,6 +102,17 @@ namespace _Project.Scripts
                 ShiftItemsDown();
         }
 
+        public void ForceRemoveFirstItem()
+        {
+            var slot = GetFirstBusySlot();
+            if (slot == null)
+                return;
+
+            DOTween.Kill(_pickedItems[slot].GameObject.transform);
+            if (TryRemoveItem(slot))
+                ShiftItemsDown();
+        }
+
         public void OnDropInput(bool isPressed)
         {
             if (isPressed)

@@ -1396,9 +1396,11 @@ MonoBehaviour:
   _updateRate: 0.1
   _raycaster:
     _castType: 0
-    _distance: 3
+    _distance:
+      rid: 1932282403192832252
     _collidersBuffer: 10
-    _radius: 0.5
+    _radius:
+      rid: 1932282403192832251
     _halfExtents: {x: 0.5, y: 0.5, z: 0.5}
     _origin:
       rid: 1932282358920642924
@@ -1463,6 +1465,14 @@ MonoBehaviour:
       type: {class: GameObjectScriptableVariableValue, ns: D_Dev.PolymorphicValueSystem, asm: D-Dev.PolymorphicValueSystem}
       data:
         _variable: {fileID: 11400000, guid: bb2b441ae14fa084e9c3b338b63b2dee, type: 2}
+    - rid: 1932282403192832251
+      type: {class: FloatConstantValue, ns: D_Dev.PolymorphicValueSystem, asm: D-Dev.PolymorphicValueSystem}
+      data:
+        _value: 0.5
+    - rid: 1932282403192832252
+      type: {class: FloatScriptableVariableValue, ns: D_Dev.PolymorphicValueSystem, asm: D-Dev.PolymorphicValueSystem}
+      data:
+        _variable: {fileID: 11400000, guid: 8261cf82e6c54494a82d8d28853352c1, type: 2}
 --- !u!114 &2100305034605706281
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1531,14 +1541,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: D-Dev.EventBehaviours::D_Dev.CustomEventManager.Listeners.EventListener
   _eventNameTypes:
-  - rid: 1932282386981061624
+  - rid: 1932282403192832378
   _raiseOnlyOnce: 0
   _onRaised:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 5841027801463457775}
         m_TargetAssemblyTypeName: _Project.Scripts.PickedItemsContainer, Game.Core
-        m_MethodName: TryRemoveFirstItem
+        m_MethodName: ForceRemoveFirstItem
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1552,7 +1562,7 @@ MonoBehaviour:
   references:
     version: 2
     RefIds:
-    - rid: 1932282386981061624
+    - rid: 1932282403192832378
       type: {class: StringVariableEventNameType, ns: D_Dev.CustomEventManager, asm: D-Dev.EventBehaviours}
       data:
         _variable: {fileID: 11400000, guid: 8e9d444533cf6f64fab303544bc41835, type: 2}
