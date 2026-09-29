@@ -23,7 +23,8 @@ namespace _Project.Scripts
         [SerializeReference] private PolymorphicValue<float> _pushForce = new FloatConstantValue();
         [SerializeField] private ForceMode _forceMode;
 
-        [Space] [Title("Variables")]
+        [Space]
+        [Title("Variables")]
         [SerializeField] private IntScriptableVariable _maxSortedItemsVariable;
         [SerializeField] private IntScriptableVariable _currentSortedItemsVariable;
         [Space]
@@ -46,10 +47,7 @@ namespace _Project.Scripts
         {
             if (_isSorted.Value)
             {
-                _collider.isTrigger = true;
-                _rigidbody.isKinematic = true;
-
-                _currentSortedItemsVariable.Value++;
+                SetSorted();
                 return;
             }
 
@@ -66,9 +64,12 @@ namespace _Project.Scripts
 
         #region Public
 
-        public void SetIsSorted(bool value)
+        public void SetSorted()
         {
-            _isSorted.Value = value;
+            _isSorted.Value = true;
+            _rigidbody.isKinematic = true;
+            _collider.enabled = false;
+            _currentSortedItemsVariable.Value++;
         }
 
         public void CancelPick()

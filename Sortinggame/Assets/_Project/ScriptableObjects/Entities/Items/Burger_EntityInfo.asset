@@ -1,0 +1,50 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82e74d80d33248ad9b3c00ab2a51d7a7, type: 3}
+  m_Name: Burger_EntityInfo
+  m_EditorClassIdentifier: D-Dev.EntityInfo::D_Dev.Entity.EntityInfo
+  _id: a3e1e307-21bf-46d8-85da-28737cb5ab99
+  _entityPrefab:
+    _makeAddressable: 0
+    _asset: {fileID: 1334760709626171991, guid: 467e922383ddb6f448087b923ec4bb0b, type: 3}
+    _assetReference:
+      m_AssetGUID: 
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_SubObjectGUID: 
+      m_EditorAssetChanged: 0
+  _variables:
+  - rid: 1932282358920642870
+  - rid: 1932282386981061389
+  references:
+    version: 2
+    RefIds:
+    - rid: 1932282358920642870
+      type: {class: StringEntityVariable, ns: D_Dev.EntityVariable.Types, asm: D-Dev.EntityVariable}
+      data:
+        _variableID: {fileID: 11400000, guid: 25252b1a58a22724bbc53f5d257d864a, type: 2}
+        _value:
+          rid: 1932282358920642871
+    - rid: 1932282358920642871
+      type: {class: StringConstantValue, ns: D_Dev.PolymorphicValueSystem, asm: D-Dev.PolymorphicValueSystem}
+      data:
+        _value: Burger
+    - rid: 1932282386981061389
+      type: {class: StringEntityVariable, ns: D_Dev.EntityVariable.Types, asm: D-Dev.EntityVariable}
+      data:
+        _variableID: {fileID: 11400000, guid: f182576ffeb67694792f1331fa4aa239, type: 2}
+        _value:
+          rid: 1932282386981061390
+    - rid: 1932282386981061390
+      type: {class: StringConstantValue, ns: D_Dev.PolymorphicValueSystem, asm: D-Dev.PolymorphicValueSystem}
+      data:
+        _value: Bakery

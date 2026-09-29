@@ -1,4 +1,7 @@
+using System;
 using System.Linq;
+using D_Dev.PolymorphicValueSystem;
+using D_Dev.ScriptableVariables;
 using D_Dev.TagSystem;
 using Sirenix.OdinInspector;
 using UnityEngine;
@@ -13,7 +16,13 @@ namespace _Project.Scripts
         [Title("Base Settings")]
         [SerializeField] private Tag _itemTag;
         [SerializeField] private Transform _root;
-
+        [SerializeReference] private PolymorphicValue<bool> _isSorted = new BoolConstantValue();
+        
+        [Space]
+        [Title("Variables")]
+        [SerializeField] private IntScriptableVariable _maxSortedShelvesVariable;
+        [SerializeField] private IntScriptableVariable _currentSortedShelvesVariable;
+        
         [Space]
         [FoldoutGroup("Events")] 
         public UnityEvent OnAllSlotsTaken;
@@ -28,6 +37,14 @@ namespace _Project.Scripts
         {
             _slots = _root.GetComponentsInChildren<ItemSlotInteractable>();
             InitSlots();
+        }
+
+        private void Start()
+        {
+            if(_isSorted.Value)
+                SetSorted();
+            else
+                _maxSortedShelvesVariable.Value++;
         }
 
         private void OnDestroy()
@@ -47,7 +64,7 @@ namespace _Project.Scripts
             foreach (var itemSlotInteractable in _slots)
             {
                 itemSlotInteractable.Init(_itemTag);
-                itemSlotInteractable.OnItemSet.AddListener(OnSlotUpdated);
+                itemSlotInteractable.OnItemSet.AddListener(CheckSlotsState);
             }
         }
 
@@ -57,17 +74,26 @@ namespace _Project.Scripts
                 return;
 
             foreach (var itemSlotInteractable in _slots)
-                itemSlotInteractable.OnItemSet.RemoveListener(OnSlotUpdated);
+                itemSlotInteractable.OnItemSet.RemoveListener(CheckSlotsState);
+        }
+
+        private void SetSorted()
+        {
+            _currentSortedShelvesVariable.Value++;
+            _isSorted.Value = true;
         }
         
         #endregion
 
         #region Listeners
 
-        private void OnSlotUpdated()
+        private void CheckSlotsState()
         {
             if (_slots.All(s => s.IsBusy))
+            {
                 OnAllSlotsTaken?.Invoke();
+                SetSorted();
+            }
         }
 
         #endregion

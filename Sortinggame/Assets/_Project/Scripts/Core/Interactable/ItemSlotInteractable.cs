@@ -2,6 +2,7 @@ using D_Dev.InteractableSystem;
 using D_Dev.PolymorphicValueSystem;
 using D_Dev.TagSystem;
 using D_Dev.TagSystem.Extensions;
+using D_Dev.TweenAnimations.Types;
 using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.Events;
@@ -19,6 +20,9 @@ namespace _Project.Scripts
         [SerializeField] private MeshRenderer _meshRenderer;
         [SerializeField] private Material _allowPlaceMat;
         [SerializeField] private Material _blockPlaceMat;
+        [Space]
+        [FoldoutGroup("Item Set Animation")] 
+        [SerializeField] private MoveAnimationTween _moveAnimationTween;
         [Space]
         [FoldoutGroup("Slot Events")]
         public UnityEvent OnItemSet;
@@ -50,31 +54,61 @@ namespace _Project.Scripts
 
         protected override void OnFocus(GameObject interactor)
         {
-            if(!IsItemExists())
+            if(IsBusy)
+                return;
+            
+            if(!IsActveItemExists())
                 return;
 
             if (!_currentActiveItem.Value.HasTag(_slotTag))
             {
-                ShowItemMesh();
                 SetBlockMaterial();
+                CanPlaceItem = false;
             }
+            else
+            {
+                CanPlaceItem = true;
+                SetAllowMaterial();
+            }
+            
+            ShowItemMesh();
         }
 
         protected override void OnUnfocus(GameObject interactor)
         {
-            if(!IsItemExists())
+            if(IsBusy)
+                return;
+            
+            if(!IsActveItemExists())
                 return;
 
+            CanPlaceItem = false;
             HideView();
         }
 
-      
-
         protected override void OnInteract(GameObject interactor)
         {
-            if(!CanPlaceItem)
+            if(IsBusy)
                 return;
             
+            if(!CanPlaceItem)
+                return;
+
+            var item = _currentActiveItem.Value;
+            _gameObjectSlot.TryPutItem(item, true);
+            OnItemSet?.Invoke();
+
+            if(item.TryGetComponent(out ItemInteractable itemInteractable))
+                itemInteractable.SetSorted();
+            
+            item.transform.localRotation = Quaternion.identity;
+            
+            _moveAnimationTween.MovedObjects = new[] { item.transform };
+            _moveAnimationTween.MoveType = MoveAnimationTween.MoveObjectType.Vector;
+            _moveAnimationTween.PositionEnd = _gameObjectSlot.transform.position;
+            _moveAnimationTween.Play();
+            
+            HideView();
         }
 
         #endregion
@@ -83,7 +117,7 @@ namespace _Project.Scripts
 
         private void SetBlockMaterial()
         {
-            if(!IsItemExists())
+            if(!IsActveItemExists())
                 return;
 
             _meshRenderer.sharedMaterial = _blockPlaceMat;
@@ -91,7 +125,7 @@ namespace _Project.Scripts
 
         private void SetAllowMaterial()
         {
-            if(!IsItemExists())
+            if(!IsActveItemExists())
                 return;
 
             _meshRenderer.sharedMaterial = _allowPlaceMat;
@@ -106,7 +140,7 @@ namespace _Project.Scripts
         
         private void ShowItemMesh()
         {
-            if(!IsItemExists())
+            if(!IsActveItemExists())
                 return;
 
             if (!_currentActiveItem.Value.TryGetComponent(out _activeItemMeshFilter))
@@ -122,7 +156,7 @@ namespace _Project.Scripts
 
         #region Helpers
 
-        private bool IsItemExists() => _currentActiveItem != null && _currentActiveItem.Value != null;
+        private bool IsActveItemExists() => _currentActiveItem != null && _currentActiveItem.Value != null;
 
         #endregion
     }
