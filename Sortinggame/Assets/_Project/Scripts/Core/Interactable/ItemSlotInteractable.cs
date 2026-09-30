@@ -1,7 +1,7 @@
+using D_Dev.Entity;
+using D_Dev.EntityInfoBinder;
 using D_Dev.InteractableSystem;
 using D_Dev.PolymorphicValueSystem;
-using D_Dev.TagSystem;
-using D_Dev.TagSystem.Extensions;
 using D_Dev.TweenAnimations.Types;
 using Sirenix.OdinInspector;
 using UnityEngine;
@@ -30,7 +30,7 @@ namespace _Project.Scripts
         [FoldoutGroup("Slot Events")]
         public UnityEvent OnItemPlaced;
         
-        private Tag _slotTag;
+        private EntityInfo _slotInfo;
         private MeshFilter _activeItemMeshFilter;
         
 
@@ -45,9 +45,9 @@ namespace _Project.Scripts
         
         #region Public
 
-        public void Init(Tag itemTag)
+        public void Init(EntityInfo itemInfo)
         {
-            _slotTag = itemTag;
+            _slotInfo = itemInfo;
             HideView();
         }
 
@@ -63,7 +63,7 @@ namespace _Project.Scripts
             if(!IsActveItemExists())
                 return;
 
-            if (!_currentActiveItem.Value.HasTag(_slotTag))
+            if (!IsMatchingItem(_currentActiveItem.Value))
             {
                 SetBlockMaterial();
                 CanPlaceItem = false;
@@ -161,6 +161,11 @@ namespace _Project.Scripts
         #region Helpers
 
         private bool IsActveItemExists() => _currentActiveItem != null && _currentActiveItem.Value != null;
+
+        private bool IsMatchingItem(GameObject item) =>
+            _slotInfo != null
+            && item.TryGetComponent(out EntityInfoBinder binder)
+            && binder.Info == _slotInfo;
 
         #endregion
     }

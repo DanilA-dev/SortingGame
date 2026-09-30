@@ -5,18 +5,53 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c7e8f329-2cc1-4157-9309-86340ee94883" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/Core/ItemSpawner.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/Core/ItemSpawner.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Sortinggame/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Sortinggame/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Danil-dev/Scripts/Runtime/Systems/InteractableSystem/BaseInteractable.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Danil-dev/Scripts/Runtime/Systems/InteractableSystem/BaseInteractable.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Danil-dev/Scripts/Runtime/Systems/InteractableSystem/Interactor/Interactor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Danil-dev/Scripts/Runtime/Systems/InteractableSystem/Interactor/Interactor.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Danil-dev/Scripts/Runtime/_Base/Interactable/IInteractable.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Danil-dev/Scripts/Runtime/_Base/Interactable/IInteractable.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Danil-dev/Assets/Prefabs/UI/LoaderMenu_Prefab.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Danil-dev/Assets/Prefabs/UI/LoaderMenu_Prefab.prefab.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Project/Art/Fonts/RifficFree-Bold SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Art/Fonts/RifficFree-Bold SDF.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/Prefabs/Player/Player_Prefab.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Prefabs/Player/Player_Prefab.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/Prefabs/TestItems/BaseItem_Prefab.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Prefabs/TestItems/BaseItem_Prefab.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/ScriptableObjects/Variables/Player/InteractInput_BoolVariable.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/ScriptableObjects/Variables/Player/InteractInput_BoolVariable.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/Core/ItemInteractable.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/Core/ItemInteractable.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/Core/PickedItemsContainer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/Core/PickedItemsContainer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Art/Materials/Entities/SlotAllow_mat.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Art/Materials/Entities/SlotAllow_mat.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Art/Materials/Entities/SlotBlock_mat.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Art/Materials/Entities/SlotBlock_mat.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Art/Materials/Entities/StreetFood_TC2_mat.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Art/Materials/Entities/StreetFood_TC2_mat.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Art/Materials/Environment/Ground_mat.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Art/Materials/Environment/Ground_mat.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Art/Models/hc-street-food-pack.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Art/Models/hc-street-food-pack/source.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Art/Models/hc-street-food-pack/source/Food.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Art/Models/hc-street-food-pack/source/Food.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Art/Models/hc-street-food-pack/textures.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Art/Models/hc-street-food-pack/textures/Streetfood.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Art/Models/hc-street-food-pack/textures/Streetfood.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Art/Textures/Ground_tex.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Art/Textures/Ground_tex.jpg.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Art/Textures/Wall_tex.jpg.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Art/Textures/Wall_tex.jpg.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Prefabs/Entities/Container/ItemSlot_Prefab.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Prefabs/Entities/Container/ItemSlot_Prefab.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Prefabs/Entities/Items/BaseItem_Prefab.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Prefabs/Entities/Items/BaseItem_Prefab.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Prefabs/Entities/Items/BurgerItem_Prefab.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Prefabs/Entities/Items/BurgerItem_Prefab.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Prefabs/Entities/Items/PizzaItem_Prefab.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Prefabs/Entities/Items/PizzaItem_Prefab.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Prefabs/Entities/Player/Player_Prefab.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Prefabs/Entities/Player/Player_Prefab.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scenes/BootScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scenes/BootScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scenes/MainScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scenes/MainScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scenes/SystemsScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scenes/SystemsScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/ScriptableObjects/Entities/Items/Burger_EntityInfo.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/ScriptableObjects/Entities/Items/Burger_EntityInfo.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/ScriptableObjects/Entities/Items/Pizza_EntityInfo.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/ScriptableObjects/Entities/Items/Pizza_EntityInfo.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/ScriptableObjects/Infos/Menus/Menu Infos Container.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/ScriptableObjects/Infos/Menus/Menu Infos Container.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/ScriptableObjects/Tags/Items.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/ScriptableObjects/Tags/Items/Burger.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/ScriptableObjects/Tags/Items/Burger.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/ScriptableObjects/Tags/Items/Pizza.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/ScriptableObjects/Tags/Items/Pizza.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/ScriptableObjects/Variables/Events/SlotItemInteractionStartEvent.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/ScriptableObjects/Variables/Events/SlotItemInteractionStartEvent.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/ScriptableObjects/Variables/Ids/Description_ID.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/ScriptableObjects/Variables/Ids/Description_ID.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/ScriptableObjects/Variables/Ids/Grounded_ID.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/ScriptableObjects/Variables/Ids/Grounded_ID.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/ScriptableObjects/Variables/Ids/MoveSpeed_ID.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/ScriptableObjects/Variables/Ids/MoveSpeed_ID.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/ScriptableObjects/Variables/Ids/Name_ID.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/ScriptableObjects/Variables/Ids/Name_ID.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/ScriptableObjects/Variables/Ids/Sorted_ID.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/ScriptableObjects/Variables/Ids/Sorted_ID.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/Core/Game.Core.asmdef" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/Core/Game.Core.asmdef" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/Core/Interactable/ItemSlotInteractable.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/Core/Interactable/ItemSlotInteractable.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/Core/ItemSlotsContainer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/Core/ItemSlotsContainer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -105,6 +140,7 @@
       <updated>1790523774356</updated>
       <workItem from="1790523775641" duration="15448000" />
       <workItem from="1790601044617" duration="6238000" />
+      <workItem from="1790779117440" duration="3217000" />
     </task>
     <servers />
   </component>

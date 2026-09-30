@@ -12,14 +12,6 @@ PrefabInstance:
       propertyPath: _collider
       value: 
       objectReference: {fileID: 0}
-    - target: {fileID: 686823432555963283, guid: 20645e136940c6b4a8caa63c41ed75ef, type: 3}
-      propertyPath: _tags.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 686823432555963283, guid: 20645e136940c6b4a8caa63c41ed75ef, type: 3}
-      propertyPath: '_tags.Array.data[2]'
-      value: 
-      objectReference: {fileID: 11400000, guid: 717d81dfc6dc9a7499fb8eee3d3561c6, type: 2}
     - target: {fileID: 4798141874339998742, guid: 20645e136940c6b4a8caa63c41ed75ef, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
@@ -36,6 +28,10 @@ PrefabInstance:
       propertyPath: m_Center.y
       value: 0.05
       objectReference: {fileID: 0}
+    - target: {fileID: 6972069644614272644, guid: 20645e136940c6b4a8caa63c41ed75ef, type: 3}
+      propertyPath: _entityInfo
+      value: 
+      objectReference: {fileID: 11400000, guid: 8a90935ce383dee4e98a98b4ca15cf4c, type: 2}
     - target: {fileID: 7790156376496395155, guid: 20645e136940c6b4a8caa63c41ed75ef, type: 3}
       propertyPath: m_LocalScale.x
       value: 1

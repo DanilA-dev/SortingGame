@@ -25,6 +25,9 @@ MonoBehaviour:
   _variables:
   - rid: 1932282358920642870
   - rid: 1932282386981061389
+  - rid: 1932282427523203931
+  - rid: 1932282427523203933
+  - rid: 1932282427523203935
   references:
     version: 2
     RefIds:
@@ -33,18 +36,48 @@ MonoBehaviour:
       data:
         _variableID: {fileID: 11400000, guid: 25252b1a58a22724bbc53f5d257d864a, type: 2}
         _value:
-          rid: 1932282358920642871
-    - rid: 1932282358920642871
-      type: {class: StringConstantValue, ns: D_Dev.PolymorphicValueSystem, asm: D-Dev.PolymorphicValueSystem}
-      data:
-        _value: Burger
+          rid: 1932282429438689543
     - rid: 1932282386981061389
       type: {class: StringEntityVariable, ns: D_Dev.EntityVariable.Types, asm: D-Dev.EntityVariable}
       data:
         _variableID: {fileID: 11400000, guid: f182576ffeb67694792f1331fa4aa239, type: 2}
         _value:
-          rid: 1932282386981061390
-    - rid: 1932282386981061390
+          rid: 1932282429438689544
+    - rid: 1932282427523203931
+      type: {class: Vector3EntityVariable, ns: D_Dev.EntityVariable.Types, asm: D-Dev.EntityVariable}
+      data:
+        _variableID: {fileID: 11400000, guid: b214d14935129e741ad4ca880893a933, type: 2}
+        _value:
+          rid: 1932282427523203932
+    - rid: 1932282427523203932
+      type: {class: Vector3ConstantValue, ns: D_Dev.PolymorphicValueSystem, asm: D-Dev.PolymorphicValueSystem}
+      data:
+        _value: {x: 0, y: 0.3, z: 0}
+    - rid: 1932282427523203933
+      type: {class: Vector3EntityVariable, ns: D_Dev.EntityVariable.Types, asm: D-Dev.EntityVariable}
+      data:
+        _variableID: {fileID: 11400000, guid: cd57551ff2c717a4484d4815c26dd597, type: 2}
+        _value:
+          rid: 1932282427523203934
+    - rid: 1932282427523203934
+      type: {class: Vector3ConstantValue, ns: D_Dev.PolymorphicValueSystem, asm: D-Dev.PolymorphicValueSystem}
+      data:
+        _value: {x: 0, y: 0, z: 0}
+    - rid: 1932282427523203935
+      type: {class: Vector3EntityVariable, ns: D_Dev.EntityVariable.Types, asm: D-Dev.EntityVariable}
+      data:
+        _variableID: {fileID: 11400000, guid: 74c259874d0dfbb45b6699563cd700f4, type: 2}
+        _value:
+          rid: 1932282427523203936
+    - rid: 1932282427523203936
+      type: {class: Vector3ConstantValue, ns: D_Dev.PolymorphicValueSystem, asm: D-Dev.PolymorphicValueSystem}
+      data:
+        _value: {x: 0, y: 0, z: 0}
+    - rid: 1932282429438689543
       type: {class: StringConstantValue, ns: D_Dev.PolymorphicValueSystem, asm: D-Dev.PolymorphicValueSystem}
       data:
-        _value: Bakery
+        _value: Burger
+    - rid: 1932282429438689544
+      type: {class: StringScriptableVariableValue, ns: D_Dev.PolymorphicValueSystem, asm: D-Dev.PolymorphicValueSystem}
+      data:
+        _variable: {fileID: 11400000, guid: 076a5765c00946c43aaad70369a190c6, type: 2}

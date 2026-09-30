@@ -119,7 +119,102 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &1076742431
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1076742433}
+  - component: {fileID: 1076742432}
+  m_Layer: 0
+  m_Name: Initializer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1076742432
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1076742431}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79e3e75a3703c754a865f4707bd33b44, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: D-Dev.ActionFlow::D_Dev.ActionFlow.ActionExecutorFlow
+  _executeOnStart: 1
+  _resetOnFinish: 0
+  _saveState: 0
+  _saveID: 
+  _actionGroups:
+  - rid: 1932282427523203072
+  _breakConditions: []
+  _onStarted:
+    m_PersistentCalls:
+      m_Calls: []
+  _onFinished:
+    m_PersistentCalls:
+      m_Calls: []
+  _onPaused:
+    m_PersistentCalls:
+      m_Calls: []
+  _onResumed:
+    m_PersistentCalls:
+      m_Calls: []
+  _onGroupStarted:
+    m_PersistentCalls:
+      m_Calls: []
+  _onGroupFinished:
+    m_PersistentCalls:
+      m_Calls: []
+  _onGroupTimeout:
+    m_PersistentCalls:
+      m_Calls: []
+  _onBroken:
+    m_PersistentCalls:
+      m_Calls: []
+  _isPaused: 0
+  _isFinished: 0
+  references:
+    version: 2
+    RefIds:
+    - rid: 1932282427523203072
+      type: {class: ActionGroup, ns: D_Dev.Base, asm: D-Dev.Base}
+      data:
+        _executeInParallel: 0
+        _actions:
+        - rid: 1932282427523203074
+    - rid: 1932282427523203074
+      type: {class: SceneInfoLoadAction, ns: D_Dev.SceneLoader.Extensions.Actions, asm: D-Dev.SceneLoader}
+      data:
+        _actionName: Load MainScene
+        OnUndo:
+          m_PersistentCalls:
+            m_Calls: []
+        _sceneInfo: {fileID: 11400000, guid: fd75081baae73744fb0407b928b14010, type: 2}
+--- !u!4 &1076742433
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1076742431}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
-  m_Roots: []
+  m_Roots:
+  - {fileID: 1076742433}

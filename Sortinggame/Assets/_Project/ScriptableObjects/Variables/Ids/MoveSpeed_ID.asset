@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 110277e40058401b9d8b93347d0123d7, type: 3}
   m_Name: MoveSpeed_ID
   m_EditorClassIdentifier: D-Dev.ScriptableVariables::D_Dev.ScriptableVariables.StringScriptableVariable
-  _value: Name
+  _value: 
   _resetOnEnterRuntime: 0

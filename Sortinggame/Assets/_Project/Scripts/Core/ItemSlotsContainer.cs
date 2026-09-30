@@ -1,9 +1,11 @@
 using System;
 using System.Linq;
+using D_Dev.Entity;
+using D_Dev.Entity.Extensions;
 using D_Dev.PolymorphicValueSystem;
 using D_Dev.ScriptableVariables;
-using D_Dev.TagSystem;
 using Sirenix.OdinInspector;
+using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -14,7 +16,10 @@ namespace _Project.Scripts
         #region Fields
 
         [Title("Base Settings")]
-        [SerializeField] private Tag _itemTag;
+        [SerializeReference] private PolymorphicValue<EntityInfo> _itemInfo = new EntityInfoConstantValue();
+        [SerializeField] private TMP_Text _nameText;
+        [SerializeReference] private PolymorphicValue<string> _shelfName = new StringConstantValue();
+        
         [SerializeField] private Transform _root;
         [SerializeReference] private PolymorphicValue<bool> _isSorted = new BoolConstantValue();
         
@@ -45,7 +50,11 @@ namespace _Project.Scripts
                 SetSorted();
             else
                 _maxSortedShelvesVariable.Value++;
+
+            SetInfo();
         }
+
+        
 
         private void OnDestroy()
         {
@@ -63,7 +72,7 @@ namespace _Project.Scripts
 
             foreach (var itemSlotInteractable in _slots)
             {
-                itemSlotInteractable.Init(_itemTag);
+                itemSlotInteractable.Init(_itemInfo.Value);
                 itemSlotInteractable.OnItemPlaced.AddListener(CheckSlotsState);
             }
         }
@@ -81,6 +90,11 @@ namespace _Project.Scripts
         {
             _currentSortedShelvesVariable.Value++;
             _isSorted.Value = true;
+        }
+        
+        private void SetInfo()
+        {
+            _nameText.SetText(_shelfName.Value);   
         }
         
         #endregion
