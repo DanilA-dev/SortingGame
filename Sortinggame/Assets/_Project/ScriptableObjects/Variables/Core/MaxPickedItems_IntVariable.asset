@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35455af4827b4272b65eb183a1212c4e, type: 3}
   m_Name: MaxPickedItems_IntVariable
   m_EditorClassIdentifier: D-Dev.ScriptableVariables::D_Dev.ScriptableVariables.IntScriptableVariable
-  _value: 3
+  _value: 10
   _resetOnEnterRuntime: 0
