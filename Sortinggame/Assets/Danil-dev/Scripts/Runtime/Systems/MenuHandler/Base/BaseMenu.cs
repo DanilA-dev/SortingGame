@@ -29,7 +29,11 @@ namespace D_Dev.MenuHandler
         [SerializeField] private TweenPlayable _closeAnimation;
 #endif
         [FoldoutGroup("Events")]
+        public UnityEvent OnBeforeOpenEvent;
+        [FoldoutGroup("Events")]
         public UnityEvent OnOpenEvent;
+        [FoldoutGroup("Events")]
+        public UnityEvent OnBeforeCloseEvent;
         [FoldoutGroup("Events")]
         public UnityEvent OnCloseEvent;
 
@@ -61,6 +65,7 @@ namespace D_Dev.MenuHandler
 
             var wasOpen = _isOpen;
             var transitionId = BeginTransition(true);
+            OnBeforeOpenEvent?.Invoke();
             gameObject.SetActive(true);
 #if DOTWEEN
             _closeAnimation?.Kill();
@@ -82,6 +87,7 @@ namespace D_Dev.MenuHandler
 
             var wasOpen = _isOpen;
             var transitionId = BeginTransition(false);
+            OnBeforeCloseEvent?.Invoke();
 #if DOTWEEN
             _openAnimation?.Kill();
             if (_hasCloseAniation && _closeAnimation != null)

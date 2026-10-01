@@ -1113,14 +1113,14 @@ MonoBehaviour:
   _disableObjectOnComplete: 0
   _openAnimation:
     _playMode: 0
-    _ignoreTimeScale: 0
+    _ignoreTimeScale: 1
     _tweens:
     - rid: 5687120578697500167
   _closeAnimation:
     _playMode: 0
     _ignoreTimeScale: 0
     _tweens: []
-  OnOpenEvent:
+  OnBeforeOpenEvent:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 5859377243970986048}
@@ -1135,7 +1135,10 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  OnCloseEvent:
+  OnOpenEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  OnBeforeCloseEvent:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 8623466188566782578}
@@ -1150,6 +1153,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  OnCloseEvent:
+    m_PersistentCalls:
+      m_Calls: []
   _sfxButton: {fileID: 1147779498770853878}
   _musicButton: {fileID: 5417120209455056374}
   _isSfxVolume:
@@ -1273,7 +1279,7 @@ MonoBehaviour:
         _duration: 0.5
         _delay: 0
         _ease: 18
-        _ignoreTimeScale: 0
+        _ignoreTimeScale: 1
         _loops: 0
         _loopType: 0
         OnStart:

@@ -14,12 +14,12 @@ namespace D_Dev.PlayerStateController
         [Title("Camera Settings")]
         [SerializeField] private InputRouter _inputRouter;
         [SerializeField] private InputActionReference _lookAction;
-        [SerializeReference] private PolymorphicValue<Transform> _cameraRoot;
-        [SerializeField] private float _topAngle = 80f;
-        [SerializeField] private float _botAngle = -80f;
-        [SerializeField] private float _stickRotationSpeed = 100f;
-        [SerializeField] private float _mouseSensitivity = 5f;
-        [SerializeField] private bool _isLocked;
+        [SerializeReference] private PolymorphicValue<Transform> _cameraRoot = new TransformConstantValue();
+        [SerializeReference] private PolymorphicValue<float> _topAngle = new FloatConstantValue() { Value = 80};
+        [SerializeReference] private PolymorphicValue<float> _botAngle = new FloatConstantValue() { Value = -80};
+        [SerializeReference] private PolymorphicValue<float> _stickRotationSpeed = new FloatConstantValue() { Value = 100};
+        [SerializeReference] private PolymorphicValue<float> _mouseSensitivity = new FloatConstantValue() { Value = 3 };
+        [SerializeReference] private PolymorphicValue<bool> _isLocked = new BoolConstantValue();
 
         private InputAction _resolvedLook;
         private Vector2 _currentLookInput;
@@ -67,14 +67,6 @@ namespace D_Dev.PlayerStateController
 
         #endregion
 
-        #region Public
-
-        public void LockCamera() => _isLocked = true;
-
-        public void UnlockCamera() => _isLocked = false;
-
-        #endregion
-
         #region Listeners
 
         private void OnLook(InputAction.CallbackContext context)
@@ -89,18 +81,18 @@ namespace D_Dev.PlayerStateController
 
         private void UpdateCameraRotation()
         {
-            if (_currentLookInput != Vector2.zero && !_isLocked)
+            if (_currentLookInput != Vector2.zero && !_isLocked.Value)
             {
                 float multiplier = _isLookFromPointer
-                    ? _mouseSensitivity
-                    : _stickRotationSpeed * Time.deltaTime;
+                    ? _mouseSensitivity.Value
+                    : _stickRotationSpeed.Value * Time.deltaTime;
 
                 _yaw += _currentLookInput.x * multiplier;
                 _pitch += _currentLookInput.y * multiplier;
             }
 
             _yaw = Mathf.Repeat(_yaw, 360f);
-            _pitch = Mathf.Clamp(_pitch, _botAngle, _topAngle);
+            _pitch = Mathf.Clamp(_pitch, _botAngle.Value, _topAngle.Value);
             _cameraRoot.Value.rotation = Quaternion.Euler(_pitch, _yaw, 0.0f);
         }
 

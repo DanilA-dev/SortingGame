@@ -5,40 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c7e8f329-2cc1-4157-9309-86340ee94883" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/UI/PauseMenu.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/UI/PauseMenu.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Sortinggame/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Sortinggame/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Danil-dev/Scripts/Runtime/Systems/InputSystem/InputActions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Danil-dev/Scripts/Runtime/Systems/InputSystem/InputActions.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Danil-dev/Scripts/Runtime/Systems/InputSystem/InputActions.inputactions" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Danil-dev/Scripts/Runtime/Systems/InputSystem/InputActions.inputactions" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Danil-dev/Scripts/Runtime/Systems/InputSystem/InputRouter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Danil-dev/Scripts/Runtime/Systems/InputSystem/InputRouter.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Free Icon Pack v3.1 (Basic)/Main/Settings/256px/Settings 1 1st 256px.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Free Icon Pack v3.1 (Basic)/Main/Settings/256px/Settings 1 1st 256px.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Free Icon Pack v3.1 (Basic)/Main/Settings/256px/Settings 1 1st Outline 256px.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Free Icon Pack v3.1 (Basic)/Main/Settings/256px/Settings 1 1st Outline 256px.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Free Icon Pack v3.1 (Basic)/Main/Settings/256px/Settings 1 2nd 256px.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Free Icon Pack v3.1 (Basic)/Main/Settings/256px/Settings 1 2nd 256px.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Free Icon Pack v3.1 (Basic)/Main/Settings/256px/Settings 1 2nd Outline 256px.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Free Icon Pack v3.1 (Basic)/Main/Settings/256px/Settings 1 2nd Outline 256px.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Free Icon Pack v3.1 (Basic)/Main/Settings/256px/Settings 2 1st 256px.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Free Icon Pack v3.1 (Basic)/Main/Settings/256px/Settings 2 1st 256px.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Free Icon Pack v3.1 (Basic)/Main/Settings/256px/Settings 2 1st Outline 256px.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Free Icon Pack v3.1 (Basic)/Main/Settings/256px/Settings 2 1st Outline 256px.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Free Icon Pack v3.1 (Basic)/Main/Settings/256px/Settings 2 2nd 256px.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Free Icon Pack v3.1 (Basic)/Main/Settings/256px/Settings 2 2nd 256px.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Free Icon Pack v3.1 (Basic)/Main/Settings/256px/Settings 2 2nd Outline 256px.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Free Icon Pack v3.1 (Basic)/Main/Settings/256px/Settings 2 2nd Outline 256px.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Free Icon Pack v3.1 (Basic)/Main/Settings/256px/Settings Black 256px.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Free Icon Pack v3.1 (Basic)/Main/Settings/256px/Settings Black 256px.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Free Icon Pack v3.1 (Basic)/Main/Settings/256px/Settings White 256px.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Free Icon Pack v3.1 (Basic)/Main/Settings/256px/Settings White 256px.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Danil-dev/Scripts/Runtime/Systems/Utility/FreeLookCameraController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Danil-dev/Scripts/Runtime/Systems/Utility/FreeLookCameraController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Project/Art/Fonts/RifficFree-Bold SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Art/Fonts/RifficFree-Bold SDF.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/Prefabs/Entities/Container/ItemSlot_Prefab.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Prefabs/Entities/Container/ItemSlot_Prefab.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/Prefabs/Entities/Levels/StoreLevel_Prefab.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Prefabs/Entities/Levels/StoreLevel_Prefab.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/Prefabs/UI/Items/ClockPanel_Prefab.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Prefabs/UI/Items/ClockPanel_Prefab.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/Prefabs/UI/Items/ItemsPanel_Prefab.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/Prefabs/UI/Items/ItemsPanel_Prefab.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/Prefabs/UI/Menus/CoreMenu_Prefab.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Prefabs/UI/Menus/CoreMenu_Prefab.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/Prefabs/UI/Menus/FinishMenu_Prefab.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Prefabs/UI/Menus/FinishMenu_Prefab.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Prefabs/Entities/Player/Player_Camera_Prefab.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Prefabs/Entities/Player/Player_Camera_Prefab.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Prefabs/UI/Menus/PauseMenu_Prefab.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Prefabs/UI/Menus/PauseMenu_Prefab.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Project/Scenes/SystemsScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scenes/SystemsScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/ScriptableObjects/Entities/Items/BlueMug_EntityInfo.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/ScriptableObjects/Entities/Items/BlueMug_EntityInfo.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/ScriptableObjects/Entities/Items/GreenCoffe_EntityInfo.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/ScriptableObjects/Entities/Items/GreenCoffe_EntityInfo.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/ScriptableObjects/Entities/Items/OrangeCoffe_EntityInfo.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/ScriptableObjects/Entities/Items/OrangeCoffe_EntityInfo.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/ScriptableObjects/Entities/Items/RedCoffe_EntityInfo.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/ScriptableObjects/Entities/Items/RedCoffe_EntityInfo.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/ScriptableObjects/Entities/Items/RedMug_EntityInfo.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/ScriptableObjects/Entities/Items/RedMug_EntityInfo.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/ScriptableObjects/Entities/Items/YellowCoffe_EntityInfo.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/ScriptableObjects/Entities/Items/YellowCoffe_EntityInfo.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/ScriptableObjects/Infos/Menus/Menu Infos Container.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/ScriptableObjects/Infos/Menus/Menu Infos Container.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/cartoon_ui_pack/basic green/scrollbar horizontal.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/cartoon_ui_pack/basic green/scrollbar horizontal.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/cartoon_ui_pack/basic purple/scrollbar horizontal.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/cartoon_ui_pack/basic purple/scrollbar horizontal.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,7 +22,9 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/Danil-dev/Scripts/Runtime/PlayerUtilities/Handlers/PlayerInputProvider.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Project/Scripts/Core/PickedItemsContainer.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_Project/Scripts/UI/PauseMenu.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.inputsystem@21a28c3a6c83/InputSystem/Plugins/OnScreen/OnScreenButton.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="ProjectColorInfo">{
@@ -130,6 +105,8 @@
       <workItem from="1790601044617" duration="6238000" />
       <workItem from="1790779117440" duration="3217000" />
       <workItem from="1790869572203" duration="4436000" />
+      <workItem from="1790877094306" duration="732000" />
+      <workItem from="1790896684861" duration="1481000" />
     </task>
     <servers />
   </component>

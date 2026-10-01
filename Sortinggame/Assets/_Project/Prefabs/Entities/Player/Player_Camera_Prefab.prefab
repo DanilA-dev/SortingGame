@@ -196,11 +196,16 @@ MonoBehaviour:
   _lookAction: {fileID: 3100268157921543758, guid: 5874c51c9acab224ab9f2bff4257f317, type: 3}
   _cameraRoot:
     rid: 3180810780262006858
-  _topAngle: 80
-  _botAngle: -80
-  _stickRotationSpeed: 100
-  _mouseSensitivity: 3
-  _isLocked: 0
+  _topAngle:
+    rid: 5687120585129984207
+  _botAngle:
+    rid: 5687120585129984208
+  _stickRotationSpeed:
+    rid: 5687120585129984209
+  _mouseSensitivity:
+    rid: 5687120585129984212
+  _isLocked:
+    rid: 5687120585129984219
   references:
     version: 2
     RefIds:
@@ -208,3 +213,23 @@ MonoBehaviour:
       type: {class: TransformScriptableVariableValue, ns: D_Dev.PolymorphicValueSystem, asm: D-Dev.PolymorphicValueSystem}
       data:
         _variable: {fileID: 11400000, guid: 6766d46aa41887841bc5e79857e11257, type: 2}
+    - rid: 5687120585129984207
+      type: {class: FloatConstantValue, ns: D_Dev.PolymorphicValueSystem, asm: D-Dev.PolymorphicValueSystem}
+      data:
+        _value: 80
+    - rid: 5687120585129984208
+      type: {class: FloatConstantValue, ns: D_Dev.PolymorphicValueSystem, asm: D-Dev.PolymorphicValueSystem}
+      data:
+        _value: -80
+    - rid: 5687120585129984209
+      type: {class: FloatConstantValue, ns: D_Dev.PolymorphicValueSystem, asm: D-Dev.PolymorphicValueSystem}
+      data:
+        _value: 100
+    - rid: 5687120585129984212
+      type: {class: FloatScriptableVariableValue, ns: D_Dev.PolymorphicValueSystem, asm: D-Dev.PolymorphicValueSystem}
+      data:
+        _variable: {fileID: 11400000, guid: d5b8cbceab7f3994bb878791aeb60a7a, type: 2}
+    - rid: 5687120585129984219
+      type: {class: BoolScriptableVariableValue, ns: D_Dev.PolymorphicValueSystem, asm: D-Dev.PolymorphicValueSystem}
+      data:
+        _variable: {fileID: 11400000, guid: 63454c0b6ba32704eb26fbb83b3ac4e3, type: 2}

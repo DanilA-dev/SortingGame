@@ -568,6 +568,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1067671697}
   - component: {fileID: 1067671696}
+  - component: {fileID: 1067671698}
   m_Layer: 0
   m_Name: InputProvider
   m_TagString: Untagged
@@ -662,6 +663,24 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1067671698
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1067671695}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae5e101bbf4540358704ccb3c9f3bbf8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: D-Dev.Utility::D_Dev.Utility.CursorToggler
+  _setCursorStateIndexOnStart: 0
+  _cursorStates:
+  - <LockMode>k__BackingField: 1
+    <Visible>k__BackingField: 0
+  - <LockMode>k__BackingField: 0
+    <Visible>k__BackingField: 1
 --- !u!1 &1425338423
 GameObject:
   m_ObjectHideFlags: 0
@@ -711,6 +730,31 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 11400000, guid: 63454c0b6ba32704eb26fbb83b3ac4e3, type: 2}
+        m_TargetAssemblyTypeName: D_Dev.ScriptableVariables.BoolScriptableVariable,
+          D-Dev.ScriptableVariables
+        m_MethodName: set_Value
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1067671698}
+        m_TargetAssemblyTypeName: D_Dev.Utility.CursorToggler, D-Dev.Utility
+        m_MethodName: ApplyCursorStatePreset
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   _debug: 0
   references:
     version: 2
@@ -748,6 +792,31 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 11400000, guid: 63454c0b6ba32704eb26fbb83b3ac4e3, type: 2}
+        m_TargetAssemblyTypeName: D_Dev.ScriptableVariables.BoolScriptableVariable,
+          D-Dev.ScriptableVariables
+        m_MethodName: set_Value
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 1067671698}
+        m_TargetAssemblyTypeName: D_Dev.Utility.CursorToggler, D-Dev.Utility
+        m_MethodName: ApplyCursorStatePreset
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
         m_CallState: 2
   _debug: 0
   references:
