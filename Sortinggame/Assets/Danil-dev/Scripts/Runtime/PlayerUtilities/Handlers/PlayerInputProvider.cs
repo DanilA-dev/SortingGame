@@ -35,11 +35,8 @@ namespace D_Dev.PlayerStateController
 
         private void OnDestroy()
         {
-            if (_inputRouter == null)
-                return;
-
             foreach (var binding in _bindings)
-                binding?.Unbind(_inputRouter);
+                binding?.Unbind();
         }
 
         #endregion

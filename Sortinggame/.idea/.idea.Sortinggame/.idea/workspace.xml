@@ -5,53 +5,40 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c7e8f329-2cc1-4157-9309-86340ee94883" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/Core/ItemSpawner.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/Core/ItemSpawner.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/UI/PauseMenu.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/UI/PauseMenu.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Sortinggame/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Sortinggame/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Danil-dev/Assets/Prefabs/UI/LoaderMenu_Prefab.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Danil-dev/Assets/Prefabs/UI/LoaderMenu_Prefab.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Danil-dev/Scripts/Runtime/Systems/InputSystem/InputActions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Danil-dev/Scripts/Runtime/Systems/InputSystem/InputActions.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Danil-dev/Scripts/Runtime/Systems/InputSystem/InputActions.inputactions" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Danil-dev/Scripts/Runtime/Systems/InputSystem/InputActions.inputactions" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Danil-dev/Scripts/Runtime/Systems/InputSystem/InputRouter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Danil-dev/Scripts/Runtime/Systems/InputSystem/InputRouter.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Free Icon Pack v3.1 (Basic)/Main/Settings/256px/Settings 1 1st 256px.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Free Icon Pack v3.1 (Basic)/Main/Settings/256px/Settings 1 1st 256px.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Free Icon Pack v3.1 (Basic)/Main/Settings/256px/Settings 1 1st Outline 256px.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Free Icon Pack v3.1 (Basic)/Main/Settings/256px/Settings 1 1st Outline 256px.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Free Icon Pack v3.1 (Basic)/Main/Settings/256px/Settings 1 2nd 256px.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Free Icon Pack v3.1 (Basic)/Main/Settings/256px/Settings 1 2nd 256px.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Free Icon Pack v3.1 (Basic)/Main/Settings/256px/Settings 1 2nd Outline 256px.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Free Icon Pack v3.1 (Basic)/Main/Settings/256px/Settings 1 2nd Outline 256px.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Free Icon Pack v3.1 (Basic)/Main/Settings/256px/Settings 2 1st 256px.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Free Icon Pack v3.1 (Basic)/Main/Settings/256px/Settings 2 1st 256px.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Free Icon Pack v3.1 (Basic)/Main/Settings/256px/Settings 2 1st Outline 256px.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Free Icon Pack v3.1 (Basic)/Main/Settings/256px/Settings 2 1st Outline 256px.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Free Icon Pack v3.1 (Basic)/Main/Settings/256px/Settings 2 2nd 256px.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Free Icon Pack v3.1 (Basic)/Main/Settings/256px/Settings 2 2nd 256px.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Free Icon Pack v3.1 (Basic)/Main/Settings/256px/Settings 2 2nd Outline 256px.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Free Icon Pack v3.1 (Basic)/Main/Settings/256px/Settings 2 2nd Outline 256px.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Free Icon Pack v3.1 (Basic)/Main/Settings/256px/Settings Black 256px.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Free Icon Pack v3.1 (Basic)/Main/Settings/256px/Settings Black 256px.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Free Icon Pack v3.1 (Basic)/Main/Settings/256px/Settings White 256px.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Free Icon Pack v3.1 (Basic)/Main/Settings/256px/Settings White 256px.png.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Project/Art/Fonts/RifficFree-Bold SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Art/Fonts/RifficFree-Bold SDF.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/Art/Materials/Entities/SlotAllow_mat.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Art/Materials/Entities/SlotAllow_mat.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/Art/Materials/Entities/SlotBlock_mat.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Art/Materials/Entities/SlotBlock_mat.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/Art/Materials/Entities/StreetFood_TC2_mat.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Art/Materials/Entities/StreetFood_TC2_mat.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/Art/Materials/Environment/Ground_mat.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Art/Materials/Environment/Ground_mat.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/Art/Models/hc-street-food-pack.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/Art/Models/hc-street-food-pack/source.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/Art/Models/hc-street-food-pack/source/Food.fbx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/Art/Models/hc-street-food-pack/source/Food.fbx.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/Art/Models/hc-street-food-pack/textures.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/Art/Models/hc-street-food-pack/textures/Streetfood.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/Art/Models/hc-street-food-pack/textures/Streetfood.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/Art/Textures/Ground_tex.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/Art/Textures/Ground_tex.jpg.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/Art/Textures/Wall_tex.jpg.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Art/Textures/Wall_tex.jpg.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Project/Prefabs/Entities/Container/ItemSlot_Prefab.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Prefabs/Entities/Container/ItemSlot_Prefab.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/Prefabs/Entities/Items/BaseItem_Prefab.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Prefabs/Entities/Items/BaseItem_Prefab.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/Prefabs/Entities/Items/BurgerItem_Prefab.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Prefabs/Entities/Items/BurgerItem_Prefab.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/Prefabs/Entities/Items/PizzaItem_Prefab.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Prefabs/Entities/Items/PizzaItem_Prefab.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/Prefabs/Entities/Player/Player_Prefab.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Prefabs/Entities/Player/Player_Prefab.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scenes/BootScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scenes/BootScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scenes/MainScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scenes/MainScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Prefabs/Entities/Levels/StoreLevel_Prefab.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Prefabs/Entities/Levels/StoreLevel_Prefab.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Prefabs/UI/Items/ClockPanel_Prefab.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Prefabs/UI/Items/ClockPanel_Prefab.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Prefabs/UI/Items/ItemsPanel_Prefab.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Prefabs/UI/Items/ItemsPanel_Prefab.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Prefabs/UI/Menus/CoreMenu_Prefab.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Prefabs/UI/Menus/CoreMenu_Prefab.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Prefabs/UI/Menus/FinishMenu_Prefab.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Prefabs/UI/Menus/FinishMenu_Prefab.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Project/Scenes/SystemsScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scenes/SystemsScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/ScriptableObjects/Entities/Items/Burger_EntityInfo.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/ScriptableObjects/Entities/Items/Burger_EntityInfo.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/ScriptableObjects/Entities/Items/Pizza_EntityInfo.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/ScriptableObjects/Entities/Items/Pizza_EntityInfo.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/ScriptableObjects/Entities/Items/BlueMug_EntityInfo.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/ScriptableObjects/Entities/Items/BlueMug_EntityInfo.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/ScriptableObjects/Entities/Items/GreenCoffe_EntityInfo.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/ScriptableObjects/Entities/Items/GreenCoffe_EntityInfo.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/ScriptableObjects/Entities/Items/OrangeCoffe_EntityInfo.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/ScriptableObjects/Entities/Items/OrangeCoffe_EntityInfo.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/ScriptableObjects/Entities/Items/RedCoffe_EntityInfo.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/ScriptableObjects/Entities/Items/RedCoffe_EntityInfo.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/ScriptableObjects/Entities/Items/RedMug_EntityInfo.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/ScriptableObjects/Entities/Items/RedMug_EntityInfo.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/ScriptableObjects/Entities/Items/YellowCoffe_EntityInfo.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/ScriptableObjects/Entities/Items/YellowCoffe_EntityInfo.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Project/ScriptableObjects/Infos/Menus/Menu Infos Container.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/ScriptableObjects/Infos/Menus/Menu Infos Container.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/ScriptableObjects/Tags/Items.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/ScriptableObjects/Tags/Items/Burger.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/ScriptableObjects/Tags/Items/Burger.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/ScriptableObjects/Tags/Items/Pizza.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/ScriptableObjects/Tags/Items/Pizza.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/ScriptableObjects/Variables/Events/SlotItemInteractionStartEvent.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/ScriptableObjects/Variables/Events/SlotItemInteractionStartEvent.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/ScriptableObjects/Variables/Ids/Description_ID.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/ScriptableObjects/Variables/Ids/Description_ID.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/ScriptableObjects/Variables/Ids/Grounded_ID.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/ScriptableObjects/Variables/Ids/Grounded_ID.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/ScriptableObjects/Variables/Ids/MoveSpeed_ID.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/ScriptableObjects/Variables/Ids/MoveSpeed_ID.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/ScriptableObjects/Variables/Ids/Name_ID.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/ScriptableObjects/Variables/Ids/Name_ID.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/ScriptableObjects/Variables/Ids/Sorted_ID.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/ScriptableObjects/Variables/Ids/Sorted_ID.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/Core/Game.Core.asmdef" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/Core/Game.Core.asmdef" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/Core/Interactable/ItemSlotInteractable.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/Core/Interactable/ItemSlotInteractable.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/Core/ItemSlotsContainer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/Core/ItemSlotsContainer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/cartoon_ui_pack/basic green/scrollbar horizontal.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/cartoon_ui_pack/basic green/scrollbar horizontal.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/cartoon_ui_pack/basic purple/scrollbar horizontal.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/cartoon_ui_pack/basic purple/scrollbar horizontal.png.meta" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,6 +50,7 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/_Project/Scripts/Core/PickedItemsContainer.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.inputsystem@21a28c3a6c83/InputSystem/Plugins/OnScreen/OnScreenButton.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 5
@@ -141,6 +129,7 @@
       <workItem from="1790523775641" duration="15448000" />
       <workItem from="1790601044617" duration="6238000" />
       <workItem from="1790779117440" duration="3217000" />
+      <workItem from="1790869572203" duration="4436000" />
     </task>
     <servers />
   </component>

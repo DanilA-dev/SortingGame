@@ -1190,7 +1190,6 @@ GameObject:
   - component: {fileID: 7624906871845726300}
   - component: {fileID: 5824734601842318458}
   - component: {fileID: 7954502312663035469}
-  - component: {fileID: 1673187466131067249}
   - component: {fileID: 9171465542281879858}
   - component: {fileID: 4794096811496763701}
   - component: {fileID: 2100305034605706281}
@@ -1277,66 +1276,6 @@ MonoBehaviour:
       type: {class: BoolConstantValue, ns: D_Dev.PolymorphicValueSystem, asm: D-Dev.PolymorphicValueSystem}
       data:
         _value: 0
---- !u!114 &1673187466131067249
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3641577891075875498}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 511fd93b676d4a92a72a052fd5086da3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _inputRouter: {fileID: 11400000, guid: b299fe18b864a6a448ae3ab79bd7d358, type: 2}
-  _bindings:
-  - rid: 1932282358920643379
-  - rid: 1932282358920643436
-  - rid: 1932282358920643439
-  - rid: 1932282381251117538
-  references:
-    version: 2
-    RefIds:
-    - rid: 1932282358920643379
-      type: {class: MoveInputBinding, ns: D_Dev.PlayerStateController.InputBindings, asm: D-Dev.PlayerUtilities}
-      data:
-        _output:
-          rid: 1932282358920643381
-    - rid: 1932282358920643381
-      type: {class: Vector3ScriptableVariableValue, ns: D_Dev.PolymorphicValueSystem, asm: D-Dev.PolymorphicValueSystem}
-      data:
-        _variable: {fileID: 11400000, guid: f3be20f8f595e724e9c03c2a008351ea, type: 2}
-    - rid: 1932282358920643436
-      type: {class: ButtonInputBinding, ns: D_Dev.PlayerStateController.InputBindings, asm: D-Dev.PlayerUtilities}
-      data:
-        _button: 4
-        _output:
-          rid: 1932282358920643438
-    - rid: 1932282358920643438
-      type: {class: BoolScriptableVariableValue, ns: D_Dev.PolymorphicValueSystem, asm: D-Dev.PolymorphicValueSystem}
-      data:
-        _variable: {fileID: 11400000, guid: dc56fb487ac1c9c468a262976d47fcd0, type: 2}
-    - rid: 1932282358920643439
-      type: {class: ButtonInputBinding, ns: D_Dev.PlayerStateController.InputBindings, asm: D-Dev.PlayerUtilities}
-      data:
-        _button: 5
-        _output:
-          rid: 1932282358920643440
-    - rid: 1932282358920643440
-      type: {class: BoolScriptableVariableValue, ns: D_Dev.PolymorphicValueSystem, asm: D-Dev.PolymorphicValueSystem}
-      data:
-        _variable: {fileID: 11400000, guid: dc56fb487ac1c9c468a262976d47fcd0, type: 2}
-    - rid: 1932282381251117538
-      type: {class: ButtonInputBinding, ns: D_Dev.PlayerStateController.InputBindings, asm: D-Dev.PlayerUtilities}
-      data:
-        _button: 6
-        _output:
-          rid: 1932282381251117539
-    - rid: 1932282381251117539
-      type: {class: BoolScriptableVariableValue, ns: D_Dev.PolymorphicValueSystem, asm: D-Dev.PolymorphicValueSystem}
-      data:
-        _variable: {fileID: 11400000, guid: ada1464b372107a4d8240d786f50079b, type: 2}
 --- !u!114 &9171465542281879858
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1438,9 +1377,12 @@ MonoBehaviour:
     - rid: 1932282358920642924
       type: {class: TransformPositionSettings, ns: D_Dev.PositionRotationConfig, asm: D-Dev.PositionRotationSettings}
       data:
-        _useRandomSphere: 0
+        _randomMode: 0
         _radius: 0
+        _boxSize: {x: 1, y: 1, z: 1}
         _axis: 7
+        _drawGizmos: 1
+        _gizmoColor: {r: 0, g: 1, b: 0.5, a: 0.8}
         _value:
           rid: 1932282358920642925
         _isLocal: 0
@@ -1451,9 +1393,12 @@ MonoBehaviour:
     - rid: 1932282358920642926
       type: {class: TransformLocalDirectionPositionSettings, ns: D_Dev.PositionRotationConfig, asm: D-Dev.PositionRotationSettings}
       data:
-        _useRandomSphere: 0
+        _randomMode: 0
         _radius: 0
+        _boxSize: {x: 1, y: 1, z: 1}
         _axis: 7
+        _drawGizmos: 1
+        _gizmoColor: {r: 0, g: 1, b: 0.5, a: 0.8}
         _value:
           rid: 1932282358920642927
         _direction: 4

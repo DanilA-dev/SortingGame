@@ -666,6 +666,37 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 10, y: 0.8855208, z: 10}
   m_Center: {x: 0, y: -0.4427604, z: 0}
+--- !u!1 &2976576105041260664
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7045635106675283394}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7045635106675283394
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2976576105041260664}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 423707931109863753}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3228519378784531392
 GameObject:
   m_ObjectHideFlags: 0
@@ -801,7 +832,6 @@ GameObject:
   m_Component:
   - component: {fileID: 3157535818945405042}
   - component: {fileID: 8414125566412400964}
-  - component: {fileID: 5543789814734132521}
   m_Layer: 0
   m_Name: PlayerSpawner
   m_TagString: Untagged
@@ -930,22 +960,6 @@ MonoBehaviour:
         _axis: 7
         _drawGizmos: 1
         _gizmoColor: {r: 0, g: 1, b: 0.5, a: 0.8}
---- !u!114 &5543789814734132521
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3646365363054899148}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ae5e101bbf4540358704ccb3c9f3bbf8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: D-Dev.Utility::D_Dev.Utility.CursorToggler
-  _setCursorStateIndexOnStart: 0
-  _cursorStates:
-  - <LockMode>k__BackingField: 2
-    <Visible>k__BackingField: 0
 --- !u!1 &3905861209526492239
 GameObject:
   m_ObjectHideFlags: 0
@@ -1601,6 +1615,74 @@ Transform:
   - {fileID: 2184669881614673427}
   m_Father: {fileID: 7847874336084560758}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &5417474173660119620
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6126946151795333954}
+  - component: {fileID: 1820894017650733944}
+  m_Layer: 0
+  m_Name: MusicPlayer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6126946151795333954
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5417474173660119620}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7847874336084560758}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1820894017650733944
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5417474173660119620}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 780e16cc01d944b59c920bde2d38e0db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: D-Dev.AudioSystem::D_Dev.AudioSystem.AudioPlayer
+  _audioConfigs:
+  - _audioConfigName: {fileID: 0}
+    _soundMixerGroup: {fileID: 2209749935846998762, guid: 1e1d9dfa7de0f2e498db43fef65e8668, type: 2}
+    _mixerGroupType: 1
+    _routeThroughManager: 0
+    _priority: 10
+    _clip: {fileID: 8300000, guid: f7d4520fc31f30148989afb105143033, type: 3}
+    _isRandomClip: 0
+    _clips: []
+    _volume: 0.1
+    _pitch: 1
+    _isRandomVolume: 0
+    _isRandomPitch: 0
+    _minVolume: 0
+    _maxVolume: 0
+    _minPitch: 0
+    _maxPitch: 0
+    _spatialBlend: 0
+    _fadeTime: 1
+    _delayType: 0
+    _delay: 0
+    _scheduledTime: 0
+    _playOnAwake: 1
+    _isLooping: 1
 --- !u!1 &5454044937866521750
 GameObject:
   m_ObjectHideFlags: 0
@@ -1865,6 +1947,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1799709081223245664}
+  - {fileID: 7045635106675283394}
   m_Father: {fileID: 8585573086341918445}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2402741726309440042
@@ -2700,6 +2783,7 @@ Transform:
   - {fileID: 6890951202808516898}
   - {fileID: 5223679096149487909}
   - {fileID: 46963980907402426}
+  - {fileID: 6126946151795333954}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &9021937432010029446

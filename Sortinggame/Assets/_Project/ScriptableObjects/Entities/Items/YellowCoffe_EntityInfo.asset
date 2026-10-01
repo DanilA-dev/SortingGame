@@ -76,7 +76,7 @@ MonoBehaviour:
     - rid: 1932282429438689669
       type: {class: StringConstantValue, ns: D_Dev.PolymorphicValueSystem, asm: D-Dev.PolymorphicValueSystem}
       data:
-        _value: Apple
+        _value: Yellow Coffe
     - rid: 1932282429438689670
       type: {class: StringScriptableVariableValue, ns: D_Dev.PolymorphicValueSystem, asm: D-Dev.PolymorphicValueSystem}
       data:

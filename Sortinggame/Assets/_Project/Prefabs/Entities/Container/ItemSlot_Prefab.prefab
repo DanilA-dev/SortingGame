@@ -171,6 +171,7 @@ GameObject:
   - component: {fileID: 8589640050056674887}
   - component: {fileID: 7118656014821705838}
   - component: {fileID: 6074312687409424883}
+  - component: {fileID: 1850185801624026552}
   m_Layer: 0
   m_Name: ItemSlot_Prefab
   m_TagString: Untagged
@@ -401,6 +402,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1850185801624026552}
+        m_TargetAssemblyTypeName: D_Dev.CurrencySystem.CurrencyInfoSetter, D-Dev.CurrencySystem
+        m_MethodName: TryDeposit
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   references:
     version: 2
     RefIds:
@@ -438,6 +451,66 @@ MonoBehaviour:
   m_EditorClassIdentifier: D-Dev.TagSystem::D_Dev.TagSystem.TagComponent
   _tags:
   - {fileID: 11400000, guid: e58f48d373dacbc4d9512fa242efb5be, type: 2}
+--- !u!114 &1850185801624026552
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2834025505702617631}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f44397fa10aa4b9c8f95cb2f3454640b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: D-Dev.CurrencySystem::D_Dev.CurrencySystem.CurrencyInfoSetter
+  _currencyInfo:
+    rid: 5687120576038830089
+  _amount:
+    rid: 5687120576064786018
+  _setOnEnable: 0
+  _startCurrencySetAction: 0
+  _useFlyingAnimation: 0
+  _flyingAnimationEventName:
+    rid: 5687120576038830088
+  _from:
+    rid: -2
+  _to:
+    rid: -2
+  OnDepositSuccess:
+    m_PersistentCalls:
+      m_Calls: []
+  OnDepositFailed:
+    m_PersistentCalls:
+      m_Calls: []
+  OnWithdrawSuccess:
+    m_PersistentCalls:
+      m_Calls: []
+  OnWithdrawFailed:
+    m_PersistentCalls:
+      m_Calls: []
+  OnSetSuccess:
+    m_PersistentCalls:
+      m_Calls: []
+  OnSetFailed:
+    m_PersistentCalls:
+      m_Calls: []
+  references:
+    version: 2
+    RefIds:
+    - rid: -2
+      type: {class: , ns: , asm: }
+    - rid: 5687120576038830088
+      type: {class: StringConstantValue, ns: D_Dev.PolymorphicValueSystem, asm: D-Dev.PolymorphicValueSystem}
+      data:
+        _value: 
+    - rid: 5687120576038830089
+      type: {class: CurrencyInfoConstantValue, ns: D_Dev.CurrencySystem.Extensions, asm: D-Dev.CurrencySystem.CurrencyInfoValue}
+      data:
+        _value: {fileID: 11400000, guid: 6f916130eddbf9845867e27e5e4e7a67, type: 2}
+    - rid: 5687120576064786018
+      type: {class: IntScriptableVariableValue, ns: D_Dev.PolymorphicValueSystem, asm: D-Dev.PolymorphicValueSystem}
+      data:
+        _variable: {fileID: 11400000, guid: 01ff7ee2f06e1fe45a0434a587a259e9, type: 2}
 --- !u!1 &3603060487694077794
 GameObject:
   m_ObjectHideFlags: 0

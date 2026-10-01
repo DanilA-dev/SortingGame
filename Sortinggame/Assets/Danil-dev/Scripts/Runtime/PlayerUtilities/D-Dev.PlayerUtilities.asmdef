@@ -8,7 +8,8 @@
         "GUID:e1891072a17d62e42bb8c10c14d59156",
         "GUID:6a50307629a80fd4090ca6d93dbe1f7e",
         "GUID:adf3757dee9f5eb4580f73a8545c7603",
-        "D-Dev.MovementHandler"
+        "D-Dev.MovementHandler",
+        "GUID:75469ad4d38634e559750d17036d5f7c"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

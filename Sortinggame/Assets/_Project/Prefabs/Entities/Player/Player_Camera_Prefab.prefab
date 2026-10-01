@@ -193,6 +193,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _inputRouter: {fileID: 11400000, guid: b299fe18b864a6a448ae3ab79bd7d358, type: 2}
+  _lookAction: {fileID: 3100268157921543758, guid: 5874c51c9acab224ab9f2bff4257f317, type: 3}
   _cameraRoot:
     rid: 3180810780262006858
   _topAngle: 80

@@ -241,6 +241,126 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!1 &288741470
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 288741471}
+  - component: {fileID: 288741472}
+  m_Layer: 0
+  m_Name: OnSfxChanged
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &288741471
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 288741470}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1610477307}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &288741472
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 288741470}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8015ee6e8b8d38647a2610f916d54bf0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: D-Dev.ScriptableVariables::D_Dev.ScriptableVariables.Listeners.FloatScriptableVariableListener
+  _variable: {fileID: 11400000, guid: f461f289454ef02498dae61e0d114b3e, type: 2}
+  OnValueChanged:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1610477306}
+        m_TargetAssemblyTypeName: D_Dev.AudioSystem.AudioManager, D-Dev.AudioSystem
+        m_MethodName: SetSFXVolume
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!1 &639588530
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 639588531}
+  - component: {fileID: 639588532}
+  m_Layer: 0
+  m_Name: OnMusicChanged
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &639588531
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 639588530}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1610477307}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &639588532
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 639588530}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8015ee6e8b8d38647a2610f916d54bf0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: D-Dev.ScriptableVariables::D_Dev.ScriptableVariables.Listeners.FloatScriptableVariableListener
+  _variable: {fileID: 11400000, guid: 56bd940c94ac3684eb93941677840c40, type: 2}
+  OnValueChanged:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1610477306}
+        m_TargetAssemblyTypeName: D_Dev.AudioSystem.AudioManager, D-Dev.AudioSystem
+        m_MethodName: SetMusicVolume
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &673027737
 GameObject:
   m_ObjectHideFlags: 0
@@ -438,6 +558,234 @@ MonoBehaviour:
           m_PersistentCalls:
             m_Calls: []
         _menuInfo: {fileID: 11400000, guid: 57ec14dd611fcfb4784faf49f4938c62, type: 2}
+--- !u!1 &1067671695
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1067671697}
+  - component: {fileID: 1067671696}
+  m_Layer: 0
+  m_Name: InputProvider
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1067671696
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1067671695}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 511fd93b676d4a92a72a052fd5086da3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _inputRouter: {fileID: 11400000, guid: b299fe18b864a6a448ae3ab79bd7d358, type: 2}
+  _bindings:
+  - rid: 1932282358920643379
+  - rid: 1932282358920643436
+  - rid: 1932282358920643439
+  - rid: 1932282381251117538
+  - rid: 5687120579038549815
+  references:
+    version: 2
+    RefIds:
+    - rid: 1932282358920643379
+      type: {class: MoveInputBinding, ns: D_Dev.PlayerStateController.InputBindings, asm: D-Dev.PlayerUtilities}
+      data:
+        _action: {fileID: 2169888456485677360, guid: 5874c51c9acab224ab9f2bff4257f317, type: 3}
+        _output:
+          rid: 1932282358920643381
+    - rid: 1932282358920643381
+      type: {class: Vector3ScriptableVariableValue, ns: D_Dev.PolymorphicValueSystem, asm: D-Dev.PolymorphicValueSystem}
+      data:
+        _variable: {fileID: 11400000, guid: f3be20f8f595e724e9c03c2a008351ea, type: 2}
+    - rid: 1932282358920643436
+      type: {class: ButtonInputBinding, ns: D_Dev.PlayerStateController.InputBindings, asm: D-Dev.PlayerUtilities}
+      data:
+        _action: {fileID: -1643155470280428031, guid: 5874c51c9acab224ab9f2bff4257f317, type: 3}
+        _output:
+          rid: 1932282358920643438
+    - rid: 1932282358920643438
+      type: {class: BoolScriptableVariableValue, ns: D_Dev.PolymorphicValueSystem, asm: D-Dev.PolymorphicValueSystem}
+      data:
+        _variable: {fileID: 11400000, guid: dc56fb487ac1c9c468a262976d47fcd0, type: 2}
+    - rid: 1932282358920643439
+      type: {class: ButtonInputBinding, ns: D_Dev.PlayerStateController.InputBindings, asm: D-Dev.PlayerUtilities}
+      data:
+        _action: {fileID: 3793283188878539746, guid: 5874c51c9acab224ab9f2bff4257f317, type: 3}
+        _output:
+          rid: 1932282358920643440
+    - rid: 1932282358920643440
+      type: {class: BoolScriptableVariableValue, ns: D_Dev.PolymorphicValueSystem, asm: D-Dev.PolymorphicValueSystem}
+      data:
+        _variable: {fileID: 11400000, guid: dc56fb487ac1c9c468a262976d47fcd0, type: 2}
+    - rid: 1932282381251117538
+      type: {class: ButtonInputBinding, ns: D_Dev.PlayerStateController.InputBindings, asm: D-Dev.PlayerUtilities}
+      data:
+        _action: {fileID: -6725285695094564783, guid: 5874c51c9acab224ab9f2bff4257f317, type: 3}
+        _output:
+          rid: 1932282381251117539
+    - rid: 1932282381251117539
+      type: {class: BoolScriptableVariableValue, ns: D_Dev.PolymorphicValueSystem, asm: D-Dev.PolymorphicValueSystem}
+      data:
+        _variable: {fileID: 11400000, guid: ada1464b372107a4d8240d786f50079b, type: 2}
+    - rid: 5687120579038549815
+      type: {class: ButtonInputBinding, ns: D_Dev.PlayerStateController.InputBindings, asm: D-Dev.PlayerUtilities}
+      data:
+        _action: {fileID: 4267602249195428043, guid: 5874c51c9acab224ab9f2bff4257f317, type: 3}
+        _output:
+          rid: 5687120579038549816
+    - rid: 5687120579038549816
+      type: {class: BoolScriptableVariableValue, ns: D_Dev.PolymorphicValueSystem, asm: D-Dev.PolymorphicValueSystem}
+      data:
+        _variable: {fileID: 11400000, guid: 7a089637506d4d1428591c3ce5ba848c, type: 2}
+--- !u!4 &1067671697
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1067671695}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1425338423
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1425338427}
+  - component: {fileID: 1425338426}
+  - component: {fileID: 1425338425}
+  - component: {fileID: 1425338424}
+  m_Layer: 0
+  m_Name: TimeManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1425338424
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1425338423}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f668e1d2ccd84703abf3232383b61c35, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: D-Dev.EventBehaviours::D_Dev.CustomEventManager.Listeners.EventListener
+  _eventNameTypes:
+  - rid: 5687120578894888964
+  _raiseOnlyOnce: 0
+  _onRaised:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1425338426}
+        m_TargetAssemblyTypeName: D_Dev.TimeScaleManager.TimeScaleManager, D-Dev.TimeScaleManager
+        m_MethodName: RestorePrevious
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  _debug: 0
+  references:
+    version: 2
+    RefIds:
+    - rid: 5687120578894888964
+      type: {class: StringVariableEventNameType, ns: D_Dev.CustomEventManager, asm: D-Dev.EventBehaviours}
+      data:
+        _variable: {fileID: 11400000, guid: 01996f6a006f9b74787beb1e31607d16, type: 2}
+--- !u!114 &1425338425
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1425338423}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f668e1d2ccd84703abf3232383b61c35, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: D-Dev.EventBehaviours::D_Dev.CustomEventManager.Listeners.EventListener
+  _eventNameTypes:
+  - rid: 5687120578894888963
+  _raiseOnlyOnce: 0
+  _onRaised:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1425338426}
+        m_TargetAssemblyTypeName: D_Dev.TimeScaleManager.TimeScaleManager, D-Dev.TimeScaleManager
+        m_MethodName: Pause
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  _debug: 0
+  references:
+    version: 2
+    RefIds:
+    - rid: 5687120578894888963
+      type: {class: StringVariableEventNameType, ns: D_Dev.CustomEventManager, asm: D-Dev.EventBehaviours}
+      data:
+        _variable: {fileID: 11400000, guid: ed4d3517d9a54dc4491b37ed0916b9ab, type: 2}
+--- !u!114 &1425338426
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1425338423}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7d913116c526b240802a448ee137fb5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: D-Dev.TimeScaleManager::D_Dev.TimeScaleManager.TimeScaleManager
+  _dontDestroyOnLoad: 0
+  _createInstanceIfNotFound: 0
+--- !u!4 &1425338427
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1425338423}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1458020538
 GameObject:
   m_ObjectHideFlags: 0
@@ -616,7 +964,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: D-Dev.AudioSystem::D_Dev.AudioSystem.AudioManager
   _dontDestroyOnLoad: 0
   _createInstanceIfNotFound: 0
-  _mixerGroupVolumeConfigs: []
+  _mixerGroupVolumeConfigs:
+  - _volume: 0
+    _type: 0
+    _mixerGroup: {fileID: 3191221578424738355, guid: 1e1d9dfa7de0f2e498db43fef65e8668, type: 2}
+    _volumeProperty: SFXVolume
+    OnVolumeChanged:
+      m_PersistentCalls:
+        m_Calls: []
+  - _volume: 0
+    _type: 1
+    _mixerGroup: {fileID: 2209749935846998762, guid: 1e1d9dfa7de0f2e498db43fef65e8668, type: 2}
+    _volumeProperty: MusicVolume
+    OnVolumeChanged:
+      m_PersistentCalls:
+        m_Calls: []
   maxSimultaneousSFX: 10
   poolSize: 14
   musicPoolSize: 2
@@ -637,7 +999,9 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 288741471}
+  - {fileID: 639588531}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1955150563
@@ -680,4 +1044,6 @@ SceneRoots:
   - {fileID: 1610477307}
   - {fileID: 95405050}
   - {fileID: 1458020542}
+  - {fileID: 1425338427}
+  - {fileID: 1067671697}
   - {fileID: 1955150564}

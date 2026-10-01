@@ -2,6 +2,7 @@ using D_Dev.InputSystem;
 using D_Dev.PolymorphicValueSystem;
 using Sirenix.OdinInspector;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 namespace D_Dev.PlayerStateController
 {
@@ -12,6 +13,7 @@ namespace D_Dev.PlayerStateController
 
         [Title("Camera Settings")]
         [SerializeField] private InputRouter _inputRouter;
+        [SerializeField] private InputActionReference _lookAction;
         [SerializeReference] private PolymorphicValue<Transform> _cameraRoot;
         [SerializeField] private float _topAngle = 80f;
         [SerializeField] private float _botAngle = -80f;
@@ -19,7 +21,9 @@ namespace D_Dev.PlayerStateController
         [SerializeField] private float _mouseSensitivity = 5f;
         [SerializeField] private bool _isLocked;
 
+        private InputAction _resolvedLook;
         private Vector2 _currentLookInput;
+        private bool _isLookFromPointer;
 
         private float _yaw;
         private float _pitch;
@@ -38,14 +42,25 @@ namespace D_Dev.PlayerStateController
 
         private void Awake()
         {
-            if(_inputRouter != null)
-                _inputRouter.Look += OnLook;
+            if (_inputRouter == null)
+                return;
+
+            _resolvedLook = _inputRouter.Resolve(_lookAction);
+            if (_resolvedLook == null)
+                return;
+
+            _resolvedLook.performed += OnLook;
+            _resolvedLook.canceled += OnLook;
         }
 
         private void OnDestroy()
         {
-            if (_inputRouter != null)
-                _inputRouter.Look -= OnLook;
+            if (_resolvedLook == null)
+                return;
+
+            _resolvedLook.performed -= OnLook;
+            _resolvedLook.canceled -= OnLook;
+            _resolvedLook = null;
         }
 
         private void LateUpdate() => UpdateCameraRotation();
@@ -62,7 +77,11 @@ namespace D_Dev.PlayerStateController
 
         #region Listeners
 
-        private void OnLook(Vector2 delta) => _currentLookInput = delta;
+        private void OnLook(InputAction.CallbackContext context)
+        {
+            _isLookFromPointer = context.control?.device is Pointer;
+            _currentLookInput = context.ReadValue<Vector2>();
+        }
 
         #endregion
 
@@ -72,7 +91,7 @@ namespace D_Dev.PlayerStateController
         {
             if (_currentLookInput != Vector2.zero && !_isLocked)
             {
-                float multiplier = _inputRouter != null && _inputRouter.IsLookFromPointer
+                float multiplier = _isLookFromPointer
                     ? _mouseSensitivity
                     : _stickRotationSpeed * Time.deltaTime;
 
@@ -84,7 +103,7 @@ namespace D_Dev.PlayerStateController
             _pitch = Mathf.Clamp(_pitch, _botAngle, _topAngle);
             _cameraRoot.Value.rotation = Quaternion.Euler(_pitch, _yaw, 0.0f);
         }
-        
+
         #endregion
     }
 }

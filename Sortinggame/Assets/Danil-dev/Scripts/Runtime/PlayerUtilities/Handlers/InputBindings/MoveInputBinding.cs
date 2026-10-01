@@ -1,6 +1,6 @@
-using D_Dev.InputSystem;
 using D_Dev.PolymorphicValueSystem;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 namespace D_Dev.PlayerStateController.InputBindings
 {
@@ -15,18 +15,29 @@ namespace D_Dev.PlayerStateController.InputBindings
 
         #region Overrides
 
-        public override void Bind(InputRouter router) => router.Move += OnMove;
+        protected override void Subscribe(InputAction action)
+        {
+            action.performed += OnMove;
+            action.canceled += OnMove;
+        }
 
-        public override void Unbind(InputRouter router) => router.Move -= OnMove;
+        protected override void Unsubscribe(InputAction action)
+        {
+            action.performed -= OnMove;
+            action.canceled -= OnMove;
+        }
 
         #endregion
 
         #region Listeners
 
-        private void OnMove(Vector2 direction)
+        private void OnMove(InputAction.CallbackContext context)
         {
-            if (_output != null)
-                _output.Value = new Vector3(direction.x, 0f, direction.y);
+            if (_output == null)
+                return;
+
+            var direction = context.ReadValue<Vector2>();
+            _output.Value = new Vector3(direction.x, 0f, direction.y);
         }
 
         #endregion
