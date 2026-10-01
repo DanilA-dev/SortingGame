@@ -139,7 +139,7 @@ GameObject:
   - component: {fileID: 3081192699636536349}
   - component: {fileID: 7972157486538570731}
   - component: {fileID: 8508884085449069956}
-  - component: {fileID: 6839136796975774839}
+  - component: {fileID: 1139091536008046473}
   m_Layer: 6
   m_Name: BaseShelf_Prefab
   m_TagString: Untagged
@@ -234,13 +234,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Game.Core::_Project.Scripts.ItemSlotsContainer
   _itemInfo:
     rid: 1932282429385736887
-  _nameText: {fileID: 1029696136825786532}
-  _shelfName:
-    rid: 1932282407733952949
   _root: {fileID: 1595276444714553935}
   _isSorted:
     rid: 1932282392652021828
-  _maxSortedShelvesVariable: {fileID: 11400000, guid: bf2602c54c4b0394a8930050ecfd4f83, type: 2}
   _currentSortedShelvesVariable: {fileID: 11400000, guid: 038ac74480d25334bbceb4dea151c7a5, type: 2}
   OnAllSlotsTaken:
     m_PersistentCalls:
@@ -252,11 +248,6 @@ MonoBehaviour:
       type: {class: BoolConstantValue, ns: D_Dev.PolymorphicValueSystem, asm: D-Dev.PolymorphicValueSystem}
       data:
         _value: 0
-    - rid: 1932282407733952949
-      type: {class: StringRuntimeVariableValue, ns: D_Dev.RuntimeEntityVariables.Extensions, asm: D-Dev.RuntimeEntityVariablesContainer.Extensions}
-      data:
-        _variableID: {fileID: 11400000, guid: 25252b1a58a22724bbc53f5d257d864a, type: 2}
-        _runtimeEntityVariablesContainer: {fileID: 3081192699636536349}
     - rid: 1932282429385736887
       type: {class: EntityInfoBinderValue, ns: D_Dev.EntityInfoBinder, asm: D-Dev.EntityInfoBinder}
       data:
@@ -524,7 +515,7 @@ MonoBehaviour:
   hitFxFadeOutDuration: 0.25
   hitFxColor: {r: 1, g: 1, b: 1, a: 1}
   hitFxRadius: 0.5
---- !u!114 &6839136796975774839
+--- !u!114 &1139091536008046473
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -533,10 +524,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 3161137883221602463}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5cdc5300222145c393d90bbbb6ad5657, type: 3}
+  m_Script: {fileID: 11500000, guid: f201d421d6f2eb249b543f9b2d6f99f5, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: D-Dev.TagSystem::D_Dev.TagSystem.TagComponent
-  _tags: []
+  m_EditorClassIdentifier: D-Dev.RuntimeLists::D_Dev.RuntimeLists.Adders.GameObjectRuntimeListAdder
+  _list: {fileID: 11400000, guid: bed0955162859c94e8b56c9e418e3363, type: 2}
+  _item: {fileID: 3161137883221602463}
 --- !u!1 &5111444105534919719
 GameObject:
   m_ObjectHideFlags: 0
@@ -728,6 +720,7 @@ GameObject:
   - component: {fileID: 4033065764650232616}
   - component: {fileID: 4771599816282637439}
   - component: {fileID: 1029696136825786532}
+  - component: {fileID: 4914615877172071906}
   m_Layer: 6
   m_Name: ShelfTypeName
   m_TagString: Untagged
@@ -850,12 +843,12 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 4.7
+  m_fontSize: 3.5
   m_fontSizeBase: 4.7
   m_fontWeight: 400
-  m_enableAutoSizing: 0
-  m_fontSizeMin: 18
-  m_fontSizeMax: 72
+  m_enableAutoSizing: 1
+  m_fontSizeMin: 1
+  m_fontSizeMax: 3.5
   m_fontStyle: 0
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
@@ -898,6 +891,47 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_renderer: {fileID: 4771599816282637439}
   m_maskType: 0
+--- !u!114 &4914615877172071906
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6602004478745971997}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 678e115f7896459bb8e621b888393980, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: D-Dev.ValueViewProvider::D_Dev.ValueViewProvider.StringValueViewProvider
+  _text: {fileID: 1029696136825786532}
+  _format: 
+  _isAnimated: 0
+  _tweenAnimation:
+    _duration: 0
+    _delay: 0
+    _ease: 0
+    _ignoreTimeScale: 0
+    _loops: 0
+    _loopType: 0
+    OnStart:
+      m_PersistentCalls:
+        m_Calls: []
+    OnComplete:
+      m_PersistentCalls:
+        m_Calls: []
+    _startValue: 
+    _endValue: 
+    _text: {fileID: 0}
+  _value:
+    rid: 1932282432728334620
+  references:
+    version: 2
+    RefIds:
+    - rid: 1932282432728334620
+      type: {class: StringRuntimeVariableValue, ns: D_Dev.RuntimeEntityVariables.Extensions, asm: D-Dev.RuntimeEntityVariablesContainer.Extensions}
+      data:
+        _variableID: {fileID: 11400000, guid: 25252b1a58a22724bbc53f5d257d864a, type: 2}
+        _runtimeEntityVariablesContainer: {fileID: 3081192699636536349}
 --- !u!1001 &201208314665095285
 PrefabInstance:
   m_ObjectHideFlags: 0

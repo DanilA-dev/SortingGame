@@ -1056,6 +1056,22 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.x
       value: 0.28499997
       objectReference: {fileID: 0}
+    - target: {fileID: 4914615877172071906, guid: eab2d8a0549728f408bb1ce4138e50e3, type: 3}
+      propertyPath: 'managedReferences[1932282432926515299]'
+      value: D-Dev.PolymorphicValueSystem D_Dev.PolymorphicValueSystem.StringConcatValue
+      objectReference: {fileID: 0}
+    - target: {fileID: 4914615877172071906, guid: eab2d8a0549728f408bb1ce4138e50e3, type: 3}
+      propertyPath: 'managedReferences[1932282432926515300]'
+      value: D-Dev.PolymorphicValueSystem D_Dev.PolymorphicValueSystem.StringConstantValue
+      objectReference: {fileID: 0}
+    - target: {fileID: 4914615877172071906, guid: eab2d8a0549728f408bb1ce4138e50e3, type: 3}
+      propertyPath: managedReferences[1932282432926515300]._value
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4914615877172071906, guid: eab2d8a0549728f408bb1ce4138e50e3, type: 3}
+      propertyPath: managedReferences[1932282432926515299]._values.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6084364285242564248, guid: eab2d8a0549728f408bb1ce4138e50e3, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.24
@@ -1128,7 +1144,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7883913515463667058, guid: eab2d8a0549728f408bb1ce4138e50e3, type: 3}
     m_RemovedGameObjects:
     - {fileID: 6298983892825771367, guid: eab2d8a0549728f408bb1ce4138e50e3, type: 3}
     - {fileID: 5111444105534919719, guid: eab2d8a0549728f408bb1ce4138e50e3, type: 3}

@@ -33,7 +33,6 @@ namespace D_Dev.EntitySpawner
             foreach (var entitySpawnSettings in _spawnSettings)
                 entitySpawnSettings.DisposePool();
         }
-
         #endregion
 
         #region Public

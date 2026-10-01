@@ -26,8 +26,8 @@ namespace D_Dev.PolymorphicValueSystem.Setters
 
         public void SetValue()
         {
-            if(_valueToSet.Value == null ||
-               _resultValue.Value == null)
+            if(_valueToSet == null ||
+               _resultValue == null)
                 return;
             
             _valueToSet.Value = _resultValue.Value;

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using D_Dev.PolymorphicValueSystem;
 using UnityEngine;
 
@@ -66,6 +67,12 @@ namespace D_Dev.PositionRotationConfig
                 LocalDirection.Back => -_value.Value.forward,
                 _ => throw new ArgumentOutOfRangeException()
             };
+        }
+
+        protected override void OnGetGizmoPositions(List<Vector3> positions)
+        {
+            if (_value?.Value != null)
+                base.OnGetGizmoPositions(positions);
         }
 
         #endregion

@@ -112,6 +112,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -50
       objectReference: {fileID: 0}
+    - target: {fileID: 3012002596722111160, guid: 6b25c0ddc9021e84cafb0c0931529e6b, type: 3}
+      propertyPath: managedReferences[1932282429438689999]._variable
+      value: 
+      objectReference: {fileID: 11400000, guid: 4f5d8eb5ac38e85428271d3d97c40f58, type: 2}
     - target: {fileID: 4778282239120882618, guid: 6b25c0ddc9021e84cafb0c0931529e6b, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -144,6 +148,18 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6170445220450928255, guid: 6b25c0ddc9021e84cafb0c0931529e6b, type: 3}
+      propertyPath: _value
+      value: 1932282429438690002
+      objectReference: {fileID: 0}
+    - target: {fileID: 6170445220450928255, guid: 6b25c0ddc9021e84cafb0c0931529e6b, type: 3}
+      propertyPath: 'managedReferences[1932282429438690002]'
+      value: D-Dev.RuntimeLists.Extensions D_Dev.RuntimeLists.Extensions.RuntimeListCountValue
+      objectReference: {fileID: 0}
+    - target: {fileID: 6170445220450928255, guid: 6b25c0ddc9021e84cafb0c0931529e6b, type: 3}
+      propertyPath: managedReferences[1932282429438690002]._list
+      value: 
+      objectReference: {fileID: 11400000, guid: f77569b02ed12d546b49e1c63bc88958, type: 2}
     - target: {fileID: 7225553536525124861, guid: 6b25c0ddc9021e84cafb0c0931529e6b, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -314,6 +330,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -50
       objectReference: {fileID: 0}
+    - target: {fileID: 3012002596722111160, guid: 6b25c0ddc9021e84cafb0c0931529e6b, type: 3}
+      propertyPath: managedReferences[1932282429438689999]._variable
+      value: 
+      objectReference: {fileID: 11400000, guid: 038ac74480d25334bbceb4dea151c7a5, type: 2}
     - target: {fileID: 4778282239120882618, guid: 6b25c0ddc9021e84cafb0c0931529e6b, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -346,6 +366,18 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6170445220450928255, guid: 6b25c0ddc9021e84cafb0c0931529e6b, type: 3}
+      propertyPath: _value
+      value: 1932282429438690001
+      objectReference: {fileID: 0}
+    - target: {fileID: 6170445220450928255, guid: 6b25c0ddc9021e84cafb0c0931529e6b, type: 3}
+      propertyPath: 'managedReferences[1932282429438690001]'
+      value: D-Dev.RuntimeLists.Extensions D_Dev.RuntimeLists.Extensions.RuntimeListCountValue
+      objectReference: {fileID: 0}
+    - target: {fileID: 6170445220450928255, guid: 6b25c0ddc9021e84cafb0c0931529e6b, type: 3}
+      propertyPath: managedReferences[1932282429438690001]._list
+      value: 
+      objectReference: {fileID: 11400000, guid: bed0955162859c94e8b56c9e418e3363, type: 2}
     - target: {fileID: 7225553536525124861, guid: 6b25c0ddc9021e84cafb0c0931529e6b, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0

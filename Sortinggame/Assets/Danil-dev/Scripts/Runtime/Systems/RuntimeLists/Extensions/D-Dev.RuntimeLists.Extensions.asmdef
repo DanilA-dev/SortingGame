@@ -1,0 +1,17 @@
+{
+    "name": "D-Dev.RuntimeLists.Extensions",
+    "rootNamespace": "",
+    "references": [
+        "D-Dev.RuntimeLists",
+        "D-Dev.PolymorphicValueSystem"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

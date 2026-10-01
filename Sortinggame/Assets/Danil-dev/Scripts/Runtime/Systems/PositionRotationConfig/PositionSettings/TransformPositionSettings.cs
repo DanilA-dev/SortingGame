@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using D_Dev.PolymorphicValueSystem;
 using UnityEngine;
 
@@ -43,6 +44,12 @@ namespace D_Dev.PositionRotationConfig
             return _isLocal
                 ? _value.Value.localPosition
                 : _value.Value.position;
+        }
+
+        protected override void OnGetGizmoPositions(List<Vector3> positions)
+        {
+            if (_value?.Value != null)
+                positions.Add(_isLocal ? _value.Value.localPosition : _value.Value.position);
         }
 
         #endregion

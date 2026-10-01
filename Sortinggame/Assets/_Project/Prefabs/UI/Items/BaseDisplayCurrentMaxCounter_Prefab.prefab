@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4778282239120882618}
   - component: {fileID: 7097776666189628907}
   - component: {fileID: 4675288046055657598}
-  - component: {fileID: 8841831015086519416}
+  - component: {fileID: 6170445220450928255}
   m_Layer: 0
   m_Name: MaxText
   m_TagString: Untagged
@@ -138,7 +138,7 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
---- !u!114 &8841831015086519416
+--- !u!114 &6170445220450928255
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -147,10 +147,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 5558961886980354899}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eb66199dfdae4934ae6be174c399a716, type: 3}
+  m_Script: {fileID: 11500000, guid: 0e241e75fc6f4c86ad6e14b3acf60d0a, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: D-Dev.ScriptableVariables.Extensions::D_Dev.ScriptableVariables.Extensions.ViewProviders.IntVariableViewProvider
+  m_EditorClassIdentifier: D-Dev.ValueViewProvider::D_Dev.ValueViewProvider.IntValueViewProvider
   _text: {fileID: 4675288046055657598}
+  _format: 
   _isAnimated: 0
   _tweenAnimation:
     _duration: 0
@@ -168,8 +169,15 @@ MonoBehaviour:
     _startValue: 0
     _endValue: 0
     _text: {fileID: 0}
-  _format: 
-  _variable: {fileID: 0}
+  _value:
+    rid: 1932282429438690000
+  references:
+    version: 2
+    RefIds:
+    - rid: 1932282429438690000
+      type: {class: IntScriptableVariableValue, ns: D_Dev.PolymorphicValueSystem, asm: D-Dev.PolymorphicValueSystem}
+      data:
+        _variable: {fileID: 0}
 --- !u!1 &5681111173953582245
 GameObject:
   m_ObjectHideFlags: 0
@@ -611,7 +619,7 @@ GameObject:
   - component: {fileID: 4792906459734245601}
   - component: {fileID: 5686920243586096105}
   - component: {fileID: 3134840245296076935}
-  - component: {fileID: 8531665376462571435}
+  - component: {fileID: 3012002596722111160}
   m_Layer: 0
   m_Name: CurrentText
   m_TagString: Untagged
@@ -738,7 +746,7 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
---- !u!114 &8531665376462571435
+--- !u!114 &3012002596722111160
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -747,10 +755,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 8111529938844207820}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eb66199dfdae4934ae6be174c399a716, type: 3}
+  m_Script: {fileID: 11500000, guid: 0e241e75fc6f4c86ad6e14b3acf60d0a, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: D-Dev.ScriptableVariables.Extensions::D_Dev.ScriptableVariables.Extensions.ViewProviders.IntVariableViewProvider
+  m_EditorClassIdentifier: D-Dev.ValueViewProvider::D_Dev.ValueViewProvider.IntValueViewProvider
   _text: {fileID: 3134840245296076935}
+  _format: 
   _isAnimated: 0
   _tweenAnimation:
     _duration: 0
@@ -768,5 +777,12 @@ MonoBehaviour:
     _startValue: 0
     _endValue: 0
     _text: {fileID: 0}
-  _format: 
-  _variable: {fileID: 0}
+  _value:
+    rid: 1932282429438689999
+  references:
+    version: 2
+    RefIds:
+    - rid: 1932282429438689999
+      type: {class: IntScriptableVariableValue, ns: D_Dev.PolymorphicValueSystem, asm: D-Dev.PolymorphicValueSystem}
+      data:
+        _variable: {fileID: 0}

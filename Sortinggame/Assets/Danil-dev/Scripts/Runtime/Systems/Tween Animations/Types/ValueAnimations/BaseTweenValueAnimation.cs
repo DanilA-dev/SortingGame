@@ -12,7 +12,7 @@ namespace D_Dev.TweenAnimations
 
         [SerializeField] protected T _startValue;
         [SerializeField] protected T _endValue;
-        [SerializeField] protected TMPro.TextMeshProUGUI _text;
+        [SerializeField] protected TMPro.TMP_Text _text;
 
         #endregion
 
@@ -30,11 +30,13 @@ namespace D_Dev.TweenAnimations
             set => _endValue = value;
         }
 
-        public TMPro.TextMeshProUGUI Text
+        public TMPro.TMP_Text Text
         {
             get => _text;
             set => _text = value;
         }
+
+        public System.Func<T, string> Formatter { get; set; }
 
         #endregion
 
@@ -50,7 +52,7 @@ namespace D_Dev.TweenAnimations
             _ease = ease;
         }
 
-        public BaseTweenValueAnimation(TMPro.TextMeshProUGUI target, T startValue, T endValue, float duration, Ease ease = Ease.Linear)
+        public BaseTweenValueAnimation(TMPro.TMP_Text target, T startValue, T endValue, float duration, Ease ease = Ease.Linear)
             : this(startValue, endValue, duration, ease)
         {
             _text = target;
@@ -63,7 +65,7 @@ namespace D_Dev.TweenAnimations
         protected virtual void ApplyValue(T value)
         {
             if(_text != null)
-                _text.text = value.ToString();
+                _text.text = Formatter != null ? Formatter(value) : value.ToString();
         }
 
         public abstract override Tween Play();

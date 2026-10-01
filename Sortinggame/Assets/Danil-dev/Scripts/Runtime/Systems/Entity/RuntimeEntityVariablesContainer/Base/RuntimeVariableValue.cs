@@ -27,7 +27,9 @@ namespace D_Dev.RuntimeEntityVariables
         {
             get
             {
-                if (_cachedVariable == null && _runtimeEntityVariablesContainer != null)
+                if (_cachedVariable == null &&
+                    _runtimeEntityVariablesContainer != null &&
+                    _runtimeEntityVariablesContainer.IsInitialized)
                     _cachedVariable = _runtimeEntityVariablesContainer.GetVariable<TVariable>(_variableID);
 
                 return _cachedVariable;
@@ -89,6 +91,9 @@ namespace D_Dev.RuntimeEntityVariables
 
             _pendingContainer = null;
             BindVariable();
+
+            if (_subscribedVariable != null)
+                RaiseValueChanged(Value);
         }
 
         private void BindVariable()

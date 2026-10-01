@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using D_Dev.CoroutineManagerSystem;
 using D_Dev.CustomEventManager;
 using D_Dev.InteractableSystem;
@@ -15,7 +16,6 @@ namespace _Project.Scripts
 
         [Title("Base Settings")]
         [SerializeField] private Rigidbody _rigidbody;
-        [SerializeField] private Collider _collider;
         [SerializeReference] private PolymorphicValue<float> _sleepDelay = new FloatConstantValue();
         [SerializeReference] private PolymorphicValue<bool> _isSorted = new BoolConstantValue();
         [Space]
@@ -25,13 +25,13 @@ namespace _Project.Scripts
 
         [Space]
         [Title("Variables")]
-        [SerializeField] private IntScriptableVariable _maxSortedItemsVariable;
         [SerializeField] private IntScriptableVariable _currentSortedItemsVariable;
         [Space]
         [SerializeField] private StringScriptableVariable _onInteractStartEventName;
         [SerializeField] private StringScriptableVariable _onInteractStopEventName;
 
         private Coroutine _sleepRoutine;
+        private Collider _collider;
         
         #endregion
 
@@ -43,6 +43,11 @@ namespace _Project.Scripts
 
         #region Monobehaviour
 
+        private void Awake()
+        {
+            _collider = GetComponent<Collider>();
+        }
+
         private void Start()
         {
             if (_isSorted.Value)
@@ -51,7 +56,6 @@ namespace _Project.Scripts
                 return;
             }
 
-            _maxSortedItemsVariable.Value++;
             TryStartSleepLogic();
         }
 

@@ -165,6 +165,7 @@ GameObject:
   - component: {fileID: 242891225577765417}
   - component: {fileID: 686823432555963283}
   - component: {fileID: 8215673142027532397}
+  - component: {fileID: 6531395032627556600}
   m_Layer: 0
   m_Name: BaseItem_Prefab
   m_TagString: Untagged
@@ -219,7 +220,7 @@ MeshRenderer:
   m_SmallMeshCulling: 1
   m_ForceMeshLod: -1
   m_MeshLodSelectionBias: 0
-  m_RenderingLayerMask: 1
+  m_RenderingLayerMask: 2
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
@@ -426,7 +427,6 @@ MonoBehaviour:
         m_CallState: 2
   _debug: 0
   _rigidbody: {fileID: 2043890389173731899}
-  _collider: {fileID: 6963323781123029201}
   _sleepDelay:
     rid: 1932282358920643001
   _isSorted:
@@ -434,7 +434,6 @@ MonoBehaviour:
   _pushForce:
     rid: 1932282381251117618
   _forceMode: 1
-  _maxSortedItemsVariable: {fileID: 11400000, guid: 2796c3b1074879140832d73b1a8ddaba, type: 2}
   _currentSortedItemsVariable: {fileID: 11400000, guid: 4f5d8eb5ac38e85428271d3d97c40f58, type: 2}
   _onInteractStartEventName: {fileID: 11400000, guid: f0f67b96c95e1b04993d02fbb9a4772a, type: 2}
   _onInteractStopEventName: {fileID: 11400000, guid: b2229797fc4127c498ff5eecaf96be9a, type: 2}
@@ -739,6 +738,20 @@ MonoBehaviour:
   hitFxFadeOutDuration: 0.25
   hitFxColor: {r: 1, g: 1, b: 1, a: 1}
   hitFxRadius: 0.5
+--- !u!114 &6531395032627556600
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8830581081181559822}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f201d421d6f2eb249b543f9b2d6f99f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: D-Dev.RuntimeLists::D_Dev.RuntimeLists.Adders.GameObjectRuntimeListAdder
+  _list: {fileID: 11400000, guid: f77569b02ed12d546b49e1c63bc88958, type: 2}
+  _item: {fileID: 8830581081181559822}
 --- !u!1 &8830770510234374267
 GameObject:
   m_ObjectHideFlags: 0

@@ -7,7 +7,7 @@ namespace D_Dev.PolymorphicValueSystem
     {
         #region Fields
 
-        [NonSerialized] private Action<T> _onValueChanged;
+        private Action<T> _onValueChanged;
 
         #endregion
 

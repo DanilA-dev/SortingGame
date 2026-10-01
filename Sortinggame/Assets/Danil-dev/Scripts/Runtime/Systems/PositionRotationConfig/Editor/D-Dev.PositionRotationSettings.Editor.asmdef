@@ -1,0 +1,18 @@
+{
+    "name": "D-Dev.PositionRotationSettings.Editor",
+    "rootNamespace": "",
+    "references": [
+        "GUID:e281149ec50211a44bff4d8585edd25c"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

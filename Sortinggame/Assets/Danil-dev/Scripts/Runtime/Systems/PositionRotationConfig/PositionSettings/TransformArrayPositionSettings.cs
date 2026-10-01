@@ -1,4 +1,5 @@
-﻿using D_Dev.PolymorphicValueSystem;
+﻿using System.Collections.Generic;
+using D_Dev.PolymorphicValueSystem;
 using UnityEngine;
 
 namespace D_Dev.PositionRotationConfig
@@ -31,6 +32,16 @@ namespace D_Dev.PositionRotationConfig
             var currentPos = currentValues[_currentIndex];
             _currentIndex = (_currentIndex + 1) % currentValues.Length;
             return currentPos.position;
+        }
+
+        protected override void OnGetGizmoPositions(List<Vector3> positions)
+        {
+            if (_values?.Value == null)
+                return;
+
+            foreach (var value in _values.Value)
+                if (value != null)
+                    positions.Add(value.position);
         }
 
         #endregion
