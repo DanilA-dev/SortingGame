@@ -16,6 +16,8 @@ namespace _Project.Scripts
 
         [Title("Base Settings")]
         [SerializeField] private Rigidbody _rigidbody;
+        [SerializeField] private MeshRenderer _meshRenderer;
+        [SerializeField] private MeshFilter _meshFilter;
         [SerializeReference] private PolymorphicValue<float> _sleepDelay = new FloatConstantValue();
         [SerializeReference] private PolymorphicValue<bool> _isSorted = new BoolConstantValue();
         [Space]
@@ -59,6 +61,11 @@ namespace _Project.Scripts
             TryStartSleepLogic();
         }
 
+        private void OnDestroy()
+        {
+            DisableInstancing();
+        }
+
         private void TryStartSleepLogic()
         {
             RestartSleepRoutine();
@@ -74,6 +81,7 @@ namespace _Project.Scripts
             _rigidbody.isKinematic = true;
             _collider.enabled = false;
             _currentSortedItemsVariable.Value++;
+            EnableInstancing();
         }
 
         public void CancelPick()
@@ -100,6 +108,18 @@ namespace _Project.Scripts
             _sleepRoutine = null;
         }
 
+        private void EnableInstancing()
+        {
+            if (InstancedItemsRenderer.Instance != null)
+                InstancedItemsRenderer.Instance.Register(_meshRenderer, _meshFilter);
+        }
+
+        private void DisableInstancing()
+        {
+            if (InstancedItemsRenderer.Instance != null)
+                InstancedItemsRenderer.Instance.Unregister(_meshRenderer);
+        }
+
         #endregion
 
         #region Coroutines
@@ -109,11 +129,24 @@ namespace _Project.Scripts
             yield return CoroutineManager.Wait(_sleepDelay.Value);
             _rigidbody.isKinematic = true;
             _sleepRoutine = null;
+            if (!IsFocused)
+                EnableInstancing();
         }
 
         #endregion
-        
+
         #region Overrides
+
+        protected override void OnFocus(GameObject interactor)
+        {
+            DisableInstancing();
+        }
+
+        protected override void OnUnfocus(GameObject interactor)
+        {
+            if (!IsPicked && _sleepRoutine == null && _rigidbody.isKinematic)
+                EnableInstancing();
+        }
 
         protected override void OnInteract(GameObject interactor)
         {
@@ -121,6 +154,7 @@ namespace _Project.Scripts
                 return;
             
             IsPicked = true;
+            DisableInstancing();
             StopSleepRoutine();
             if (!_rigidbody.isKinematic)
             {

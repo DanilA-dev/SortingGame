@@ -138,7 +138,7 @@ namespace _Project.Scripts
 
         private void HideView()
         {
-            _meshFilter.mesh = null;
+            _meshFilter.sharedMesh = null;
             _meshRenderer.sharedMaterial = null;
         }
         
@@ -153,7 +153,7 @@ namespace _Project.Scripts
                 return;
             }
 
-            _meshFilter.mesh = _activeItemMeshFilter.mesh;
+            _meshFilter.sharedMesh = _activeItemMeshFilter.sharedMesh;
         }
 
         #endregion
