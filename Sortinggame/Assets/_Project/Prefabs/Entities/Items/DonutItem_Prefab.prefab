@@ -15,11 +15,11 @@ PrefabInstance:
     - target: {fileID: 4798141874339998742, guid: 20645e136940c6b4a8caa63c41ed75ef, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: a581149c8bd333843be708f68f52049c, type: 2}
+      objectReference: {fileID: 2100000, guid: a581c8ddc0ea4aa4ea506985e2bc704c, type: 2}
     - target: {fileID: 6010130360636563255, guid: 20645e136940c6b4a8caa63c41ed75ef, type: 3}
       propertyPath: m_Mesh
       value: 
-      objectReference: {fileID: -227272712135852155, guid: ce4799f8aab93e141a1915a2ffe17a8d, type: 3}
+      objectReference: {fileID: 8114702087847586212, guid: 8ef3b382fd722be41a920384dc563bfc, type: 3}
     - target: {fileID: 6963323781123029201, guid: 20645e136940c6b4a8caa63c41ed75ef, type: 3}
       propertyPath: m_Radius
       value: 0.09

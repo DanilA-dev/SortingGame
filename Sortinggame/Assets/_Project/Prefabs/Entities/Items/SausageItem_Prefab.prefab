@@ -15,11 +15,11 @@ PrefabInstance:
     - target: {fileID: 4798141874339998742, guid: 20645e136940c6b4a8caa63c41ed75ef, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: a581149c8bd333843be708f68f52049c, type: 2}
+      objectReference: {fileID: 2100000, guid: 30c5e465dc21c534bada8d020bae91f4, type: 2}
     - target: {fileID: 6010130360636563255, guid: 20645e136940c6b4a8caa63c41ed75ef, type: 3}
       propertyPath: m_Mesh
       value: 
-      objectReference: {fileID: -8930983086252291749, guid: 5a7fa29667a546340a11fa75e4d282f2, type: 3}
+      objectReference: {fileID: 8225184976386512288, guid: 3bc9d63909ed48241b8846cf2fdef9ea, type: 3}
     - target: {fileID: 6963323781123029201, guid: 20645e136940c6b4a8caa63c41ed75ef, type: 3}
       propertyPath: m_Radius
       value: 0.09
@@ -121,7 +121,7 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.03
-  m_Height: 0.18971588
-  m_Direction: 2
-  m_Center: {x: -0.0000009536743, y: 0.02094222, z: 0}
+  m_Radius: 0.08624473
+  m_Height: 0.57681197
+  m_Direction: 0
+  m_Center: {x: -0.0016551912, y: 0.07718694, z: 0}
