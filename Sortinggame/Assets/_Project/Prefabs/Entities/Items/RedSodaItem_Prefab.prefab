@@ -16,6 +16,30 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 6bd9b20be8582274d9052dba0c2245b4, type: 2}
+    - target: {fileID: 4850069839852230955, guid: 20645e136940c6b4a8caa63c41ed75ef, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4850069839852230955, guid: 20645e136940c6b4a8caa63c41ed75ef, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4850069839852230955, guid: 20645e136940c6b4a8caa63c41ed75ef, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4850069839852230955, guid: 20645e136940c6b4a8caa63c41ed75ef, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4850069839852230955, guid: 20645e136940c6b4a8caa63c41ed75ef, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4850069839852230955, guid: 20645e136940c6b4a8caa63c41ed75ef, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6010130360636563255, guid: 20645e136940c6b4a8caa63c41ed75ef, type: 3}
       propertyPath: m_Mesh
       value: 
@@ -32,6 +56,10 @@ PrefabInstance:
       propertyPath: _entityInfo
       value: 
       objectReference: {fileID: 11400000, guid: 79b6a69fced43624e9fae8b3c58d7002, type: 2}
+    - target: {fileID: 7293211538275626967, guid: 20645e136940c6b4a8caa63c41ed75ef, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -1444473512212570541, guid: 607d23d70adf73242a60ddb3ae32f6f6, type: 3}
     - target: {fileID: 7790156376496395155, guid: 20645e136940c6b4a8caa63c41ed75ef, type: 3}
       propertyPath: m_LocalScale.x
       value: 1
@@ -84,6 +112,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8215673142027532397, guid: 20645e136940c6b4a8caa63c41ed75ef, type: 3}
+      propertyPath: rmsCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8506885365720382400, guid: 20645e136940c6b4a8caa63c41ed75ef, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 6bd9b20be8582274d9052dba0c2245b4, type: 2}
     - target: {fileID: 8830581081181559822, guid: 20645e136940c6b4a8caa63c41ed75ef, type: 3}
       propertyPath: m_Name
       value: RedSodaItem_Prefab
@@ -121,7 +157,7 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.049155034
-  m_Height: 0.3699004
+  m_Radius: 0.055647127
+  m_Height: 0.3790928
   m_Direction: 2
-  m_Center: {x: 0.0000047683716, y: 0.00000023841858, z: -0.014568031}
+  m_Center: {x: 0.0000047683716, y: 0.0036771595, z: -0.02100265}

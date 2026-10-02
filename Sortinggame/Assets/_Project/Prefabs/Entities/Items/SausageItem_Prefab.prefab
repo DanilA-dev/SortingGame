@@ -32,6 +32,10 @@ PrefabInstance:
       propertyPath: _entityInfo
       value: 
       objectReference: {fileID: 11400000, guid: feceab2397e88b34fabff915e8fad72b, type: 2}
+    - target: {fileID: 7293211538275626967, guid: 20645e136940c6b4a8caa63c41ed75ef, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 8225184976386512288, guid: 3bc9d63909ed48241b8846cf2fdef9ea, type: 3}
     - target: {fileID: 7790156376496395155, guid: 20645e136940c6b4a8caa63c41ed75ef, type: 3}
       propertyPath: m_LocalScale.x
       value: 1
@@ -84,6 +88,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8215673142027532397, guid: 20645e136940c6b4a8caa63c41ed75ef, type: 3}
+      propertyPath: rmsCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8506885365720382400, guid: 20645e136940c6b4a8caa63c41ed75ef, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 30c5e465dc21c534bada8d020bae91f4, type: 2}
     - target: {fileID: 8830581081181559822, guid: 20645e136940c6b4a8caa63c41ed75ef, type: 3}
       propertyPath: m_Name
       value: SausageItem_Prefab
@@ -121,7 +133,7 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.08624473
-  m_Height: 0.57681197
+  m_Radius: 0.07025358
+  m_Height: 0.45046794
   m_Direction: 0
-  m_Center: {x: -0.0016551912, y: 0.07718694, z: 0}
+  m_Center: {x: -0.0016551912, y: 0.06119579, z: 0}

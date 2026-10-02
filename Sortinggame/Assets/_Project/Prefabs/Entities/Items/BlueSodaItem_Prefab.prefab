@@ -16,6 +16,18 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: a581149c8bd333843be708f68f52049c, type: 2}
+    - target: {fileID: 4850069839852230955, guid: 20645e136940c6b4a8caa63c41ed75ef, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4850069839852230955, guid: 20645e136940c6b4a8caa63c41ed75ef, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4850069839852230955, guid: 20645e136940c6b4a8caa63c41ed75ef, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6010130360636563255, guid: 20645e136940c6b4a8caa63c41ed75ef, type: 3}
       propertyPath: m_Mesh
       value: 
@@ -32,6 +44,10 @@ PrefabInstance:
       propertyPath: _entityInfo
       value: 
       objectReference: {fileID: 11400000, guid: 01c5186a64dace048b60e27b40749804, type: 2}
+    - target: {fileID: 7293211538275626967, guid: 20645e136940c6b4a8caa63c41ed75ef, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -3364214537823830014, guid: 718b09cddb7cf474585658784407aee8, type: 3}
     - target: {fileID: 7790156376496395155, guid: 20645e136940c6b4a8caa63c41ed75ef, type: 3}
       propertyPath: m_LocalScale.x
       value: 1
@@ -84,6 +100,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8215673142027532397, guid: 20645e136940c6b4a8caa63c41ed75ef, type: 3}
+      propertyPath: rmsCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8506885365720382400, guid: 20645e136940c6b4a8caa63c41ed75ef, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: a581149c8bd333843be708f68f52049c, type: 2}
     - target: {fileID: 8830581081181559822, guid: 20645e136940c6b4a8caa63c41ed75ef, type: 3}
       propertyPath: m_Name
       value: BlueSodaItem_Prefab
@@ -121,5 +145,5 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.09864882, y: 0.14671111, z: 0.10319693}
-  m_Center: {x: 0.0019944757, y: 0.07351357, z: 0.0022301301}
+  m_Size: {x: 0.15429181, y: 0.22123986, z: 0.1660851}
+  m_Center: {x: 0.0019944757, y: 0.110777944, z: 0.0022301301}

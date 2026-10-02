@@ -320,6 +320,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e2094cba49287d4aba7727be758268d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Game.Core::_Project.Scripts.InstancedItemsRenderer
+  _dontDestroyOnLoad: 1
+  _createInstanceIfNotFound: 1
   _drawBounds:
     m_Center: {x: 0, y: 0, z: 0}
     m_Extent: {x: 200, y: 200, z: 200}
@@ -346,6 +348,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7282302099893938, guid: 904105cf8a1f5ce43a0bc11b9b5ff4dc, type: 3}
+      propertyPath: m_fontSize
+      value: 2.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1649998574977379128, guid: 904105cf8a1f5ce43a0bc11b9b5ff4dc, type: 3}
+      propertyPath: m_fontSize
+      value: 2.1
+      objectReference: {fileID: 0}
     - target: {fileID: 2298425154715164223, guid: 904105cf8a1f5ce43a0bc11b9b5ff4dc, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 50
@@ -354,9 +364,37 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2704569546392364968, guid: 904105cf8a1f5ce43a0bc11b9b5ff4dc, type: 3}
+      propertyPath: m_fontSize
+      value: 2.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2919986546277087667, guid: 904105cf8a1f5ce43a0bc11b9b5ff4dc, type: 3}
+      propertyPath: m_fontSize
+      value: 2.1
+      objectReference: {fileID: 0}
     - target: {fileID: 3358421487402490099, guid: 904105cf8a1f5ce43a0bc11b9b5ff4dc, type: 3}
       propertyPath: managedReferences[1932282429438689800]._boxSize.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3590256084667001474, guid: 904105cf8a1f5ce43a0bc11b9b5ff4dc, type: 3}
+      propertyPath: m_fontSize
+      value: 2.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4206188508201564754, guid: 904105cf8a1f5ce43a0bc11b9b5ff4dc, type: 3}
+      propertyPath: m_fontSize
+      value: 2.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4477717373839568123, guid: 904105cf8a1f5ce43a0bc11b9b5ff4dc, type: 3}
+      propertyPath: m_fontSize
+      value: 2.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5976123429847748845, guid: 904105cf8a1f5ce43a0bc11b9b5ff4dc, type: 3}
+      propertyPath: m_fontSize
+      value: 2.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7619070669228650347, guid: 904105cf8a1f5ce43a0bc11b9b5ff4dc, type: 3}
+      propertyPath: m_fontSize
+      value: 2.1
       objectReference: {fileID: 0}
     - target: {fileID: 7847874336084560758, guid: 904105cf8a1f5ce43a0bc11b9b5ff4dc, type: 3}
       propertyPath: m_LocalPosition.x

@@ -814,7 +814,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Game.Core::_Project.Scripts.PickedItemsContainer
   _rootPoint: {fileID: 5474812981895806397}
-  _itemStep: {x: 0, y: 0.2, z: 0}
   _absoluteMaxCapaicty:
     rid: 1932282386981061114
   _currentMaxCapacity:
@@ -822,6 +821,8 @@ MonoBehaviour:
   _currentItemsAmount:
     rid: 1932282386981061171
   _onItemInteractStartEventName: {fileID: 11400000, guid: f0f67b96c95e1b04993d02fbb9a4772a, type: 2}
+  _itemPickLocalRotationId: {fileID: 11400000, guid: 4d063e45151c87b44a3bebc8295d9cf9, type: 2}
+  _itemPickStepVariableId: {fileID: 11400000, guid: b214d14935129e741ad4ca880893a933, type: 2}
   _selectedItem:
     rid: 1932282386981060903
   _duration:
@@ -833,13 +834,49 @@ MonoBehaviour:
   _jumpEase: 18
   OnFullCapacity:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 66463130735523875}
+        m_TargetAssemblyTypeName: D_Dev.CustomEventManager.EventInvoker, D-Dev.EventBehaviours
+        m_MethodName: Raise
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   OnItemPicked:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 6310178730646501804}
+        m_TargetAssemblyTypeName: D_Dev.AudioSystem.AudioPlayer, D-Dev.AudioSystem
+        m_MethodName: Play
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   OnItemDropped:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2901340620052886826}
+        m_TargetAssemblyTypeName: D_Dev.AudioSystem.AudioPlayer, D-Dev.AudioSystem
+        m_MethodName: Play
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   references:
     version: 2
     RefIds:
@@ -1089,6 +1126,39 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!1 &2739311377954848113
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8740145613627193588}
+  m_Layer: 3
+  m_Name: SFX
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8740145613627193588
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2739311377954848113}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 8450843166290580241}
+  - {fileID: 377007139325199408}
+  m_Father: {fileID: 7624906871845726300}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3433429229398327313
 GameObject:
   m_ObjectHideFlags: 0
@@ -1218,6 +1288,7 @@ Transform:
   - {fileID: 3397705229956267384}
   - {fileID: 907784217545572169}
   - {fileID: 3621044774616372212}
+  - {fileID: 8740145613627193588}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!143 &5824734601842318458
@@ -1511,6 +1582,76 @@ MonoBehaviour:
       type: {class: StringVariableEventNameType, ns: D_Dev.CustomEventManager, asm: D-Dev.EventBehaviours}
       data:
         _variable: {fileID: 11400000, guid: 8e9d444533cf6f64fab303544bc41835, type: 2}
+--- !u!1 &4309753313566023115
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 377007139325199408}
+  - component: {fileID: 2901340620052886826}
+  m_Layer: 0
+  m_Name: DropSFX
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &377007139325199408
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4309753313566023115}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.29999998, y: 0.29999998, z: 0.29999998}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8740145613627193588}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2901340620052886826
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4309753313566023115}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 780e16cc01d944b59c920bde2d38e0db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: D-Dev.AudioSystem::D_Dev.AudioSystem.AudioPlayer
+  _audioConfigs:
+  - _audioConfigName: {fileID: 0}
+    _soundMixerGroup: {fileID: 3191221578424738355, guid: 1e1d9dfa7de0f2e498db43fef65e8668, type: 2}
+    _mixerGroupType: 0
+    _routeThroughManager: 0
+    _priority: 10
+    _clip: {fileID: 0}
+    _isRandomClip: 1
+    _clips:
+    - {fileID: 8300000, guid: 0ace252a448cd2b4e826c1f966bc0b4f, type: 3}
+    - {fileID: 8300000, guid: fc76a21af7a1e3347b3c30f749d4a909, type: 3}
+    _volume: 0.5
+    _pitch: 1
+    _isRandomVolume: 0
+    _isRandomPitch: 1
+    _minVolume: 0
+    _maxVolume: 0
+    _minPitch: 0.85
+    _maxPitch: 1
+    _spatialBlend: 0
+    _fadeTime: 0
+    _delayType: 0
+    _delay: 0
+    _scheduledTime: 0
+    _playOnAwake: 0
+    _isLooping: 0
 --- !u!1 &5908720655796975918
 GameObject:
   m_ObjectHideFlags: 0
@@ -1541,8 +1682,167 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2280727447611546628}
+  - {fileID: 8443917908369301350}
   m_Father: {fileID: 7624906871845726300}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &6757496935446282390
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8443917908369301350}
+  m_Layer: 3
+  m_Name: Invokers
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8443917908369301350
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6757496935446282390}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 398902036323717873}
+  m_Father: {fileID: 3621044774616372212}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &6970600752390463904
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8450843166290580241}
+  - component: {fileID: 6310178730646501804}
+  m_Layer: 0
+  m_Name: PickSFX
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8450843166290580241
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6970600752390463904}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.29999998, y: 0.29999998, z: 0.29999998}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8740145613627193588}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6310178730646501804
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6970600752390463904}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 780e16cc01d944b59c920bde2d38e0db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: D-Dev.AudioSystem::D_Dev.AudioSystem.AudioPlayer
+  _audioConfigs:
+  - _audioConfigName: {fileID: 0}
+    _soundMixerGroup: {fileID: 3191221578424738355, guid: 1e1d9dfa7de0f2e498db43fef65e8668, type: 2}
+    _mixerGroupType: 0
+    _routeThroughManager: 0
+    _priority: 10
+    _clip: {fileID: 0}
+    _isRandomClip: 1
+    _clips:
+    - {fileID: 8300000, guid: 3248e14297e40b847a66d2b5736971ca, type: 3}
+    - {fileID: 8300000, guid: d89e3cd557ec43d4baff79a6306a8248, type: 3}
+    _volume: 0.5
+    _pitch: 1
+    _isRandomVolume: 0
+    _isRandomPitch: 1
+    _minVolume: 0
+    _maxVolume: 0
+    _minPitch: 0.85
+    _maxPitch: 1
+    _spatialBlend: 0
+    _fadeTime: 0
+    _delayType: 0
+    _delay: 0
+    _scheduledTime: 0
+    _playOnAwake: 0
+    _isLooping: 0
+--- !u!1 &8526762014091022092
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 398902036323717873}
+  - component: {fileID: 66463130735523875}
+  m_Layer: 3
+  m_Name: OnSlotsLimitReached
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &398902036323717873
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8526762014091022092}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8443917908369301350}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &66463130735523875
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8526762014091022092}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55962e55d7934bfcaf9652b09ecb0f6f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: D-Dev.EventBehaviours::D_Dev.CustomEventManager.EventInvoker
+  _eventNameTypes:
+  - rid: 5687120606234417552
+  _invokeOnStart: 0
+  _invokeOnlyOnce: 0
+  _debug: 0
+  references:
+    version: 2
+    RefIds:
+    - rid: 5687120606234417552
+      type: {class: StringVariableEventNameType, ns: D_Dev.CustomEventManager, asm: D-Dev.EventBehaviours}
+      data:
+        _variable: {fileID: 11400000, guid: 79761f63de2c5574ea6a45ff0b235f37, type: 2}
 --- !u!1 &8662303737437014132
 GameObject:
   m_ObjectHideFlags: 0

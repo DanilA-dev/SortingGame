@@ -31,7 +31,11 @@ PrefabInstance:
     - target: {fileID: 6972069644614272644, guid: 20645e136940c6b4a8caa63c41ed75ef, type: 3}
       propertyPath: _entityInfo
       value: 
-      objectReference: {fileID: 11400000, guid: d3b2ac454cfcad7438d6a5bb6146a118, type: 2}
+      objectReference: {fileID: 11400000, guid: f2c8a178c10094e47852707f3d152f33, type: 2}
+    - target: {fileID: 7293211538275626967, guid: 20645e136940c6b4a8caa63c41ed75ef, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -5026693231773630160, guid: 38a4e6359cc6b7644a6067cc3e1af95e, type: 3}
     - target: {fileID: 7790156376496395155, guid: 20645e136940c6b4a8caa63c41ed75ef, type: 3}
       propertyPath: m_LocalScale.x
       value: 1
@@ -84,6 +88,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8215673142027532397, guid: 20645e136940c6b4a8caa63c41ed75ef, type: 3}
+      propertyPath: rmsCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8506885365720382400, guid: 20645e136940c6b4a8caa63c41ed75ef, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: b2d0678d40c554e41bd91fbce8d8e46e, type: 2}
     - target: {fileID: 8830581081181559822, guid: 20645e136940c6b4a8caa63c41ed75ef, type: 3}
       propertyPath: m_Name
       value: YellowCoffeItem_Prefab

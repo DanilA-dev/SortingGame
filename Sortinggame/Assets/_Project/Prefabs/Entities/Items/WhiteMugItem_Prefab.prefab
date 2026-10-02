@@ -32,6 +32,10 @@ PrefabInstance:
       propertyPath: _entityInfo
       value: 
       objectReference: {fileID: 11400000, guid: d3b2ac454cfcad7438d6a5bb6146a118, type: 2}
+    - target: {fileID: 7293211538275626967, guid: 20645e136940c6b4a8caa63c41ed75ef, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 3006895879536192516, guid: d96a0d2109f073e43853a58d64ef8ede, type: 3}
     - target: {fileID: 7790156376496395155, guid: 20645e136940c6b4a8caa63c41ed75ef, type: 3}
       propertyPath: m_LocalScale.x
       value: 1
@@ -84,6 +88,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8506885365720382400, guid: 20645e136940c6b4a8caa63c41ed75ef, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: b2d0678d40c554e41bd91fbce8d8e46e, type: 2}
     - target: {fileID: 8830581081181559822, guid: 20645e136940c6b4a8caa63c41ed75ef, type: 3}
       propertyPath: m_Name
       value: WhiteMugItem_Prefab

@@ -16,6 +16,18 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: a581149c8bd333843be708f68f52049c, type: 2}
+    - target: {fileID: 4850069839852230955, guid: 20645e136940c6b4a8caa63c41ed75ef, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4850069839852230955, guid: 20645e136940c6b4a8caa63c41ed75ef, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4850069839852230955, guid: 20645e136940c6b4a8caa63c41ed75ef, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6010130360636563255, guid: 20645e136940c6b4a8caa63c41ed75ef, type: 3}
       propertyPath: m_Mesh
       value: 
@@ -32,6 +44,10 @@ PrefabInstance:
       propertyPath: _entityInfo
       value: 
       objectReference: {fileID: 11400000, guid: 2e35e55e395f1cb4293c022872c1f3c1, type: 2}
+    - target: {fileID: 7293211538275626967, guid: 20645e136940c6b4a8caa63c41ed75ef, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 8683459183912069420, guid: 817480b76ae1b2d4fa3450081c4dd0e6, type: 3}
     - target: {fileID: 7790156376496395155, guid: 20645e136940c6b4a8caa63c41ed75ef, type: 3}
       propertyPath: m_LocalScale.x
       value: 1
@@ -84,6 +100,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8215673142027532397, guid: 20645e136940c6b4a8caa63c41ed75ef, type: 3}
+      propertyPath: rmsCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8506885365720382400, guid: 20645e136940c6b4a8caa63c41ed75ef, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: a581149c8bd333843be708f68f52049c, type: 2}
     - target: {fileID: 8830581081181559822, guid: 20645e136940c6b4a8caa63c41ed75ef, type: 3}
       propertyPath: m_Name
       value: YellowChipsItem_Prefab
@@ -121,5 +145,5 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.19947317, y: 0.108717315, z: 0.3496983}
-  m_Center: {x: 0.00590368, y: 0.048992228, z: 0.0011811107}
+  m_Size: {x: 0.20881864, y: 0.36852127, z: 0.10671621}
+  m_Center: {x: 0.004969135, y: 0.0031994283, z: -0.047415297}

@@ -32,6 +32,10 @@ PrefabInstance:
       propertyPath: _entityInfo
       value: 
       objectReference: {fileID: 11400000, guid: 4358e77c9e169e8419c1efe430668d34, type: 2}
+    - target: {fileID: 7293211538275626967, guid: 20645e136940c6b4a8caa63c41ed75ef, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 4397344855704175242, guid: 8e9fd9a3d92d47c4094ee55e337f374d, type: 3}
     - target: {fileID: 7790156376496395155, guid: 20645e136940c6b4a8caa63c41ed75ef, type: 3}
       propertyPath: m_LocalScale.x
       value: 1
@@ -84,9 +88,13 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8506885365720382400, guid: 20645e136940c6b4a8caa63c41ed75ef, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 6bd9b20be8582274d9052dba0c2245b4, type: 2}
     - target: {fileID: 8830581081181559822, guid: 20645e136940c6b4a8caa63c41ed75ef, type: 3}
       propertyPath: m_Name
-      value: SandwichItem_Prefab
+      value: RedBurgerItem_Prefab
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6963323781123029201, guid: 20645e136940c6b4a8caa63c41ed75ef, type: 3}

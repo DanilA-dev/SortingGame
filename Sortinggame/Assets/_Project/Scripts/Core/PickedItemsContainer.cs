@@ -2,7 +2,9 @@ using System.Collections.Generic;
 using System.Linq;
 using D_Dev.Base;
 using D_Dev.CustomEventManager;
+using D_Dev.EntityVariable.Types;
 using D_Dev.PolymorphicValueSystem;
+using D_Dev.RuntimeEntityVariables;
 using D_Dev.ScriptableVariables;
 using DG.Tweening;
 using Sirenix.OdinInspector;
@@ -17,12 +19,16 @@ namespace _Project.Scripts
 
         [Title("Base Settings")]
         [SerializeField] private Transform _rootPoint;
-        [SerializeField] private Vector3 _itemStep;
+        [SerializeField] private Vector3 _defaultItemStep = new(0, 0.3f, 0);
         [SerializeReference] private PolymorphicValue<int> _absoluteMaxCapaicty = new IntConstantValue();
         [SerializeReference] private PolymorphicValue<int> _currentMaxCapacity = new IntConstantValue();
         [SerializeReference] private PolymorphicValue<int> _currentItemsAmount = new IntConstantValue();
         [Title("Variables")]
         [SerializeField] private StringScriptableVariable _onItemInteractStartEventName;
+
+        [SerializeField] private StringScriptableVariable _itemPickLocalRotationId;
+        [SerializeField] private StringScriptableVariable _itemPickStepVariableId;
+        
         [SerializeReference] private PolymorphicValue<GameObject> _selectedItem = new GameObjectConstantValue();
 
         [FoldoutGroup("Item Animation Tween")]
@@ -43,7 +49,10 @@ namespace _Project.Scripts
         private List<GameObjectSlot> _createdSlots = new();
 
         private Dictionary<GameObjectSlot, IInteractable> _pickedItems = new();
+        private Dictionary<IInteractable, Vector3> _itemSteps = new();
 
+        private Vector3 _itemPickedLocalRotation;
+        
         #endregion
 
         #region Properties
@@ -159,7 +168,7 @@ namespace _Project.Scripts
                 GameObject newItemPoint = new GameObject("ItemStep");
                 var slot = newItemPoint.AddComponent<GameObjectSlot>();
                 newItemPoint.transform.SetParent(root, false);
-                newItemPoint.transform.localPosition = _itemStep * i;
+                newItemPoint.transform.localPosition = _defaultItemStep * i;
                 _createdSlots.Add(slot);
             }
         }
@@ -167,6 +176,19 @@ namespace _Project.Scripts
         private GameObjectSlot GetFirstBusySlot() => _createdSlots.FirstOrDefault(s => s.IsBusy);
         private GameObjectSlot GetLastBusySlot() => _createdSlots.LastOrDefault(s => s.IsBusy);
         private GameObjectSlot GetFirstFreeSlot() => _createdSlots.Take(Capacity).FirstOrDefault(s => !s.IsBusy);
+
+        private Vector3 GetSlotPosition(int index)
+        {
+            if (index == 0)
+                return Vector3.zero;
+
+            var prevSlot = _createdSlots[index - 1];
+            var step = _pickedItems.TryGetValue(prevSlot, out var prevItem) && _itemSteps.TryGetValue(prevItem, out var s)
+                ? s
+                : _defaultItemStep;
+
+            return prevSlot.transform.localPosition + step;
+        }
 
         private bool TryRemoveItem(GameObjectSlot slot)
         {
@@ -178,6 +200,7 @@ namespace _Project.Scripts
                 return false;
 
             FreeSlot(slot);
+            _itemSteps.Remove(item);
             item.StopInteract(gameObject);
             UpdateSelectedItem();
             
@@ -216,7 +239,9 @@ namespace _Project.Scripts
                 {
                     var item = _pickedItems[slot];
                     FreeSlot(slot);
-                    if (TryPutToSlot(_createdSlots[targetIndex], item))
+                    var targetSlot = _createdSlots[targetIndex];
+                    targetSlot.transform.localPosition = GetSlotPosition(targetIndex);
+                    if (TryPutToSlot(targetSlot, item))
                         AnimateShift(item);
                 }
                 targetIndex++;
@@ -246,9 +271,12 @@ namespace _Project.Scripts
                 return;
             }
 
+            slot.transform.localPosition = GetSlotPosition(_createdSlots.IndexOf(slot));
+
             if (!TryPutToSlot(slot, interactable))
                 return;
 
+            ReadItemVariables(interactable);
             AnimatePick(interactable);
             UpdateSelectedItem();
             
@@ -256,6 +284,20 @@ namespace _Project.Scripts
                 _currentItemsAmount.Value++;
             
             OnItemPicked?.Invoke();
+        }
+
+        private void ReadItemVariables(IInteractable interactable)
+        {
+            _itemSteps[interactable] = _defaultItemStep;
+
+            if (!interactable.GameObject.TryGetComponent(out RuntimeEntityVariablesContainer container))
+                return;
+
+            if (container.TryGetVariable<Vector3EntityVariable>(_itemPickLocalRotationId, out var rotVariable))
+                _itemPickedLocalRotation = rotVariable.Value.Value;
+
+            if (container.TryGetVariable<Vector3EntityVariable>(_itemPickStepVariableId, out var stepVariable))
+                _itemSteps[interactable] = stepVariable.Value.Value;
         }
 
         private void AnimatePick(IInteractable interactable)
@@ -266,7 +308,7 @@ namespace _Project.Scripts
             DOTween.Sequence()
                 .Join(itemTransform.DOLocalJump(Vector3.zero, _jumpPower.Value, _jumpsNum.Value, _duration.Value)
                     .SetEase(_jumpEase))
-                .Join(itemTransform.DOLocalRotate(Vector3.zero, _duration.Value))
+                .Join(itemTransform.DOLocalRotate(_itemPickedLocalRotation, _duration.Value))
                 .SetTarget(itemTransform)
                 .SetAutoKill(true);
         }
@@ -278,7 +320,6 @@ namespace _Project.Scripts
 
             DOTween.Sequence()
                 .Join(itemTransform.DOLocalMove(Vector3.zero, _duration.Value).SetEase(Ease.OutQuad))
-                .Join(itemTransform.DOLocalRotate(Vector3.zero, _duration.Value))
                 .SetTarget(itemTransform)
                 .SetAutoKill(true);
         }

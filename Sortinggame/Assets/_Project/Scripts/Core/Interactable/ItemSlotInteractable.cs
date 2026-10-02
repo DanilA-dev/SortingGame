@@ -1,7 +1,10 @@
 using D_Dev.Entity;
+using D_Dev.Entity.Extensions;
 using D_Dev.EntityInfoBinder;
+using D_Dev.EntityVariable.Types;
 using D_Dev.InteractableSystem;
 using D_Dev.PolymorphicValueSystem;
+using D_Dev.ScriptableVariables;
 using D_Dev.TweenAnimations.Types;
 using Sirenix.OdinInspector;
 using UnityEngine;
@@ -14,12 +17,17 @@ namespace _Project.Scripts
         #region Fields
 
         [SerializeField] private GameObjectSlot _gameObjectSlot;
+        [SerializeField] private Transform _itemView;
         [SerializeReference] private PolymorphicValue<GameObject> _currentActiveItem = new GameObjectConstantValue();
         [Title("Item Place Materials")]
         [SerializeField] private MeshFilter _meshFilter;
         [SerializeField] private MeshRenderer _meshRenderer;
         [SerializeField] private Material _allowPlaceMat;
         [SerializeField] private Material _blockPlaceMat;
+
+        [Title("Item Settings")] 
+        [SerializeField] private StringScriptableVariable _itemRotationVariableId;
+        [SerializeField] private StringScriptableVariable _itemOffsetVariableId;
         [Space]
         [FoldoutGroup("Item Set Animation")] 
         [SerializeField] private MoveAnimationTween _moveAnimationTween;
@@ -30,9 +38,10 @@ namespace _Project.Scripts
         [FoldoutGroup("Slot Events")]
         public UnityEvent OnItemPlaced;
         
-        private EntityInfo _slotInfo;
-        private MeshFilter _activeItemMeshFilter;
-        
+        private EntityInfo _itemInfo;
+        private Vector3 _itemSlotLocalRotation;
+        private Vector3 _initPos;
+        private Vector3 _itemSlotOffset;
 
         #endregion
 
@@ -47,7 +56,10 @@ namespace _Project.Scripts
 
         public void Init(EntityInfo itemInfo)
         {
-            _slotInfo = itemInfo;
+            _itemInfo = itemInfo;
+
+            _initPos = _itemView.localPosition;
+            GetItemData();
             HideView();
         }
 
@@ -60,7 +72,7 @@ namespace _Project.Scripts
             if(IsBusy)
                 return;
             
-            if(!IsActveItemExists())
+            if(!IsActiveItemExists())
                 return;
 
             if (!IsMatchingItem(_currentActiveItem.Value))
@@ -75,6 +87,7 @@ namespace _Project.Scripts
             }
             
             ShowItemMesh();
+            SetItemOffset();
         }
 
         protected override void OnUnfocus(GameObject interactor)
@@ -82,11 +95,12 @@ namespace _Project.Scripts
             if(IsBusy)
                 return;
             
-            if(!IsActveItemExists())
+            if(!IsActiveItemExists())
                 return;
 
             CanPlaceItem = false;
             HideView();
+            ResetItemOffset();
         }
 
         protected override void OnInteract(GameObject interactor)
@@ -104,8 +118,8 @@ namespace _Project.Scripts
             OnItemPlaced?.Invoke();
             if(item.TryGetComponent(out ItemInteractable itemInteractable))
                 itemInteractable.SetSorted();
-            
-            item.transform.localRotation = Quaternion.identity;
+
+            item.transform.localEulerAngles = Vector3.zero;
             
             _moveAnimationTween.MovedObjects = new[] { item.transform };
             _moveAnimationTween.MoveType = MoveAnimationTween.MoveObjectType.Vector;
@@ -113,15 +127,40 @@ namespace _Project.Scripts
             _moveAnimationTween.Play();
             
             HideView();
+            SetItemOffset();
         }
 
         #endregion
 
         #region Private
 
+        private void SetItemOffset()
+        {
+            _itemView.localPosition = _initPos + _itemSlotOffset;
+        }
+
+        private void ResetItemOffset()
+        {
+            _itemView.localPosition = _initPos;
+        }
+        
+        private void GetItemData()
+        {
+            var rotationVariable = _itemInfo.GetVariable<Vector3EntityVariable>(_itemRotationVariableId);
+            var offsetVariable = _itemInfo.GetVariable<Vector3EntityVariable>(_itemOffsetVariableId);
+            if (rotationVariable != null)
+            {
+                _itemSlotLocalRotation = rotationVariable.Value.Value;
+                transform.localEulerAngles = _itemSlotLocalRotation;
+            }
+
+            if (offsetVariable != null)
+                _itemSlotOffset = offsetVariable.Value.Value;
+        }
+        
         private void SetBlockMaterial()
         {
-            if(!IsActveItemExists())
+            if(!IsActiveItemExists())
                 return;
 
             _meshRenderer.sharedMaterial = _blockPlaceMat;
@@ -129,7 +168,7 @@ namespace _Project.Scripts
 
         private void SetAllowMaterial()
         {
-            if(!IsActveItemExists())
+            if(!IsActiveItemExists())
                 return;
 
             _meshRenderer.sharedMaterial = _allowPlaceMat;
@@ -144,28 +183,25 @@ namespace _Project.Scripts
         
         private void ShowItemMesh()
         {
-            if(!IsActveItemExists())
+            if(!IsActiveItemExists())
                 return;
 
-            if (!_currentActiveItem.Value.TryGetComponent(out _activeItemMeshFilter))
-            {
-                Debug.LogError($"Item {_currentActiveItem.Value.name} does not have any mesh filter on it!");
+            if (!_currentActiveItem.Value.TryGetComponent(out ItemInteractable item))
                 return;
-            }
 
-            _meshFilter.sharedMesh = _activeItemMeshFilter.sharedMesh;
+            _meshFilter.sharedMesh = item.Filter.sharedMesh;
         }
 
         #endregion
 
         #region Helpers
 
-        private bool IsActveItemExists() => _currentActiveItem != null && _currentActiveItem.Value != null;
+        private bool IsActiveItemExists() => _currentActiveItem != null && _currentActiveItem.Value != null;
 
         private bool IsMatchingItem(GameObject item) =>
-            _slotInfo != null
+            _itemInfo != null
             && item.TryGetComponent(out EntityInfoBinder binder)
-            && binder.Info == _slotInfo;
+            && binder.Info == _itemInfo;
 
         #endregion
     }

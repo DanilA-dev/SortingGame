@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using D_Dev.CoroutineManagerSystem;
 using D_Dev.CustomEventManager;
 using D_Dev.InteractableSystem;
@@ -40,6 +39,18 @@ namespace _Project.Scripts
         #region Properties
 
         public bool IsPicked { get; private set; }
+
+        public MeshRenderer Renderer
+        {
+            get => _meshRenderer;
+            set => _meshRenderer = value;
+        }
+
+        public MeshFilter Filter
+        {
+            get => _meshFilter;
+            set => _meshFilter = value;
+        }
 
         #endregion
 

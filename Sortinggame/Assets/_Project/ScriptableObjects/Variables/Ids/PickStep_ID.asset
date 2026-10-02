@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 110277e40058401b9d8b93347d0123d7, type: 3}
-  m_Name: HoldStep_ID
+  m_Name: PickStep_ID
   m_EditorClassIdentifier: D-Dev.ScriptableVariables::D_Dev.ScriptableVariables.StringScriptableVariable
   _value: 
   _resetOnEnterRuntime: 0

@@ -156,7 +156,7 @@ MeshRenderer:
   m_RenderingLayerMask: 2
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: b004d94341257ed468b373ba8a354331, type: 2}
+  - {fileID: 2100000, guid: c4299b1f9e727d34696b786de8243fb7, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -468,8 +468,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3161137883221602463, guid: eab2d8a0549728f408bb1ce4138e50e3, type: 3}
       propertyPath: m_Name
-      value: Shelf_1_Prefab
+      value: Shelf24_1_Prefab
       objectReference: {fileID: 0}
+    - target: {fileID: 5469179752177931143, guid: eab2d8a0549728f408bb1ce4138e50e3, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: c4299b1f9e727d34696b786de8243fb7, type: 2}
     - target: {fileID: 8508884085449069956, guid: eab2d8a0549728f408bb1ce4138e50e3, type: 3}
       propertyPath: rmsCount
       value: 7

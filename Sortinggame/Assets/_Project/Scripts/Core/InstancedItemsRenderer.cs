@@ -1,10 +1,11 @@
 using System.Collections.Generic;
+using D_Dev.Singleton;
 using UnityEngine;
 using UnityEngine.Rendering;
 
 namespace _Project.Scripts
 {
-    public class InstancedItemsRenderer : MonoBehaviour
+    public class InstancedItemsRenderer : BaseSingleton<InstancedItemsRenderer>
     {
         #region Classes
 
@@ -30,24 +31,7 @@ namespace _Project.Scripts
 
         #endregion
 
-        #region Properties
-
-        public static InstancedItemsRenderer Instance { get; private set; }
-
-        #endregion
-
         #region Monobehaviour
-
-        private void Awake()
-        {
-            Instance = this;
-        }
-
-        private void OnDestroy()
-        {
-            if (Instance == this)
-                Instance = null;
-        }
 
         private void LateUpdate()
         {

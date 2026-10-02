@@ -16,6 +16,26 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 30c5e465dc21c534bada8d020bae91f4, type: 2}
+    - target: {fileID: 4850069839852230955, guid: 20645e136940c6b4a8caa63c41ed75ef, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4850069839852230955, guid: 20645e136940c6b4a8caa63c41ed75ef, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4850069839852230955, guid: 20645e136940c6b4a8caa63c41ed75ef, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4850069839852230955, guid: 20645e136940c6b4a8caa63c41ed75ef, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4850069839852230955, guid: 20645e136940c6b4a8caa63c41ed75ef, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6010130360636563255, guid: 20645e136940c6b4a8caa63c41ed75ef, type: 3}
       propertyPath: m_Mesh
       value: 
@@ -32,6 +52,10 @@ PrefabInstance:
       propertyPath: _entityInfo
       value: 
       objectReference: {fileID: 11400000, guid: 0e7834fef74a46c4db9197c0f50728a8, type: 2}
+    - target: {fileID: 7293211538275626967, guid: 20645e136940c6b4a8caa63c41ed75ef, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -3397297858778562299, guid: a9b2fe35a167c904693b59a94f5d74c8, type: 3}
     - target: {fileID: 7790156376496395155, guid: 20645e136940c6b4a8caa63c41ed75ef, type: 3}
       propertyPath: m_LocalScale.x
       value: 1
@@ -84,9 +108,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8215673142027532397, guid: 20645e136940c6b4a8caa63c41ed75ef, type: 3}
+      propertyPath: rmsCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8506885365720382400, guid: 20645e136940c6b4a8caa63c41ed75ef, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 30c5e465dc21c534bada8d020bae91f4, type: 2}
     - target: {fileID: 8830581081181559822, guid: 20645e136940c6b4a8caa63c41ed75ef, type: 3}
       propertyPath: m_Name
-      value: FishItem_Prefab
+      value: SalmonItem_Prefab
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6963323781123029201, guid: 20645e136940c6b4a8caa63c41ed75ef, type: 3}
@@ -121,7 +153,7 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.11324419
-  m_Height: 0.672302
+  m_Radius: 0.10647991
+  m_Height: 0.80819637
   m_Direction: 0
-  m_Center: {x: 0.07352787, y: 0.07761103, z: 0.004504159}
+  m_Center: {x: 0, y: 0.08135837, z: 0.00023922324}

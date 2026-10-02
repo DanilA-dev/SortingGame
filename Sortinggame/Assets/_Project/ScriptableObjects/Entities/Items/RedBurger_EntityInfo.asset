@@ -26,8 +26,9 @@ MonoBehaviour:
   - rid: 1932282358920642870
   - rid: 1932282386981061389
   - rid: 1932282427523203931
-  - rid: 1932282427523203933
   - rid: 1932282427523203935
+  - rid: 5687120598224339353
+  - rid: 5687120599968388862
   references:
     version: 2
     RefIds:
@@ -53,16 +54,6 @@ MonoBehaviour:
       type: {class: Vector3ConstantValue, ns: D_Dev.PolymorphicValueSystem, asm: D-Dev.PolymorphicValueSystem}
       data:
         _value: {x: 0, y: 0.3, z: 0}
-    - rid: 1932282427523203933
-      type: {class: Vector3EntityVariable, ns: D_Dev.EntityVariable.Types, asm: D-Dev.EntityVariable}
-      data:
-        _variableID: {fileID: 11400000, guid: cd57551ff2c717a4484d4815c26dd597, type: 2}
-        _value:
-          rid: 1932282427523203934
-    - rid: 1932282427523203934
-      type: {class: Vector3ConstantValue, ns: D_Dev.PolymorphicValueSystem, asm: D-Dev.PolymorphicValueSystem}
-      data:
-        _value: {x: 0, y: 0, z: 0}
     - rid: 1932282427523203935
       type: {class: Vector3EntityVariable, ns: D_Dev.EntityVariable.Types, asm: D-Dev.EntityVariable}
       data:
@@ -72,7 +63,7 @@ MonoBehaviour:
     - rid: 1932282427523203936
       type: {class: Vector3ConstantValue, ns: D_Dev.PolymorphicValueSystem, asm: D-Dev.PolymorphicValueSystem}
       data:
-        _value: {x: 0, y: 0, z: 0}
+        _value: {x: -90, y: 0, z: 0}
     - rid: 1932282429438689564
       type: {class: StringConstantValue, ns: D_Dev.PolymorphicValueSystem, asm: D-Dev.PolymorphicValueSystem}
       data:
@@ -81,3 +72,23 @@ MonoBehaviour:
       type: {class: StringScriptableVariableValue, ns: D_Dev.PolymorphicValueSystem, asm: D-Dev.PolymorphicValueSystem}
       data:
         _variable: {fileID: 11400000, guid: 076a5765c00946c43aaad70369a190c6, type: 2}
+    - rid: 5687120598224339353
+      type: {class: Vector3EntityVariable, ns: D_Dev.EntityVariable.Types, asm: D-Dev.EntityVariable}
+      data:
+        _variableID: {fileID: 11400000, guid: cd57551ff2c717a4484d4815c26dd597, type: 2}
+        _value:
+          rid: 5687120598224339403
+    - rid: 5687120598224339403
+      type: {class: Vector3ConstantValue, ns: D_Dev.PolymorphicValueSystem, asm: D-Dev.PolymorphicValueSystem}
+      data:
+        _value: {x: 0, y: 0, z: 0}
+    - rid: 5687120599968388862
+      type: {class: Vector3EntityVariable, ns: D_Dev.EntityVariable.Types, asm: D-Dev.EntityVariable}
+      data:
+        _variableID: {fileID: 11400000, guid: 4d063e45151c87b44a3bebc8295d9cf9, type: 2}
+        _value:
+          rid: 5687120599968388863
+    - rid: 5687120599968388863
+      type: {class: Vector3ConstantValue, ns: D_Dev.PolymorphicValueSystem, asm: D-Dev.PolymorphicValueSystem}
+      data:
+        _value: {x: -90, y: 0, z: 0}
