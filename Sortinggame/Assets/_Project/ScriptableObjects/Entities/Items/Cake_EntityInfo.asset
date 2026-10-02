@@ -76,7 +76,7 @@ MonoBehaviour:
     - rid: 1932282429438689536
       type: {class: StringConstantValue, ns: D_Dev.PolymorphicValueSystem, asm: D-Dev.PolymorphicValueSystem}
       data:
-        _value: Pie
+        _value: Cake
     - rid: 1932282429438689537
       type: {class: StringScriptableVariableValue, ns: D_Dev.PolymorphicValueSystem, asm: D-Dev.PolymorphicValueSystem}
       data:
