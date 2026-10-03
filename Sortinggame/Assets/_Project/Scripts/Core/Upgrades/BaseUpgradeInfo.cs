@@ -44,6 +44,8 @@ namespace _Project.Scripts.Core.Upgrades
 
         #region Public
 
+        public bool CanAfford(Currency currency) => !IsMaxed && currency.Value >= NextPrice;
+
         public bool TryUpgrade(Currency currency)
         {
             if (IsMaxed)
@@ -63,9 +65,21 @@ namespace _Project.Scripts.Core.Upgrades
                 return false;
             }
 
-            _level.Value++;
-            Apply();
-            OnLevelChanged?.Invoke(Level);
+            LevelUp();
+            return true;
+        }
+
+        public bool TryUpgradeFree()
+        {
+            if (IsMaxed)
+            {
+                if (_showDebugInfo)
+                    Debug.Log($"[Upgrade] {name} has reached max level");
+
+                return false;
+            }
+
+            LevelUp();
             return true;
         }
 
@@ -78,6 +92,17 @@ namespace _Project.Scripts.Core.Upgrades
         #region Protected
 
         protected abstract void ApplyLevel(int level);
+
+        #endregion
+
+        #region Private
+
+        private void LevelUp()
+        {
+            _level.Value++;
+            Apply();
+            OnLevelChanged?.Invoke(Level);
+        }
 
         #endregion
     }

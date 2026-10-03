@@ -42,12 +42,19 @@ namespace _Project.Scripts.UI.Views
 
         #region Monobehaviour
 
+        private void Awake()
+        {
+            if(_selectButton != null)
+                _selectButton.onClick.AddListener(SelectUpgradableView);
+        }
+
         private void OnDestroy()
         {
-            if(_upgradeInfo == null)
-                return;
-
-            _upgradeInfo.OnLevelChanged -= OnLevelUpdate;
+            if(_selectButton != null)
+                _selectButton.onClick.RemoveListener(SelectUpgradableView);
+            
+            if(_upgradeInfo != null)
+                _upgradeInfo.OnLevelChanged -= OnLevelUpdate;
         }
 
         #endregion
@@ -56,13 +63,17 @@ namespace _Project.Scripts.UI.Views
 
         public void Init(BaseUpgradeInfo upgradeInfo)
         {
+            if(_upgradeInfo != null)
+                _upgradeInfo.OnLevelChanged -= OnLevelUpdate;
+
             _upgradeInfo = upgradeInfo;
             _upgradeInfo.OnLevelChanged += OnLevelUpdate;
+
             UpdateData();
         }
+
         public void Select()
         {
-            OnUpgradableSelected?.Invoke(this);
             _onSelect?.Invoke();
         }
 
@@ -82,10 +93,15 @@ namespace _Project.Scripts.UI.Views
             
             _upgradableNameText?.SetText(_upgradeInfo.UpgradeName.Value);
             _upgradableDescriptionText?.SetText(_upgradeInfo.UpgradeDescription.Value);
-            _upgradableLevelText?.SetText(_upgradeInfo.Level.ToString());
-
             _icon.sprite = _upgradeInfo.Icon;
-            
+
+            UpdateLevel();
+        }
+
+        private void UpdateLevel()
+        {
+            _upgradableLevelText?.SetText((_upgradeInfo.Level + 1).ToString());
+
             if(IsMaxed)
                 _onMaxLevel?.Invoke();
         }
@@ -96,7 +112,12 @@ namespace _Project.Scripts.UI.Views
 
         private void OnLevelUpdate(int level)
         {
-            
+            UpdateLevel();
+        }
+        
+        private void SelectUpgradableView()
+        {
+            OnUpgradableSelected?.Invoke(this);
         }
 
         #endregion

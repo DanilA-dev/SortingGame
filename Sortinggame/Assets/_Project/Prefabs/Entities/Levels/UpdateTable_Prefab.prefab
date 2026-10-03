@@ -1,5 +1,62 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &881237502349921973
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 9191936944170320780}
+  - component: {fileID: 8766752844698197669}
+  m_Layer: 0
+  m_Name: CloseFocusUpgradeTableMenu
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &9191936944170320780
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 881237502349921973}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2931730875900009493}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8766752844698197669
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 881237502349921973}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c20da54fe9d44c0da37990021738df29, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: D-Dev.Menu::D_Dev.MenuHandler.Extensions.EventBehaviours.MenuEventInvoker
+  _eventNameTypes:
+  - rid: 5687120620302893436
+  _invokeOnStart: 0
+  _invokeOnlyOnce: 0
+  _debug: 0
+  <Param>k__BackingField: {fileID: 11400000, guid: 19c8e0b69f89c124dbd829ff7cdd13eb, type: 2}
+  references:
+    version: 2
+    RefIds:
+    - rid: 5687120620302893436
+      type: {class: ConstantEventNameType, ns: D_Dev.CustomEventManager, asm: D-Dev.EventBehaviours}
+      data:
+        _eventNameConstants: 6
 --- !u!1 &1577420005663359213
 GameObject:
   m_ObjectHideFlags: 0
@@ -12,7 +69,9 @@ GameObject:
   - component: {fileID: 4673799602419152039}
   - component: {fileID: 1390651572665662465}
   - component: {fileID: 7401038137089261444}
-  m_Layer: 6
+  - component: {fileID: 8713933448977038590}
+  - component: {fileID: 2162404844136588239}
+  m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -112,6 +171,118 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &8713933448977038590
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1577420005663359213}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f988cffada3d48ad8cb8a36e04212b5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: D-Dev.InteractableSystem::D_Dev.InteractableSystem.SimpleInteractable
+  _isInteractable: 1
+  _interactMode: 0
+  _holdTime:
+    rid: 5687120620302893434
+  _holdProgress:
+    rid: 5687120620302893435
+  _isDistanceBased: 0
+  _interactionDistance: 2
+  _canBeStopped: 0
+  _stopOnFocusLost: 1
+  OnInteractStart:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8766752844698197669}
+        m_TargetAssemblyTypeName: D_Dev.MenuHandler.Extensions.EventBehaviours.MenuEventInvoker,
+          D-Dev.Menu
+        m_MethodName: Raise
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1370840412836266163}
+        m_TargetAssemblyTypeName: D_Dev.MenuHandler.Extensions.EventBehaviours.MenuEventInvoker,
+          D-Dev.Menu
+        m_MethodName: Raise
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnInteractStop:
+    m_PersistentCalls:
+      m_Calls: []
+  OnFocused:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1108527433926428371}
+        m_TargetAssemblyTypeName: D_Dev.MenuHandler.Extensions.EventBehaviours.MenuEventInvoker,
+          D-Dev.Menu
+        m_MethodName: Raise
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnUnfocused:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8766752844698197669}
+        m_TargetAssemblyTypeName: D_Dev.MenuHandler.Extensions.EventBehaviours.MenuEventInvoker,
+          D-Dev.Menu
+        m_MethodName: Raise
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  _debug: 0
+  references:
+    version: 2
+    RefIds:
+    - rid: 5687120620302893434
+      type: {class: FloatConstantValue, ns: D_Dev.PolymorphicValueSystem, asm: D-Dev.PolymorphicValueSystem}
+      data:
+        _value: 0
+    - rid: 5687120620302893435
+      type: {class: FloatConstantValue, ns: D_Dev.PolymorphicValueSystem, asm: D-Dev.PolymorphicValueSystem}
+      data:
+        _value: 0
+--- !u!114 &2162404844136588239
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1577420005663359213}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5cdc5300222145c393d90bbbb6ad5657, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: D-Dev.TagSystem::D_Dev.TagSystem.TagComponent
+  _tags:
+  - {fileID: 11400000, guid: e58f48d373dacbc4d9512fa242efb5be, type: 2}
 --- !u!1 &3148378970698429813
 GameObject:
   m_ObjectHideFlags: 0
@@ -430,6 +601,7 @@ Transform:
   m_Children:
   - {fileID: 2564107544513982002}
   - {fileID: 7421440981222514646}
+  - {fileID: 2931730875900009493}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6762279652371315978
@@ -522,3 +694,151 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!1 &6993241589966762502
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5350991536310802202}
+  - component: {fileID: 1370840412836266163}
+  m_Layer: 0
+  m_Name: OpenUpgradesMenu
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5350991536310802202
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6993241589966762502}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2931730875900009493}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1370840412836266163
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6993241589966762502}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c20da54fe9d44c0da37990021738df29, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: D-Dev.Menu::D_Dev.MenuHandler.Extensions.EventBehaviours.MenuEventInvoker
+  _eventNameTypes:
+  - rid: 5687120620302893436
+  _invokeOnStart: 0
+  _invokeOnlyOnce: 0
+  _debug: 0
+  <Param>k__BackingField: {fileID: 11400000, guid: 40c162bb03b152e4a92cffc22f4a311f, type: 2}
+  references:
+    version: 2
+    RefIds:
+    - rid: 5687120620302893436
+      type: {class: ConstantEventNameType, ns: D_Dev.CustomEventManager, asm: D-Dev.EventBehaviours}
+      data:
+        _eventNameConstants: 5
+--- !u!1 &7911396857898333582
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2931730875900009493}
+  m_Layer: 0
+  m_Name: Events
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2931730875900009493
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7911396857898333582}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 5350991536310802202}
+  - {fileID: 3006981209039745638}
+  - {fileID: 9191936944170320780}
+  m_Father: {fileID: 6914725332524232116}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &8364335187944721046
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3006981209039745638}
+  - component: {fileID: 1108527433926428371}
+  m_Layer: 0
+  m_Name: OpenFocusUpgradeTableMenu
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3006981209039745638
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8364335187944721046}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2931730875900009493}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1108527433926428371
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8364335187944721046}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c20da54fe9d44c0da37990021738df29, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: D-Dev.Menu::D_Dev.MenuHandler.Extensions.EventBehaviours.MenuEventInvoker
+  _eventNameTypes:
+  - rid: 5687120620302893436
+  _invokeOnStart: 0
+  _invokeOnlyOnce: 0
+  _debug: 0
+  <Param>k__BackingField: {fileID: 11400000, guid: 19c8e0b69f89c124dbd829ff7cdd13eb, type: 2}
+  references:
+    version: 2
+    RefIds:
+    - rid: 5687120620302893436
+      type: {class: ConstantEventNameType, ns: D_Dev.CustomEventManager, asm: D-Dev.EventBehaviours}
+      data:
+        _eventNameConstants: 5

@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: CurrentInventoryCapacity_IntVariable
   m_EditorClassIdentifier: D-Dev.ScriptableVariables::D_Dev.ScriptableVariables.IntScriptableVariable
   _value: 3
-  _resetOnEnterRuntime: 0
+  _resetOnEnterRuntime: 1

@@ -233,7 +233,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: D-Dev.TweenAnimations::D_Dev.TweenAnimations.TweenPlayer
   _tweenPlayer:
     _playMode: 0
-    _ignoreTimeScale: 0
+    _ignoreTimeScale: 1
     _tweens:
     - rid: 5687120576283154483
   _playOnEnable: 0
@@ -254,7 +254,7 @@ MonoBehaviour:
         _duration: 0.1
         _delay: 0
         _ease: 0
-        _ignoreTimeScale: 0
+        _ignoreTimeScale: 1
         _loops: 0
         _loopType: 0
         OnStart:
