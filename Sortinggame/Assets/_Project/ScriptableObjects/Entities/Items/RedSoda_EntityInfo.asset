@@ -81,7 +81,7 @@ MonoBehaviour:
     - rid: 5687120598224339370
       type: {class: Vector3ConstantValue, ns: D_Dev.PolymorphicValueSystem, asm: D-Dev.PolymorphicValueSystem}
       data:
-        _value: {x: 0, y: 0, z: 0.175}
+        _value: {x: 0, y: 0.175, z: 0}
     - rid: 5687120599968388796
       type: {class: Vector3EntityVariable, ns: D_Dev.EntityVariable.Types, asm: D-Dev.EntityVariable}
       data:

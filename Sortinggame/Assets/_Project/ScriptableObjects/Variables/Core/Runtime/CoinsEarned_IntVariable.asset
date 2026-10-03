@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35455af4827b4272b65eb183a1212c4e, type: 3}
   m_Name: CoinsEarned_IntVariable
   m_EditorClassIdentifier: D-Dev.ScriptableVariables::D_Dev.ScriptableVariables.IntScriptableVariable
-  _value: 228
-  _resetOnEnterRuntime: 0
+  _value: 0
+  _resetOnEnterRuntime: 1

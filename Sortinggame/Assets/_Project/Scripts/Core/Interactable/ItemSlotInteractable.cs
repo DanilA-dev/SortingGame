@@ -19,15 +19,13 @@ namespace _Project.Scripts
         [SerializeField] private GameObjectSlot _gameObjectSlot;
         [SerializeField] private Transform _itemView;
         [SerializeReference] private PolymorphicValue<GameObject> _currentActiveItem = new GameObjectConstantValue();
+        [SerializeReference] private PolymorphicValue<Vector3> _currentActiveItemOffset = new Vector3ConstantValue();
+        [SerializeReference] private PolymorphicValue<Vector3> _currentActiveItemRotation = new Vector3ConstantValue();
         [Title("Item Place Materials")]
         [SerializeField] private MeshFilter _meshFilter;
         [SerializeField] private MeshRenderer _meshRenderer;
         [SerializeField] private Material _allowPlaceMat;
         [SerializeField] private Material _blockPlaceMat;
-
-        [Title("Item Settings")] 
-        [SerializeField] private StringScriptableVariable _itemRotationVariableId;
-        [SerializeField] private StringScriptableVariable _itemOffsetVariableId;
         [Space]
         [FoldoutGroup("Item Set Animation")] 
         [SerializeField] private MoveAnimationTween _moveAnimationTween;
@@ -38,10 +36,12 @@ namespace _Project.Scripts
         [FoldoutGroup("Slot Events")]
         public UnityEvent OnItemPlaced;
         
-        private EntityInfo _itemInfo;
+        private EntityInfo _slotItemInfo;
+        
         private Vector3 _itemSlotLocalRotation;
-        private Vector3 _initPos;
-        private Vector3 _itemSlotOffset;
+        
+        private Vector3 _defaultPos;
+        private Vector3 _defaultEulerAngles;
 
         #endregion
 
@@ -56,10 +56,11 @@ namespace _Project.Scripts
 
         public void Init(EntityInfo itemInfo)
         {
-            _itemInfo = itemInfo;
+            _slotItemInfo = itemInfo;
 
-            _initPos = _itemView.localPosition;
-            GetItemData();
+            _defaultPos = _itemView.localPosition;
+            _defaultEulerAngles = _itemView.localEulerAngles;
+            
             HideView();
         }
 
@@ -74,7 +75,7 @@ namespace _Project.Scripts
             
             if(!IsActiveItemExists())
                 return;
-
+            
             if (!IsMatchingItem(_currentActiveItem.Value))
             {
                 SetBlockMaterial();
@@ -136,26 +137,14 @@ namespace _Project.Scripts
 
         private void SetItemOffset()
         {
-            _itemView.localPosition = _initPos + _itemSlotOffset;
+            _itemView.localPosition = _defaultPos + _currentActiveItemOffset.Value;
+            _itemView.localEulerAngles = _currentActiveItemRotation.Value;
         }
 
         private void ResetItemOffset()
         {
-            _itemView.localPosition = _initPos;
-        }
-        
-        private void GetItemData()
-        {
-            var rotationVariable = _itemInfo.GetVariable<Vector3EntityVariable>(_itemRotationVariableId);
-            var offsetVariable = _itemInfo.GetVariable<Vector3EntityVariable>(_itemOffsetVariableId);
-            if (rotationVariable != null)
-            {
-                _itemSlotLocalRotation = rotationVariable.Value.Value;
-                transform.localEulerAngles = _itemSlotLocalRotation;
-            }
-
-            if (offsetVariable != null)
-                _itemSlotOffset = offsetVariable.Value.Value;
+            _itemView.localPosition = _defaultPos;
+            _itemView.localEulerAngles = _defaultEulerAngles;
         }
         
         private void SetBlockMaterial()
@@ -172,7 +161,6 @@ namespace _Project.Scripts
                 return;
 
             _meshRenderer.sharedMaterial = _allowPlaceMat;
-
         }
 
         private void HideView()
@@ -198,10 +186,13 @@ namespace _Project.Scripts
 
         private bool IsActiveItemExists() => _currentActiveItem != null && _currentActiveItem.Value != null;
 
-        private bool IsMatchingItem(GameObject item) =>
-            _itemInfo != null
-            && item.TryGetComponent(out EntityInfoBinder binder)
-            && binder.Info == _itemInfo;
+        
+        private bool IsMatchingItem(GameObject item)
+        {
+            return _slotItemInfo != null
+                   && item.TryGetComponent(out EntityInfoBinder binder)
+                   && binder.Info == _slotItemInfo;
+        }
 
         #endregion
     }

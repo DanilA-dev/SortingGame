@@ -57,6 +57,161 @@ MonoBehaviour:
       type: {class: ConstantEventNameType, ns: D_Dev.CustomEventManager, asm: D-Dev.EventBehaviours}
       data:
         _eventNameConstants: 6
+--- !u!1 &2397476614587087217
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2646074078178798372}
+  - component: {fileID: 5340671237350000498}
+  m_Layer: 0
+  m_Name: UpdateActiveItemSlotOffset
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2646074078178798372
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2397476614587087217}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1083694468069973490}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5340671237350000498
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2397476614587087217}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eca4cd2ae0abe334ba9bab4bc717eda8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: D-Dev.PolymorphicValueSystem.Extensions::D_Dev.PolymorphicValueSystem.Setters.Vector3ValueSetter
+  _setOnStart: 0
+  _valueToSet:
+    rid: 5687120608163011876
+  _resultValue:
+    rid: 5687120608163011877
+  references:
+    version: 2
+    RefIds:
+    - rid: 5687120608163011876
+      type: {class: Vector3ScriptableVariableValue, ns: D_Dev.PolymorphicValueSystem, asm: D-Dev.PolymorphicValueSystem}
+      data:
+        _variable: {fileID: 11400000, guid: 8e607776a376ed54c99d2bb9d1fce177, type: 2}
+    - rid: 5687120608163011877
+      type: {class: Vector3RuntimeVariableValue, ns: D_Dev.RuntimeEntityVariables.Extensions, asm: D-Dev.RuntimeEntityVariablesContainer.Extensions}
+      data:
+        _variableID: {fileID: 11400000, guid: cd57551ff2c717a4484d4815c26dd597, type: 2}
+        _runtimeEntityVariablesContainer: {fileID: 5311234596924771119}
+--- !u!1 &2765507427550533300
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1083694468069973490}
+  m_Layer: 0
+  m_Name: RuntimeValues
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1083694468069973490
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2765507427550533300}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 2646074078178798372}
+  - {fileID: 4728560299811393286}
+  m_Father: {fileID: 7790156376496395155}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2909326171545619507
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4728560299811393286}
+  - component: {fileID: 110416785911864237}
+  m_Layer: 0
+  m_Name: UpdateActiveItemSlotRotation
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4728560299811393286
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2909326171545619507}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1083694468069973490}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &110416785911864237
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2909326171545619507}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eca4cd2ae0abe334ba9bab4bc717eda8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: D-Dev.PolymorphicValueSystem.Extensions::D_Dev.PolymorphicValueSystem.Setters.Vector3ValueSetter
+  _setOnStart: 0
+  _valueToSet:
+    rid: 5687120608163011876
+  _resultValue:
+    rid: 5687120608163011877
+  references:
+    version: 2
+    RefIds:
+    - rid: 5687120608163011876
+      type: {class: Vector3ScriptableVariableValue, ns: D_Dev.PolymorphicValueSystem, asm: D-Dev.PolymorphicValueSystem}
+      data:
+        _variable: {fileID: 11400000, guid: be3d72a1afc0b4543863a71aab982ee8, type: 2}
+    - rid: 5687120608163011877
+      type: {class: Vector3RuntimeVariableValue, ns: D_Dev.RuntimeEntityVariables.Extensions, asm: D-Dev.RuntimeEntityVariablesContainer.Extensions}
+      data:
+        _variableID: {fileID: 11400000, guid: 74c259874d0dfbb45b6699563cd700f4, type: 2}
+        _runtimeEntityVariablesContainer: {fileID: 5311234596924771119}
 --- !u!1 &4041779000992102656
 GameObject:
   m_ObjectHideFlags: 0
@@ -275,8 +430,9 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4850069839852230955}
-  - {fileID: 9002372791656434715}
   - {fileID: 6370941395387000699}
+  - {fileID: 1083694468069973490}
+  - {fileID: 9002372791656434715}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!135 &6963323781123029201
@@ -397,7 +553,33 @@ MonoBehaviour:
   _stopOnFocusLost: 0
   OnInteractStart:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5340671237350000498}
+        m_TargetAssemblyTypeName: D_Dev.PolymorphicValueSystem.Setters.Vector3ValueSetter,
+          D-Dev.PolymorphicValueSystem.Extensions
+        m_MethodName: SetValue
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 110416785911864237}
+        m_TargetAssemblyTypeName: D_Dev.PolymorphicValueSystem.Setters.Vector3ValueSetter,
+          D-Dev.PolymorphicValueSystem.Extensions
+        m_MethodName: SetValue
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   OnInteractStop:
     m_PersistentCalls:
       m_Calls: []

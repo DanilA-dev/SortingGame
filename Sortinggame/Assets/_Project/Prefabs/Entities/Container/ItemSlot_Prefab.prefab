@@ -255,12 +255,14 @@ MonoBehaviour:
   _itemView: {fileID: 572762186621065852}
   _currentActiveItem:
     rid: 1932282386981061363
+  _currentActiveItemOffset:
+    rid: 5687120608163012124
+  _currentActiveItemRotation:
+    rid: 5687120608284910472
   _meshFilter: {fileID: 4007380572460390971}
   _meshRenderer: {fileID: 2075935138956795165}
   _allowPlaceMat: {fileID: 2100000, guid: c5432fc51c1c93f46a68c442ddf75534, type: 2}
   _blockPlaceMat: {fileID: 2100000, guid: ca02ad44fcb170841803dc68f7a25547, type: 2}
-  _itemRotationVariableId: {fileID: 11400000, guid: 74c259874d0dfbb45b6699563cd700f4, type: 2}
-  _itemOffsetVariableId: {fileID: 11400000, guid: cd57551ff2c717a4484d4815c26dd597, type: 2}
   _moveAnimationTween:
     _duration: 0.25
     _delay: 0
@@ -380,6 +382,14 @@ MonoBehaviour:
       type: {class: TransformConstantValue, ns: D_Dev.PolymorphicValueSystem, asm: D-Dev.PolymorphicValueSystem}
       data:
         _value: {fileID: 0}
+    - rid: 5687120608163012124
+      type: {class: Vector3ScriptableVariableValue, ns: D_Dev.PolymorphicValueSystem, asm: D-Dev.PolymorphicValueSystem}
+      data:
+        _variable: {fileID: 11400000, guid: 8e607776a376ed54c99d2bb9d1fce177, type: 2}
+    - rid: 5687120608284910472
+      type: {class: Vector3ScriptableVariableValue, ns: D_Dev.PolymorphicValueSystem, asm: D-Dev.PolymorphicValueSystem}
+      data:
+        _variable: {fileID: 11400000, guid: be3d72a1afc0b4543863a71aab982ee8, type: 2}
 --- !u!114 &6074312687409424883
 MonoBehaviour:
   m_ObjectHideFlags: 0
