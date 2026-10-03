@@ -71,7 +71,7 @@ MonoBehaviour:
   _movementDirection:
     rid: 1932282345740042386
   _maxMoveSpeed:
-    rid: 1932282345740042244
+    rid: 5687120620302893151
   _accelerationSpeed:
     rid: 1932282345740042245
   _preserveMomentum: 0
@@ -90,10 +90,6 @@ MonoBehaviour:
       type: {class: FloatConstantValue, ns: D_Dev.PolymorphicValueSystem, asm: D-Dev.PolymorphicValueSystem}
       data:
         _value: 0
-    - rid: 1932282345740042244
-      type: {class: FloatConstantValue, ns: D_Dev.PolymorphicValueSystem, asm: D-Dev.PolymorphicValueSystem}
-      data:
-        _value: 4
     - rid: 1932282345740042245
       type: {class: FloatConstantValue, ns: D_Dev.PolymorphicValueSystem, asm: D-Dev.PolymorphicValueSystem}
       data:
@@ -166,6 +162,10 @@ MonoBehaviour:
       type: {class: FloatConstantValue, ns: D_Dev.PolymorphicValueSystem, asm: D-Dev.PolymorphicValueSystem}
       data:
         _value: 0
+    - rid: 5687120620302893151
+      type: {class: FloatScriptableVariableValue, ns: D_Dev.PolymorphicValueSystem, asm: D-Dev.PolymorphicValueSystem}
+      data:
+        _variable: {fileID: 11400000, guid: 071686952c3973c4baabc7790c6b7998, type: 2}
 --- !u!1 &100356794288655646
 GameObject:
   m_ObjectHideFlags: 0
@@ -239,7 +239,7 @@ MonoBehaviour:
   _movementDirection:
     rid: 1932282345740042386
   _maxMoveSpeed:
-    rid: 1932282345740042244
+    rid: 5687120620302893150
   _accelerationSpeed:
     rid: 1932282345740042245
   _preserveMomentum: 0
@@ -258,10 +258,6 @@ MonoBehaviour:
       type: {class: FloatConstantValue, ns: D_Dev.PolymorphicValueSystem, asm: D-Dev.PolymorphicValueSystem}
       data:
         _value: 0
-    - rid: 1932282345740042244
-      type: {class: FloatConstantValue, ns: D_Dev.PolymorphicValueSystem, asm: D-Dev.PolymorphicValueSystem}
-      data:
-        _value: 4
     - rid: 1932282345740042245
       type: {class: FloatConstantValue, ns: D_Dev.PolymorphicValueSystem, asm: D-Dev.PolymorphicValueSystem}
       data:
@@ -347,6 +343,10 @@ MonoBehaviour:
       type: {class: Vector3ScriptableVariableValue, ns: D_Dev.PolymorphicValueSystem, asm: D-Dev.PolymorphicValueSystem}
       data:
         _variable: {fileID: 11400000, guid: 211bde359bd07ba47ac42099fe5a8339, type: 2}
+    - rid: 5687120620302893150
+      type: {class: FloatScriptableVariableValue, ns: D_Dev.PolymorphicValueSystem, asm: D-Dev.PolymorphicValueSystem}
+      data:
+        _variable: {fileID: 11400000, guid: 071686952c3973c4baabc7790c6b7998, type: 2}
 --- !u!1 &227936837616491064
 GameObject:
   m_ObjectHideFlags: 0
@@ -583,7 +583,7 @@ MonoBehaviour:
   _movementDirection:
     rid: 1932282381251117980
   _maxMoveSpeed:
-    rid: 1932282381251117981
+    rid: 5687120620302893152
   _accelerationSpeed:
     rid: 1932282381251117982
   _preserveMomentum: 1
@@ -637,10 +637,6 @@ MonoBehaviour:
       type: {class: Vector3ScriptableVariableValue, ns: D_Dev.PolymorphicValueSystem, asm: D-Dev.PolymorphicValueSystem}
       data:
         _variable: {fileID: 11400000, guid: 211bde359bd07ba47ac42099fe5a8339, type: 2}
-    - rid: 1932282381251117981
-      type: {class: FloatConstantValue, ns: D_Dev.PolymorphicValueSystem, asm: D-Dev.PolymorphicValueSystem}
-      data:
-        _value: 4
     - rid: 1932282381251117982
       type: {class: FloatConstantValue, ns: D_Dev.PolymorphicValueSystem, asm: D-Dev.PolymorphicValueSystem}
       data:
@@ -685,6 +681,10 @@ MonoBehaviour:
       data:
         _inputAction: {fileID: -2875356980376606985, guid: 5874c51c9acab224ab9f2bff4257f317, type: 3}
         _desiredPhase: 0
+    - rid: 5687120620302893152
+      type: {class: FloatScriptableVariableValue, ns: D_Dev.PolymorphicValueSystem, asm: D-Dev.PolymorphicValueSystem}
+      data:
+        _variable: {fileID: 11400000, guid: 071686952c3973c4baabc7790c6b7998, type: 2}
 --- !u!1 &1948339936289830862
 GameObject:
   m_ObjectHideFlags: 0
@@ -814,6 +814,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Game.Core::_Project.Scripts.PickedItemsContainer
   _rootPoint: {fileID: 5474812981895806397}
+  _defaultItemStep: {x: 0, y: 0.3, z: 0}
   _absoluteMaxCapaicty:
     rid: 1932282386981061114
   _currentMaxCapacity:

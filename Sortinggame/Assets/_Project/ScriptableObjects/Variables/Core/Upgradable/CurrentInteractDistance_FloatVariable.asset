@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9a4d30d5daba4c64810d0bcc3101feec, type: 3}
-  m_Name: PlayerMoveSpeed_FloatVariable
+  m_Name: CurrentInteractDistance_FloatVariable
   m_EditorClassIdentifier: D-Dev.ScriptableVariables::D_Dev.ScriptableVariables.FloatScriptableVariable
-  _value: 4.5
+  _value: 3
   _resetOnEnterRuntime: 0

@@ -5,26 +5,38 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c7e8f329-2cc1-4157-9309-86340ee94883" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/Core/Upgrades.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/Core/Upgrades/BaseUpgradeInfo.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/Core/Upgrades/BaseUpgradeInfo.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/Core/Upgrades/FloatUpgradeInfo.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/Core/Upgrades/FloatUpgradeInfo.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/Core/Upgrades/IntUpgradeInfo.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/Core/Upgrades/IntUpgradeInfo.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/Core/Upgrades/UpgradesInfoContainer.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/Core/Upgrades/UpgradesInfoContainer.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/UI/Menus.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/UI/Menus/UpgradesMenu.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/UI/Menus/UpgradesMenu.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/UI/Views.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/UI/Views/UpgradableItemView.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/UI/Views/UpgradableItemView.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Sortinggame/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Sortinggame/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/Prefabs/Entities/Container/ItemSlot_Prefab.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Prefabs/Entities/Container/ItemSlot_Prefab.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/Prefabs/Entities/Items/BaseItem_Prefab.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Prefabs/Entities/Items/BaseItem_Prefab.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/ScriptableObjects/Variables/Core/CoinsEarned_IntVariable.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/ScriptableObjects/Variables/Core/CoinsEarned_IntVariable.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/ScriptableObjects/Variables/Core/CurrentPickedItems_IntVariable.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/ScriptableObjects/Variables/Core/CurrentPickedItems_IntVariable.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/ScriptableObjects/Variables/Core/CurrentSortedItems_IntVariable.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/ScriptableObjects/Variables/Core/CurrentSortedItems_IntVariable.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/ScriptableObjects/Variables/Core/CurrentSortedShelves_IntVariable.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/ScriptableObjects/Variables/Core/CurrentSortedShelves_IntVariable.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/ScriptableObjects/Variables/Core/FocusedInteractable_GameObjectVariable.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/ScriptableObjects/Variables/Core/FocusedInteractable_GameObjectVariable.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/ScriptableObjects/Variables/Core/InteractDistance_FloatVariable.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/ScriptableObjects/Variables/Core/InteractDistance_FloatVariable.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/ScriptableObjects/Variables/Core/MaxPickedItems_IntVariable.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/ScriptableObjects/Variables/Core/MaxPickedItems_IntVariable.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/ScriptableObjects/Variables/Core/SelectedInteractable_GameObjectVariable.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/ScriptableObjects/Variables/Core/SelectedInteractable_GameObjectVariable.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/Core/Interactable/ItemSlotInteractable.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/Core/Interactable/ItemSlotInteractable.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Art/Fonts/RifficFree-Bold SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Art/Fonts/RifficFree-Bold SDF.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Prefabs/UI/Items/BaseDisplayCurrentMaxCounter_Prefab.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Prefabs/UI/Items/BaseDisplayCurrentMaxCounter_Prefab.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Prefabs/UI/Items/BaseUIButton_Prefab.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Prefabs/UI/Items/BaseUIButton_Prefab.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/ScriptableObjects/Variables/Core/Upgradable/InteractDistance_FloatVariable.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/ScriptableObjects/Variables/Core/Upgradable/InteractDistance_FloatVariable.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/ScriptableObjects/Variables/Core/Upgradable/MaxPickedItems_IntVariable.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/ScriptableObjects/Variables/Core/Upgradable/MaxPickedItems_IntVariable.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/Core/Game.Core.asmdef" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/Core/Game.Core.asmdef" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/UI/Game.UI.asmdef" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/UI/Game.UI.asmdef" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/UI/ItemDisplayMenu.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/UI/Menus/ItemDisplayMenu.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/UI/ItemDisplayMenu.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/UI/Menus/ItemDisplayMenu.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/UI/PauseMenu.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/UI/Menus/PauseMenu.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/UI/PauseMenu.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/UI/Menus/PauseMenu.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/cartoon_ui_pack/basic blue/pop up window.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/cartoon_ui_pack/basic blue/pop up window.png.meta" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,7 +49,7 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/Danil-dev/Scripts/Runtime/PlayerUtilities/Handlers/PlayerInputProvider.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Project/Scripts/Core/PickedItemsContainer.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/_Project/Scripts/UI/PauseMenu.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_Project/Scripts/UI/Menus/PauseMenu.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.inputsystem@21a28c3a6c83/InputSystem/Plugins/OnScreen/OnScreenButton.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="ProjectColorInfo">{
@@ -120,7 +132,8 @@
       <workItem from="1790869572203" duration="4436000" />
       <workItem from="1790877094306" duration="732000" />
       <workItem from="1790896684861" duration="2166000" />
-      <workItem from="1790943107211" duration="14833000" />
+      <workItem from="1790943107211" duration="19541000" />
+      <workItem from="1791030697126" duration="5257000" />
     </task>
     <servers />
   </component>
