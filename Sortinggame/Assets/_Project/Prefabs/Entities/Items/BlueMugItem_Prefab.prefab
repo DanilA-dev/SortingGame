@@ -31,7 +31,7 @@ PrefabInstance:
     - target: {fileID: 6972069644614272644, guid: 20645e136940c6b4a8caa63c41ed75ef, type: 3}
       propertyPath: _entityInfo
       value: 
-      objectReference: {fileID: 11400000, guid: d3b2ac454cfcad7438d6a5bb6146a118, type: 2}
+      objectReference: {fileID: 11400000, guid: a7a2f0c9489b8874fa5ce850e706b6d2, type: 2}
     - target: {fileID: 7293211538275626967, guid: 20645e136940c6b4a8caa63c41ed75ef, type: 3}
       propertyPath: m_Mesh
       value: 
@@ -87,6 +87,10 @@ PrefabInstance:
     - target: {fileID: 7790156376496395155, guid: 20645e136940c6b4a8caa63c41ed75ef, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8215673142027532397, guid: 20645e136940c6b4a8caa63c41ed75ef, type: 3}
+      propertyPath: rmsCount
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8506885365720382400, guid: 20645e136940c6b4a8caa63c41ed75ef, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'

@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 381d41cf19d4c274da053cf99a1e8b3f, type: 3}
+  m_Name: Skills Info Container
+  m_EditorClassIdentifier: Game.Skills::_Project.Scripts.Core.Skills.SkillsInfoContainer
+  _skills:
+  - {fileID: 11400000, guid: e5a72d9e4b191da4992f0b2f5345cd95, type: 2}
+  - {fileID: 11400000, guid: 2fc2364cc90d4924ab878f65431c9965, type: 2}
+  - {fileID: 11400000, guid: f88fdfd257502724e98efa1f30786bd2, type: 2}

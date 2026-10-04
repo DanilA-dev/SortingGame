@@ -33,12 +33,14 @@ namespace _Project.Scripts
 
         private Coroutine _sleepRoutine;
         private Collider _collider;
-        
+        private bool _isRevealed;
+
         #endregion
 
         #region Properties
 
         public bool IsPicked { get; private set; }
+        public bool IsSorted => _isSorted.Value;
 
         public MeshRenderer Renderer
         {
@@ -103,6 +105,15 @@ namespace _Project.Scripts
             RestartSleepRoutine();
         }
 
+        public void SetRevealed(bool isRevealed)
+        {
+            _isRevealed = isRevealed;
+            if (isRevealed)
+                DisableInstancing();
+            else if (!IsPicked && !IsFocused && _sleepRoutine == null && _rigidbody.isKinematic)
+                EnableInstancing();
+        }
+
         #endregion
 
         #region Private
@@ -140,7 +151,7 @@ namespace _Project.Scripts
             yield return CoroutineManager.Wait(_sleepDelay.Value);
             _rigidbody.isKinematic = true;
             _sleepRoutine = null;
-            if (!IsFocused)
+            if (!IsFocused && !_isRevealed)
                 EnableInstancing();
         }
 
@@ -155,7 +166,7 @@ namespace _Project.Scripts
 
         protected override void OnUnfocus(GameObject interactor)
         {
-            if (!IsPicked && _sleepRoutine == null && _rigidbody.isKinematic)
+            if (!IsPicked && !_isRevealed && _sleepRoutine == null && _rigidbody.isKinematic)
                 EnableInstancing();
         }
 

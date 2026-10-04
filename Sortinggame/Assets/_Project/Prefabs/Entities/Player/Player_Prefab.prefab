@@ -685,6 +685,99 @@ MonoBehaviour:
       type: {class: FloatScriptableVariableValue, ns: D_Dev.PolymorphicValueSystem, asm: D-Dev.PolymorphicValueSystem}
       data:
         _variable: {fileID: 11400000, guid: 071686952c3973c4baabc7790c6b7998, type: 2}
+--- !u!1 &642849859430252685
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6145870393603192763}
+  - component: {fileID: 6347653750099301011}
+  m_Layer: 3
+  m_Name: MagnetSkill
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6145870393603192763
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 642849859430252685}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3109950376635906442}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6347653750099301011
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 642849859430252685}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4892f8d33c4af8d4eb291e21507dbf7a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Game.Core::_Project.Scripts.MagnetSkill
+  _info: {fileID: 11400000, guid: 2fc2364cc90d4924ab878f65431c9965, type: 2}
+  _skillTriggerVariable: {fileID: 11400000, guid: 20e1116faeec80348a009a8c9b3f57a7, type: 2}
+  _state: 0
+  _onSkillUseStart:
+    m_PersistentCalls:
+      m_Calls: []
+  _onSkillNotAvailable:
+    m_PersistentCalls:
+      m_Calls: []
+  _onSkillUseStop:
+    m_PersistentCalls:
+      m_Calls: []
+  _onSkillLocked:
+    m_PersistentCalls:
+      m_Calls: []
+  _selectedItem:
+    rid: 5687120631951532627
+  _itemsList: {fileID: 11400000, guid: f77569b02ed12d546b49e1c63bc88958, type: 2}
+  _radius:
+    rid: 5687120631951532628
+  _maxItems:
+    rid: 5687120631951532629
+  _currentItemsAmount:
+    rid: 5687120631951532632
+  _maxCapacity:
+    rid: 5687120631951532630
+  references:
+    version: 2
+    RefIds:
+    - rid: 5687120631951532627
+      type: {class: GameObjectScriptableVariableValue, ns: D_Dev.PolymorphicValueSystem, asm: D-Dev.PolymorphicValueSystem}
+      data:
+        _variable: {fileID: 11400000, guid: 2df0936c87ebd4741bc9a5422a28b436, type: 2}
+    - rid: 5687120631951532628
+      type: {class: FloatScriptableVariableValue, ns: D_Dev.PolymorphicValueSystem, asm: D-Dev.PolymorphicValueSystem}
+      data:
+        _variable: {fileID: 11400000, guid: fd082eecd2a145768b727620955a5914, type: 2}
+    - rid: 5687120631951532629
+      type: {class: IntScriptableVariableValue, ns: D_Dev.PolymorphicValueSystem, asm: D-Dev.PolymorphicValueSystem}
+      data:
+        _variable: {fileID: 11400000, guid: 5320ddf586519e145a1165c3222657f9, type: 2}
+    - rid: 5687120631951532630
+      type: {class: IntScriptableVariableValue, ns: D_Dev.PolymorphicValueSystem, asm: D-Dev.PolymorphicValueSystem}
+      data:
+        _variable: {fileID: 11400000, guid: 5320ddf586519e145a1165c3222657f9, type: 2}
+    - rid: 5687120631951532632
+      type: {class: IntScriptableVariableValue, ns: D_Dev.PolymorphicValueSystem, asm: D-Dev.PolymorphicValueSystem}
+      data:
+        _variable: {fileID: 11400000, guid: b7fb52aaa5665f04e80a9075c3dc1604, type: 2}
 --- !u!1 &1948339936289830862
 GameObject:
   m_ObjectHideFlags: 0
@@ -1127,6 +1220,75 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!1 &2697955643180790943
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2221332719055900143}
+  - component: {fileID: 1340271323974889131}
+  m_Layer: 3
+  m_Name: VisionSkill
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2221332719055900143
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2697955643180790943}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3109950376635906442}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1340271323974889131
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2697955643180790943}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c08a2b60716e7c4a83ff113262ce14a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Game.Core::_Project.Scripts.VisionSkill
+  _info: {fileID: 11400000, guid: e5a72d9e4b191da4992f0b2f5345cd95, type: 2}
+  _skillTriggerVariable: {fileID: 11400000, guid: 20ad7223fbc4670478d23ba3c855149c, type: 2}
+  _state: 0
+  _onSkillUseStart:
+    m_PersistentCalls:
+      m_Calls: []
+  _onSkillNotAvailable:
+    m_PersistentCalls:
+      m_Calls: []
+  _onSkillUseStop:
+    m_PersistentCalls:
+      m_Calls: []
+  _onSkillLocked:
+    m_PersistentCalls:
+      m_Calls: []
+  _selectedItem:
+    rid: 5687120631951532621
+  _targetsList: {fileID: 11400000, guid: f77569b02ed12d546b49e1c63bc88958, type: 2}
+  references:
+    version: 2
+    RefIds:
+    - rid: 5687120631951532621
+      type: {class: GameObjectScriptableVariableValue, ns: D_Dev.PolymorphicValueSystem, asm: D-Dev.PolymorphicValueSystem}
+      data:
+        _variable: {fileID: 11400000, guid: 2df0936c87ebd4741bc9a5422a28b436, type: 2}
 --- !u!1 &2739311377954848113
 GameObject:
   m_ObjectHideFlags: 0
@@ -1158,6 +1320,40 @@ Transform:
   m_Children:
   - {fileID: 8450843166290580241}
   - {fileID: 377007139325199408}
+  m_Father: {fileID: 7624906871845726300}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &3309184395394228983
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3109950376635906442}
+  m_Layer: 3
+  m_Name: Skills
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3109950376635906442
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3309184395394228983}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 2221332719055900143}
+  - {fileID: 6145870393603192763}
+  - {fileID: 5215995887792127946}
   m_Father: {fileID: 7624906871845726300}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3433429229398327313
@@ -1287,6 +1483,7 @@ Transform:
   - {fileID: 6063115550617834303}
   - {fileID: 2898917107102666014}
   - {fileID: 3397705229956267384}
+  - {fileID: 3109950376635906442}
   - {fileID: 907784217545572169}
   - {fileID: 3621044774616372212}
   - {fileID: 8740145613627193588}
@@ -1686,6 +1883,75 @@ Transform:
   - {fileID: 8443917908369301350}
   m_Father: {fileID: 7624906871845726300}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &5924426602623339593
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5215995887792127946}
+  - component: {fileID: 3868615669854247119}
+  m_Layer: 3
+  m_Name: StockSkill
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5215995887792127946
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5924426602623339593}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3109950376635906442}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3868615669854247119
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5924426602623339593}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13b45eefd2fba9e4782f3ac955fe7e5d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Game.Core::_Project.Scripts.StockSkill
+  _info: {fileID: 11400000, guid: f88fdfd257502724e98efa1f30786bd2, type: 2}
+  _skillTriggerVariable: {fileID: 11400000, guid: a76fac6538c391446a5509e434ff8976, type: 2}
+  _state: 0
+  _onSkillUseStart:
+    m_PersistentCalls:
+      m_Calls: []
+  _onSkillNotAvailable:
+    m_PersistentCalls:
+      m_Calls: []
+  _onSkillUseStop:
+    m_PersistentCalls:
+      m_Calls: []
+  _onSkillLocked:
+    m_PersistentCalls:
+      m_Calls: []
+  _selectedItem:
+    rid: 5687120631951532634
+  _targetsList: {fileID: 11400000, guid: bed0955162859c94e8b56c9e418e3363, type: 2}
+  references:
+    version: 2
+    RefIds:
+    - rid: 5687120631951532634
+      type: {class: GameObjectScriptableVariableValue, ns: D_Dev.PolymorphicValueSystem, asm: D-Dev.PolymorphicValueSystem}
+      data:
+        _variable: {fileID: 11400000, guid: 2df0936c87ebd4741bc9a5422a28b436, type: 2}
 --- !u!1 &6757496935446282390
 GameObject:
   m_ObjectHideFlags: 0

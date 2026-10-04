@@ -5,38 +5,40 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c7e8f329-2cc1-4157-9309-86340ee94883" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/Core/Upgrades.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/Core/Upgrades/BaseUpgradeInfo.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/Core/Upgrades/BaseUpgradeInfo.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/Core/Upgrades/FloatUpgradeInfo.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/Core/Upgrades/FloatUpgradeInfo.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/Core/Upgrades/IntUpgradeInfo.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/Core/Upgrades/IntUpgradeInfo.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/Core/Upgrades/UpgradesInfoContainer.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/Core/Upgrades/UpgradesInfoContainer.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/UI/Menus.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/UI/Menus/UpgradesMenu.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/UI/Menus/UpgradesMenu.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/UI/Views.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/UI/Views/UpgradableItemView.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/UI/Views/UpgradableItemView.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/Core/Skills.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/Core/Skills/BaseSkill.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/Core/Skills/BaseSkill.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/Core/Skills/SkillInfo.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/Core/Skills/SkillInfo.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Sortinggame/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Sortinggame/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/Art/Fonts/RifficFree-Bold SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Art/Fonts/RifficFree-Bold SDF.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/Prefabs/UI/Items/BaseDisplayCurrentMaxCounter_Prefab.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/Prefabs/UI/Items/BaseDisplayCurrentMaxCounter_Prefab.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/Prefabs/UI/Items/BaseUIButton_Prefab.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/Prefabs/UI/Items/BaseUIButton_Prefab.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/ScriptableObjects/Variables/Core/Upgradable/InteractDistance_FloatVariable.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/ScriptableObjects/Variables/Core/Upgradable/InteractDistance_FloatVariable.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/ScriptableObjects/Variables/Core/Upgradable/MaxPickedItems_IntVariable.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/ScriptableObjects/Variables/Core/Upgradable/MaxPickedItems_IntVariable.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Danil-dev/Assets/Input/InputActions.inputactions" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Danil-dev/Assets/Input/InputActions.inputactions" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Free Icon Pack v3.1 (Basic)/Item/Location Pin/256px/Location Pin 1st 256px.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Free Icon Pack v3.1 (Basic)/Item/Location Pin/256px/Location Pin 1st 256px.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Free Icon Pack v3.1 (Basic)/Item/Location Pin/256px/Location Pin 1st Outline 256px.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Free Icon Pack v3.1 (Basic)/Item/Location Pin/256px/Location Pin 1st Outline 256px.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Free Icon Pack v3.1 (Basic)/Item/Location Pin/256px/Location Pin 2nd 256px.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Free Icon Pack v3.1 (Basic)/Item/Location Pin/256px/Location Pin 2nd 256px.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Free Icon Pack v3.1 (Basic)/Item/Location Pin/256px/Location Pin 2nd Outline 256px.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Free Icon Pack v3.1 (Basic)/Item/Location Pin/256px/Location Pin 2nd Outline 256px.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Free Icon Pack v3.1 (Basic)/Item/Location Pin/256px/Location Pin Black 256px.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Free Icon Pack v3.1 (Basic)/Item/Location Pin/256px/Location Pin Black 256px.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Free Icon Pack v3.1 (Basic)/Item/Location Pin/256px/Location Pin White 256px.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Free Icon Pack v3.1 (Basic)/Item/Location Pin/256px/Location Pin White 256px.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Free Icon Pack v3.1 (Basic)/Main/Magnifying Glass/256w/Magnifying Glass 1st 256px.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Free Icon Pack v3.1 (Basic)/Main/Magnifying Glass/256w/Magnifying Glass 1st 256px.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Free Icon Pack v3.1 (Basic)/Main/Magnifying Glass/256w/Magnifying Glass 1st Outline 256px.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Free Icon Pack v3.1 (Basic)/Main/Magnifying Glass/256w/Magnifying Glass 1st Outline 256px.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Free Icon Pack v3.1 (Basic)/Main/Magnifying Glass/256w/Magnifying Glass 2nd 256px.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Free Icon Pack v3.1 (Basic)/Main/Magnifying Glass/256w/Magnifying Glass 2nd 256px.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Free Icon Pack v3.1 (Basic)/Main/Magnifying Glass/256w/Magnifying Glass 2nd Outline 256px.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Free Icon Pack v3.1 (Basic)/Main/Magnifying Glass/256w/Magnifying Glass 2nd Outline 256px.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Free Icon Pack v3.1 (Basic)/Main/Magnifying Glass/256w/Magnifying Glass Black 256px.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Free Icon Pack v3.1 (Basic)/Main/Magnifying Glass/256w/Magnifying Glass Black 256px.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Free Icon Pack v3.1 (Basic)/Main/Magnifying Glass/256w/Magnifying Glass White 256px.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Free Icon Pack v3.1 (Basic)/Main/Magnifying Glass/256w/Magnifying Glass White 256px.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Prefabs/Entities/Items/BlueMugItem_Prefab.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Prefabs/Entities/Items/BlueMugItem_Prefab.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Prefabs/Entities/Items/RedMugItem_Prefab.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Prefabs/Entities/Items/RedMugItem_Prefab.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Prefabs/Entities/Levels/StoreLevel_Prefab.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Prefabs/Entities/Levels/StoreLevel_Prefab.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Prefabs/Entities/Player/Player_Prefab.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Prefabs/Entities/Player/Player_Prefab.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scenes/SystemsScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scenes/SystemsScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/ScriptableObjects/Infos/Menus/Menu Infos Container.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/ScriptableObjects/Infos/Menus/Menu Infos Container.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/ScriptableObjects/Variables/Core/Runtime/CurrentSortedItems_IntVariable.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/ScriptableObjects/Variables/Core/Runtime/CurrentSortedItems_IntVariable.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/ScriptableObjects/Variables/Core/Runtime/CurrentSortedShelves_IntVariable.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/ScriptableObjects/Variables/Core/Runtime/CurrentSortedShelves_IntVariable.asset.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/Core/Game.Core.asmdef" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/Core/Game.Core.asmdef" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/Core/Interactable/ItemInteractable.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/Core/Interactable/ItemInteractable.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/Core/ItemSlotsContainer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/Core/ItemSlotsContainer.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/UI/Game.UI.asmdef" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/UI/Game.UI.asmdef" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/UI/ItemDisplayMenu.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/UI/Menus/ItemDisplayMenu.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/UI/ItemDisplayMenu.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/UI/Menus/ItemDisplayMenu.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/UI/PauseMenu.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/UI/Menus/PauseMenu.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/UI/PauseMenu.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/UI/Menus/PauseMenu.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/cartoon_ui_pack/basic blue/pop up window.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/cartoon_ui_pack/basic blue/pop up window.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/cartoon_ui_pack/basic white/button square clicked.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/cartoon_ui_pack/basic white/button square clicked.png.meta" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,6 +52,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Danil-dev/Scripts/Runtime/PlayerUtilities/Handlers/PlayerInputProvider.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Project/Scripts/Core/PickedItemsContainer.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Project/Scripts/UI/Menus/PauseMenu.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_Project/Scripts/UI/Menus/SkillsMenu.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.inputsystem@21a28c3a6c83/InputSystem/Plugins/OnScreen/OnScreenButton.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="ProjectColorInfo">{
@@ -60,20 +63,20 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "main",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.sourceCode.C#",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
     <configuration name="Start Unity" type="RunUnityExe" factoryName="Unity Executable">
       <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\6000.3.18f1\Editor\Unity.exe" />

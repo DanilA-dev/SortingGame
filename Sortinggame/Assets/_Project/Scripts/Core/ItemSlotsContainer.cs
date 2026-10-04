@@ -35,6 +35,7 @@ namespace _Project.Scripts
 
         public ItemSlotInteractable[] Slots => _slots;
         public EntityInfo ItemInfo => _itemInfo.Value;
+        public bool IsSorted => _isSorted.Value;
 
         #endregion
 

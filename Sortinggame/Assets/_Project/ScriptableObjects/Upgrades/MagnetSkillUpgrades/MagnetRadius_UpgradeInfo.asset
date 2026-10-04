@@ -1,0 +1,45 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3450f76d55984495a0b2a5b3298d5f81, type: 3}
+  m_Name: MagnetRadius_UpgradeInfo
+  m_EditorClassIdentifier: Game.Upgrades::_Project.Scripts.Core.Upgrades.FloatUpgradeInfo
+  _upgradeName:
+    rid: 568712064000000031
+  _upgradeDescription:
+    rid: 568712064000000032
+  _icon: {fileID: 0}
+  _level: {fileID: 11400000, guid: 78ef287dde4346de9bf49eb647bf495a, type: 2}
+  _prices: 6400000096000000fa00000090010000
+  _showDebugInfo: 1
+  _target:
+    rid: 568712064000000033
+  _values:
+  - 3
+  - 4
+  - 5
+  - 6
+  - 8
+  references:
+    version: 2
+    RefIds:
+    - rid: 568712064000000031
+      type: {class: StringConstantValue, ns: D_Dev.PolymorphicValueSystem, asm: D-Dev.PolymorphicValueSystem}
+      data:
+        _value: Magnet Radius
+    - rid: 568712064000000032
+      type: {class: StringConstantValue, ns: D_Dev.PolymorphicValueSystem, asm: D-Dev.PolymorphicValueSystem}
+      data:
+        _value: Attract products from further away
+    - rid: 568712064000000033
+      type: {class: FloatScriptableVariableValue, ns: D_Dev.PolymorphicValueSystem, asm: D-Dev.PolymorphicValueSystem}
+      data:
+        _variable: {fileID: 11400000, guid: fd082eecd2a145768b727620955a5914, type: 2}

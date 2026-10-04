@@ -656,6 +656,9 @@ MonoBehaviour:
   - rid: 1932282358920643439
   - rid: 1932282381251117538
   - rid: 5687120579038549815
+  - rid: 5687120631951532687
+  - rid: 5687120631951532690
+  - rid: 5687120631951532692
   references:
     version: 2
     RefIds:
@@ -709,6 +712,36 @@ MonoBehaviour:
       type: {class: BoolScriptableVariableValue, ns: D_Dev.PolymorphicValueSystem, asm: D-Dev.PolymorphicValueSystem}
       data:
         _variable: {fileID: 11400000, guid: 7a089637506d4d1428591c3ce5ba848c, type: 2}
+    - rid: 5687120631951532687
+      type: {class: ButtonInputBinding, ns: D_Dev.PlayerStateController.InputBindings, asm: D-Dev.PlayerUtilities}
+      data:
+        _action: {fileID: 7522433593963234655, guid: 5874c51c9acab224ab9f2bff4257f317, type: 3}
+        _output:
+          rid: 5687120631951532689
+    - rid: 5687120631951532689
+      type: {class: BoolScriptableVariableValue, ns: D_Dev.PolymorphicValueSystem, asm: D-Dev.PolymorphicValueSystem}
+      data:
+        _variable: {fileID: 11400000, guid: 20ad7223fbc4670478d23ba3c855149c, type: 2}
+    - rid: 5687120631951532690
+      type: {class: ButtonInputBinding, ns: D_Dev.PlayerStateController.InputBindings, asm: D-Dev.PlayerUtilities}
+      data:
+        _action: {fileID: 8048916842342626340, guid: 5874c51c9acab224ab9f2bff4257f317, type: 3}
+        _output:
+          rid: 5687120631951532691
+    - rid: 5687120631951532691
+      type: {class: BoolScriptableVariableValue, ns: D_Dev.PolymorphicValueSystem, asm: D-Dev.PolymorphicValueSystem}
+      data:
+        _variable: {fileID: 11400000, guid: 20e1116faeec80348a009a8c9b3f57a7, type: 2}
+    - rid: 5687120631951532692
+      type: {class: ButtonInputBinding, ns: D_Dev.PlayerStateController.InputBindings, asm: D-Dev.PlayerUtilities}
+      data:
+        _action: {fileID: -5804887708883568349, guid: 5874c51c9acab224ab9f2bff4257f317, type: 3}
+        _output:
+          rid: 5687120631951532693
+    - rid: 5687120631951532693
+      type: {class: BoolScriptableVariableValue, ns: D_Dev.PolymorphicValueSystem, asm: D-Dev.PolymorphicValueSystem}
+      data:
+        _variable: {fileID: 11400000, guid: a76fac6538c391446a5509e434ff8976, type: 2}
 --- !u!4 &1067671697
 Transform:
   m_ObjectHideFlags: 0

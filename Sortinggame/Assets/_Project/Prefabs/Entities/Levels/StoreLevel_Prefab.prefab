@@ -473,7 +473,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1799709081223245664}
-  - component: {fileID: 7010000344529828028}
+  - component: {fileID: 2062937264128546950}
   m_Layer: 0
   m_Name: CreateMenus
   m_TagString: Untagged
@@ -496,7 +496,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 423707931109863753}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7010000344529828028
+--- !u!114 &2062937264128546950
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -505,22 +505,68 @@ MonoBehaviour:
   m_GameObject: {fileID: 2648132942500739273}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c20da54fe9d44c0da37990021738df29, type: 3}
+  m_Script: {fileID: 11500000, guid: 79e3e75a3703c754a865f4707bd33b44, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: D-Dev.Menu::D_Dev.MenuHandler.Extensions.EventBehaviours.MenuEventInvoker
-  _eventNameTypes:
-  - rid: 1932282358920642902
-  _invokeOnStart: 0
-  _invokeOnlyOnce: 0
-  _debug: 0
-  <Param>k__BackingField: {fileID: 11400000, guid: a1649d8f281ab634490fce80d6cbbcc1, type: 2}
+  m_EditorClassIdentifier: D-Dev.ActionFlow::D_Dev.ActionFlow.ActionExecutorFlow
+  _executeOnStart: 0
+  _resetOnFinish: 0
+  _saveState: 0
+  _saveID: 
+  _actionGroups:
+  - rid: 5687120623140086046
+  _breakConditions: []
+  _onStarted:
+    m_PersistentCalls:
+      m_Calls: []
+  _onFinished:
+    m_PersistentCalls:
+      m_Calls: []
+  _onPaused:
+    m_PersistentCalls:
+      m_Calls: []
+  _onResumed:
+    m_PersistentCalls:
+      m_Calls: []
+  _onGroupStarted:
+    m_PersistentCalls:
+      m_Calls: []
+  _onGroupFinished:
+    m_PersistentCalls:
+      m_Calls: []
+  _onGroupTimeout:
+    m_PersistentCalls:
+      m_Calls: []
+  _onBroken:
+    m_PersistentCalls:
+      m_Calls: []
+  _isPaused: 0
+  _isFinished: 0
   references:
     version: 2
     RefIds:
-    - rid: 1932282358920642902
-      type: {class: ConstantEventNameType, ns: D_Dev.CustomEventManager, asm: D-Dev.EventBehaviours}
+    - rid: 5687120623140086046
+      type: {class: ActionGroup, ns: D_Dev.Base, asm: D-Dev.Base}
       data:
-        _eventNameConstants: 5
+        _executeInParallel: 1
+        _actions:
+        - rid: 5687120623140086047
+        - rid: 5687120623140086048
+    - rid: 5687120623140086047
+      type: {class: OpenMenuInfoAction, ns: D_Dev.Scripts.MenuHandler.Extensions.Actions, asm: D-Dev.Menu}
+      data:
+        _actionName: Open Core Menu
+        OnUndo:
+          m_PersistentCalls:
+            m_Calls: []
+        _menuInfo: {fileID: 11400000, guid: a1649d8f281ab634490fce80d6cbbcc1, type: 2}
+    - rid: 5687120623140086048
+      type: {class: OpenMenuInfoAction, ns: D_Dev.Scripts.MenuHandler.Extensions.Actions, asm: D-Dev.Menu}
+      data:
+        _actionName: Open Core Menu
+        OnUndo:
+          m_PersistentCalls:
+            m_Calls: []
+        _menuInfo: {fileID: 11400000, guid: dd1cfdc775c5c8344a63e11912168d59, type: 2}
 --- !u!1 &2902112454564396192
 GameObject:
   m_ObjectHideFlags: 0
@@ -666,37 +712,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 10, y: 0.8855208, z: 10}
   m_Center: {x: 0, y: -0.4427604, z: 0}
---- !u!1 &2976576105041260664
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 7045635106675283394}
-  m_Layer: 0
-  m_Name: GameObject
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &7045635106675283394
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2976576105041260664}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 423707931109863753}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3228519378784531392
 GameObject:
   m_ObjectHideFlags: 0
@@ -1948,7 +1963,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1799709081223245664}
-  - {fileID: 7045635106675283394}
   m_Father: {fileID: 8585573086341918445}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2402741726309440042
@@ -1969,10 +1983,9 @@ MonoBehaviour:
   _onRaised:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7010000344529828028}
-        m_TargetAssemblyTypeName: D_Dev.MenuHandler.Extensions.EventBehaviours.MenuEventInvoker,
-          D-Dev.Menu
-        m_MethodName: Raise
+      - m_Target: {fileID: 2062937264128546950}
+        m_TargetAssemblyTypeName: D_Dev.ActionFlow.ActionExecutorFlow, D-Dev.ActionFlow
+        m_MethodName: StartExecution
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
