@@ -10,9 +10,9 @@ namespace _Project.Scripts.Core.Purchasable
 
         #endregion
 
-        #region Monobehaviour
+        #region Public
 
-        private void Start()
+        public void ApplyAll()
         {
             foreach (var container in _containers)
             {

@@ -35,6 +35,7 @@ namespace _Project.Scripts
         private Collider _collider;
         private bool _isRevealed;
         private bool _isSettled;
+        private bool _isSortedApplied;
 
         #endregion
 
@@ -72,7 +73,7 @@ namespace _Project.Scripts
                 return;
             }
 
-            if (_isSettled)
+            if (_isSettled || IsPicked)
                 return;
 
             TryStartSleepLogic();
@@ -94,6 +95,11 @@ namespace _Project.Scripts
 
         public void SetSorted()
         {
+            if (_isSortedApplied)
+                return;
+
+            _isSortedApplied = true;
+            StopSleepRoutine();
             _isSorted.Value = true;
             _rigidbody.isKinematic = true;
             _collider.enabled = false;

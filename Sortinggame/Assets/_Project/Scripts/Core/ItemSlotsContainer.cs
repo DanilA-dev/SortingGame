@@ -28,6 +28,7 @@ namespace _Project.Scripts
         public UnityEvent OnAllSlotsTaken;
 
         private ItemSlotInteractable[] _slots;
+        private bool _isSortedApplied;
 
         #endregion
 
@@ -62,6 +63,34 @@ namespace _Project.Scripts
 
         #endregion
 
+        #region Public
+
+        public bool TryGetSlotIndex(GameObject item, out int index)
+        {
+            index = -1;
+            if (_slots == null || item == null)
+                return false;
+
+            index = System.Array.FindIndex(_slots, s => s.Item == item);
+            return index >= 0;
+        }
+
+        public bool TryRestoreItem(int slotIndex, GameObject item)
+        {
+            if (_slots == null || slotIndex < 0 || slotIndex >= _slots.Length)
+                return false;
+
+            if (!_slots[slotIndex].TryPlaceItemImmediate(item))
+                return false;
+
+            if (_slots.All(s => s.IsBusy))
+                SetSorted();
+
+            return true;
+        }
+
+        #endregion
+
         #region Private
 
         private void InitSlots()
@@ -87,6 +116,10 @@ namespace _Project.Scripts
 
         private void SetSorted()
         {
+            if (_isSortedApplied)
+                return;
+
+            _isSortedApplied = true;
             _currentSortedShelvesVariable.Value++;
             _isSorted.Value = true;
         }

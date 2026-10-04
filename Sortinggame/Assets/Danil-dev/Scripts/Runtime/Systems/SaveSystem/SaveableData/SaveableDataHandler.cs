@@ -1,9 +1,11 @@
-﻿using System.IO;
+﻿using System.Collections.Generic;
+using System.IO;
 using Cysharp.Threading.Tasks;
 using D_Dev.PolymorphicValueSystem;
 using D_Dev.SaveSystem.Services;
 using Sirenix.OdinInspector;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace D_Dev.SaveSystem.SaveableData
 {
@@ -15,12 +17,20 @@ namespace D_Dev.SaveSystem.SaveableData
         [SerializeReference] private BaseSaveableData[] _saveableDatas;
         [PropertySpace(15)]
         [SerializeField] private bool _debug;
-        
+        [FoldoutGroup("Events"), PropertyOrder(100)]
+        public UnityEvent OnLoaded;
+
+        #endregion
+
+        #region Properties
+
+        public bool IsLoaded { get; private set; }
+
         #endregion
 
         #region Monobehaviour
 
-        private void Start() => LoadOnStart();
+        private void Start() => LoadAllAsync(true).Forget();
         private void OnDestroy() => SaveOnExit();
         private void OnApplicationFocus(bool hasFocus)
         {
@@ -40,11 +50,7 @@ namespace D_Dev.SaveSystem.SaveableData
                 Save(saveableData);
         }
 
-        public void LoadData()
-        {
-            foreach (var saveableData in _saveableDatas)
-                Load(saveableData);
-        }
+        public void LoadData() => LoadAllAsync(false).Forget();
 
         
         [Button]
@@ -78,11 +84,28 @@ namespace D_Dev.SaveSystem.SaveableData
         
         #region Private
 
-        private void LoadOnStart()
+        private async UniTaskVoid LoadAllAsync(bool onlyLoadOnStart)
         {
-            foreach (var saveableData in _saveableDatas)
-                if (saveableData.LoadOnStart)
-                    Load(saveableData);
+            IsLoaded = false;
+
+            var tasks = new List<UniTask>();
+            if (_saveableDatas != null)
+            {
+                foreach (var saveableData in _saveableDatas)
+                    if (saveableData != null && (!onlyLoadOnStart || saveableData.LoadOnStart))
+                        tasks.Add(LoadAsync(saveableData));
+            }
+
+            await UniTask.WhenAll(tasks);
+
+            if (this == null)
+                return;
+
+            IsLoaded = true;
+            OnLoaded?.Invoke();
+
+            if (_debug)
+                Debug.Log("[SaveableDataHandler] All data loaded");
         }
 
         private void SaveOnExit()
@@ -94,7 +117,7 @@ namespace D_Dev.SaveSystem.SaveableData
 
         private void Save(BaseSaveableData data, bool immediate = false)
         {
-            if (GlobalSaveService.Instance == null)
+            if (GlobalSaveService.Instance == null || !data.CanSave)
                 return;
 
             if (immediate)
@@ -106,13 +129,16 @@ namespace D_Dev.SaveSystem.SaveableData
                 Debug.Log($"[SaveableDataHandler] Save {data.Key.Value}");
         }
 
-        private async void Load(BaseSaveableData data)
+        private async UniTask LoadAsync(BaseSaveableData data)
         {
             if (GlobalSaveService.Instance == null)
                 return;
-            
+
             var loaded = await GlobalSaveService.Instance.LoadAsync<object>(data.Key.Value, data.GetDefaultValue());
-            
+
+            if (this == null)
+                return;
+
             if (loaded != null)
                 data.LoadData(loaded);
             

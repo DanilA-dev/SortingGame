@@ -140,6 +140,27 @@ namespace _Project.Scripts
             return slot != null ? _pickedItems[slot] : null;
         }
 
+        public bool TryGetItemIndex(GameObject item, out int index)
+        {
+            index = 0;
+            if (item == null)
+                return false;
+
+            foreach (var slot in _createdSlots)
+            {
+                if (!slot.IsBusy)
+                    continue;
+
+                if (slot.Item == item)
+                    return true;
+
+                index++;
+            }
+
+            index = -1;
+            return false;
+        }
+
         #endregion
 
         #region Listeners

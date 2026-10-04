@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using Cysharp.Threading.Tasks;
 using D_Dev.Entity;
@@ -7,6 +8,7 @@ using D_Dev.PositionRotationConfig;
 using D_Dev.PositionRotationConfig.RotationSettings;
 using D_Dev.RuntimeLists;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 namespace _Project.Scripts
 {
@@ -23,8 +25,18 @@ namespace _Project.Scripts
 
         private EntitySpawnSettings _entitySpawnSettings;
         private Dictionary<EntityInfo, int> _itemsSpawnAmounts;
+        private readonly Dictionary<string, EntityInfo> _itemInfosById = new();
         private readonly List<BasePositionSettings> _validZones = new();
         private readonly List<float> _zonesCumulativeWeights = new();
+        private readonly List<GameObject> _spawnedItems = new();
+        private bool _isCached;
+
+        #endregion
+
+        #region Properties
+
+        public IReadOnlyList<GameObject> SpawnedItems => _spawnedItems;
+        public bool IsSpawned => _isSpawned.Value;
 
         #endregion
 
@@ -38,8 +50,7 @@ namespace _Project.Scripts
 
         private void Start()
         {
-            CacheShelvesItemsData();
-            CacheSpawnZones();
+            EnsureCached();
 
             if(_spawnOnStart)
                 SpawnItems();
@@ -59,18 +70,18 @@ namespace _Project.Scripts
             SpawnItemsAsync().Forget();
         }
 
-        #endregion
+        public UniTask SpawnItemsAsync() => SpawnItemsAsync(CreateRandomItems);
 
-        #region Private
-
-        private async UniTask SpawnItemsAsync()
+        public async UniTask SpawnItemsAsync(Func<UniTask<List<GameObject>>> createItems)
         {
+            EnsureCached();
+
             var prevSimulationMode = Physics.simulationMode;
             Physics.simulationMode = SimulationMode.Script;
 
             try
             {
-                var items = await CreateItems();
+                var items = await createItems();
                 SettleItems(items);
             }
             finally
@@ -80,33 +91,68 @@ namespace _Project.Scripts
             }
         }
 
-        private async UniTask<List<GameObject>> CreateItems()
+        public async UniTask<GameObject> CreateItemAsync(EntityInfo itemInfo)
+        {
+            EnsureCached();
+
+            if (itemInfo == null)
+                return null;
+
+            if (_validZones.Count == 0)
+            {
+                Debug.LogError($"[SlotsBasedItemSpawner] No spawn zones assigned on {gameObject.name}");
+                return null;
+            }
+
+            _entitySpawnSettings.Data.Value = itemInfo;
+            _entitySpawnSettings.SetActiveOnStart = true;
+            _entitySpawnSettings.PositionSettings = GetRandomZone();
+
+            var item = await _entitySpawnSettings.Get();
+            if (item == null)
+                return null;
+
+            item.transform.rotation = _spawnRotationSettings.GetRotation();
+            _spawnedItems.Add(item);
+            return item;
+        }
+
+        public bool TryGetItemInfo(string id, out EntityInfo itemInfo)
+        {
+            EnsureCached();
+
+            itemInfo = null;
+            return !string.IsNullOrEmpty(id) && _itemInfosById.TryGetValue(id, out itemInfo);
+        }
+
+        #endregion
+
+        #region Private
+
+        private void EnsureCached()
+        {
+            if (_isCached)
+                return;
+
+            _isCached = true;
+            CacheShelvesItemsData();
+            CacheSpawnZones();
+        }
+
+        private async UniTask<List<GameObject>> CreateRandomItems()
         {
             var items = new List<GameObject>();
 
             if(_itemsSpawnAmounts == null || _itemsSpawnAmounts.Count <= 0)
                 return items;
 
-            if (_validZones.Count == 0)
-            {
-                Debug.LogError($"[SlotsBasedItemSpawner] No spawn zones assigned on {gameObject.name}");
-                return items;
-            }
-
             foreach (var (itemData, amount) in _itemsSpawnAmounts)
             {
-                _entitySpawnSettings.Data.Value = itemData;
-                _entitySpawnSettings.SetActiveOnStart = true;
-
                 for (int i = 0; i < amount; i++)
                 {
-                    _entitySpawnSettings.PositionSettings = GetRandomZone();
-                    var item  = await _entitySpawnSettings.Get();
-                    if (item == null)
-                        continue;
-
-                    item.transform.rotation = _spawnRotationSettings.GetRotation();
-                    items.Add(item);
+                    var item = await CreateItemAsync(itemData);
+                    if (item != null)
+                        items.Add(item);
                 }
             }
 
@@ -115,7 +161,7 @@ namespace _Project.Scripts
 
         private void SettleItems(List<GameObject> items)
         {
-            if (items.Count == 0)
+            if (items == null || items.Count == 0)
                 return;
 
             var bodies = new List<Rigidbody>(items.Count);
@@ -150,6 +196,7 @@ namespace _Project.Scripts
                 return;
 
             _itemsSpawnAmounts = new();
+            _itemInfosById.Clear();
 
             foreach (var item in _shelvesRuntimeList.Items)
             {
@@ -159,7 +206,14 @@ namespace _Project.Scripts
                 if(!item.TryGetComponent(out ItemSlotsContainer container))
                     continue;
 
-                _itemsSpawnAmounts.TryAdd(container.ItemInfo, container.Slots.Length);
+                var itemInfo = container.ItemInfo;
+                if (itemInfo == null)
+                    continue;
+
+                _itemsSpawnAmounts.TryAdd(itemInfo, container.Slots.Length);
+
+                if (!string.IsNullOrEmpty(itemInfo.ID))
+                    _itemInfosById.TryAdd(itemInfo.ID, itemInfo);
             }
         }
 
@@ -226,7 +280,7 @@ namespace _Project.Scripts
 
         private static BasePositionSettings CreateZoneCopy(BasePositionSettings source)
         {
-            var copy = (BasePositionSettings)System.Activator.CreateInstance(source.GetType());
+            var copy = (BasePositionSettings)Activator.CreateInstance(source.GetType());
             copy.RandomMode = source.RandomMode;
             copy.RandomBoxSize = source.RandomBoxSize;
             copy.RandomRadius = source.RandomRadius;

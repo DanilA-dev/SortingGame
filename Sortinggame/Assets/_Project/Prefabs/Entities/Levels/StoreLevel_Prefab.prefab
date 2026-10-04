@@ -90,6 +90,53 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!1 &774930211127627763
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6813283313806506390}
+  - component: {fileID: 6565164201937415689}
+  m_Layer: 0
+  m_Name: UpgradesLoader
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6813283313806506390
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 774930211127627763}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1321928048244494409}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6565164201937415689
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 774930211127627763}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78ba7de3ff9a42639322e5434cddb114, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Game.Purchasable::_Project.Scripts.Core.Purchasable.PurchasesLoader
+  _containers:
+  - {fileID: 11400000, guid: 4f60a69fb08598c409dfa58af2a5f143, type: 2}
+  - {fileID: 11400000, guid: 39314d51d0b649deb14305c8f53dd90a, type: 2}
 --- !u!1 &858811634898617745
 GameObject:
   m_ObjectHideFlags: 0
@@ -423,6 +470,8 @@ Transform:
   m_Children:
   - {fileID: 1321928048244494409}
   - {fileID: 2733575127309596121}
+  - {fileID: 4949325508083221235}
+  - {fileID: 4718390265537710242}
   m_Father: {fileID: 7847874336084560758}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &4199078729010370001
@@ -567,6 +616,54 @@ MonoBehaviour:
           m_PersistentCalls:
             m_Calls: []
         _menuInfo: {fileID: 11400000, guid: dd1cfdc775c5c8344a63e11912168d59, type: 2}
+--- !u!1 &2779676866177182419
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4949325508083221235}
+  - component: {fileID: 1013663533928872126}
+  m_Layer: 0
+  m_Name: LevelStateController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4949325508083221235
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2779676866177182419}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6890951202808516898}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1013663533928872126
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2779676866177182419}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8674bcc4e6f3134a991c244a92ee568, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Game.Core::_Project.Scripts.LevelStateController
+  _spawner: {fileID: 3358421487402490099}
+  _shelvesRuntimeList: {fileID: 11400000, guid: bed0955162859c94e8b56c9e418e3363, type: 2}
+  _pickedContainerWaitTimeout: 10
+  _debug: 0
 --- !u!1 &2902112454564396192
 GameObject:
   m_ObjectHideFlags: 0
@@ -2304,7 +2401,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19dba1a172234286a9a0313fb9ce3a8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Game.Core::_Project.Scripts.ItemSpawner
-  _spawnOnStart: 1
+  _spawnOnStart: 0
   _spawnZones:
   - rid: 5687120588422780635
   - rid: 5687120588422780637
@@ -2562,6 +2659,7 @@ Transform:
   m_Children:
   - {fileID: 3157535818945405042}
   - {fileID: 7655285261311846952}
+  - {fileID: 6813283313806506390}
   m_Father: {fileID: 6890951202808516898}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7645635349983130126
@@ -35166,3 +35264,447 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4659716826186661427, guid: 18ac7605defe47541a67a92d9482ae3f, type: 3}
   m_PrefabInstance: {fileID: 9197444304604936716}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &4718390265537710241
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4718390265537710242}
+  - component: {fileID: 4718390265537710243}
+  m_Layer: 0
+  m_Name: SaveableDataHandler
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4718390265537710242
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4718390265537710241}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6890951202808516898}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4718390265537710243
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4718390265537710241}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 326eb38365b542159b95145c061ca7d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: D-Dev.SaveSystem.SaveableData::D_Dev.SaveSystem.SaveableData.SaveableDataHandler
+  _saveableDatas:
+  - rid: 4718390265537720010
+  - rid: 4718390265537720020
+  - rid: 4718390265537720030
+  - rid: 4718390265537720040
+  - rid: 4718390265537720050
+  - rid: 4718390265537720060
+  - rid: 4718390265537720070
+  - rid: 4718390265537720080
+  - rid: 4718390265537720090
+  - rid: 4718390265537720100
+  - rid: 4718390265537720110
+  - rid: 4718390265537720120
+  - rid: 4718390265537720130
+  _debug: 0
+  OnLoaded:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6565164201937415689}
+        m_TargetAssemblyTypeName: _Project.Scripts.Core.Purchasable.PurchasesLoader, Game.Purchasable
+        m_MethodName: ApplyAll
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1013663533928872126}
+        m_TargetAssemblyTypeName: _Project.Scripts.LevelStateController, Game.Core
+        m_MethodName: Restore
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  references:
+    version: 2
+    RefIds:
+    - rid: 4718390265537720010
+      type: {class: CurrencyInfoSaveableData, ns: D_Dev.CurrencySystem.Extensions, asm: D-Dev.CurrencySystem.CurrencyInfoSaveable}
+      data:
+        _key:
+          rid: 4718390265537720011
+        _saveOnExit: 1
+        _loadOnStart: 1
+        OnSaveData:
+          m_PersistentCalls:
+            m_Calls: []
+        OnLoadData:
+          m_PersistentCalls:
+            m_Calls: []
+        _currency: {fileID: 11400000, guid: 6f916130eddbf9845867e27e5e4e7a67, type: 2}
+    - rid: 4718390265537720011
+      type: {class: StringConstantValue, ns: D_Dev.PolymorphicValueSystem, asm: D-Dev.PolymorphicValueSystem}
+      data:
+        _value: coins
+    - rid: 4718390265537720020
+      type: {class: IntValueSaveableData, ns: D_Dev.PolymorphicValueSystem.Extensions.Saveables, asm: D-Dev.PolymorphicValueSystem.Extensions}
+      data:
+        _key:
+          rid: 4718390265537720021
+        _saveOnExit: 1
+        _loadOnStart: 1
+        OnSaveData:
+          m_PersistentCalls:
+            m_Calls: []
+        OnLoadData:
+          m_PersistentCalls:
+            m_Calls: []
+        _value:
+          rid: 4718390265537720022
+        _defaultValue:
+          rid: 4718390265537720023
+    - rid: 4718390265537720021
+      type: {class: StringConstantValue, ns: D_Dev.PolymorphicValueSystem, asm: D-Dev.PolymorphicValueSystem}
+      data:
+        _value: upgrade_move_speed_level
+    - rid: 4718390265537720022
+      type: {class: IntScriptableVariableValue, ns: D_Dev.PolymorphicValueSystem, asm: D-Dev.PolymorphicValueSystem}
+      data:
+        _variable: {fileID: 11400000, guid: dfa886604a9d6d047a59b62c98dba708, type: 2}
+    - rid: 4718390265537720023
+      type: {class: IntConstantValue, ns: D_Dev.PolymorphicValueSystem, asm: D-Dev.PolymorphicValueSystem}
+      data:
+        _value: 0
+    - rid: 4718390265537720030
+      type: {class: IntValueSaveableData, ns: D_Dev.PolymorphicValueSystem.Extensions.Saveables, asm: D-Dev.PolymorphicValueSystem.Extensions}
+      data:
+        _key:
+          rid: 4718390265537720031
+        _saveOnExit: 1
+        _loadOnStart: 1
+        OnSaveData:
+          m_PersistentCalls:
+            m_Calls: []
+        OnLoadData:
+          m_PersistentCalls:
+            m_Calls: []
+        _value:
+          rid: 4718390265537720032
+        _defaultValue:
+          rid: 4718390265537720033
+    - rid: 4718390265537720031
+      type: {class: StringConstantValue, ns: D_Dev.PolymorphicValueSystem, asm: D-Dev.PolymorphicValueSystem}
+      data:
+        _value: upgrade_inventory_capacity_level
+    - rid: 4718390265537720032
+      type: {class: IntScriptableVariableValue, ns: D_Dev.PolymorphicValueSystem, asm: D-Dev.PolymorphicValueSystem}
+      data:
+        _variable: {fileID: 11400000, guid: 01a109ec8b998e94bb97d986d493b651, type: 2}
+    - rid: 4718390265537720033
+      type: {class: IntConstantValue, ns: D_Dev.PolymorphicValueSystem, asm: D-Dev.PolymorphicValueSystem}
+      data:
+        _value: 0
+    - rid: 4718390265537720040
+      type: {class: IntValueSaveableData, ns: D_Dev.PolymorphicValueSystem.Extensions.Saveables, asm: D-Dev.PolymorphicValueSystem.Extensions}
+      data:
+        _key:
+          rid: 4718390265537720041
+        _saveOnExit: 1
+        _loadOnStart: 1
+        OnSaveData:
+          m_PersistentCalls:
+            m_Calls: []
+        OnLoadData:
+          m_PersistentCalls:
+            m_Calls: []
+        _value:
+          rid: 4718390265537720042
+        _defaultValue:
+          rid: 4718390265537720043
+    - rid: 4718390265537720041
+      type: {class: StringConstantValue, ns: D_Dev.PolymorphicValueSystem, asm: D-Dev.PolymorphicValueSystem}
+      data:
+        _value: upgrade_interaction_distance_level
+    - rid: 4718390265537720042
+      type: {class: IntScriptableVariableValue, ns: D_Dev.PolymorphicValueSystem, asm: D-Dev.PolymorphicValueSystem}
+      data:
+        _variable: {fileID: 11400000, guid: 81fac72e4494abc42a81fcf9fec94bf8, type: 2}
+    - rid: 4718390265537720043
+      type: {class: IntConstantValue, ns: D_Dev.PolymorphicValueSystem, asm: D-Dev.PolymorphicValueSystem}
+      data:
+        _value: 0
+    - rid: 4718390265537720050
+      type: {class: IntValueSaveableData, ns: D_Dev.PolymorphicValueSystem.Extensions.Saveables, asm: D-Dev.PolymorphicValueSystem.Extensions}
+      data:
+        _key:
+          rid: 4718390265537720051
+        _saveOnExit: 1
+        _loadOnStart: 1
+        OnSaveData:
+          m_PersistentCalls:
+            m_Calls: []
+        OnLoadData:
+          m_PersistentCalls:
+            m_Calls: []
+        _value:
+          rid: 4718390265537720052
+        _defaultValue:
+          rid: 4718390265537720053
+    - rid: 4718390265537720051
+      type: {class: StringConstantValue, ns: D_Dev.PolymorphicValueSystem, asm: D-Dev.PolymorphicValueSystem}
+      data:
+        _value: upgrade_magnet_radius_level
+    - rid: 4718390265537720052
+      type: {class: IntScriptableVariableValue, ns: D_Dev.PolymorphicValueSystem, asm: D-Dev.PolymorphicValueSystem}
+      data:
+        _variable: {fileID: 11400000, guid: 78ef287dde4346de9bf49eb647bf495a, type: 2}
+    - rid: 4718390265537720053
+      type: {class: IntConstantValue, ns: D_Dev.PolymorphicValueSystem, asm: D-Dev.PolymorphicValueSystem}
+      data:
+        _value: 0
+    - rid: 4718390265537720060
+      type: {class: IntValueSaveableData, ns: D_Dev.PolymorphicValueSystem.Extensions.Saveables, asm: D-Dev.PolymorphicValueSystem.Extensions}
+      data:
+        _key:
+          rid: 4718390265537720061
+        _saveOnExit: 1
+        _loadOnStart: 1
+        OnSaveData:
+          m_PersistentCalls:
+            m_Calls: []
+        OnLoadData:
+          m_PersistentCalls:
+            m_Calls: []
+        _value:
+          rid: 4718390265537720062
+        _defaultValue:
+          rid: 4718390265537720063
+    - rid: 4718390265537720061
+      type: {class: StringConstantValue, ns: D_Dev.PolymorphicValueSystem, asm: D-Dev.PolymorphicValueSystem}
+      data:
+        _value: upgrade_stock_time_level
+    - rid: 4718390265537720062
+      type: {class: IntScriptableVariableValue, ns: D_Dev.PolymorphicValueSystem, asm: D-Dev.PolymorphicValueSystem}
+      data:
+        _variable: {fileID: 11400000, guid: 9b53a73f5a35474991a84e51332e6949, type: 2}
+    - rid: 4718390265537720063
+      type: {class: IntConstantValue, ns: D_Dev.PolymorphicValueSystem, asm: D-Dev.PolymorphicValueSystem}
+      data:
+        _value: 0
+    - rid: 4718390265537720070
+      type: {class: IntValueSaveableData, ns: D_Dev.PolymorphicValueSystem.Extensions.Saveables, asm: D-Dev.PolymorphicValueSystem.Extensions}
+      data:
+        _key:
+          rid: 4718390265537720071
+        _saveOnExit: 1
+        _loadOnStart: 1
+        OnSaveData:
+          m_PersistentCalls:
+            m_Calls: []
+        OnLoadData:
+          m_PersistentCalls:
+            m_Calls: []
+        _value:
+          rid: 4718390265537720072
+        _defaultValue:
+          rid: 4718390265537720073
+    - rid: 4718390265537720071
+      type: {class: StringConstantValue, ns: D_Dev.PolymorphicValueSystem, asm: D-Dev.PolymorphicValueSystem}
+      data:
+        _value: upgrade_vision_time_level
+    - rid: 4718390265537720072
+      type: {class: IntScriptableVariableValue, ns: D_Dev.PolymorphicValueSystem, asm: D-Dev.PolymorphicValueSystem}
+      data:
+        _variable: {fileID: 11400000, guid: b3a568ebdeb2426094e50f062a531914, type: 2}
+    - rid: 4718390265537720073
+      type: {class: IntConstantValue, ns: D_Dev.PolymorphicValueSystem, asm: D-Dev.PolymorphicValueSystem}
+      data:
+        _value: 0
+    - rid: 4718390265537720080
+      type: {class: BoolValueSaveableData, ns: D_Dev.PolymorphicValueSystem.Extensions.Saveables, asm: D-Dev.PolymorphicValueSystem.Extensions}
+      data:
+        _key:
+          rid: 4718390265537720081
+        _saveOnExit: 1
+        _loadOnStart: 1
+        OnSaveData:
+          m_PersistentCalls:
+            m_Calls: []
+        OnLoadData:
+          m_PersistentCalls:
+            m_Calls: []
+        _value:
+          rid: 4718390265537720082
+        _defaultValue:
+          rid: 4718390265537720083
+    - rid: 4718390265537720081
+      type: {class: StringConstantValue, ns: D_Dev.PolymorphicValueSystem, asm: D-Dev.PolymorphicValueSystem}
+      data:
+        _value: skill_magnet_locked
+    - rid: 4718390265537720082
+      type: {class: BoolScriptableVariableValue, ns: D_Dev.PolymorphicValueSystem, asm: D-Dev.PolymorphicValueSystem}
+      data:
+        _variable: {fileID: 11400000, guid: ea28e6aebd17420fad778460f07675b5, type: 2}
+    - rid: 4718390265537720083
+      type: {class: BoolConstantValue, ns: D_Dev.PolymorphicValueSystem, asm: D-Dev.PolymorphicValueSystem}
+      data:
+        _value: 1
+    - rid: 4718390265537720090
+      type: {class: BoolValueSaveableData, ns: D_Dev.PolymorphicValueSystem.Extensions.Saveables, asm: D-Dev.PolymorphicValueSystem.Extensions}
+      data:
+        _key:
+          rid: 4718390265537720091
+        _saveOnExit: 1
+        _loadOnStart: 1
+        OnSaveData:
+          m_PersistentCalls:
+            m_Calls: []
+        OnLoadData:
+          m_PersistentCalls:
+            m_Calls: []
+        _value:
+          rid: 4718390265537720092
+        _defaultValue:
+          rid: 4718390265537720093
+    - rid: 4718390265537720091
+      type: {class: StringConstantValue, ns: D_Dev.PolymorphicValueSystem, asm: D-Dev.PolymorphicValueSystem}
+      data:
+        _value: skill_stock_locked
+    - rid: 4718390265537720092
+      type: {class: BoolScriptableVariableValue, ns: D_Dev.PolymorphicValueSystem, asm: D-Dev.PolymorphicValueSystem}
+      data:
+        _variable: {fileID: 11400000, guid: fd04ade30bd1429a82e3761684652507, type: 2}
+    - rid: 4718390265537720093
+      type: {class: BoolConstantValue, ns: D_Dev.PolymorphicValueSystem, asm: D-Dev.PolymorphicValueSystem}
+      data:
+        _value: 1
+    - rid: 4718390265537720100
+      type: {class: BoolValueSaveableData, ns: D_Dev.PolymorphicValueSystem.Extensions.Saveables, asm: D-Dev.PolymorphicValueSystem.Extensions}
+      data:
+        _key:
+          rid: 4718390265537720101
+        _saveOnExit: 1
+        _loadOnStart: 1
+        OnSaveData:
+          m_PersistentCalls:
+            m_Calls: []
+        OnLoadData:
+          m_PersistentCalls:
+            m_Calls: []
+        _value:
+          rid: 4718390265537720102
+        _defaultValue:
+          rid: 4718390265537720103
+    - rid: 4718390265537720101
+      type: {class: StringConstantValue, ns: D_Dev.PolymorphicValueSystem, asm: D-Dev.PolymorphicValueSystem}
+      data:
+        _value: skill_vision_locked
+    - rid: 4718390265537720102
+      type: {class: BoolScriptableVariableValue, ns: D_Dev.PolymorphicValueSystem, asm: D-Dev.PolymorphicValueSystem}
+      data:
+        _variable: {fileID: 11400000, guid: 08be4c4d4c88472ea0dfe24a1a88a096, type: 2}
+    - rid: 4718390265537720103
+      type: {class: BoolConstantValue, ns: D_Dev.PolymorphicValueSystem, asm: D-Dev.PolymorphicValueSystem}
+      data:
+        _value: 1
+    - rid: 4718390265537720110
+      type: {class: DoubleValueSaveableData, ns: D_Dev.PolymorphicValueSystem.Extensions.Saveables, asm: D-Dev.PolymorphicValueSystem.Extensions}
+      data:
+        _key:
+          rid: 4718390265537720111
+        _saveOnExit: 1
+        _loadOnStart: 1
+        OnSaveData:
+          m_PersistentCalls:
+            m_Calls: []
+        OnLoadData:
+          m_PersistentCalls:
+            m_Calls: []
+        _value:
+          rid: 4718390265537720112
+        _defaultValue:
+          rid: 4718390265537720113
+    - rid: 4718390265537720111
+      type: {class: StringConstantValue, ns: D_Dev.PolymorphicValueSystem, asm: D-Dev.PolymorphicValueSystem}
+      data:
+        _value: play_time
+    - rid: 4718390265537720112
+      type: {class: DoubleScriptableVariableValue, ns: D_Dev.PolymorphicValueSystem, asm: D-Dev.PolymorphicValueSystem}
+      data:
+        _variable: {fileID: 11400000, guid: 2362a705e53c95141a282f76da1332ee, type: 2}
+    - rid: 4718390265537720113
+      type: {class: DoubleConstantValue, ns: D_Dev.PolymorphicValueSystem, asm: D-Dev.PolymorphicValueSystem}
+      data:
+        _value: 0
+    - rid: 4718390265537720120
+      type: {class: IntValueSaveableData, ns: D_Dev.PolymorphicValueSystem.Extensions.Saveables, asm: D-Dev.PolymorphicValueSystem.Extensions}
+      data:
+        _key:
+          rid: 4718390265537720121
+        _saveOnExit: 1
+        _loadOnStart: 1
+        OnSaveData:
+          m_PersistentCalls:
+            m_Calls: []
+        OnLoadData:
+          m_PersistentCalls:
+            m_Calls: []
+        _value:
+          rid: 4718390265537720122
+        _defaultValue:
+          rid: 4718390265537720123
+    - rid: 4718390265537720121
+      type: {class: StringConstantValue, ns: D_Dev.PolymorphicValueSystem, asm: D-Dev.PolymorphicValueSystem}
+      data:
+        _value: coins_earned
+    - rid: 4718390265537720122
+      type: {class: IntScriptableVariableValue, ns: D_Dev.PolymorphicValueSystem, asm: D-Dev.PolymorphicValueSystem}
+      data:
+        _variable: {fileID: 11400000, guid: 9b89f1ee1be99d3489c7e3cd8c33b397, type: 2}
+    - rid: 4718390265537720123
+      type: {class: IntConstantValue, ns: D_Dev.PolymorphicValueSystem, asm: D-Dev.PolymorphicValueSystem}
+      data:
+        _value: 0
+    - rid: 4718390265537720130
+      type: {class: LevelStateSaveableData, ns: _Project.Scripts, asm: Game.Core}
+      data:
+        _key:
+          rid: 4718390265537720131
+        _saveOnExit: 1
+        _loadOnStart: 1
+        OnSaveData:
+          m_PersistentCalls:
+            m_Calls: []
+        OnLoadData:
+          m_PersistentCalls:
+            m_Calls: []
+        _controller: {fileID: 1013663533928872126}
+    - rid: 4718390265537720131
+      type: {class: StringConstantValue, ns: D_Dev.PolymorphicValueSystem, asm: D-Dev.PolymorphicValueSystem}
+      data:
+        _value: level_store_state

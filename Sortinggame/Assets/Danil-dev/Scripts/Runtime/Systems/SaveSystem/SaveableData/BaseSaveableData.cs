@@ -41,6 +41,8 @@ namespace D_Dev.SaveSystem.SaveableData
             set => _loadOnStart = value;
         }
 
+        public virtual bool CanSave => true;
+
         #endregion
 
         #region Public

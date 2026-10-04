@@ -48,10 +48,11 @@ namespace _Project.Scripts
         #region Properties
 
         public bool IsBusy => _gameObjectSlot.IsBusy;
+        public GameObject Item => _gameObjectSlot.Item;
         public bool CanPlaceItem { get; private set; }
 
         #endregion
-        
+
         #region Public
 
         public void Init(EntityInfo itemInfo)
@@ -60,8 +61,22 @@ namespace _Project.Scripts
 
             _defaultPos = _itemView.localPosition;
             _defaultEulerAngles = _itemView.localEulerAngles;
-            
+
             HideView();
+        }
+
+        public bool TryPlaceItemImmediate(GameObject item)
+        {
+            if (item == null || !_gameObjectSlot.TryPutItem(item, true))
+                return false;
+
+            item.transform.localPosition = Vector3.zero;
+            item.transform.localEulerAngles = Vector3.zero;
+
+            if (item.TryGetComponent(out ItemInteractable itemInteractable))
+                itemInteractable.SetSorted();
+
+            return true;
         }
 
         #endregion
