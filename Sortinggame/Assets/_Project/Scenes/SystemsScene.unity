@@ -601,16 +601,9 @@ MonoBehaviour:
       data:
         _executeInParallel: 0
         _actions:
-        - rid: 1932282427523203080
+        - rid: 5687120644540997739
+        - rid: 5687120644540997735
         - rid: 1932282427523203084
-    - rid: 1932282427523203080
-      type: {class: TimerAction, ns: D_Dev.TimerSystem.Extensions.Actions, asm: D-Dev.TimerSystem.Extensions}
-      data:
-        _actionName: Delay
-        OnUndo:
-          m_PersistentCalls:
-            m_Calls: []
-        _delay: 1
     - rid: 1932282427523203084
       type: {class: CloseMenuInfoAction, ns: D_Dev.Scripts.MenuHandler.Extensions.Actions, asm: D-Dev.Menu}
       data:
@@ -619,6 +612,35 @@ MonoBehaviour:
           m_PersistentCalls:
             m_Calls: []
         _menuInfo: {fileID: 11400000, guid: 57ec14dd611fcfb4784faf49f4938c62, type: 2}
+    - rid: 5687120644540997735
+      type: {class: WaitUntilBoolValueAction, ns: D_Dev.PolymorphicValueSystem.Actions, asm: D-Dev.PolymorphicValueSystem.Extensions}
+      data:
+        _actionName: Wait Until Items Settle
+        OnUndo:
+          m_PersistentCalls:
+            m_Calls: []
+        _condition:
+          _invert: 0
+          _value:
+            rid: 5687120644540997738
+          _compareTo:
+            rid: 5687120644540997737
+    - rid: 5687120644540997737
+      type: {class: BoolConstantValue, ns: D_Dev.PolymorphicValueSystem, asm: D-Dev.PolymorphicValueSystem}
+      data:
+        _value: 1
+    - rid: 5687120644540997738
+      type: {class: BoolScriptableVariableValue, ns: D_Dev.PolymorphicValueSystem, asm: D-Dev.PolymorphicValueSystem}
+      data:
+        _variable: {fileID: 11400000, guid: 3b7e1f0c9a4d4e2f8c6a5d1e7f2b9c40, type: 2}
+    - rid: 5687120644540997739
+      type: {class: TimerAction, ns: D_Dev.TimerSystem.Extensions.Actions, asm: D-Dev.TimerSystem.Extensions}
+      data:
+        _actionName: Delay
+        OnUndo:
+          m_PersistentCalls:
+            m_Calls: []
+        _delay: 0.5
 --- !u!1 &1067671695
 GameObject:
   m_ObjectHideFlags: 0

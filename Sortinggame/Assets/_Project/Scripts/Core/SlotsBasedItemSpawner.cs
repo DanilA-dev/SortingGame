@@ -1,6 +1,8 @@
 using System.Collections.Generic;
+using Cysharp.Threading.Tasks;
 using D_Dev.Entity;
 using D_Dev.EntitySpawner;
+using D_Dev.PolymorphicValueSystem;
 using D_Dev.PositionRotationConfig;
 using D_Dev.PositionRotationConfig.RotationSettings;
 using D_Dev.RuntimeLists;
@@ -16,6 +18,8 @@ namespace _Project.Scripts
         [SerializeReference] private BasePositionSettings[] _spawnZones = { new Vector3PositionSettings() };
         [SerializeReference] private BaseRotationSettings _spawnRotationSettings = new();
         [SerializeField] private GameObjectRuntimeList _shelvesRuntimeList;
+        [SerializeField, Min(1)] private int _maxSettleSteps = 300;
+        [SerializeReference] private PolymorphicValue<bool> _isSpawned = new BoolConstantValue();
 
         private EntitySpawnSettings _entitySpawnSettings;
         private Dictionary<EntityInfo, int> _itemsSpawnAmounts;
@@ -29,6 +33,7 @@ namespace _Project.Scripts
         private void Awake()
         {
             _entitySpawnSettings = new();
+            _isSpawned.Value = false;
         }
 
         private void Start()
@@ -49,15 +54,43 @@ namespace _Project.Scripts
 
         #region Public
 
-        public async void SpawnItems()
+        public void SpawnItems()
         {
+            SpawnItemsAsync().Forget();
+        }
+
+        #endregion
+
+        #region Private
+
+        private async UniTask SpawnItemsAsync()
+        {
+            var prevSimulationMode = Physics.simulationMode;
+            Physics.simulationMode = SimulationMode.Script;
+
+            try
+            {
+                var items = await CreateItems();
+                SettleItems(items);
+            }
+            finally
+            {
+                Physics.simulationMode = prevSimulationMode;
+                _isSpawned.Value = true;
+            }
+        }
+
+        private async UniTask<List<GameObject>> CreateItems()
+        {
+            var items = new List<GameObject>();
+
             if(_itemsSpawnAmounts == null || _itemsSpawnAmounts.Count <= 0)
-                return;
+                return items;
 
             if (_validZones.Count == 0)
             {
                 Debug.LogError($"[SlotsBasedItemSpawner] No spawn zones assigned on {gameObject.name}");
-                return;
+                return items;
             }
 
             foreach (var (itemData, amount) in _itemsSpawnAmounts)
@@ -69,14 +102,47 @@ namespace _Project.Scripts
                 {
                     _entitySpawnSettings.PositionSettings = GetRandomZone();
                     var item  = await _entitySpawnSettings.Get();
+                    if (item == null)
+                        continue;
+
                     item.transform.rotation = _spawnRotationSettings.GetRotation();
+                    items.Add(item);
                 }
             }
+
+            return items;
         }
 
-        #endregion
+        private void SettleItems(List<GameObject> items)
+        {
+            if (items.Count == 0)
+                return;
 
-        #region Private
+            var bodies = new List<Rigidbody>(items.Count);
+            foreach (var item in items)
+            {
+                if (item.TryGetComponent(out Rigidbody body))
+                    bodies.Add(body);
+            }
+
+            Physics.SyncTransforms();
+
+            bool isSettled = false;
+            for (int step = 0; step < _maxSettleSteps && !isSettled; step++)
+            {
+                Physics.Simulate(Time.fixedDeltaTime);
+                isSettled = bodies.TrueForAll(b => b.IsSleeping());
+            }
+
+            if (!isSettled)
+                Debug.LogWarning($"[SlotsBasedItemSpawner] Items did not fully settle in {_maxSettleSteps} steps on {gameObject.name}");
+
+            foreach (var item in items)
+            {
+                if (item.TryGetComponent(out ItemInteractable interactable))
+                    interactable.SetSettled();
+            }
+        }
 
         private void CacheShelvesItemsData()
         {

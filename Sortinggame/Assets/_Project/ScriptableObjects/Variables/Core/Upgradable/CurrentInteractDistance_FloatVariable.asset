@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: CurrentInteractDistance_FloatVariable
   m_EditorClassIdentifier: D-Dev.ScriptableVariables::D_Dev.ScriptableVariables.FloatScriptableVariable
   _value: 3
-  _resetOnEnterRuntime: 1
+  _resetOnEnterRuntime: 0

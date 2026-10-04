@@ -9,8 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a4d30d5daba4c64810d0bcc3101feec, type: 3}
-  m_Name: MagnetCooldownTime_FloatVariable
-  m_EditorClassIdentifier: D-Dev.ScriptableVariables::D_Dev.ScriptableVariables.FloatScriptableVariable
-  _value: 30
+  m_Script: {fileID: 11500000, guid: 51637e4e5b3a44b98713c6d9920609e9, type: 3}
+  m_Name: PlayTime_DoubleVariable
+  m_EditorClassIdentifier: D-Dev.ScriptableVariables::D_Dev.ScriptableVariables.DoubleScriptableVariable
+  _value: 0
   _resetOnEnterRuntime: 0

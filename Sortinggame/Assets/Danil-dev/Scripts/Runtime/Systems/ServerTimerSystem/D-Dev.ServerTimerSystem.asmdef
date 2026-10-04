@@ -1,7 +1,9 @@
 {
-    "name": "D-Dev.TimerSystem",
+    "name": "D-Dev.ServerTimerSystem",
     "rootNamespace": "",
     "references": [
+        "GUID:a947a454b8df3474d81c9577867188ff",
+        "GUID:ba7d088f93a8e1649b9edc0955fab802",
         "GUID:afd511e9df38c4a4a9b7414410d3bc6a",
         "GUID:d789ad2b695405b409ea35b65e2bfca9"
     ],

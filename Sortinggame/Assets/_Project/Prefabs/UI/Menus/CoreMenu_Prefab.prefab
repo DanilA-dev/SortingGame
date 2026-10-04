@@ -1496,8 +1496,87 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6889463072119303141, guid: 47e6e43e349ef7141afb6b1414245ec5, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5586617965020220296}
   m_SourcePrefab: {fileID: 100100000, guid: 47e6e43e349ef7141afb6b1414245ec5, type: 3}
+--- !u!1 &1930080958775352339 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6889463072119303141, guid: 47e6e43e349ef7141afb6b1414245ec5, type: 3}
+  m_PrefabInstance: {fileID: 4995983261363304438}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &5586617965020220296
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1930080958775352339}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b7b6592ba08a4b4eacc99697ae90461, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: D-Dev.TimerSystem.Extensions::D_Dev.TimerSystem.LongTimerComponent
+  _invokeOnStart: 1
+  _useUnscaledTime: 0
+  _direction: 0
+  _timeValue:
+    rid: 5687120644540997770
+  _resetTime:
+    rid: 5687120644540997768
+  _targetTime:
+    rid: 5687120644540997769
+  OnTimerStart:
+    m_PersistentCalls:
+      m_Calls: []
+  OnTimerStop:
+    m_PersistentCalls:
+      m_Calls: []
+  OnTimerEnd:
+    m_PersistentCalls:
+      m_Calls: []
+  OnTimeTextChanged:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8323494784748745132}
+        m_TargetAssemblyTypeName: TMPro.TextMeshProUGUI, Unity.TextMeshPro
+        m_MethodName: set_text
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  references:
+    version: 2
+    RefIds:
+    - rid: 5687120644540997768
+      type: {class: DoubleConstantValue, ns: D_Dev.PolymorphicValueSystem, asm: D-Dev.PolymorphicValueSystem}
+      data:
+        _value: 0
+    - rid: 5687120644540997769
+      type: {class: DoubleConstantValue, ns: D_Dev.PolymorphicValueSystem, asm: D-Dev.PolymorphicValueSystem}
+      data:
+        _value: 0
+    - rid: 5687120644540997770
+      type: {class: DoubleScriptableVariableValue, ns: D_Dev.PolymorphicValueSystem, asm: D-Dev.PolymorphicValueSystem}
+      data:
+        _variable: {fileID: 11400000, guid: 2362a705e53c95141a282f76da1332ee, type: 2}
+--- !u!114 &8323494784748745132 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3951823075453470298, guid: 47e6e43e349ef7141afb6b1414245ec5, type: 3}
+  m_PrefabInstance: {fileID: 4995983261363304438}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
 --- !u!224 &8666913271894798275 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 4400654544014612533, guid: 47e6e43e349ef7141afb6b1414245ec5, type: 3}

@@ -1466,7 +1466,7 @@ GameObject:
   - component: {fileID: 9171465542281879858}
   - component: {fileID: 4794096811496763701}
   - component: {fileID: 2100305034605706281}
-  m_Layer: 3
+  m_Layer: 8
   m_Name: Player_Prefab
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -1550,7 +1550,7 @@ MonoBehaviour:
     - rid: 1932282381251117880
       type: {class: BoolConstantValue, ns: D_Dev.PolymorphicValueSystem, asm: D-Dev.PolymorphicValueSystem}
       data:
-        _value: 0
+        _value: 1
 --- !u!114 &9171465542281879858
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2129,7 +2129,8 @@ GameObject:
   - component: {fileID: 5931868010335862706}
   - component: {fileID: 1595699534733605447}
   - component: {fileID: 9137221950826013944}
-  m_Layer: 0
+  - component: {fileID: 6261283236069522815}
+  m_Layer: 8
   m_Name: GroundedTrigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2217,17 +2218,17 @@ MonoBehaviour:
     _checkLayer: 1
     _checkLayerMask:
       serializedVersion: 2
-      m_Bits: 192
+      m_Bits: 64
     _checkTag: 0
     _checkTags: []
     _ignoreTrigger: 1
     _ignoreColliders: 0
     _ignoredColliders: []
     _ignoredColliders2D: []
-    _ignoreLayer: 0
+    _ignoreLayer: 1
     _ignoreLayerMask:
       serializedVersion: 2
-      m_Bits: 0
+      m_Bits: 512
     _ignoreTag: 0
     _ignoreTags: []
     _debugColliders: 0
@@ -2300,6 +2301,62 @@ MonoBehaviour:
       type: {class: BoolConstantValue, ns: D_Dev.PolymorphicValueSystem, asm: D-Dev.PolymorphicValueSystem}
       data:
         _value: 0
+--- !u!114 &6261283236069522815
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8662303737437014132}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 04d3c93a717d4b96a6998fa8d2c0f144, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: D-Dev.TimerSystem.Extensions::D_Dev.TimerSystem.SimpleTimerComponent
+  _invokeOnStart: 1
+  _repeat: 0
+  _timeValue:
+    rid: 5687120646002975319
+  OnTimerStart:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5931868010335862706}
+        m_TargetAssemblyTypeName: UnityEngine.SphereCollider, UnityEngine
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnTimerUpdate:
+    m_PersistentCalls:
+      m_Calls: []
+  OnTimerEnd:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5931868010335862706}
+        m_TargetAssemblyTypeName: UnityEngine.SphereCollider, UnityEngine
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+  references:
+    version: 2
+    RefIds:
+    - rid: 5687120646002975319
+      type: {class: FloatConstantValue, ns: D_Dev.PolymorphicValueSystem, asm: D-Dev.PolymorphicValueSystem}
+      data:
+        _value: 0.01
 --- !u!1 &8992897419839417998
 GameObject:
   m_ObjectHideFlags: 0

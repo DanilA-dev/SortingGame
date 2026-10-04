@@ -34,6 +34,7 @@ namespace _Project.Scripts
         private Coroutine _sleepRoutine;
         private Collider _collider;
         private bool _isRevealed;
+        private bool _isSettled;
 
         #endregion
 
@@ -71,6 +72,9 @@ namespace _Project.Scripts
                 return;
             }
 
+            if (_isSettled)
+                return;
+
             TryStartSleepLogic();
         }
 
@@ -95,6 +99,19 @@ namespace _Project.Scripts
             _collider.enabled = false;
             _currentSortedItemsVariable.Value++;
             EnableInstancing();
+        }
+
+        public void SetSettled()
+        {
+            if (_isSorted.Value || IsPicked)
+                return;
+
+            _isSettled = true;
+            StopSleepRoutine();
+            _rigidbody.isKinematic = true;
+
+            if (!IsFocused && !_isRevealed)
+                EnableInstancing();
         }
 
         public void CancelPick()
