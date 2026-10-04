@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21c6ecf1771b417985edbf425319ce6c, type: 3}
+  m_Name: Skills_PurchasesContainer
+  m_EditorClassIdentifier: Game.Purchasable::_Project.Scripts.Core.Purchasable.PurchasesContainer
+  _purchases:
+  - {fileID: 11400000, guid: 6cf1720535194618b0a551f605d5fc2c, type: 2}
+  - {fileID: 11400000, guid: a5156ddb95b24c42a45f09b875cac0a5, type: 2}
+  - {fileID: 11400000, guid: fec55872cb674bf09f91f03fa9478ca7, type: 2}
+  - {fileID: 11400000, guid: 64b58aa94f67432082955664e1590bdc, type: 2}
+  - {fileID: 11400000, guid: db779299b62e44948a8b92bccc0b7412, type: 2}
+  - {fileID: 11400000, guid: 2118a29873654708af7d57f0fe43c2f0, type: 2}

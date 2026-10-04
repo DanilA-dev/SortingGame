@@ -368,8 +368,10 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 78ba7de3ff9a42639322e5434cddb114, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Game.Upgrades::_Project.Scripts.Core.Upgrades.UpgradesLoader
-  _upgradesInfoContainer: {fileID: 11400000, guid: 4f60a69fb08598c409dfa58af2a5f143, type: 2}
+  m_EditorClassIdentifier: Game.Purchasable::_Project.Scripts.Core.Purchasable.PurchasesLoader
+  _containers:
+  - {fileID: 11400000, guid: 4f60a69fb08598c409dfa58af2a5f143, type: 2}
+  - {fileID: 11400000, guid: 39314d51d0b649deb14305c8f53dd90a, type: 2}
 --- !u!4 &1074730194
 Transform:
   m_ObjectHideFlags: 0

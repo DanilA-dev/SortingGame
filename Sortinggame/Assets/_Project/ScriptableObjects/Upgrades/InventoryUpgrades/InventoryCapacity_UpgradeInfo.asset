@@ -11,14 +11,17 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3e7373918f2a4e6da0f02a5860446470, type: 3}
   m_Name: InventoryCapacity_UpgradeInfo
-  m_EditorClassIdentifier: Game.Core::_Project.Scripts.Core.Upgrades.IntUpgrade
-  _upgradeName:
+  m_EditorClassIdentifier: Game.Purchasable::_Project.Scripts.Core.Purchasable.IntUpgradeInfo
+  _displayName:
     rid: 5687120620302893056
-  _upgradeDescription:
+  _description:
     rid: 5687120620302893057
   _icon: {fileID: 21300000, guid: 8a3eb38c54afe6a4ab55f486420725a1, type: 3}
+  _currency:
+    rid: 568712066000000002
   _level: {fileID: 11400000, guid: 01a109ec8b998e94bb97d986d493b651, type: 2}
-  _prices: 280000003c00000050000000fa0000005e010000
+  _prices: 00000000280000003c00000050000000fa0000005e010000
+  _requirement: {fileID: 0}
   _showDebugInfo: 1
   _target:
     rid: 5687120608309289344
@@ -38,3 +41,7 @@ MonoBehaviour:
       type: {class: StringConstantValue, ns: D_Dev.PolymorphicValueSystem, asm: D-Dev.PolymorphicValueSystem}
       data:
         _value: Pick up more items to stock
+    - rid: 568712066000000002
+      type: {class: CurrencyInfoConstantValue, ns: D_Dev.CurrencySystem.Extensions, asm: D-Dev.CurrencySystem.CurrencyInfoValue}
+      data:
+        _value: {fileID: 11400000, guid: 6f916130eddbf9845867e27e5e4e7a67, type: 2}

@@ -1,4 +1,7 @@
+using System;
 using System.Collections.Generic;
+using System.Threading;
+using Cysharp.Threading.Tasks;
 using D_Dev.EntityInfoBinder;
 using D_Dev.PolymorphicValueSystem;
 using D_Dev.RuntimeLists;
@@ -13,11 +16,13 @@ namespace _Project.Scripts
 
         [Title("Magnet")]
         [SerializeField] private GameObjectRuntimeList _itemsList;
+        [SerializeReference] private PolymorphicValue<float> _itemCollectDelay = new FloatConstantValue();
         [SerializeReference] private PolymorphicValue<float> _radius = new FloatConstantValue();
         [SerializeReference] private PolymorphicValue<int> _maxItems = new IntConstantValue();
         [Title("Inventory")]
         [SerializeReference] private PolymorphicValue<int> _currentItemsAmount = new IntConstantValue();
         [SerializeReference] private PolymorphicValue<int> _maxCapacity = new IntConstantValue();
+        
 
         private readonly List<ItemInteractable> _targets = new();
 
@@ -43,18 +48,36 @@ namespace _Project.Scripts
 
         protected override void OnUseStart()
         {
-            foreach (var item in _targets)
-            {
-                if (item != null)
-                    item.StartInteract(gameObject);
-            }
-
+            var items = _targets.ToArray();
             _targets.Clear();
+            CollectItems(items, this.GetCancellationTokenOnDestroy()).Forget();
         }
 
         #endregion
 
         #region Private
+
+        private async UniTaskVoid CollectItems(ItemInteractable[] items, CancellationToken token)
+        {
+            for (int i = 0; i < items.Length; i++)
+            {
+                if (!isActiveAndEnabled)
+                    return;
+
+                var item = items[i];
+                if (item != null && !item.IsPicked && !item.IsSorted && HasFreeSlot())
+                    item.StartInteract(gameObject);
+
+                if (i == items.Length - 1)
+                    break;
+
+                if (await UniTask.Delay(TimeSpan.FromSeconds(_itemCollectDelay.Value), cancellationToken: token)
+                        .SuppressCancellationThrow())
+                    return;
+            }
+        }
+
+        private bool HasFreeSlot() => _currentItemsAmount.Value < _maxCapacity.Value;
 
         private void CollectTargets()
         {

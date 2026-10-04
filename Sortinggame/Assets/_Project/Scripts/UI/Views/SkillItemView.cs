@@ -16,6 +16,7 @@ namespace _Project.Scripts.UI.Views
         [Title("UI")]
         [SerializeField] private Image _icon;
         [SerializeField] private TMP_Text _keyText;
+        [SerializeField] private Button _useButton;
         [Title("Using")]
         [SerializeField] private BaseTimerComponent _usingTimer;
         [SerializeField] private ImageFillUpdater _usingFill;
@@ -44,7 +45,13 @@ namespace _Project.Scripts.UI.Views
 
         #region Monobehaviour
 
-        private void OnDestroy() => Unsubscribe();
+        private void Awake() => _useButton.onClick.AddListener(OnUseClicked);
+
+        private void OnDestroy()
+        {
+            _useButton.onClick.RemoveListener(OnUseClicked);
+            Unsubscribe();
+        }
 
         #endregion
 
@@ -135,6 +142,8 @@ namespace _Project.Scripts.UI.Views
         }
 
         private void OnNotAvailable() => _onNotAvailable?.Invoke();
+
+        private void OnUseClicked() => _info?.RequestUse();
 
         #endregion
     }

@@ -19,7 +19,6 @@ namespace _Project.Scripts.Core.Skills
         [Space]
         [Title("Values")] 
         [SerializeReference] private PolymorphicValue<bool> _isLocked = new BoolConstantValue();
-        [SerializeReference] private PolymorphicValue<int> _price = new IntConstantValue();
         [SerializeReference] private PolymorphicValue<float> _duration = new FloatConstantValue();
         [SerializeReference] private PolymorphicValue<float> _cooldown = new FloatConstantValue();
 
@@ -27,6 +26,7 @@ namespace _Project.Scripts.Core.Skills
         public event Action OnUseStopped;
         public event Action OnReady;
         public event Action OnNotAvailable;
+        public event Action OnUseRequested;
 
         #endregion
 
@@ -44,8 +44,6 @@ namespace _Project.Scripts.Core.Skills
 
         public PolymorphicValue<bool> IsLocked => _isLocked;
 
-        public PolymorphicValue<int> Price => _price;
-
         #endregion
 
         #region Public
@@ -54,6 +52,7 @@ namespace _Project.Scripts.Core.Skills
         public void NotifyUseStopped() => OnUseStopped?.Invoke();
         public void NotifyReady() => OnReady?.Invoke();
         public void NotifyNotAvailable() => OnNotAvailable?.Invoke();
+        public void RequestUse() => OnUseRequested?.Invoke();
 
         #endregion
 

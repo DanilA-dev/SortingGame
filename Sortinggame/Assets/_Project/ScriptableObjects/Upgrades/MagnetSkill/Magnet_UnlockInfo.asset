@@ -9,40 +9,41 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 602591fbc228453993b549601199e4f1, type: 3}
-  m_Name: MagnetSkill
-  m_EditorClassIdentifier: Game.Core::_Project.Scripts.Core.Skills.SkillInfo
-  _skillName:
-    rid: 5687120623140086010
-  _skillDescription:
-    rid: 5687120623140086011
+  m_Script: {fileID: 11500000, guid: 5de9cea384944d089ae566931861cfcf, type: 3}
+  m_Name: Magnet_UnlockInfo
+  m_EditorClassIdentifier: Game.Purchasable::_Project.Scripts.Core.Purchasable.UnlockInfo
+  _displayName:
+    rid: 568712065000000011
+  _description:
+    rid: 568712065000000012
   _icon: {fileID: 21300000, guid: 6dd1e4dcdcdb0674ea882c91f547fb0a, type: 3}
+  _currency:
+    rid: 568712066000000004
+  _showDebugInfo: 1
   _isLocked:
-    rid: 5687120623140086012
-  _duration:
-    rid: 5687120623140086013
-  _cooldown:
-    rid: 5687120623140086014
+    rid: 568712065000000013
+  _price:
+    rid: 568712065000000014
   references:
     version: 2
     RefIds:
-    - rid: 5687120623140086010
+    - rid: 568712065000000011
       type: {class: StringConstantValue, ns: D_Dev.PolymorphicValueSystem, asm: D-Dev.PolymorphicValueSystem}
       data:
         _value: Magnet
-    - rid: 5687120623140086011
+    - rid: 568712065000000012
       type: {class: StringConstantValue, ns: D_Dev.PolymorphicValueSystem, asm: D-Dev.PolymorphicValueSystem}
       data:
         _value: Attracts products of the same type in radius
-    - rid: 5687120623140086012
+    - rid: 568712065000000013
       type: {class: BoolScriptableVariableValue, ns: D_Dev.PolymorphicValueSystem, asm: D-Dev.PolymorphicValueSystem}
       data:
         _variable: {fileID: 11400000, guid: ea28e6aebd17420fad778460f07675b5, type: 2}
-    - rid: 5687120623140086013
-      type: {class: FloatConstantValue, ns: D_Dev.PolymorphicValueSystem, asm: D-Dev.PolymorphicValueSystem}
+    - rid: 568712065000000014
+      type: {class: IntConstantValue, ns: D_Dev.PolymorphicValueSystem, asm: D-Dev.PolymorphicValueSystem}
       data:
-        _value: 1
-    - rid: 5687120623140086014
-      type: {class: FloatConstantValue, ns: D_Dev.PolymorphicValueSystem, asm: D-Dev.PolymorphicValueSystem}
+        _value: 100
+    - rid: 568712066000000004
+      type: {class: CurrencyInfoConstantValue, ns: D_Dev.CurrencySystem.Extensions, asm: D-Dev.CurrencySystem.CurrencyInfoValue}
       data:
-        _value: 60
+        _value: {fileID: 11400000, guid: 6f916130eddbf9845867e27e5e4e7a67, type: 2}

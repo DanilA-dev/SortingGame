@@ -10,45 +10,44 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3450f76d55984495a0b2a5b3298d5f81, type: 3}
-  m_Name: InteractionDistance_UpgradeInfo
+  m_Name: MagnetRadius_UpgradeInfo
   m_EditorClassIdentifier: Game.Purchasable::_Project.Scripts.Core.Purchasable.FloatUpgradeInfo
   _displayName:
-    rid: 5687120620302893145
+    rid: 568712064000000031
   _description:
-    rid: 5687120620302893146
-  _icon: {fileID: 21300000, guid: d808931095822a44495ba3c116b85d83, type: 3}
+    rid: 568712064000000032
+  _icon: {fileID: 21300000, guid: 76f586265422ec24ca1a2cdca9bd3346, type: 3}
   _currency:
-    rid: 568712066000000001
-  _level: {fileID: 11400000, guid: 81fac72e4494abc42a81fcf9fec94bf8, type: 2}
-  _prices: 230000003700000050000000780000008c000000af000000dc000000
-  _requirement: {fileID: 0}
+    rid: 568712066000000003
+  _level: {fileID: 11400000, guid: 78ef287dde4346de9bf49eb647bf495a, type: 2}
+  _prices: 6400000096000000fa00000090010000f401000058020000
+  _requirement: {fileID: 11400000, guid: 6cf1720535194618b0a551f605d5fc2c, type: 2}
   _showDebugInfo: 1
   _target:
-    rid: 5687120620302893149
+    rid: 568712064000000033
   _values:
   - 3
-  - 3.2
-  - 3.5
   - 4
-  - 4.3
-  - 4.7
   - 5
+  - 6
+  - 8
+  - 10
   references:
     version: 2
     RefIds:
-    - rid: 5687120620302893145
+    - rid: 568712064000000031
       type: {class: StringConstantValue, ns: D_Dev.PolymorphicValueSystem, asm: D-Dev.PolymorphicValueSystem}
       data:
-        _value: Interaction distance
-    - rid: 5687120620302893146
+        _value: Magnet Radius
+    - rid: 568712064000000032
       type: {class: StringConstantValue, ns: D_Dev.PolymorphicValueSystem, asm: D-Dev.PolymorphicValueSystem}
       data:
-        _value: Pick up items and stock at longer range
-    - rid: 5687120620302893149
+        _value: Attract products from further away
+    - rid: 568712064000000033
       type: {class: FloatScriptableVariableValue, ns: D_Dev.PolymorphicValueSystem, asm: D-Dev.PolymorphicValueSystem}
       data:
-        _variable: {fileID: 11400000, guid: 8261cf82e6c54494a82d8d28853352c1, type: 2}
-    - rid: 568712066000000001
+        _variable: {fileID: 11400000, guid: fd082eecd2a145768b727620955a5914, type: 2}
+    - rid: 568712066000000003
       type: {class: CurrencyInfoConstantValue, ns: D_Dev.CurrencySystem.Extensions, asm: D-Dev.CurrencySystem.CurrencyInfoValue}
       data:
         _value: {fileID: 11400000, guid: 6f916130eddbf9845867e27e5e4e7a67, type: 2}

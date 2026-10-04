@@ -747,6 +747,8 @@ MonoBehaviour:
   _selectedItem:
     rid: 5687120631951532627
   _itemsList: {fileID: 11400000, guid: f77569b02ed12d546b49e1c63bc88958, type: 2}
+  _itemCollectDelay:
+    rid: 5687120631951532882
   _radius:
     rid: 5687120631951532628
   _maxItems:
@@ -778,6 +780,10 @@ MonoBehaviour:
       type: {class: IntScriptableVariableValue, ns: D_Dev.PolymorphicValueSystem, asm: D-Dev.PolymorphicValueSystem}
       data:
         _variable: {fileID: 11400000, guid: b7fb52aaa5665f04e80a9075c3dc1604, type: 2}
+    - rid: 5687120631951532882
+      type: {class: FloatConstantValue, ns: D_Dev.PolymorphicValueSystem, asm: D-Dev.PolymorphicValueSystem}
+      data:
+        _value: 0.25
 --- !u!1 &1948339936289830862
 GameObject:
   m_ObjectHideFlags: 0
@@ -2039,13 +2045,13 @@ MonoBehaviour:
     _clips:
     - {fileID: 8300000, guid: 3248e14297e40b847a66d2b5736971ca, type: 3}
     - {fileID: 8300000, guid: d89e3cd557ec43d4baff79a6306a8248, type: 3}
-    _volume: 0.5
+    _volume: 0.3
     _pitch: 1
     _isRandomVolume: 0
     _isRandomPitch: 1
     _minVolume: 0
     _maxVolume: 0
-    _minPitch: 0.85
+    _minPitch: 0.9
     _maxPitch: 1
     _spatialBlend: 0
     _fadeTime: 0

@@ -46,12 +46,18 @@ namespace _Project.Scripts.Core.Skills
         {
             if (_skillTriggerVariable != null)
                 _skillTriggerVariable.OnValueUpdate += OnTriggerUpdate;
+
+            if (_info != null)
+                _info.OnUseRequested += Use;
         }
 
         private void OnDisable()
         {
             if (_skillTriggerVariable != null)
                 _skillTriggerVariable.OnValueUpdate -= OnTriggerUpdate;
+
+            if (_info != null)
+                _info.OnUseRequested -= Use;
 
             Cancel();
         }

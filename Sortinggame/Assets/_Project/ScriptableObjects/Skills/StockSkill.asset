@@ -19,8 +19,6 @@ MonoBehaviour:
   _icon: {fileID: 21300000, guid: fc77e69864e5a1444a1e9fb7576bfd5d, type: 3}
   _isLocked:
     rid: 5687120623140086012
-  _price:
-    rid: 5687120631137043605
   _duration:
     rid: 5687120623140086013
   _cooldown:
@@ -37,9 +35,9 @@ MonoBehaviour:
       data:
         _value: highlights shelf of active product
     - rid: 5687120623140086012
-      type: {class: BoolConstantValue, ns: D_Dev.PolymorphicValueSystem, asm: D-Dev.PolymorphicValueSystem}
+      type: {class: BoolScriptableVariableValue, ns: D_Dev.PolymorphicValueSystem, asm: D-Dev.PolymorphicValueSystem}
       data:
-        _value: 0
+        _variable: {fileID: 11400000, guid: fd04ade30bd1429a82e3761684652507, type: 2}
     - rid: 5687120623140086013
       type: {class: FloatScriptableVariableValue, ns: D_Dev.PolymorphicValueSystem, asm: D-Dev.PolymorphicValueSystem}
       data:
@@ -48,7 +46,3 @@ MonoBehaviour:
       type: {class: FloatConstantValue, ns: D_Dev.PolymorphicValueSystem, asm: D-Dev.PolymorphicValueSystem}
       data:
         _value: 60
-    - rid: 5687120631137043605
-      type: {class: IntConstantValue, ns: D_Dev.PolymorphicValueSystem, asm: D-Dev.PolymorphicValueSystem}
-      data:
-        _value: 100
