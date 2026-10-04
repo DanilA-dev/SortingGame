@@ -1,0 +1,79 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &1978843610972490983
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 304544335590462864, guid: 1aa58cad648d2b94da65ce1591177c7f, type: 3}
+      propertyPath: <Param>k__BackingField
+      value: 
+      objectReference: {fileID: 11400000, guid: 1a53dfb232d4f7644b517a57ffe79e88, type: 2}
+    - target: {fileID: 622305986696793676, guid: 1aa58cad648d2b94da65ce1591177c7f, type: 3}
+      propertyPath: _eventNameTypes.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 622305986696793676, guid: 1aa58cad648d2b94da65ce1591177c7f, type: 3}
+      propertyPath: '_eventNameTypes.Array.data[0]'
+      value: 5687120647698776899
+      objectReference: {fileID: 0}
+    - target: {fileID: 622305986696793676, guid: 1aa58cad648d2b94da65ce1591177c7f, type: 3}
+      propertyPath: 'managedReferences[5687120647698776899]'
+      value: D-Dev.EventBehaviours D_Dev.CustomEventManager.StringVariableEventNameType
+      objectReference: {fileID: 0}
+    - target: {fileID: 622305986696793676, guid: 1aa58cad648d2b94da65ce1591177c7f, type: 3}
+      propertyPath: managedReferences[5687120647698776899]._variable
+      value: 
+      objectReference: {fileID: 11400000, guid: eddbb5d0214f67e45be77974a7a1c871, type: 2}
+    - target: {fileID: 1281501670949282584, guid: 1aa58cad648d2b94da65ce1591177c7f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1281501670949282584, guid: 1aa58cad648d2b94da65ce1591177c7f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1281501670949282584, guid: 1aa58cad648d2b94da65ce1591177c7f, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1281501670949282584, guid: 1aa58cad648d2b94da65ce1591177c7f, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1281501670949282584, guid: 1aa58cad648d2b94da65ce1591177c7f, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1281501670949282584, guid: 1aa58cad648d2b94da65ce1591177c7f, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1281501670949282584, guid: 1aa58cad648d2b94da65ce1591177c7f, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1281501670949282584, guid: 1aa58cad648d2b94da65ce1591177c7f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1281501670949282584, guid: 1aa58cad648d2b94da65ce1591177c7f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1281501670949282584, guid: 1aa58cad648d2b94da65ce1591177c7f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7762275446362457197, guid: 1aa58cad648d2b94da65ce1591177c7f, type: 3}
+      propertyPath: m_Name
+      value: CoinsRewardBonus_Prefab
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 1aa58cad648d2b94da65ce1591177c7f, type: 3}

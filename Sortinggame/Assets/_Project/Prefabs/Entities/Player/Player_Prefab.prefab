@@ -163,9 +163,20 @@ MonoBehaviour:
       data:
         _value: 0
     - rid: 5687120620302893151
+      type: {class: FloatMultipliedValue, ns: D_Dev.PolymorphicValueSystem, asm: D-Dev.PolymorphicValueSystem}
+      data:
+        _value:
+          rid: 4718390265537740011
+        _multiplier:
+          rid: 4718390265537740012
+    - rid: 4718390265537740011
       type: {class: FloatScriptableVariableValue, ns: D_Dev.PolymorphicValueSystem, asm: D-Dev.PolymorphicValueSystem}
       data:
         _variable: {fileID: 11400000, guid: 071686952c3973c4baabc7790c6b7998, type: 2}
+    - rid: 4718390265537740012
+      type: {class: FloatScriptableVariableValue, ns: D_Dev.PolymorphicValueSystem, asm: D-Dev.PolymorphicValueSystem}
+      data:
+        _variable: {fileID: 11400000, guid: 24a0e234d830ab087874f5770c5d0a2c, type: 2}
 --- !u!1 &100356794288655646
 GameObject:
   m_ObjectHideFlags: 0
@@ -344,9 +355,20 @@ MonoBehaviour:
       data:
         _variable: {fileID: 11400000, guid: 211bde359bd07ba47ac42099fe5a8339, type: 2}
     - rid: 5687120620302893150
+      type: {class: FloatMultipliedValue, ns: D_Dev.PolymorphicValueSystem, asm: D-Dev.PolymorphicValueSystem}
+      data:
+        _value:
+          rid: 4718390265537740001
+        _multiplier:
+          rid: 4718390265537740002
+    - rid: 4718390265537740001
       type: {class: FloatScriptableVariableValue, ns: D_Dev.PolymorphicValueSystem, asm: D-Dev.PolymorphicValueSystem}
       data:
         _variable: {fileID: 11400000, guid: 071686952c3973c4baabc7790c6b7998, type: 2}
+    - rid: 4718390265537740002
+      type: {class: FloatScriptableVariableValue, ns: D_Dev.PolymorphicValueSystem, asm: D-Dev.PolymorphicValueSystem}
+      data:
+        _variable: {fileID: 11400000, guid: 24a0e234d830ab087874f5770c5d0a2c, type: 2}
 --- !u!1 &227936837616491064
 GameObject:
   m_ObjectHideFlags: 0
@@ -682,9 +704,20 @@ MonoBehaviour:
         _inputAction: {fileID: -2875356980376606985, guid: 5874c51c9acab224ab9f2bff4257f317, type: 3}
         _desiredPhase: 0
     - rid: 5687120620302893152
+      type: {class: FloatMultipliedValue, ns: D_Dev.PolymorphicValueSystem, asm: D-Dev.PolymorphicValueSystem}
+      data:
+        _value:
+          rid: 4718390265537740021
+        _multiplier:
+          rid: 4718390265537740022
+    - rid: 4718390265537740021
       type: {class: FloatScriptableVariableValue, ns: D_Dev.PolymorphicValueSystem, asm: D-Dev.PolymorphicValueSystem}
       data:
         _variable: {fileID: 11400000, guid: 071686952c3973c4baabc7790c6b7998, type: 2}
+    - rid: 4718390265537740022
+      type: {class: FloatScriptableVariableValue, ns: D_Dev.PolymorphicValueSystem, asm: D-Dev.PolymorphicValueSystem}
+      data:
+        _variable: {fileID: 11400000, guid: 24a0e234d830ab087874f5770c5d0a2c, type: 2}
 --- !u!1 &642849859430252685
 GameObject:
   m_ObjectHideFlags: 0
@@ -1466,6 +1499,7 @@ GameObject:
   - component: {fileID: 9171465542281879858}
   - component: {fileID: 4794096811496763701}
   - component: {fileID: 2100305034605706281}
+  - component: {fileID: 4440802065511710024}
   m_Layer: 8
   m_Name: Player_Prefab
   m_TagString: Player
@@ -1716,6 +1750,20 @@ MonoBehaviour:
       type: {class: BoolScriptableVariableValue, ns: D_Dev.PolymorphicValueSystem, asm: D-Dev.PolymorphicValueSystem}
       data:
         _variable: {fileID: 11400000, guid: dc56fb487ac1c9c468a262976d47fcd0, type: 2}
+--- !u!114 &4440802065511710024
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3641577891075875498}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5cdc5300222145c393d90bbbb6ad5657, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: D-Dev.TagSystem::D_Dev.TagSystem.TagComponent
+  _tags:
+  - {fileID: 11400000, guid: f0cb574d29e5169439a8ca9ba001beea, type: 2}
 --- !u!1 &3819758101362029489
 GameObject:
   m_ObjectHideFlags: 0

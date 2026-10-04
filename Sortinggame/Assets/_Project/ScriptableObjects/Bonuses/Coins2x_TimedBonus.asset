@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6fe73eedd8ddcc46d150599ce00570bc, type: 3}
+  m_Name: Coins2x_TimedBonus
+  m_EditorClassIdentifier: Game.Core::_Project.Scripts.TimedBonusInfo
+  _multiplier:
+    rid: 4718390265537730001
+  _activeMultiplier: 2
+  _defaultMultiplier: 1
+  _duration: 120
+  _useUnscaledTime: 0
+  _remainingTime:
+    rid: 4718390265537730002
+  references:
+    version: 2
+    RefIds:
+    - rid: 4718390265537730001
+      type: {class: FloatScriptableVariableValue, ns: D_Dev.PolymorphicValueSystem, asm: D-Dev.PolymorphicValueSystem}
+      data:
+        _variable: {fileID: 11400000, guid: 7ea185d3044c4751c584928446cafff8, type: 2}
+    - rid: 4718390265537730002
+      type: {class: FloatConstantValue, ns: D_Dev.PolymorphicValueSystem, asm: D-Dev.PolymorphicValueSystem}
+      data:
+        _value: 0

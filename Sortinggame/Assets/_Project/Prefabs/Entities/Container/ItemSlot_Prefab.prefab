@@ -461,9 +461,20 @@ MonoBehaviour:
       data:
         _value: {fileID: 11400000, guid: 6f916130eddbf9845867e27e5e4e7a67, type: 2}
     - rid: 5687120576064786018
+      type: {class: IntMultipliedValue, ns: D_Dev.PolymorphicValueSystem, asm: D-Dev.PolymorphicValueSystem}
+      data:
+        _value:
+          rid: 4718390265537750001
+        _multiplier:
+          rid: 4718390265537750002
+    - rid: 4718390265537750001
       type: {class: IntScriptableVariableValue, ns: D_Dev.PolymorphicValueSystem, asm: D-Dev.PolymorphicValueSystem}
       data:
         _variable: {fileID: 11400000, guid: 01ff7ee2f06e1fe45a0434a587a259e9, type: 2}
+    - rid: 4718390265537750002
+      type: {class: FloatScriptableVariableValue, ns: D_Dev.PolymorphicValueSystem, asm: D-Dev.PolymorphicValueSystem}
+      data:
+        _variable: {fileID: 11400000, guid: 7ea185d3044c4751c584928446cafff8, type: 2}
 --- !u!1 &3603060487694077794
 GameObject:
   m_ObjectHideFlags: 0

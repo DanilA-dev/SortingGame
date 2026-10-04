@@ -13,6 +13,9 @@ MonoBehaviour:
   m_Name: Menu Infos Container
   m_EditorClassIdentifier: D-Dev.Menu::D_Dev.MenuHandler.MenuInfosContainer
   _projectMenus:
+  - {fileID: 11400000, guid: 1a53dfb232d4f7644b517a57ffe79e88, type: 2}
+  - {fileID: 11400000, guid: dd1b838279ae20844860712b51504415, type: 2}
+  - {fileID: 11400000, guid: 92d56e51be9b4b344bfb34a29ca033de, type: 2}
   - {fileID: 11400000, guid: a1649d8f281ab634490fce80d6cbbcc1, type: 2}
   - {fileID: 11400000, guid: 3692f98d1a16acf4e93163a8a559ea58, type: 2}
   - {fileID: 11400000, guid: 037ade487c690504aa9177ddd9ddf7fd, type: 2}

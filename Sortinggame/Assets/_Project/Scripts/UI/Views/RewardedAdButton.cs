@@ -24,6 +24,8 @@ namespace _Project.Scripts.UI.Views
         [SerializeField] private UnityEvent _onCooldownStart;
         [FoldoutGroup("Events")]
         [SerializeField] private UnityEvent _onCooldownEnd;
+        [FoldoutGroup("Events")]
+        [SerializeField] private UnityEvent _onRewarded;
 
         private float _readyTime;
         private bool _isWaitingForAd;
@@ -74,6 +76,7 @@ namespace _Project.Scripts.UI.Views
             {
                 _readyTime = Time.unscaledTime + _cooldown;
                 OnRewarded?.Invoke();
+                _onRewarded?.Invoke();
             }
 
             RefreshState();

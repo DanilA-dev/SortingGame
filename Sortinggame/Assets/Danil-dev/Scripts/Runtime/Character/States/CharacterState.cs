@@ -48,6 +48,8 @@ namespace D_Dev.Character.States
 
         protected RotationHandler _rotationHandler = new();
 
+        private bool _isSubscribedToMaxMoveSpeed;
+
         #endregion
 
         #region State
@@ -64,6 +66,7 @@ namespace D_Dev.Character.States
 
                 _movementController.SetMaxVelocity(maxSpeed);
                 _movementController.SetAcceleration(_accelerationSpeed.Value);
+                SubscribeToMaxMoveSpeed();
             }
             else
             {
@@ -74,6 +77,11 @@ namespace D_Dev.Character.States
                 _rotationHandler.Initialize(_rotateRoot.Value, _rotateSpeed.Value, _movementController.Rigidbody);
         }
 
+        public override void OnExit()
+        {
+            UnsubscribeFromMaxMoveSpeed();
+        }
+
         public override void OnUpdate()
         {
             if (_canRotate)
@@ -81,6 +89,43 @@ namespace D_Dev.Character.States
 
             if (_canMove)
                 _movementController.SetDirection(_movementDirection.Value);
+        }
+
+        #endregion
+
+        #region Protected
+
+        protected virtual void OnMaxMoveSpeedChanged(float maxSpeed)
+        {
+            if (_movementController == null)
+            {
+                UnsubscribeFromMaxMoveSpeed();
+                return;
+            }
+
+            _movementController.SetMaxVelocity(maxSpeed);
+        }
+
+        #endregion
+
+        #region Private
+
+        private void SubscribeToMaxMoveSpeed()
+        {
+            if (_isSubscribedToMaxMoveSpeed || _maxMoveSpeed == null)
+                return;
+
+            _maxMoveSpeed.OnValueChanged += OnMaxMoveSpeedChanged;
+            _isSubscribedToMaxMoveSpeed = true;
+        }
+
+        private void UnsubscribeFromMaxMoveSpeed()
+        {
+            if (!_isSubscribedToMaxMoveSpeed)
+                return;
+
+            _maxMoveSpeed.OnValueChanged -= OnMaxMoveSpeedChanged;
+            _isSubscribedToMaxMoveSpeed = false;
         }
 
         #endregion

@@ -1,0 +1,107 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &2874150807696316296
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 304544335590462864, guid: 1aa58cad648d2b94da65ce1591177c7f, type: 3}
+      propertyPath: <Param>k__BackingField
+      value: 
+      objectReference: {fileID: 11400000, guid: dd1b838279ae20844860712b51504415, type: 2}
+    - target: {fileID: 622305986696793676, guid: 1aa58cad648d2b94da65ce1591177c7f, type: 3}
+      propertyPath: _eventNameTypes.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 622305986696793676, guid: 1aa58cad648d2b94da65ce1591177c7f, type: 3}
+      propertyPath: '_eventNameTypes.Array.data[0]'
+      value: 5687120647698776893
+      objectReference: {fileID: 0}
+    - target: {fileID: 622305986696793676, guid: 1aa58cad648d2b94da65ce1591177c7f, type: 3}
+      propertyPath: 'managedReferences[5687120647698776893]'
+      value: D-Dev.EventBehaviours D_Dev.CustomEventManager.StringVariableEventNameType
+      objectReference: {fileID: 0}
+    - target: {fileID: 622305986696793676, guid: 1aa58cad648d2b94da65ce1591177c7f, type: 3}
+      propertyPath: managedReferences[5687120647698776893]._variable
+      value: 
+      objectReference: {fileID: 11400000, guid: 4a6a5c04b29eb3248b94768c65236369, type: 2}
+    - target: {fileID: 1281501670949282584, guid: 1aa58cad648d2b94da65ce1591177c7f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1281501670949282584, guid: 1aa58cad648d2b94da65ce1591177c7f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1281501670949282584, guid: 1aa58cad648d2b94da65ce1591177c7f, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1281501670949282584, guid: 1aa58cad648d2b94da65ce1591177c7f, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1281501670949282584, guid: 1aa58cad648d2b94da65ce1591177c7f, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1281501670949282584, guid: 1aa58cad648d2b94da65ce1591177c7f, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1281501670949282584, guid: 1aa58cad648d2b94da65ce1591177c7f, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1281501670949282584, guid: 1aa58cad648d2b94da65ce1591177c7f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1281501670949282584, guid: 1aa58cad648d2b94da65ce1591177c7f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1281501670949282584, guid: 1aa58cad648d2b94da65ce1591177c7f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6234935188169049201, guid: 1aa58cad648d2b94da65ce1591177c7f, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: c3296cc8f3b1f244c848c3bc2cbce43b, type: 3}
+    - target: {fileID: 6861803139357306449, guid: 1aa58cad648d2b94da65ce1591177c7f, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6861803139357306449, guid: 1aa58cad648d2b94da65ce1591177c7f, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.g
+      value: 0.51979506
+      objectReference: {fileID: 0}
+    - target: {fileID: 6861803139357306449, guid: 1aa58cad648d2b94da65ce1591177c7f, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.r
+      value: 0.16470587
+      objectReference: {fileID: 0}
+    - target: {fileID: 7762275446362457197, guid: 1aa58cad648d2b94da65ce1591177c7f, type: 3}
+      propertyPath: m_Name
+      value: MoveSpeedRewardBonus_Prefab
+      objectReference: {fileID: 0}
+    - target: {fileID: 9045464690770143123, guid: 1aa58cad648d2b94da65ce1591177c7f, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9045464690770143123, guid: 1aa58cad648d2b94da65ce1591177c7f, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.g
+      value: 0.51979506
+      objectReference: {fileID: 0}
+    - target: {fileID: 9045464690770143123, guid: 1aa58cad648d2b94da65ce1591177c7f, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.r
+      value: 0.16470587
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 1aa58cad648d2b94da65ce1591177c7f, type: 3}

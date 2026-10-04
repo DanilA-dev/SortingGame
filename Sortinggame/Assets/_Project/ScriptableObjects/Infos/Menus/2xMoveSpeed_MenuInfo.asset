@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4f5dd28871c43cab726ddf879627531, type: 3}
+  m_Name: 2xMoveSpeed_MenuInfo
+  m_EditorClassIdentifier: D-Dev.Menu::D_Dev.MenuHandler.MenuInfo
+  _canvas: 0
+  _menuPrefab:
+    _makeAddressable: 0
+    _asset: {fileID: 620084149812800116, guid: c1e21738235f6c94293c27f00726760d, type: 3}
+    _assetReference:
+      m_AssetGUID: 
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_SubObjectGUID: 
+      m_EditorAssetChanged: 0
+  _openOnCreate: 0
