@@ -3,6 +3,7 @@ using _Project.Scripts.Core.Purchasable;
 using Sirenix.OdinInspector;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 namespace _Project.Scripts.UI.Views
@@ -21,11 +22,14 @@ namespace _Project.Scripts.UI.Views
         [Title("Buttons")]
         [SerializeField] private Button _buyButton;
         [SerializeField] private RewardedAdButton _adsButton;
+        [FoldoutGroup("Events")]
+        public UnityEvent OnPurchased;
+        [FoldoutGroup("Events")]
+        public UnityEvent OnNotEnoughCurrency;
+        
 
         private BasePurchasableInfo _info;
 
-        public event Action OnPurchased;
-        public event Action OnNotEnoughCurrency;
 
         #endregion
 
@@ -78,8 +82,7 @@ namespace _Project.Scripts.UI.Views
             _nextValueText?.SetText(isMaxed ? _maxLevelText : _info.GetNextText());
             _priceText?.SetText(isMaxed ? _maxLevelText : _info.NextPrice.ToString());
 
-            _buyButton.gameObject.SetActive(isMaxed || canAfford);
-            _buyButton.interactable = !isMaxed;
+            _buyButton.gameObject.SetActive(!isMaxed);
             _adsButton.gameObject.SetActive(!isMaxed && !canAfford);
         }
 

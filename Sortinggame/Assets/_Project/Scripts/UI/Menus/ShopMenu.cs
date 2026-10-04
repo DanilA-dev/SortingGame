@@ -44,8 +44,8 @@ namespace _Project.Scripts.UI
 
         private void OnEnable()
         {
-            _buyItemView.OnPurchased += OnPurchased;
-            _buyItemView.OnNotEnoughCurrency += OnNotEnoughCurrency;
+            _buyItemView.OnPurchased.AddListener(OnPurchased);
+            _buyItemView.OnNotEnoughCurrency.AddListener(OnNotEnoughCurrency);
 
             InitItems();
             SelectFirstShown();
@@ -53,8 +53,8 @@ namespace _Project.Scripts.UI
 
         private void OnDisable()
         {
-            _buyItemView.OnPurchased -= OnPurchased;
-            _buyItemView.OnNotEnoughCurrency -= OnNotEnoughCurrency;
+            _buyItemView.OnPurchased.RemoveListener(OnPurchased);
+            _buyItemView.OnNotEnoughCurrency.RemoveListener(OnNotEnoughCurrency);
         }
 
         private void OnDestroy()
