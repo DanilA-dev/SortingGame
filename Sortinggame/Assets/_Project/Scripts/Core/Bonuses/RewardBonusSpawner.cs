@@ -19,6 +19,8 @@ namespace _Project.Scripts
         [Title("Rewards")]
         [SerializeField] private GameObject[] _rewardPrefabs;
         [SerializeField] private Transform _parent;
+        [Title("Bonuses")]
+        [SerializeField] private TimedBonusInfo[] _bonuses;
 
         private List<GameObject> _rewards = new();
         private List<GameObject> _inactiveRewards = new();
@@ -57,12 +59,43 @@ namespace _Project.Scripts
         {
             while (!token.IsCancellationRequested)
             {
+                if (await UniTask.WaitUntil(IsIdle, cancellationToken: token).SuppressCancellationThrow())
+                    return;
+
                 var delay = TimeSpan.FromSeconds(Mathf.Max(0f, _delay.Value));
                 if (await UniTask.Delay(delay, cancellationToken: token).SuppressCancellationThrow())
                     return;
 
-                TryShowRandomReward();
+                if (IsIdle())
+                    TryShowRandomReward();
             }
+        }
+
+        private bool IsIdle() => !HasActiveReward() && !HasActiveBonus();
+
+        private bool HasActiveReward()
+        {
+            foreach (var reward in _rewards)
+            {
+                if (reward != null && reward.activeSelf)
+                    return true;
+            }
+
+            return false;
+        }
+
+        private bool HasActiveBonus()
+        {
+            if (_bonuses == null)
+                return false;
+
+            foreach (var bonus in _bonuses)
+            {
+                if (bonus != null && bonus.IsActive)
+                    return true;
+            }
+
+            return false;
         }
 
         private void TryShowRandomReward()

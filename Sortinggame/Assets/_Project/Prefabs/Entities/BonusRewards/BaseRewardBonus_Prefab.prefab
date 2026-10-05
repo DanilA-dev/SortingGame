@@ -10558,6 +10558,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: D-Dev.TimerSystem.Extensions::D_Dev.TimerSystem.LongTimerComponent
   _invokeOnStart: 1
+  _restartOnEnable: 1
   _useUnscaledTime: 0
   _direction: 1
   _timeValue:

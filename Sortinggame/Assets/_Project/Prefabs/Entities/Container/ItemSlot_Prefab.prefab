@@ -259,6 +259,8 @@ MonoBehaviour:
     rid: 5687120608163012124
   _currentActiveItemRotation:
     rid: 5687120608284910472
+  _itemSlotOffsetId: {fileID: 11400000, guid: cd57551ff2c717a4484d4815c26dd597, type: 2}
+  _itemSlotRotationId: {fileID: 11400000, guid: 74c259874d0dfbb45b6699563cd700f4, type: 2}
   _meshFilter: {fileID: 4007380572460390971}
   _meshRenderer: {fileID: 2075935138956795165}
   _allowPlaceMat: {fileID: 2100000, guid: c5432fc51c1c93f46a68c442ddf75534, type: 2}

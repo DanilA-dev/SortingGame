@@ -11,6 +11,7 @@ namespace D_Dev.TimerSystem
         #region Fields
 
         [SerializeField] private bool _invokeOnStart;
+        [SerializeField] private bool _restartOnEnable;
         [SerializeField] private bool _useUnscaledTime;
         [SerializeField] private CountDirection _direction;
         [SerializeReference] private PolymorphicValue<double> _timeValue = new DoubleConstantValue();
@@ -28,6 +29,8 @@ namespace D_Dev.TimerSystem
         public UnityEvent<string> OnTimeTextChanged;
 
         private LongTimer _timer;
+        private double _initialTime;
+        private bool _isStarted;
 
         #endregion
 
@@ -43,7 +46,8 @@ namespace D_Dev.TimerSystem
 
         private void Awake()
         {
-            _timer = new LongTimer(_direction, _timeValue.Value, GetTargetTime());
+            _initialTime = _timeValue.Value;
+            _timer = new LongTimer(_direction, _initialTime, GetTargetTime());
 
             _timer.OnTimerStart += OnStart;
             _timer.OnTimerStop += OnStop;
@@ -54,11 +58,22 @@ namespace D_Dev.TimerSystem
             _timeValue.OnValueChanged += OnTimeValueChanged;
         }
 
+        private void OnEnable()
+        {
+            if (!_restartOnEnable || !_isStarted)
+                return;
+
+            _timer.SetTime(_initialTime);
+            OnTimeTextChanged?.Invoke(TimeText);
+            StartTimer();
+        }
+
         private void Start()
         {
+            _isStarted = true;
             OnTimeTextChanged?.Invoke(TimeText);
 
-            if (_invokeOnStart)
+            if (_invokeOnStart || _restartOnEnable)
                 StartTimer();
         }
 

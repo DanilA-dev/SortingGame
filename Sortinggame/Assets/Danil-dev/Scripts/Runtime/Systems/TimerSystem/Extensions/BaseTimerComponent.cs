@@ -10,6 +10,7 @@ namespace D_Dev.TimerSystem
         #region Fields
 
         [SerializeField] protected bool _invokeOnStart;
+        [SerializeField] protected bool _restartOnEnable;
         [SerializeField] protected bool _repeat;
         [SerializeReference] protected PolymorphicValue<float> _timeValue = new FloatConstantValue();
 
@@ -42,15 +43,21 @@ namespace D_Dev.TimerSystem
 
         #region Monobehaviour
 
+        protected virtual void OnEnable()
+        {
+            if (_restartOnEnable && _timer != null)
+                StartTimer();
+        }
+
         protected virtual void Start()
         {
             _timer = new CountdownTimer(_timeValue.Value);
-            
+
             _timer.OnTimerStart += OnStart;
             _timer.OnTimerEnd += OnEnd;
             _timer.OnTimerProgressUpdate += OnProgress;
-            
-            if (_invokeOnStart)
+
+            if (_invokeOnStart || _restartOnEnable)
                 StartTimer();
         }
 

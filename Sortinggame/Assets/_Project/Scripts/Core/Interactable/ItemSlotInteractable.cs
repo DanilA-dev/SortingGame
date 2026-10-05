@@ -4,6 +4,7 @@ using D_Dev.EntityInfoBinder;
 using D_Dev.EntityVariable.Types;
 using D_Dev.InteractableSystem;
 using D_Dev.PolymorphicValueSystem;
+using D_Dev.RuntimeEntityVariables;
 using D_Dev.ScriptableVariables;
 using D_Dev.TweenAnimations.Types;
 using Sirenix.OdinInspector;
@@ -21,6 +22,9 @@ namespace _Project.Scripts
         [SerializeReference] private PolymorphicValue<GameObject> _currentActiveItem = new GameObjectConstantValue();
         [SerializeReference] private PolymorphicValue<Vector3> _currentActiveItemOffset = new Vector3ConstantValue();
         [SerializeReference] private PolymorphicValue<Vector3> _currentActiveItemRotation = new Vector3ConstantValue();
+        [Title("Item Slot Offset")]
+        [SerializeField] private StringScriptableVariable _itemSlotOffsetId;
+        [SerializeField] private StringScriptableVariable _itemSlotRotationId;
         [Title("Item Place Materials")]
         [SerializeField] private MeshFilter _meshFilter;
         [SerializeField] private MeshRenderer _meshRenderer;
@@ -70,6 +74,7 @@ namespace _Project.Scripts
             if (item == null || !_gameObjectSlot.TryPutItem(item, true))
                 return false;
 
+            ApplyItemOffset(item);
             item.transform.localPosition = Vector3.zero;
             item.transform.localEulerAngles = Vector3.zero;
 
@@ -154,6 +159,24 @@ namespace _Project.Scripts
         {
             _itemView.localPosition = _defaultPos + _currentActiveItemOffset.Value;
             _itemView.localEulerAngles = _currentActiveItemRotation.Value;
+        }
+
+        private void ApplyItemOffset(GameObject item)
+        {
+            var offset = Vector3.zero;
+            var rotation = _defaultEulerAngles;
+
+            if (item.TryGetComponent(out RuntimeEntityVariablesContainer container))
+            {
+                if (container.TryGetVariable<Vector3EntityVariable>(_itemSlotOffsetId, out var offsetVariable))
+                    offset = offsetVariable.Value.Value;
+
+                if (container.TryGetVariable<Vector3EntityVariable>(_itemSlotRotationId, out var rotationVariable))
+                    rotation = rotationVariable.Value.Value;
+            }
+
+            _itemView.localPosition = _defaultPos + offset;
+            _itemView.localEulerAngles = rotation;
         }
 
         private void ResetItemOffset()

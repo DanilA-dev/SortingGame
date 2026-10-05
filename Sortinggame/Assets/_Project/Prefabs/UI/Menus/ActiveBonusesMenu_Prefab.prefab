@@ -427,80 +427,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!1 &3336353032506799005
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 372929812144014819}
-  - component: {fileID: 8408095774625647132}
-  m_Layer: 0
-  m_Name: OnCoinsBonusTaken
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &372929812144014819
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3336353032506799005}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 8313281228155500734}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &8408095774625647132
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3336353032506799005}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f668e1d2ccd84703abf3232383b61c35, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: D-Dev.EventBehaviours::D_Dev.CustomEventManager.Listeners.EventListener
-  _eventNameTypes:
-  - rid: 5687120647698776876
-  _raiseOnlyOnce: 0
-  _onRaised:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 4930368247908236512}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-  _debug: 0
-  references:
-    version: 2
-    RefIds:
-    - rid: 5687120647698776876
-      type: {class: StringVariableEventNameType, ns: D_Dev.CustomEventManager, asm: D-Dev.EventBehaviours}
-      data:
-        _variable: {fileID: 11400000, guid: eddbb5d0214f67e45be77974a7a1c871, type: 2}
 --- !u!1 &4736265040275234083
 GameObject:
   m_ObjectHideFlags: 0
@@ -515,6 +441,8 @@ GameObject:
   - component: {fileID: 7764843646368777188}
   - component: {fileID: 645817578762229899}
   - component: {fileID: 3876675756540888940}
+  - component: {fileID: 4718390265537760001}
+  - component: {fileID: 4718390265537760002}
   m_Layer: 0
   m_Name: ActiveBonusesMenu_Prefab
   m_TagString: Untagged
@@ -535,7 +463,6 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2371655773061329383}
-  - {fileID: 8313281228155500734}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -657,6 +584,36 @@ MonoBehaviour:
   references:
     version: 2
     RefIds: []
+--- !u!114 &4718390265537760001
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4736265040275234083}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ade68e22c28726fb164f8aed892da30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Game.Core::_Project.Scripts.TimedBonusView
+  _bonus: {fileID: 11400000, guid: 494e366b65750fadc1b4e207e8f78b46, type: 2}
+  _root: {fileID: 4930368247908236512}
+  _timeText: {fileID: 3319229189417269945}
+--- !u!114 &4718390265537760002
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4736265040275234083}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ade68e22c28726fb164f8aed892da30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Game.Core::_Project.Scripts.TimedBonusView
+  _bonus: {fileID: 11400000, guid: afd98f34042e41213801e754f60e1ae9, type: 2}
+  _root: {fileID: 7073993316301317256}
+  _timeText: {fileID: 6553522032877320849}
 --- !u!1 &4763319581163983806
 GameObject:
   m_ObjectHideFlags: 0
@@ -803,7 +760,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3524771485325380383}
-  - component: {fileID: 903398043404367542}
   m_Layer: 0
   m_Name: CoinsBonus
   m_TagString: Untagged
@@ -832,78 +788,6 @@ RectTransform:
   m_AnchoredPosition: {x: 122.7965, y: -239.99048}
   m_SizeDelta: {x: 75, y: 75}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &903398043404367542
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4930368247908236512}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2b7b6592ba08a4b4eacc99697ae90461, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: D-Dev.TimerSystem.Extensions::D_Dev.TimerSystem.LongTimerComponent
-  _invokeOnStart: 1
-  _useUnscaledTime: 0
-  _direction: 1
-  _timeValue:
-    rid: 5687120647698776873
-  _resetTime:
-    rid: 5687120647698776874
-  _targetTime:
-    rid: 5687120647698776875
-  OnTimerStart:
-    m_PersistentCalls:
-      m_Calls: []
-  OnTimerStop:
-    m_PersistentCalls:
-      m_Calls: []
-  OnTimerEnd:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 4930368247908236512}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  OnTimeTextChanged:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 3319229189417269945}
-        m_TargetAssemblyTypeName: TMPro.TextMeshProUGUI, Unity.TextMeshPro
-        m_MethodName: set_text
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  references:
-    version: 2
-    RefIds:
-    - rid: 5687120647698776873
-      type: {class: DoubleConstantValue, ns: D_Dev.PolymorphicValueSystem, asm: D-Dev.PolymorphicValueSystem}
-      data:
-        _value: 120
-    - rid: 5687120647698776874
-      type: {class: DoubleConstantValue, ns: D_Dev.PolymorphicValueSystem, asm: D-Dev.PolymorphicValueSystem}
-      data:
-        _value: 0
-    - rid: 5687120647698776875
-      type: {class: DoubleConstantValue, ns: D_Dev.PolymorphicValueSystem, asm: D-Dev.PolymorphicValueSystem}
-      data:
-        _value: 0
 --- !u!1 &7073993316301317256
 GameObject:
   m_ObjectHideFlags: 0
@@ -913,7 +797,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1522913273400409545}
-  - component: {fileID: 1166062281799687454}
   m_Layer: 0
   m_Name: MoveSpeedBonus
   m_TagString: Untagged
@@ -941,115 +824,6 @@ RectTransform:
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 122.7965, y: -434.99048}
   m_SizeDelta: {x: 75, y: 75}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1166062281799687454
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7073993316301317256}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2b7b6592ba08a4b4eacc99697ae90461, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: D-Dev.TimerSystem.Extensions::D_Dev.TimerSystem.LongTimerComponent
-  _invokeOnStart: 1
-  _useUnscaledTime: 0
-  _direction: 1
-  _timeValue:
-    rid: 5687120647698776873
-  _resetTime:
-    rid: 5687120647698776874
-  _targetTime:
-    rid: 5687120647698776875
-  OnTimerStart:
-    m_PersistentCalls:
-      m_Calls: []
-  OnTimerStop:
-    m_PersistentCalls:
-      m_Calls: []
-  OnTimerEnd:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 7073993316301317256}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  OnTimeTextChanged:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 6553522032877320849}
-        m_TargetAssemblyTypeName: TMPro.TextMeshProUGUI, Unity.TextMeshPro
-        m_MethodName: set_text
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  references:
-    version: 2
-    RefIds:
-    - rid: 5687120647698776873
-      type: {class: DoubleConstantValue, ns: D_Dev.PolymorphicValueSystem, asm: D-Dev.PolymorphicValueSystem}
-      data:
-        _value: 120
-    - rid: 5687120647698776874
-      type: {class: DoubleConstantValue, ns: D_Dev.PolymorphicValueSystem, asm: D-Dev.PolymorphicValueSystem}
-      data:
-        _value: 0
-    - rid: 5687120647698776875
-      type: {class: DoubleConstantValue, ns: D_Dev.PolymorphicValueSystem, asm: D-Dev.PolymorphicValueSystem}
-      data:
-        _value: 0
---- !u!1 &7322339308906389628
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 8313281228155500734}
-  m_Layer: 0
-  m_Name: Events
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &8313281228155500734
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7322339308906389628}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 372929812144014819}
-  - {fileID: 4489799111741408254}
-  m_Father: {fileID: 950012311360329621}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &7331025337241852591
 GameObject:
@@ -1401,77 +1175,3 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!1 &9080735991326425915
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 4489799111741408254}
-  - component: {fileID: 4930711327744290937}
-  m_Layer: 0
-  m_Name: OnMoveSpeedBonusTaken
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &4489799111741408254
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9080735991326425915}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 8313281228155500734}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &4930711327744290937
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9080735991326425915}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f668e1d2ccd84703abf3232383b61c35, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: D-Dev.EventBehaviours::D_Dev.CustomEventManager.Listeners.EventListener
-  _eventNameTypes:
-  - rid: 5687120647698776876
-  _raiseOnlyOnce: 0
-  _onRaised:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 7073993316301317256}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-  _debug: 0
-  references:
-    version: 2
-    RefIds:
-    - rid: 5687120647698776876
-      type: {class: StringVariableEventNameType, ns: D_Dev.CustomEventManager, asm: D-Dev.EventBehaviours}
-      data:
-        _variable: {fileID: 11400000, guid: 4a6a5c04b29eb3248b94768c65236369, type: 2}

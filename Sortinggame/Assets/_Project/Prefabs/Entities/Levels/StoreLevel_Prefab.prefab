@@ -3440,6 +3440,9 @@ MonoBehaviour:
   - {fileID: 8128829805546883210, guid: 9456047aa1ca5f549b9a353570e28572, type: 3}
   - {fileID: 5501758869871776741, guid: 2ee793d576332ec4c86742dfaf6621eb, type: 3}
   _parent: {fileID: 8437558359332428907}
+  _bonuses:
+  - {fileID: 11400000, guid: 494e366b65750fadc1b4e207e8f78b46, type: 2}
+  - {fileID: 11400000, guid: afd98f34042e41213801e754f60e1ae9, type: 2}
   references:
     version: 2
     RefIds:

@@ -7,7 +7,12 @@ namespace D_Dev.TimerSystem
     {
         #region Monobehaviour
 
-        private void OnEnable() => UpdateManager.Add(this);
+        protected override void OnEnable()
+        {
+            base.OnEnable();
+            UpdateManager.Add(this);
+        }
+
         private void OnDisable() => UpdateManager.Remove(this);
 
         #endregion
