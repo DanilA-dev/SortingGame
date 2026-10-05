@@ -1051,7 +1051,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 59874416908739532, guid: e3142c9b72d8fb147ae2eb4db4a9847a, type: 3}
       propertyPath: _saveConfig
-      value: 1932282358920642814
+      value: 5687120665372794935
       objectReference: {fileID: 0}
     - target: {fileID: 59874416908739532, guid: e3142c9b72d8fb147ae2eb4db4a9847a, type: 3}
       propertyPath: _dontDestroyOnLoad
@@ -1068,6 +1068,10 @@ PrefabInstance:
     - target: {fileID: 59874416908739532, guid: e3142c9b72d8fb147ae2eb4db4a9847a, type: 3}
       propertyPath: 'managedReferences[1932282358920642814]'
       value: D-Dev.SaveSystem D_Dev.SaveSystem.JsonFileSaveConfig
+      objectReference: {fileID: 0}
+    - target: {fileID: 59874416908739532, guid: e3142c9b72d8fb147ae2eb4db4a9847a, type: 3}
+      propertyPath: 'managedReferences[5687120665372794935]'
+      value: D-Dev.SaveSystem D_Dev.SaveSystem.PlayerPrefsSaveConfig
       objectReference: {fileID: 0}
     - target: {fileID: 6197869098031699101, guid: e3142c9b72d8fb147ae2eb4db4a9847a, type: 3}
       propertyPath: m_Name

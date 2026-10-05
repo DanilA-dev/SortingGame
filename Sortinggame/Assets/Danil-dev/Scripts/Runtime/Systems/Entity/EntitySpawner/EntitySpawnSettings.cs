@@ -231,6 +231,7 @@ namespace D_Dev.EntitySpawner
                 {
                     obj.transform.position = _positionSettings.GetPosition() + _positionOffset;
                     obj.transform.rotation = _rotationSettings.GetRotation();
+                    Physics.SyncTransforms();
                 }
                 return obj;
             }
@@ -243,6 +244,7 @@ namespace D_Dev.EntitySpawner
                 {
                     returnObj.transform.position = _positionSettings.GetPosition();
                     returnObj.transform.rotation = _rotationSettings.GetRotation();
+                    Physics.SyncTransforms();
                 }
             }
             else
@@ -319,6 +321,7 @@ namespace D_Dev.EntitySpawner
 
             obj.transform.position = _positionSettings.GetPosition() + _positionOffset;
             obj.transform.rotation = _rotationSettings.GetRotation();
+            Physics.SyncTransforms();
             obj.SetActive(forceInactive ? false : _setActiveOnStart);
 
             if (obj.TryGetComponent(out RuntimeEntityVariablesContainer runtimeEntityVariablesContainer))
@@ -345,6 +348,7 @@ namespace D_Dev.EntitySpawner
 
             obj.transform.position = _positionSettings.GetPosition() + _positionOffset;
             obj.transform.rotation = _rotationSettings.GetRotation();
+            Physics.SyncTransforms();
             obj.SetActive(_setActiveOnStart);
 
             if (obj.TryGetComponent(out RuntimeEntityVariablesContainer runtimeEntityVariablesContainer))

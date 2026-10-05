@@ -11,11 +11,15 @@ namespace _Project.Scripts.UI
     {
         #region Fields
 
+        [Title("UI")]
         [SerializeField] private Button _sfxButton;
         [SerializeField] private Button _musicButton;
+        [SerializeField] private Slider _lookSensSlider;
         [Space]
-        [SerializeReference] private PolymorphicValue<float> _isSfxVolume = new FloatConstantValue();
-        [SerializeReference] private PolymorphicValue<float> _isMusicVolume = new FloatConstantValue();
+        [Title("Values")]
+        [SerializeReference] private PolymorphicValue<float> _sfxVolume = new FloatConstantValue();
+        [SerializeReference] private PolymorphicValue<float> _musicVolume = new FloatConstantValue();
+        [SerializeReference] private PolymorphicValue<float> _lookSens = new FloatConstantValue();
 
         [FoldoutGroup("Events")] 
         [SerializeField] private UnityEvent _onSfxOn;
@@ -33,25 +37,34 @@ namespace _Project.Scripts.UI
 
         private void OnEnable()
         {
-            _isSfxVolume.OnValueChanged += VolumeSfxChanged;
-            _isMusicVolume.OnValueChanged += VolumeMusicChanged;
+            _sfxVolume.OnValueChanged += VolumeSfxChanged;
+            _musicVolume.OnValueChanged += VolumeMusicChanged;
+            _lookSensSlider.onValueChanged.AddListener(UpdateLookSensValue);
             
-            _musicButton.onClick.AddListener(ToogleMusicVolume);
-            _sfxButton.onClick.AddListener(ToogleSfxVolume);
+            _musicButton.onClick.AddListener(ToggleMusicVolume);
+            _sfxButton.onClick.AddListener(ToggleSfxVolume);
         }
-
-
         private void OnDisable()
         {
-            _isSfxVolume.OnValueChanged -= VolumeSfxChanged;
-            _isMusicVolume.OnValueChanged -= VolumeMusicChanged;
+            _sfxVolume.OnValueChanged -= VolumeSfxChanged;
+            _musicVolume.OnValueChanged -= VolumeMusicChanged;
             
-            _musicButton.onClick.RemoveListener(ToogleMusicVolume);
-            _sfxButton.onClick.RemoveListener(ToogleSfxVolume);
+            _lookSensSlider.onValueChanged.RemoveListener(UpdateLookSensValue);
+            _musicButton.onClick.RemoveListener(ToggleMusicVolume);
+            _sfxButton.onClick.RemoveListener(ToggleSfxVolume);
         }
 
         #endregion
 
+        #region Public
+
+        public void UpdateLookSensValue(float sliderValue)
+        {
+            _lookSens.Value = sliderValue;
+        }
+
+        #endregion
+        
         #region Listeners
 
         private void VolumeMusicChanged(float volume)
@@ -70,31 +83,31 @@ namespace _Project.Scripts.UI
                 _onSfxOff?.Invoke();
         }
 
-        private void ToogleSfxVolume()
+        private void ToggleSfxVolume()
         {
-            if (_isSfxVolume.Value >= 0)
+            if (_sfxVolume.Value >= 0)
             {
-                _isSfxVolume.Value = -80;
-                VolumeSfxChanged(_isSfxVolume.Value);
+                _sfxVolume.Value = -80;
+                VolumeSfxChanged(_sfxVolume.Value);
             }
             else
             {
-                _isSfxVolume.Value = 0;
-                VolumeSfxChanged(-_isSfxVolume.Value);
+                _sfxVolume.Value = 0;
+                VolumeSfxChanged(-_sfxVolume.Value);
             }
         }
 
-        private void ToogleMusicVolume()
+        private void ToggleMusicVolume()
         {
-            if (_isMusicVolume.Value >= 0)
+            if (_musicVolume.Value >= 0)
             {
-                _isMusicVolume.Value = -80;
-                VolumeMusicChanged(_isMusicVolume.Value);
+                _musicVolume.Value = -80;
+                VolumeMusicChanged(_musicVolume.Value);
             }
             else
             {
-                _isMusicVolume.Value = 0;
-                VolumeMusicChanged(_isMusicVolume.Value);
+                _musicVolume.Value = 0;
+                VolumeMusicChanged(_musicVolume.Value);
             }
         }
         

@@ -1873,6 +1873,19 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 3988008238210057469}
+        m_TargetAssemblyTypeName: D_Dev.PolymorphicValueSystem.Compare.BoolValueCompare,
+          D-Dev.PolymorphicValueSystem.Extensions
+        m_MethodName: CheckValues
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   references:
     version: 2
     RefIds:
@@ -3865,7 +3878,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0baefc6bc51e64a40a0d678b4b15817f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: D-Dev.PolymorphicValueSystem.Extensions::D_Dev.PolymorphicValueSystem.Compare.BoolValueCompare
-  _checkOnStart: 1
+  _checkOnStart: 0
   _comparePairs:
   - CompareValue:
       rid: 5687120654156440149

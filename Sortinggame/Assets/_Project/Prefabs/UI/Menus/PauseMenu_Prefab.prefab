@@ -191,10 +191,10 @@ MonoBehaviour:
   m_FillRect: {fileID: 7645135252488143908}
   m_HandleRect: {fileID: 6635215989151682918}
   m_Direction: 0
-  m_MinValue: 0
-  m_MaxValue: 1
-  m_WholeNumbers: 0
-  m_Value: 0.586
+  m_MinValue: 1
+  m_MaxValue: 5
+  m_WholeNumbers: 1
+  m_Value: 3
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -1158,10 +1158,13 @@ MonoBehaviour:
       m_Calls: []
   _sfxButton: {fileID: 1147779498770853878}
   _musicButton: {fileID: 5417120209455056374}
-  _isSfxVolume:
-    rid: 5687120578697500180
-  _isMusicVolume:
-    rid: 5687120578697500181
+  _lookSensSlider: {fileID: 1723936193259818338}
+  _sfxVolume:
+    rid: 5687120665025708232
+  _musicVolume:
+    rid: 5687120665025708233
+  _lookSens:
+    rid: 5687120665025708234
   _onSfxOn:
     m_PersistentCalls:
       m_Calls:
@@ -1301,14 +1304,18 @@ MonoBehaviour:
         _punch: {x: 1, y: 1, z: 1}
         _vibratoPunch: 10
         _elasticityPunch: 1
-    - rid: 5687120578697500180
+    - rid: 5687120665025708232
       type: {class: FloatScriptableVariableValue, ns: D_Dev.PolymorphicValueSystem, asm: D-Dev.PolymorphicValueSystem}
       data:
         _variable: {fileID: 11400000, guid: f461f289454ef02498dae61e0d114b3e, type: 2}
-    - rid: 5687120578697500181
+    - rid: 5687120665025708233
       type: {class: FloatScriptableVariableValue, ns: D_Dev.PolymorphicValueSystem, asm: D-Dev.PolymorphicValueSystem}
       data:
         _variable: {fileID: 11400000, guid: 56bd940c94ac3684eb93941677840c40, type: 2}
+    - rid: 5687120665025708234
+      type: {class: FloatScriptableVariableValue, ns: D_Dev.PolymorphicValueSystem, asm: D-Dev.PolymorphicValueSystem}
+      data:
+        _variable: {fileID: 11400000, guid: d5b8cbceab7f3994bb878791aeb60a7a, type: 2}
 --- !u!1 &5610220745917117099
 GameObject:
   m_ObjectHideFlags: 0

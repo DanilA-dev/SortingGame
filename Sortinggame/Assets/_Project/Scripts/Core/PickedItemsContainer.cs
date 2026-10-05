@@ -125,7 +125,7 @@ namespace _Project.Scripts
         public void OnDropInput(bool isPressed)
         {
             if (isPressed)
-                TryRemoveFirstItem();
+                TryRemoveLastItem();
         }
 
         public IInteractable GetLastItem()
