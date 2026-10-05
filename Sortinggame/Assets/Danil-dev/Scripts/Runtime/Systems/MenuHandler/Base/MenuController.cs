@@ -141,8 +141,7 @@ namespace D_Dev.MenuHandler
         {
             var menuParent = menuInfo.Canvas == 
                              MenuInfo.CanvasType.Overlay ? _overlayCanvas : _cameraCanvas;
-            var newMenu  = await menuInfo.MenuPrefab.InstantiateAsync();
-            newMenu.transform.SetParent(menuParent, false);
+            var newMenu = await menuInfo.MenuPrefab.InstantiateAsync(menuParent, false);
             newMenu.gameObject.SetActive(false);
             return newMenu.GetComponent<BaseMenu>();
         }
