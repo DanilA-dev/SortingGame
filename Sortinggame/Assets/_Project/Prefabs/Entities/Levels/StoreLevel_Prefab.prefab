@@ -192,13 +192,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 858811634898617745}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -1.36}
+  m_LocalRotation: {x: -0, y: 0.70710677, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: -10.9800005, y: 0, z: -5.26}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3157535818945405042}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!1 &1164514171178259961
 GameObject:
   m_ObjectHideFlags: 0
@@ -503,6 +503,7 @@ Transform:
   - {fileID: 2733575127309596121}
   - {fileID: 4949325508083221235}
   - {fileID: 4718390265537710242}
+  - {fileID: 122902657973098584}
   m_Father: {fileID: 7847874336084560758}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &4199078729010370001
@@ -1698,6 +1699,7 @@ MonoBehaviour:
   - rid: 4718390265537720110
   - rid: 4718390265537720120
   - rid: 4718390265537720130
+  - rid: 5687120654156440144
   _debug: 0
   OnLoaded:
     m_PersistentCalls:
@@ -2085,6 +2087,35 @@ MonoBehaviour:
       type: {class: StringConstantValue, ns: D_Dev.PolymorphicValueSystem, asm: D-Dev.PolymorphicValueSystem}
       data:
         _value: level_store_state
+    - rid: 5687120654156440144
+      type: {class: BoolValueSaveableData, ns: D_Dev.PolymorphicValueSystem.Extensions.Saveables, asm: D-Dev.PolymorphicValueSystem.Extensions}
+      data:
+        _key:
+          rid: 5687120654156440145
+        _saveOnExit: 1
+        _loadOnStart: 1
+        OnSaveData:
+          m_PersistentCalls:
+            m_Calls: []
+        OnLoadData:
+          m_PersistentCalls:
+            m_Calls: []
+        _value:
+          rid: 5687120654156440148
+        _defaultValue:
+          rid: 5687120654156440147
+    - rid: 5687120654156440145
+      type: {class: StringConstantValue, ns: D_Dev.PolymorphicValueSystem, asm: D-Dev.PolymorphicValueSystem}
+      data:
+        _value: _tutorialPassed
+    - rid: 5687120654156440147
+      type: {class: BoolConstantValue, ns: D_Dev.PolymorphicValueSystem, asm: D-Dev.PolymorphicValueSystem}
+      data:
+        _value: 0
+    - rid: 5687120654156440148
+      type: {class: BoolScriptableVariableValue, ns: D_Dev.PolymorphicValueSystem, asm: D-Dev.PolymorphicValueSystem}
+      data:
+        _variable: {fileID: 11400000, guid: 204cb5365d4ecdd4ea944eecb6d0130f, type: 2}
 --- !u!1 &4830914305873261971
 GameObject:
   m_ObjectHideFlags: 0
@@ -3580,6 +3611,148 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!1 &8095550245741316441
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 122902657973098584}
+  - component: {fileID: 5724184821380582770}
+  - component: {fileID: 3988008238210057469}
+  m_Layer: 0
+  m_Name: TutorialFlow
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &122902657973098584
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8095550245741316441}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6890951202808516898}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5724184821380582770
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8095550245741316441}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79e3e75a3703c754a865f4707bd33b44, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: D-Dev.ActionFlow::D_Dev.ActionFlow.ActionExecutorFlow
+  _executeOnStart: 0
+  _resetOnFinish: 0
+  _saveState: 0
+  _saveID: _tutorial
+  _actionGroups:
+  - rid: 5687120651950753519
+  _breakConditions: []
+  _onStarted:
+    m_PersistentCalls:
+      m_Calls: []
+  _onFinished:
+    m_PersistentCalls:
+      m_Calls: []
+  _onPaused:
+    m_PersistentCalls:
+      m_Calls: []
+  _onResumed:
+    m_PersistentCalls:
+      m_Calls: []
+  _onGroupStarted:
+    m_PersistentCalls:
+      m_Calls: []
+  _onGroupFinished:
+    m_PersistentCalls:
+      m_Calls: []
+  _onGroupTimeout:
+    m_PersistentCalls:
+      m_Calls: []
+  _onBroken:
+    m_PersistentCalls:
+      m_Calls: []
+  _isPaused: 0
+  _isFinished: 0
+  references:
+    version: 2
+    RefIds:
+    - rid: 5687120651950753519
+      type: {class: ActionGroup, ns: D_Dev.Base, asm: D-Dev.Base}
+      data:
+        _executeInParallel: 0
+        _actions:
+        - rid: 5687120651950753520
+    - rid: 5687120651950753520
+      type: {class: OpenMenuInfoAction, ns: D_Dev.Scripts.MenuHandler.Extensions.Actions, asm: D-Dev.Menu}
+      data:
+        _actionName: Open Tutorial Menu
+        OnUndo:
+          m_PersistentCalls:
+            m_Calls: []
+        _menuInfo: {fileID: 11400000, guid: 0a4665b1e4724d443bae4c2c6aafb897, type: 2}
+--- !u!114 &3988008238210057469
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8095550245741316441}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0baefc6bc51e64a40a0d678b4b15817f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: D-Dev.PolymorphicValueSystem.Extensions::D_Dev.PolymorphicValueSystem.Compare.BoolValueCompare
+  _checkOnStart: 1
+  _comparePairs:
+  - CompareValue:
+      rid: 5687120654156440149
+    CompareValueTo:
+      rid: 5687120654156440150
+    OnValueCompareTrue:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 5724184821380582770}
+          m_TargetAssemblyTypeName: D_Dev.ActionFlow.ActionExecutorFlow, D-Dev.ActionFlow
+          m_MethodName: StartExecution
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    OnValueCompareFalse:
+      m_PersistentCalls:
+        m_Calls: []
+  references:
+    version: 2
+    RefIds:
+    - rid: 5687120654156440149
+      type: {class: BoolScriptableVariableValue, ns: D_Dev.PolymorphicValueSystem, asm: D-Dev.PolymorphicValueSystem}
+      data:
+        _variable: {fileID: 11400000, guid: 204cb5365d4ecdd4ea944eecb6d0130f, type: 2}
+    - rid: 5687120654156440150
+      type: {class: BoolConstantValue, ns: D_Dev.PolymorphicValueSystem, asm: D-Dev.PolymorphicValueSystem}
+      data:
+        _value: 0
 --- !u!1 &8302147359211474665
 GameObject:
   m_ObjectHideFlags: 0

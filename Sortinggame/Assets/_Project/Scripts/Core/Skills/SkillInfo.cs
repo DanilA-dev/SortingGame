@@ -27,6 +27,8 @@ namespace _Project.Scripts.Core.Skills
         public event Action OnReady;
         public event Action OnNotAvailable;
         public event Action OnUseRequested;
+        public event Action OnUseImmediately;
+        public event Action OnStopImmediately;
 
         #endregion
 
@@ -52,6 +54,10 @@ namespace _Project.Scripts.Core.Skills
         public void NotifyUseStopped() => OnUseStopped?.Invoke();
         public void NotifyReady() => OnReady?.Invoke();
         public void NotifyNotAvailable() => OnNotAvailable?.Invoke();
+
+        public void UseImmediately() => OnUseImmediately?.Invoke();
+        public void StopImmediately() => OnStopImmediately?.Invoke();
+        
         public void RequestUse() => OnUseRequested?.Invoke();
 
         #endregion

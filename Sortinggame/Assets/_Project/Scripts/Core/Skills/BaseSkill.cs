@@ -37,6 +37,7 @@ namespace _Project.Scripts.Core.Skills
         [SerializeField] private UnityEvent _onSkillLocked;
 
         private Coroutine _routine;
+        private bool _isUsingImmediately;
 
         #endregion
 
@@ -48,8 +49,14 @@ namespace _Project.Scripts.Core.Skills
                 _skillTriggerVariable.OnValueUpdate += OnTriggerUpdate;
 
             if (_info != null)
+            {
                 _info.OnUseRequested += Use;
+                _info.OnUseImmediately += OnUseImmediately;
+                _info.OnStopImmediately += OnStopImmediately;
+            }
         }
+
+       
 
         private void OnDisable()
         {
@@ -57,7 +64,11 @@ namespace _Project.Scripts.Core.Skills
                 _skillTriggerVariable.OnValueUpdate -= OnTriggerUpdate;
 
             if (_info != null)
+            {
                 _info.OnUseRequested -= Use;
+                _info.OnUseImmediately -= OnUseImmediately;
+                _info.OnStopImmediately -= OnStopImmediately;
+            }
 
             Cancel();
         }
@@ -87,7 +98,7 @@ namespace _Project.Scripts.Core.Skills
                 return;
             }
 
-            if (_state != SkillState.Ready || !CanUse())
+            if (_state != SkillState.Ready || _isUsingImmediately || !CanUse())
             {
                 _info.NotifyNotAvailable();
                 _onSkillNotAvailable?.Invoke();
@@ -120,6 +131,29 @@ namespace _Project.Scripts.Core.Skills
 
             if (_info != null && _state != SkillState.Ready)
                 SetReady();
+
+            OnStopImmediately();
+        }
+
+        private void OnUseImmediately()
+        {
+            if (_info == null || _state == SkillState.Using || _isUsingImmediately)
+                return;
+
+            if (!CanUse())
+                return;
+
+            _isUsingImmediately = true;
+            OnUseStart();
+        }
+
+        private void OnStopImmediately()
+        {
+            if (!_isUsingImmediately)
+                return;
+
+            _isUsingImmediately = false;
+            OnUseStop();
         }
 
         #endregion
