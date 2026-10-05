@@ -649,7 +649,7 @@ MonoBehaviour:
         OnUndo:
           m_PersistentCalls:
             m_Calls: []
-        _menuInfo: {fileID: 11400000, guid: 92d56e51be9b4b344bfb34a29ca033de, type: 2}
+        _menuInfo: {fileID: 11400000, guid: d4fd957f1cc9f0542b5213d4d75b09d8, type: 2}
 --- !u!1 &810510973
 GameObject:
   m_ObjectHideFlags: 0
