@@ -65,13 +65,29 @@ MonoBehaviour:
       data:
         _value: {x: -90, y: 0, z: 0}
     - rid: 1932282429438689753
-      type: {class: StringConstantValue, ns: D_Dev.PolymorphicValueSystem, asm: D-Dev.PolymorphicValueSystem}
+      type: {class: LocalizedStringValue, ns: D_Dev.LocalizationSystem.Extensions, asm: D-Dev.LocalizationSystem.Extensions}
       data:
-        _value: Mustard
+        _localizedString:
+          m_TableReference:
+            m_TableCollectionName: GUID:55f22157f86a2e344a505ab92b3e7307
+          m_TableEntryReference:
+            m_KeyId: 7000071303168
+            m_Key: 
+          m_FallbackState: 0
+          m_WaitForCompletion: 0
+          m_LocalVariables: []
     - rid: 1932282429438689754
-      type: {class: StringScriptableVariableValue, ns: D_Dev.PolymorphicValueSystem, asm: D-Dev.PolymorphicValueSystem}
+      type: {class: LocalizedStringValue, ns: D_Dev.LocalizationSystem.Extensions, asm: D-Dev.LocalizationSystem.Extensions}
       data:
-        _variable: {fileID: 11400000, guid: f05a932998b803742b3a52620905a3a1, type: 2}
+        _localizedString:
+          m_TableReference:
+            m_TableCollectionName: GUID:57f782d3147d02248be60e090ad3cd2a
+          m_TableEntryReference:
+            m_KeyId: 8000033554432
+            m_Key: 
+          m_FallbackState: 0
+          m_WaitForCompletion: 0
+          m_LocalVariables: []
     - rid: 5687120598224339337
       type: {class: Vector3EntityVariable, ns: D_Dev.EntityVariable.Types, asm: D-Dev.EntityVariable}
       data:

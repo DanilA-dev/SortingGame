@@ -34,13 +34,29 @@ MonoBehaviour:
       data:
         _variable: {fileID: 11400000, guid: 5320ddf586519e145a1165c3222657f9, type: 2}
     - rid: 5687120620302893056
-      type: {class: StringConstantValue, ns: D_Dev.PolymorphicValueSystem, asm: D-Dev.PolymorphicValueSystem}
+      type: {class: LocalizedStringValue, ns: D_Dev.LocalizationSystem.Extensions, asm: D-Dev.LocalizationSystem.Extensions}
       data:
-        _value: Inventory Capacity
+        _localizedString:
+          m_TableReference:
+            m_TableCollectionName: GUID:f565ff0b6e207e141aba113036989c06
+          m_TableEntryReference:
+            m_KeyId: 9100008388608
+            m_Key: 
+          m_FallbackState: 0
+          m_WaitForCompletion: 0
+          m_LocalVariables: []
     - rid: 5687120620302893057
-      type: {class: StringConstantValue, ns: D_Dev.PolymorphicValueSystem, asm: D-Dev.PolymorphicValueSystem}
+      type: {class: LocalizedStringValue, ns: D_Dev.LocalizationSystem.Extensions, asm: D-Dev.LocalizationSystem.Extensions}
       data:
-        _value: Pick up more items to stock
+        _localizedString:
+          m_TableReference:
+            m_TableCollectionName: GUID:f565ff0b6e207e141aba113036989c06
+          m_TableEntryReference:
+            m_KeyId: 9100012582912
+            m_Key: 
+          m_FallbackState: 0
+          m_WaitForCompletion: 0
+          m_LocalVariables: []
     - rid: 568712066000000002
       type: {class: CurrencyInfoConstantValue, ns: D_Dev.CurrencySystem.Extensions, asm: D-Dev.CurrencySystem.CurrencyInfoValue}
       data:

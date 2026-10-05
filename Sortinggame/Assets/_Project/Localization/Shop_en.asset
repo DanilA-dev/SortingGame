@@ -1,0 +1,119 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: Shop_en
+  m_EditorClassIdentifier: Unity.Localization::UnityEngine.Localization.Tables.StringTable
+  m_LocaleId:
+    m_Code: en
+  m_SharedData: {fileID: 11400000, guid: f565ff0b6e207e141aba113036989c06, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 47562964992
+    m_Localized: SHOP
+    m_Metadata:
+      m_Items: []
+  - m_Id: 175115943936
+    m_Localized: IMPROVEMENTS
+    m_Metadata:
+      m_Items: []
+  - m_Id: 208674570240
+    m_Localized: SKILLS
+    m_Metadata:
+      m_Items: []
+  - m_Id: 319341281280
+    m_Localized: Magnet
+    m_Metadata:
+      m_Items: []
+  - m_Id: 361502425088
+    m_Localized: Vision
+    m_Metadata:
+      m_Items: []
+  - m_Id: 410919714816
+    m_Localized: Stock
+    m_Metadata:
+      m_Items: []
+  - m_Id: 647872724992
+    m_Localized: Buy
+    m_Metadata:
+      m_Items: []
+  - m_Id: 671469879296
+    m_Localized: Free
+    m_Metadata:
+      m_Items: []
+  - m_Id: 783038365696
+    m_Localized: Lv.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9000000000000
+    m_Localized: Attracts nearby products of the same type
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9000004194304
+    m_Localized: Highlights products of the same type
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9000008388608
+    m_Localized: Highlights the shelf of the selected product
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9100000000000
+    m_Localized: Interaction Distance
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9100004194304
+    m_Localized: Pick up and stock items from farther away
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9100008388608
+    m_Localized: Inventory Capacity
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9100012582912
+    m_Localized: Pick up more items to stock
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9100016777216
+    m_Localized: Magnet Radius
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9100020971520
+    m_Localized: Attract products from farther away
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9100025165824
+    m_Localized: Move Speed
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9100029360128
+    m_Localized: Move through the store much faster
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9100033554432
+    m_Localized: Stock Time
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9100037748736
+    m_Localized: Highlight the product shelf for longer
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9100041943040
+    m_Localized: Vision Time
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9100046137344
+    m_Localized: Highlight same products for longer
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []

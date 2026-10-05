@@ -65,13 +65,29 @@ MonoBehaviour:
       data:
         _value: {x: -90, y: 180, z: 0}
     - rid: 1932282429438689767
-      type: {class: StringConstantValue, ns: D_Dev.PolymorphicValueSystem, asm: D-Dev.PolymorphicValueSystem}
+      type: {class: LocalizedStringValue, ns: D_Dev.LocalizationSystem.Extensions, asm: D-Dev.LocalizationSystem.Extensions}
       data:
-        _value: Yellow Chips
+        _localizedString:
+          m_TableReference:
+            m_TableCollectionName: GUID:55f22157f86a2e344a505ab92b3e7307
+          m_TableEntryReference:
+            m_KeyId: 7000201326592
+            m_Key: 
+          m_FallbackState: 0
+          m_WaitForCompletion: 0
+          m_LocalVariables: []
     - rid: 1932282429438689768
-      type: {class: StringScriptableVariableValue, ns: D_Dev.PolymorphicValueSystem, asm: D-Dev.PolymorphicValueSystem}
+      type: {class: LocalizedStringValue, ns: D_Dev.LocalizationSystem.Extensions, asm: D-Dev.LocalizationSystem.Extensions}
       data:
-        _variable: {fileID: 11400000, guid: 0aa4485835cc52147ac56a48c2ae4000, type: 2}
+        _localizedString:
+          m_TableReference:
+            m_TableCollectionName: GUID:57f782d3147d02248be60e090ad3cd2a
+          m_TableEntryReference:
+            m_KeyId: 8000041943040
+            m_Key: 
+          m_FallbackState: 0
+          m_WaitForCompletion: 0
+          m_LocalVariables: []
     - rid: 5687120598224339341
       type: {class: Vector3EntityVariable, ns: D_Dev.EntityVariable.Types, asm: D-Dev.EntityVariable}
       data:

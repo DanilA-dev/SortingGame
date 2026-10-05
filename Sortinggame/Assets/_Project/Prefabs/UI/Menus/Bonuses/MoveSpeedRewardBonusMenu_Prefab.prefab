@@ -180,6 +180,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: MoveSpeedRewardBonusMenu_Prefab
       objectReference: {fileID: 0}
+    - target: {fileID: 5913794525258047872, guid: e954605ef36ffb648bb7ed9ca839d88f, type: 3}
+      propertyPath: m_StringReference.m_TableEntryReference.m_KeyId
+      value: 1783518281728
+      objectReference: {fileID: 0}
+    - target: {fileID: 5913794525258047872, guid: e954605ef36ffb648bb7ed9ca839d88f, type: 3}
+      propertyPath: m_StringReference.m_TableReference.m_TableCollectionName
+      value: GUID:93126b9859f3c20428bab15b5f2a4dd8
+      objectReference: {fileID: 0}
     - target: {fileID: 6462367677147430498, guid: e954605ef36ffb648bb7ed9ca839d88f, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0

@@ -1,0 +1,124 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b11a58205ec3474ca216360e9fa74a8, type: 3}
+  m_Name: Shop Shared Data
+  m_EditorClassIdentifier: Unity.Localization::UnityEngine.Localization.Tables.SharedTableData
+  m_TableCollectionName: Shop
+  m_TableCollectionNameGuidString: f565ff0b6e207e141aba113036989c06
+  m_Entries:
+  - m_Id: 47562964992
+    m_Key: Shop
+    m_Metadata:
+      m_Items: []
+  - m_Id: 175115943936
+    m_Key: Improvements
+    m_Metadata:
+      m_Items: []
+  - m_Id: 208674570240
+    m_Key: Skills
+    m_Metadata:
+      m_Items: []
+  - m_Id: 319341281280
+    m_Key: Magnet Skill Name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 361502425088
+    m_Key: Vision Skill Name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 410919714816
+    m_Key: Stock Skill Name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 647872724992
+    m_Key: Buy
+    m_Metadata:
+      m_Items: []
+  - m_Id: 671469879296
+    m_Key: Free
+    m_Metadata:
+      m_Items: []
+  - m_Id: 783038365696
+    m_Key: Lv
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9000000000000
+    m_Key: Magnet Skill Desc
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9000004194304
+    m_Key: Vision Skill Desc
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9000008388608
+    m_Key: Stock Skill Desc
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9100000000000
+    m_Key: Interaction Distance Upgrade Name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9100004194304
+    m_Key: Interaction Distance Upgrade Desc
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9100008388608
+    m_Key: Inventory Capacity Upgrade Name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9100012582912
+    m_Key: Inventory Capacity Upgrade Desc
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9100016777216
+    m_Key: Magnet Radius Upgrade Name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9100020971520
+    m_Key: Magnet Radius Upgrade Desc
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9100025165824
+    m_Key: Move Speed Upgrade Name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9100029360128
+    m_Key: Move Speed Upgrade Desc
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9100033554432
+    m_Key: Stock Time Upgrade Name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9100037748736
+    m_Key: Stock Time Upgrade Desc
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9100041943040
+    m_Key: Vision Time Upgrade Name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9100046137344
+    m_Key: Vision Time Upgrade Desc
+    m_Metadata:
+      m_Items: []
+  m_Metadata:
+    m_Items: []
+  m_KeyGenerator:
+    rid: 5687120668477105141
+  references:
+    version: 2
+    RefIds:
+    - rid: 5687120668477105141
+      type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables, asm: Unity.Localization}
+      data:
+        m_CustomEpoch: 1791216136738

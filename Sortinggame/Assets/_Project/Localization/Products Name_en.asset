@@ -1,0 +1,223 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: Products Name_en
+  m_EditorClassIdentifier: Unity.Localization::UnityEngine.Localization.Tables.StringTable
+  m_LocaleId:
+    m_Code: en
+  m_SharedData: {fileID: 11400000, guid: 55f22157f86a2e344a505ab92b3e7307, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 7000000000000
+    m_Localized: Apple
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7000004194304
+    m_Localized: Baguette
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7000008388608
+    m_Localized: Black Bread
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7000012582912
+    m_Localized: Black Cookie
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7000016777216
+    m_Localized: Blue Creamy Ice Cream
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7000020971520
+    m_Localized: Blue Fruit Ice
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7000025165824
+    m_Localized: Blue Mug
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7000029360128
+    m_Localized: Blue Soda
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7000033554432
+    m_Localized: Bowl
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7000037748736
+    m_Localized: Burger
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7000041943040
+    m_Localized: Cake
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7000046137344
+    m_Localized: Donut
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7000050331648
+    m_Localized: Green Coffee
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7000054525952
+    m_Localized: Green Creamy Ice Cream
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7000058720256
+    m_Localized: Hot Dog
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7000062914560
+    m_Localized: Ketchup
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7000067108864
+    m_Localized: Milk
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7000071303168
+    m_Localized: Mustard
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7000075497472
+    m_Localized: Onigiri
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7000079691776
+    m_Localized: Orange Coffee
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7000083886080
+    m_Localized: Orange Juice
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7000088080384
+    m_Localized: Orange Soda
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7000092274688
+    m_Localized: Orange
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7000096468992
+    m_Localized: Pepper
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7000100663296
+    m_Localized: Pink Creamy Ice Cream
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7000104857600
+    m_Localized: Pink Fruit Ice
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7000109051904
+    m_Localized: Pink Steak
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7000113246208
+    m_Localized: Pizza
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7000117440512
+    m_Localized: Plate
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7000121634816
+    m_Localized: Pumpkin
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7000125829120
+    m_Localized: Purple Chips
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7000130023424
+    m_Localized: Red Burger
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7000134217728
+    m_Localized: Red Coffee
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7000138412032
+    m_Localized: Red Fruit Ice
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7000142606336
+    m_Localized: Red Mug
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7000146800640
+    m_Localized: Red Soda
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7000150994944
+    m_Localized: Red Steak
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7000155189248
+    m_Localized: Salmon
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7000159383552
+    m_Localized: Sausage
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7000163577856
+    m_Localized: Shrimp
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7000167772160
+    m_Localized: Taco
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7000171966464
+    m_Localized: Tomato
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7000176160768
+    m_Localized: Watermelon
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7000180355072
+    m_Localized: White Bread
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7000184549376
+    m_Localized: White Cookie
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7000188743680
+    m_Localized: White Mug
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7000192937984
+    m_Localized: White Soda
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7000197132288
+    m_Localized: Yellow Bread
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7000201326592
+    m_Localized: Yellow Chips
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7000205520896
+    m_Localized: Yellow Coffee
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []

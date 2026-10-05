@@ -28,13 +28,29 @@ MonoBehaviour:
     version: 2
     RefIds:
     - rid: 568712065000000011
-      type: {class: StringConstantValue, ns: D_Dev.PolymorphicValueSystem, asm: D-Dev.PolymorphicValueSystem}
+      type: {class: LocalizedStringValue, ns: D_Dev.LocalizationSystem.Extensions, asm: D-Dev.LocalizationSystem.Extensions}
       data:
-        _value: Magnet
+        _localizedString:
+          m_TableReference:
+            m_TableCollectionName: GUID:f565ff0b6e207e141aba113036989c06
+          m_TableEntryReference:
+            m_KeyId: 319341281280
+            m_Key: 
+          m_FallbackState: 0
+          m_WaitForCompletion: 0
+          m_LocalVariables: []
     - rid: 568712065000000012
-      type: {class: StringConstantValue, ns: D_Dev.PolymorphicValueSystem, asm: D-Dev.PolymorphicValueSystem}
+      type: {class: LocalizedStringValue, ns: D_Dev.LocalizationSystem.Extensions, asm: D-Dev.LocalizationSystem.Extensions}
       data:
-        _value: Attracts products of the same type in radius
+        _localizedString:
+          m_TableReference:
+            m_TableCollectionName: GUID:f565ff0b6e207e141aba113036989c06
+          m_TableEntryReference:
+            m_KeyId: 9000000000000
+            m_Key: 
+          m_FallbackState: 0
+          m_WaitForCompletion: 0
+          m_LocalVariables: []
     - rid: 568712065000000013
       type: {class: BoolScriptableVariableValue, ns: D_Dev.PolymorphicValueSystem, asm: D-Dev.PolymorphicValueSystem}
       data:

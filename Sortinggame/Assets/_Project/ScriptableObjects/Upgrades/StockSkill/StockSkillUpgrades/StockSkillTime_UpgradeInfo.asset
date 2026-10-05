@@ -35,13 +35,29 @@ MonoBehaviour:
     version: 2
     RefIds:
     - rid: 568712064000000021
-      type: {class: StringConstantValue, ns: D_Dev.PolymorphicValueSystem, asm: D-Dev.PolymorphicValueSystem}
+      type: {class: LocalizedStringValue, ns: D_Dev.LocalizationSystem.Extensions, asm: D-Dev.LocalizationSystem.Extensions}
       data:
-        _value: Stock Time
+        _localizedString:
+          m_TableReference:
+            m_TableCollectionName: GUID:f565ff0b6e207e141aba113036989c06
+          m_TableEntryReference:
+            m_KeyId: 9100033554432
+            m_Key: 
+          m_FallbackState: 0
+          m_WaitForCompletion: 0
+          m_LocalVariables: []
     - rid: 568712064000000022
-      type: {class: StringConstantValue, ns: D_Dev.PolymorphicValueSystem, asm: D-Dev.PolymorphicValueSystem}
+      type: {class: LocalizedStringValue, ns: D_Dev.LocalizationSystem.Extensions, asm: D-Dev.LocalizationSystem.Extensions}
       data:
-        _value: Highlight product shelf longer
+        _localizedString:
+          m_TableReference:
+            m_TableCollectionName: GUID:f565ff0b6e207e141aba113036989c06
+          m_TableEntryReference:
+            m_KeyId: 9100037748736
+            m_Key: 
+          m_FallbackState: 0
+          m_WaitForCompletion: 0
+          m_LocalVariables: []
     - rid: 568712064000000023
       type: {class: FloatScriptableVariableValue, ns: D_Dev.PolymorphicValueSystem, asm: D-Dev.PolymorphicValueSystem}
       data:

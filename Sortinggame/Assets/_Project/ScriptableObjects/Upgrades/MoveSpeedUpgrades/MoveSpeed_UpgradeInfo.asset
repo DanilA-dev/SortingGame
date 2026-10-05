@@ -37,13 +37,29 @@ MonoBehaviour:
     version: 2
     RefIds:
     - rid: 5687120620302893145
-      type: {class: StringConstantValue, ns: D_Dev.PolymorphicValueSystem, asm: D-Dev.PolymorphicValueSystem}
+      type: {class: LocalizedStringValue, ns: D_Dev.LocalizationSystem.Extensions, asm: D-Dev.LocalizationSystem.Extensions}
       data:
-        _value: Move Speed
+        _localizedString:
+          m_TableReference:
+            m_TableCollectionName: GUID:f565ff0b6e207e141aba113036989c06
+          m_TableEntryReference:
+            m_KeyId: 9100025165824
+            m_Key: 
+          m_FallbackState: 0
+          m_WaitForCompletion: 0
+          m_LocalVariables: []
     - rid: 5687120620302893146
-      type: {class: StringConstantValue, ns: D_Dev.PolymorphicValueSystem, asm: D-Dev.PolymorphicValueSystem}
+      type: {class: LocalizedStringValue, ns: D_Dev.LocalizationSystem.Extensions, asm: D-Dev.LocalizationSystem.Extensions}
       data:
-        _value: Move thru the store much quicker
+        _localizedString:
+          m_TableReference:
+            m_TableCollectionName: GUID:f565ff0b6e207e141aba113036989c06
+          m_TableEntryReference:
+            m_KeyId: 9100029360128
+            m_Key: 
+          m_FallbackState: 0
+          m_WaitForCompletion: 0
+          m_LocalVariables: []
     - rid: 5687120620302893149
       type: {class: FloatScriptableVariableValue, ns: D_Dev.PolymorphicValueSystem, asm: D-Dev.PolymorphicValueSystem}
       data:

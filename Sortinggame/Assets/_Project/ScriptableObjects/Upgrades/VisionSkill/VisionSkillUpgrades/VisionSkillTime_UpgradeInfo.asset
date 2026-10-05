@@ -35,13 +35,29 @@ MonoBehaviour:
     version: 2
     RefIds:
     - rid: 568712064000000011
-      type: {class: StringConstantValue, ns: D_Dev.PolymorphicValueSystem, asm: D-Dev.PolymorphicValueSystem}
+      type: {class: LocalizedStringValue, ns: D_Dev.LocalizationSystem.Extensions, asm: D-Dev.LocalizationSystem.Extensions}
       data:
-        _value: Vision Time
+        _localizedString:
+          m_TableReference:
+            m_TableCollectionName: GUID:f565ff0b6e207e141aba113036989c06
+          m_TableEntryReference:
+            m_KeyId: 9100041943040
+            m_Key: 
+          m_FallbackState: 0
+          m_WaitForCompletion: 0
+          m_LocalVariables: []
     - rid: 568712064000000012
-      type: {class: StringConstantValue, ns: D_Dev.PolymorphicValueSystem, asm: D-Dev.PolymorphicValueSystem}
+      type: {class: LocalizedStringValue, ns: D_Dev.LocalizationSystem.Extensions, asm: D-Dev.LocalizationSystem.Extensions}
       data:
-        _value: Highlight same products longer
+        _localizedString:
+          m_TableReference:
+            m_TableCollectionName: GUID:f565ff0b6e207e141aba113036989c06
+          m_TableEntryReference:
+            m_KeyId: 9100046137344
+            m_Key: 
+          m_FallbackState: 0
+          m_WaitForCompletion: 0
+          m_LocalVariables: []
     - rid: 568712064000000013
       type: {class: FloatScriptableVariableValue, ns: D_Dev.PolymorphicValueSystem, asm: D-Dev.PolymorphicValueSystem}
       data:
