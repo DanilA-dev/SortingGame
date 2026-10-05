@@ -151,6 +151,10 @@ PrefabInstance:
       propertyPath: _createInstanceIfNotFound
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3286976159062540397, guid: 914182b0e1e986f4f8283fc61a9d263b, type: 3}
+      propertyPath: m_MatchWidthOrHeight
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3812011159553958919, guid: 914182b0e1e986f4f8283fc61a9d263b, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
