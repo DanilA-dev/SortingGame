@@ -564,7 +564,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6890951202808516898}
-  - component: {fileID: 4199078729010370001}
   m_Layer: 0
   m_Name: Systems
   m_TagString: Untagged
@@ -586,52 +585,13 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1321928048244494409}
-  - {fileID: 2733575127309596121}
   - {fileID: 4949325508083221235}
   - {fileID: 4718390265537710242}
   - {fileID: 122902657973098584}
   - {fileID: 2980013331662976953}
+  - {fileID: 2733575127309596121}
   m_Father: {fileID: 7847874336084560758}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4199078729010370001
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1835660178862580950}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1721ea02cfaf4f6d86adebffcfb83bc1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Game.Core::_Project.Scripts.LevelFinishListener
-  _currentSortedItems:
-    rid: 1932282392652021899
-  _currentSortedShelves:
-    rid: 1932282392652021900
-  _maxSortedItems:
-    rid: 1932282392652021901
-  _maxSortedShelves:
-    rid: 1932282392652021902
-  references:
-    version: 2
-    RefIds:
-    - rid: 1932282392652021899
-      type: {class: IntScriptableVariableValue, ns: D_Dev.PolymorphicValueSystem, asm: D-Dev.PolymorphicValueSystem}
-      data:
-        _variable: {fileID: 11400000, guid: 4f5d8eb5ac38e85428271d3d97c40f58, type: 2}
-    - rid: 1932282392652021900
-      type: {class: IntScriptableVariableValue, ns: D_Dev.PolymorphicValueSystem, asm: D-Dev.PolymorphicValueSystem}
-      data:
-        _variable: {fileID: 11400000, guid: 038ac74480d25334bbceb4dea151c7a5, type: 2}
-    - rid: 1932282392652021901
-      type: {class: IntScriptableVariableValue, ns: D_Dev.PolymorphicValueSystem, asm: D-Dev.PolymorphicValueSystem}
-      data:
-        _variable: {fileID: 11400000, guid: 2796c3b1074879140832d73b1a8ddaba, type: 2}
-    - rid: 1932282392652021902
-      type: {class: IntScriptableVariableValue, ns: D_Dev.PolymorphicValueSystem, asm: D-Dev.PolymorphicValueSystem}
-      data:
-        _variable: {fileID: 11400000, guid: bf2602c54c4b0394a8930050ecfd4f83, type: 2}
 --- !u!1 &2648132942500739273
 GameObject:
   m_ObjectHideFlags: 0
@@ -816,7 +776,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2902112454564396192}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1796,7 +1756,7 @@ GameObject:
   - component: {fileID: 4718390265537710242}
   - component: {fileID: 4718390265537710243}
   m_Layer: 0
-  m_Name: SaveableDataHandler
+  m_Name: LevelSaveableDataHandler
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1843,7 +1803,6 @@ MonoBehaviour:
   - rid: 4718390265537720110
   - rid: 4718390265537720120
   - rid: 4718390265537720130
-  - rid: 5687120654156440144
   _debug: 0
   OnLoaded:
     m_PersistentCalls:
@@ -1864,19 +1823,6 @@ MonoBehaviour:
       - m_Target: {fileID: 1013663533928872126}
         m_TargetAssemblyTypeName: _Project.Scripts.LevelStateController, Game.Core
         m_MethodName: Restore
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 3988008238210057469}
-        m_TargetAssemblyTypeName: D_Dev.PolymorphicValueSystem.Compare.BoolValueCompare,
-          D-Dev.PolymorphicValueSystem.Extensions
-        m_MethodName: CheckValues
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2244,35 +2190,6 @@ MonoBehaviour:
       type: {class: StringConstantValue, ns: D_Dev.PolymorphicValueSystem, asm: D-Dev.PolymorphicValueSystem}
       data:
         _value: level_store_state
-    - rid: 5687120654156440144
-      type: {class: BoolValueSaveableData, ns: D_Dev.PolymorphicValueSystem.Extensions.Saveables, asm: D-Dev.PolymorphicValueSystem.Extensions}
-      data:
-        _key:
-          rid: 5687120654156440145
-        _saveOnExit: 1
-        _loadOnStart: 1
-        OnSaveData:
-          m_PersistentCalls:
-            m_Calls: []
-        OnLoadData:
-          m_PersistentCalls:
-            m_Calls: []
-        _value:
-          rid: 5687120654156440148
-        _defaultValue:
-          rid: 5687120654156440147
-    - rid: 5687120654156440145
-      type: {class: StringConstantValue, ns: D_Dev.PolymorphicValueSystem, asm: D-Dev.PolymorphicValueSystem}
-      data:
-        _value: _tutorialPassed
-    - rid: 5687120654156440147
-      type: {class: BoolConstantValue, ns: D_Dev.PolymorphicValueSystem, asm: D-Dev.PolymorphicValueSystem}
-      data:
-        _value: 0
-    - rid: 5687120654156440148
-      type: {class: BoolScriptableVariableValue, ns: D_Dev.PolymorphicValueSystem, asm: D-Dev.PolymorphicValueSystem}
-      data:
-        _variable: {fileID: 11400000, guid: 204cb5365d4ecdd4ea944eecb6d0130f, type: 2}
 --- !u!1 &4830914305873261971
 GameObject:
   m_ObjectHideFlags: 0
@@ -2618,6 +2535,9 @@ MonoBehaviour:
         _actions:
         - rid: 1932282392652021909
         - rid: 1932282392652021910
+        - rid: 5687120674588984866
+        - rid: 5687120674588984867
+        - rid: 5687120674588984868
     - rid: 1932282392652021909
       type: {class: OpenMenuInfoAction, ns: D_Dev.Scripts.MenuHandler.Extensions.Actions, asm: D-Dev.Menu}
       data:
@@ -2629,11 +2549,49 @@ MonoBehaviour:
     - rid: 1932282392652021910
       type: {class: CloseMenuInfoAction, ns: D_Dev.Scripts.MenuHandler.Extensions.Actions, asm: D-Dev.Menu}
       data:
-        _actionName: Close Core Menu
+        _actionName: Close Menus
         OnUndo:
           m_PersistentCalls:
             m_Calls: []
         _menuInfo: {fileID: 11400000, guid: a1649d8f281ab634490fce80d6cbbcc1, type: 2}
+    - rid: 5687120674588984866
+      type: {class: CloseMenuInfoAction, ns: D_Dev.Scripts.MenuHandler.Extensions.Actions, asm: D-Dev.Menu}
+      data:
+        _actionName: Close Menus
+        OnUndo:
+          m_PersistentCalls:
+            m_Calls: []
+        _menuInfo: {fileID: 11400000, guid: 92d56e51be9b4b344bfb34a29ca033de, type: 2}
+    - rid: 5687120674588984867
+      type: {class: CloseMenuInfoAction, ns: D_Dev.Scripts.MenuHandler.Extensions.Actions, asm: D-Dev.Menu}
+      data:
+        _actionName: Close Menus
+        OnUndo:
+          m_PersistentCalls:
+            m_Calls: []
+        _menuInfo: {fileID: 11400000, guid: dd1cfdc775c5c8344a63e11912168d59, type: 2}
+    - rid: 5687120674588984868
+      type: {class: UnityEventAction, ns: D_Dev.Actions, asm: D-Dev.UtilityActions}
+      data:
+        _actionName: Reset Level
+        OnUndo:
+          m_PersistentCalls:
+            m_Calls: []
+        Event:
+          m_PersistentCalls:
+            m_Calls:
+            - m_Target: {fileID: 9195016927406199122}
+              m_TargetAssemblyTypeName: _Project.Scripts.LevelReseter, Game.Core
+              m_MethodName: ResetLevel
+              m_Mode: 1
+              m_Arguments:
+                m_ObjectArgument: {fileID: 0}
+                m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+                m_IntArgument: 0
+                m_FloatArgument: 0
+                m_StringArgument: 
+                m_BoolArgument: 0
+              m_CallState: 2
 --- !u!1 &5562798462378476433
 GameObject:
   m_ObjectHideFlags: 0
@@ -3780,6 +3738,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 122902657973098584}
+  - component: {fileID: 9113202905215573771}
   - component: {fileID: 5724184821380582770}
   - component: {fileID: 3988008238210057469}
   m_Layer: 0
@@ -3804,6 +3763,68 @@ Transform:
   m_Children: []
   m_Father: {fileID: 6890951202808516898}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &9113202905215573771
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8095550245741316441}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 326eb38365b542159b95145c061ca7d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: D-Dev.SaveSystem.SaveableData::D_Dev.SaveSystem.SaveableData.SaveableDataHandler
+  _saveableDatas:
+  - rid: 5687120674305614448
+  _debug: 0
+  OnLoaded:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5724184821380582770}
+        m_TargetAssemblyTypeName: D_Dev.ActionFlow.ActionExecutorFlow, D-Dev.ActionFlow
+        m_MethodName: StartExecution
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  references:
+    version: 2
+    RefIds:
+    - rid: 5687120674305614448
+      type: {class: BoolValueSaveableData, ns: D_Dev.PolymorphicValueSystem.Extensions.Saveables, asm: D-Dev.PolymorphicValueSystem.Extensions}
+      data:
+        _key:
+          rid: 5687120674305614449
+        _saveOnExit: 1
+        _loadOnStart: 1
+        OnSaveData:
+          m_PersistentCalls:
+            m_Calls: []
+        OnLoadData:
+          m_PersistentCalls:
+            m_Calls: []
+        _value:
+          rid: 5687120674305614450
+        _defaultValue:
+          rid: 5687120674305614451
+    - rid: 5687120674305614449
+      type: {class: StringConstantValue, ns: D_Dev.PolymorphicValueSystem, asm: D-Dev.PolymorphicValueSystem}
+      data:
+        _value: _tutorialPassed
+    - rid: 5687120674305614450
+      type: {class: BoolScriptableVariableValue, ns: D_Dev.PolymorphicValueSystem, asm: D-Dev.PolymorphicValueSystem}
+      data:
+        _variable: {fileID: 11400000, guid: 204cb5365d4ecdd4ea944eecb6d0130f, type: 2}
+    - rid: 5687120674305614451
+      type: {class: BoolConstantValue, ns: D_Dev.PolymorphicValueSystem, asm: D-Dev.PolymorphicValueSystem}
+      data:
+        _value: 0
 --- !u!114 &5724184821380582770
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4049,6 +4070,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7847874336084560758}
+  - component: {fileID: 8685551250999285038}
+  - component: {fileID: 9195016927406199122}
   m_Layer: 0
   m_Name: StoreLevel_Prefab
   m_TagString: Untagged
@@ -4075,6 +4098,61 @@ Transform:
   - {fileID: 6126946151795333954}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8685551250999285038
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8498885027602770463}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1721ea02cfaf4f6d86adebffcfb83bc1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Game.Core::_Project.Scripts.LevelFinishListener
+  _currentSortedItems:
+    rid: 1932282392652021899
+  _currentSortedShelves:
+    rid: 1932282392652021900
+  _maxSortedItems:
+    rid: 5687120674620449603
+  _maxSortedShelves:
+    rid: 5687120674620449604
+  references:
+    version: 2
+    RefIds:
+    - rid: 1932282392652021899
+      type: {class: IntScriptableVariableValue, ns: D_Dev.PolymorphicValueSystem, asm: D-Dev.PolymorphicValueSystem}
+      data:
+        _variable: {fileID: 11400000, guid: 4f5d8eb5ac38e85428271d3d97c40f58, type: 2}
+    - rid: 1932282392652021900
+      type: {class: IntScriptableVariableValue, ns: D_Dev.PolymorphicValueSystem, asm: D-Dev.PolymorphicValueSystem}
+      data:
+        _variable: {fileID: 11400000, guid: 038ac74480d25334bbceb4dea151c7a5, type: 2}
+    - rid: 5687120674620449603
+      type: {class: RuntimeListCountValue, ns: D_Dev.RuntimeLists.Extensions, asm: D-Dev.RuntimeLists.Extensions}
+      data:
+        _list: {fileID: 11400000, guid: f77569b02ed12d546b49e1c63bc88958, type: 2}
+    - rid: 5687120674620449604
+      type: {class: RuntimeListCountValue, ns: D_Dev.RuntimeLists.Extensions, asm: D-Dev.RuntimeLists.Extensions}
+      data:
+        _list: {fileID: 11400000, guid: bed0955162859c94e8b56c9e418e3363, type: 2}
+--- !u!114 &9195016927406199122
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8498885027602770463}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86c890413d6bdbb4e9deab74516d7c27, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Game.Core::_Project.Scripts.LevelReseter
+  _saveableDataHandler: {fileID: 4718390265537710243}
+  OnReset:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &9021937432010029446
 GameObject:
   m_ObjectHideFlags: 0

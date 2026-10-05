@@ -1204,7 +1204,7 @@ MonoBehaviour:
   - _audioConfigName: {fileID: 0}
     _soundMixerGroup: {fileID: 3191221578424738355, guid: 1e1d9dfa7de0f2e498db43fef65e8668, type: 2}
     _mixerGroupType: 0
-    _routeThroughManager: 0
+    _routeThroughManager: 1
     _priority: 10
     _clip: {fileID: 8300000, guid: dfd515687df766946b072099ab4fcb36, type: 3}
     _isRandomClip: 0
