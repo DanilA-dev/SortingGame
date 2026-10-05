@@ -334,19 +334,14 @@ MonoBehaviour:
   _createInstanceIfNotFound: 0
   _loadAllTypesOnStart: 1
   _adsModules:
-  - rid: 5687120623140085959
+  - rid: 5687120670664425734
   references:
     version: 2
     RefIds:
-    - rid: 5687120623140085959
-      type: {class: DebugAdsModule, ns: D_Dev.AdsService, asm: D-Dev.AdsService}
+    - rid: 5687120670664425734
+      type: {class: YG2AdsModule, ns: _Project.Scripts.SDK, asm: Assembly-CSharp}
       data:
-        _editorOnly: 1
-        _initializeDelay: 0
-        _showDelay: 1
-        _bannerResult: 0
-        _interstitialResult: 0
-        _rewardedResult: 1
+        _rewardedId: reward
 --- !u!4 &321780046
 Transform:
   m_ObjectHideFlags: 0
@@ -797,6 +792,60 @@ MonoBehaviour:
     <Visible>k__BackingField: 0
   - <LockMode>k__BackingField: 0
     <Visible>k__BackingField: 1
+--- !u!1 &1214066918
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1214066920}
+  - component: {fileID: 1214066919}
+  m_Layer: 0
+  m_Name: LocaleManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1214066919
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1214066918}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76159418735448cbb5e4a1f4a7f2f6bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: D-Dev.LocalizationSystem::D_Dev.LocalizationSystem.LocalizationManager
+  _autoAssignLocale: 1
+  _assingOnStart: 1
+  _localeAutoAssigner:
+    rid: 5687120670664425731
+  references:
+    version: 2
+    RefIds:
+    - rid: 5687120670664425731
+      type: {class: YG2LocaleAutoAssigner, ns: _Project.Scripts.SDK, asm: Assembly-CSharp}
+      data: 
+--- !u!4 &1214066920
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1214066918}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1425338423
 GameObject:
   m_ObjectHideFlags: 0
@@ -1051,7 +1100,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 59874416908739532, guid: e3142c9b72d8fb147ae2eb4db4a9847a, type: 3}
       propertyPath: _saveConfig
-      value: 5687120665372794935
+      value: 5687120670664425730
       objectReference: {fileID: 0}
     - target: {fileID: 59874416908739532, guid: e3142c9b72d8fb147ae2eb4db4a9847a, type: 3}
       propertyPath: _dontDestroyOnLoad
@@ -1072,6 +1121,10 @@ PrefabInstance:
     - target: {fileID: 59874416908739532, guid: e3142c9b72d8fb147ae2eb4db4a9847a, type: 3}
       propertyPath: 'managedReferences[5687120665372794935]'
       value: D-Dev.SaveSystem D_Dev.SaveSystem.PlayerPrefsSaveConfig
+      objectReference: {fileID: 0}
+    - target: {fileID: 59874416908739532, guid: e3142c9b72d8fb147ae2eb4db4a9847a, type: 3}
+      propertyPath: 'managedReferences[5687120670664425730]'
+      value: Assembly-CSharp _Project.Scripts.SDK.YG2SaveConfig
       objectReference: {fileID: 0}
     - target: {fileID: 6197869098031699101, guid: e3142c9b72d8fb147ae2eb4db4a9847a, type: 3}
       propertyPath: m_Name
@@ -1236,4 +1289,5 @@ SceneRoots:
   - {fileID: 1425338427}
   - {fileID: 1067671697}
   - {fileID: 321780046}
+  - {fileID: 1214066920}
   - {fileID: 1955150564}
