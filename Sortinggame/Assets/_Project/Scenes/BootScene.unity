@@ -568,7 +568,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90921bd092bd485bb771ac07f4a37b91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: D-Dev.Utility::D_Dev.Utility.DebugSwitcher
-  _debugMode: 1
+  _debugMode: 0
   _releaseDebugMode: 2
   _onDevelopmentBuild:
     m_PersistentCalls:
