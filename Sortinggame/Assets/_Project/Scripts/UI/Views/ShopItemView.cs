@@ -28,6 +28,8 @@ namespace _Project.Scripts.UI.Views
         [SerializeField] private UnityEvent _onDeselect;
         [FoldoutGroup("Events")]
         [SerializeField] private UnityEvent _onMaxLevel;
+        [FoldoutGroup("Events")]
+        [SerializeField] private UnityEvent _onNotMaxLevel;
 
         private BasePurchasableInfo _info;
 
@@ -90,6 +92,8 @@ namespace _Project.Scripts.UI.Views
             
             if (_info.IsMaxed)
                 _onMaxLevel?.Invoke();
+            else
+                _onNotMaxLevel?.Invoke();
 
             if (!_hideWhenUnavailable || IsShown == _info.IsAvailable)
                 return;

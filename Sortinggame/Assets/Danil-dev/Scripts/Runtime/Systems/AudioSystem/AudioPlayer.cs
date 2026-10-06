@@ -18,18 +18,36 @@ namespace D_Dev.AudioSystem
 
         #endregion
 
+        #region Properties
+
+        private AudioSource Source
+        {
+            get
+            {
+                if (_audioSource == null && !TryGetComponent(out _audioSource))
+                {
+                    _audioSource = gameObject.AddComponent<AudioSource>();
+                    _audioSource.playOnAwake = false;
+                    _audioSource.mute = AudioManager.Instance != null && AudioManager.Instance.IsMuted;
+                }
+                return _audioSource;
+            }
+        }
+
+        #endregion
+
         #region Monobehaviour
 
         private void Awake()
         {
-            GetOrCreateAudioSource();
+            TryGetComponent(out _audioSource);
             TryStartAwakeAudio();
         }
 
         private void Start()
         {
             AudioManager.OnMuteStateChanged += OnMuteChanged;
-            if (AudioManager.Instance != null)
+            if (_audioSource != null && AudioManager.Instance != null)
                 _audioSource.mute = AudioManager.Instance.IsMuted;
         }
 
@@ -123,18 +141,19 @@ namespace D_Dev.AudioSystem
                 return;
             }
 
-            audioConfig.SetAudioSource(ref _audioSource);
+            AudioSource source = Source;
+            audioConfig.SetAudioSource(ref source);
             _lastAudioConfig = audioConfig;
             switch (audioConfig.DelayType)
             {
                 case DelayType.None:
-                    _audioSource.Play();
+                    source.Play();
                     break;
                 case DelayType.SimpleDelay:
-                    _audioSource.PlayDelayed(audioConfig.Delay);
+                    source.PlayDelayed(audioConfig.Delay);
                     break;
                 case DelayType.ScheduledDelay:
-                    _audioSource.PlayScheduled(audioConfig.ScheduledTime);
+                    source.PlayScheduled(audioConfig.ScheduledTime);
                     break;
                 default:
                     throw new ArgumentOutOfRangeException();
@@ -153,9 +172,10 @@ namespace D_Dev.AudioSystem
                 return;
             }
 
-            audioConfig.SetAudioSource(ref _audioSource);
+            AudioSource source = Source;
+            audioConfig.SetAudioSource(ref source);
             _lastAudioConfig = audioConfig;
-            _audioSource.PlayOneShot(audioConfig.GetClip());
+            source.PlayOneShot(audioConfig.GetClip());
         }
 
         public void PlayOneShotWithDelay(AudioConfig audioConfig)
@@ -171,8 +191,9 @@ namespace D_Dev.AudioSystem
             if (audioConfig == null)
                 return;
 
-            audioConfig.SetAudioSource(ref _audioSource);
-            if (_audioSource.isPlaying && _lastAudioConfig != null)
+            AudioSource source = Source;
+            audioConfig.SetAudioSource(ref source);
+            if (source.isPlaying && _lastAudioConfig != null)
                 StartCoroutine(FadePlay(audioConfig));
             else
                 Play(audioConfig);
@@ -188,7 +209,8 @@ namespace D_Dev.AudioSystem
                 return;
             }
 
-            _audioSource?.Stop();
+            if (_audioSource != null)
+                _audioSource.Stop();
         }
 
         public void StopWithFade()
@@ -209,12 +231,14 @@ namespace D_Dev.AudioSystem
 
         public void Pause()
         {
-            _audioSource?.Pause();
+            if (_audioSource != null)
+                _audioSource.Pause();
         }
 
         public void UnPause()
         {
-            _audioSource?.UnPause();
+            if (_audioSource != null)
+                _audioSource.UnPause();
         }
 
         #endregion
@@ -239,34 +263,29 @@ namespace D_Dev.AudioSystem
             Play(firstAwakeAudio);
         }
 
-        private void GetOrCreateAudioSource()
-        {
-            if (!TryGetComponent(out _audioSource))
-                _audioSource = gameObject.AddComponent<AudioSource>();
-        }
-
         #endregion
 
         #region Coroutines
 
         private IEnumerator FadePlay(AudioConfig audioConfig)
         {
-            if (_audioSource.isPlaying)
+            AudioSource source = Source;
+            if (source.isPlaying)
             {
                 for (float i = 0; i < _lastAudioConfig.FadeTime; i += Time.deltaTime)
                 {
-                    _audioSource.volume = _lastAudioConfig.Volume - (i / _lastAudioConfig.FadeTime);
+                    source.volume = _lastAudioConfig.Volume - (i / _lastAudioConfig.FadeTime);
                     yield return null;
                 }
             }
 
-            _audioSource.Stop();
-            audioConfig.SetAudioSource(ref _audioSource);
-            _audioSource.Play();
+            source.Stop();
+            audioConfig.SetAudioSource(ref source);
+            source.Play();
 
             for (float i = 0; i < audioConfig.FadeTime; i += Time.deltaTime)
             {
-                _audioSource.volume = (i / audioConfig.FadeTime) * 1;
+                source.volume = (i / audioConfig.FadeTime) * 1;
                 yield return null;
             }
         }
@@ -279,18 +298,19 @@ namespace D_Dev.AudioSystem
 
         private IEnumerator FadeStop()
         {
-            if (_audioSource.isPlaying)
+            AudioSource source = Source;
+            if (source.isPlaying)
             {
-                float startVolume = _audioSource.volume;
+                float startVolume = source.volume;
                 for (float i = 0; i < _lastAudioConfig.FadeTime; i += Time.deltaTime)
                 {
-                    _audioSource.volume = startVolume * (1 - i / _lastAudioConfig.FadeTime);
+                    source.volume = startVolume * (1 - i / _lastAudioConfig.FadeTime);
                     yield return null;
                 }
             }
 
-            _audioSource.Stop();
-            _audioSource.volume = _lastAudioConfig.Volume;
+            source.Stop();
+            source.volume = _lastAudioConfig.Volume;
         }
 
         #endregion

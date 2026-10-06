@@ -462,7 +462,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: D-Dev.ActionFlow::D_Dev.ActionFlow.ActionExecutorFlow
   _executeOnStart: 0
-  _resetOnFinish: 0
+  _resetOnFinish: 1
   _saveState: 0
   _saveID: 
   _actionGroups:
@@ -556,7 +556,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: D-Dev.ActionFlow::D_Dev.ActionFlow.ActionExecutorFlow
   _executeOnStart: 0
-  _resetOnFinish: 0
+  _resetOnFinish: 1
   _saveState: 0
   _saveID: 
   _actionGroups:

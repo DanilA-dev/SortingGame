@@ -16,7 +16,9 @@ MonoBehaviour:
   m_TableCollectionNameGuidString: 8fe4b58b8dd80db488e59a392377cc4d
   m_Entries:
   - m_Id: 4519563444224
-    m_Key: Congratulations
+    m_Key: 'Finish Label
+
+'
     m_Metadata:
       m_Items: []
   - m_Id: 4936494039040

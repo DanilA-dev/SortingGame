@@ -58,7 +58,7 @@ MonoBehaviour:
     - rid: 568712065000000024
       type: {class: IntConstantValue, ns: D_Dev.PolymorphicValueSystem, asm: D-Dev.PolymorphicValueSystem}
       data:
-        _value: 100
+        _value: 125
     - rid: 568712066000000009
       type: {class: CurrencyInfoConstantValue, ns: D_Dev.CurrencySystem.Extensions, asm: D-Dev.CurrencySystem.CurrencyInfoValue}
       data:

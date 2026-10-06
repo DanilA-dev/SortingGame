@@ -53,7 +53,6 @@ namespace D_Dev.LocalizationSystem
 
         #endregion
 
-
         #region Coroutine
 
         private IEnumerator InitializeAndAssignLocale()

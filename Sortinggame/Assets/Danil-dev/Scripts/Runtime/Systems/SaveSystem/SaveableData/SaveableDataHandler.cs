@@ -20,6 +20,8 @@ namespace D_Dev.SaveSystem.SaveableData
         [FoldoutGroup("Events"), PropertyOrder(100)]
         public UnityEvent OnLoaded;
 
+        private bool _isSavingLocked;
+
         #endregion
 
         #region Properties
@@ -80,6 +82,20 @@ namespace D_Dev.SaveSystem.SaveableData
                 DeleteKey(saveableData.Key.Value);
         }
 
+        public void ResetAll(bool lockSaving = true)
+        {
+            _isSavingLocked = lockSaving;
+
+            foreach (var saveableData in _saveableDatas)
+            {
+                if (saveableData == null)
+                    continue;
+
+                saveableData.LoadData(saveableData.GetDefaultValue());
+                DeleteKey(saveableData.Key.Value);
+            }
+        }
+
         #endregion
         
         #region Private
@@ -117,7 +133,7 @@ namespace D_Dev.SaveSystem.SaveableData
 
         private void Save(BaseSaveableData data, bool immediate = false)
         {
-            if (GlobalSaveService.Instance == null || !data.CanSave)
+            if (_isSavingLocked || GlobalSaveService.Instance == null || !data.CanSave)
                 return;
 
             if (immediate)
