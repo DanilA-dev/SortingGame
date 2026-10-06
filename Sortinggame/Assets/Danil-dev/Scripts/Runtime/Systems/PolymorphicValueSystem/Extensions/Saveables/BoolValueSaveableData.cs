@@ -24,6 +24,24 @@ namespace D_Dev.PolymorphicValueSystem.Extensions.Saveables
 
         #endregion
 
+        #region Subscription
+
+        public override void Subscribe()
+        {
+            if (_value != null)
+                _value.OnValueChanged += OnValueChanged;
+        }
+
+        public override void Unsubscribe()
+        {
+            if (_value != null)
+                _value.OnValueChanged -= OnValueChanged;
+        }
+
+        private void OnValueChanged(bool value) => NotifyChanged();
+
+        #endregion
+
         #region Overrides
 
         protected override bool GetTypedSaveData() => _value.Value;
