@@ -18,7 +18,7 @@ PrefabInstance:
       objectReference: {fileID: -3500872997411817233, guid: 3b8560ab3538ed743a023e23ee568b27, type: 3}
     - target: {fileID: 6963323781123029201, guid: 20645e136940c6b4a8caa63c41ed75ef, type: 3}
       propertyPath: m_Radius
-      value: 0.21681412
+      value: 0.19441822
       objectReference: {fileID: 0}
     - target: {fileID: 6963323781123029201, guid: 20645e136940c6b4a8caa63c41ed75ef, type: 3}
       propertyPath: m_Center.x
@@ -26,7 +26,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6963323781123029201, guid: 20645e136940c6b4a8caa63c41ed75ef, type: 3}
       propertyPath: m_Center.y
-      value: 0.21427952
+      value: 0.19188362
       objectReference: {fileID: 0}
     - target: {fileID: 6972069644614272644, guid: 20645e136940c6b4a8caa63c41ed75ef, type: 3}
       propertyPath: _entityInfo
@@ -35,7 +35,7 @@ PrefabInstance:
     - target: {fileID: 7293211538275626967, guid: 20645e136940c6b4a8caa63c41ed75ef, type: 3}
       propertyPath: m_Mesh
       value: 
-      objectReference: {fileID: -3500872997411817233, guid: 3b8560ab3538ed743a023e23ee568b27, type: 3}
+      objectReference: {fileID: 1616471948417666808, guid: 63880a8e4dec7364a9518ae02e49f3d6, type: 3}
     - target: {fileID: 7790156376496395155, guid: 20645e136940c6b4a8caa63c41ed75ef, type: 3}
       propertyPath: m_LocalScale.x
       value: 1
@@ -88,10 +88,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8215673142027532397, guid: 20645e136940c6b4a8caa63c41ed75ef, type: 3}
+      propertyPath: rmsCount
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8506885365720382400, guid: 20645e136940c6b4a8caa63c41ed75ef, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: a581149c8bd333843be708f68f52049c, type: 2}
+      objectReference: {fileID: 2100000, guid: ad39eccb39be39f40b3ba8c2298f9fd2, type: 2}
     - target: {fileID: 8830581081181559822, guid: 20645e136940c6b4a8caa63c41ed75ef, type: 3}
       propertyPath: m_Name
       value: WatermelonItem_Prefab

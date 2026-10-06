@@ -16,7 +16,7 @@ MonoBehaviour:
   m_TableCollectionNameGuidString: 55f22157f86a2e344a505ab92b3e7307
   m_Entries:
   - m_Id: 7000000000000
-    m_Key: Apple
+    m_Key: Avacado
     m_Metadata:
       m_Items: []
   - m_Id: 7000004194304
@@ -24,7 +24,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 7000008388608
-    m_Key: BlackBread
+    m_Key: Croissant
     m_Metadata:
       m_Items: []
   - m_Id: 7000012582912
@@ -44,7 +44,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 7000029360128
-    m_Key: BlueSoda
+    m_Key: GreenSoda
     m_Metadata:
       m_Items: []
   - m_Id: 7000033554432
@@ -204,7 +204,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 7000197132288
-    m_Key: YellowBread
+    m_Key: Cheesecake
     m_Metadata:
       m_Items: []
   - m_Id: 7000201326592
