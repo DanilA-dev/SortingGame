@@ -20,7 +20,7 @@ MonoBehaviour:
   _currency:
     rid: 568712066000000003
   _level: {fileID: 11400000, guid: 78ef287dde4346de9bf49eb647bf495a, type: 2}
-  _prices: 6400000096000000fa00000090010000f401000058020000
+  _prices: 00000000960000002c0100002602000052030000b0040000
   _requirement: {fileID: 11400000, guid: 6cf1720535194618b0a551f605d5fc2c, type: 2}
   _showDebugInfo: 1
   _target:

@@ -16,19 +16,23 @@ MonoBehaviour:
     rid: 5687120620302893056
   _description:
     rid: 5687120620302893057
-  _icon: {fileID: 21300000, guid: 8a3eb38c54afe6a4ab55f486420725a1, type: 3}
+  _icon: {fileID: 21300000, guid: e70020376f074e7468f0db77648a37d5, type: 3}
   _currency:
     rid: 568712066000000002
-  _level: {fileID: 11400000, guid: 01a109ec8b998e94bb97d986d493b651, type: 2}
-  _prices: 00000000280000003c00000050000000fa0000005e010000
-  _requirement: {fileID: 0}
   _showDebugInfo: 1
+  _level: {fileID: 11400000, guid: 01a109ec8b998e94bb97d986d493b651, type: 2}
+  _prices: 000000003200000078000000fa000000f401000020030000
+  _requirement: {fileID: 0}
   _target:
     rid: 5687120608309289344
   _values: 0300000005000000070000000a0000000d0000000f000000
   references:
     version: 2
     RefIds:
+    - rid: 568712066000000002
+      type: {class: CurrencyInfoConstantValue, ns: D_Dev.CurrencySystem.Extensions, asm: D-Dev.CurrencySystem.CurrencyInfoValue}
+      data:
+        _value: {fileID: 11400000, guid: 6f916130eddbf9845867e27e5e4e7a67, type: 2}
     - rid: 5687120608309289344
       type: {class: IntScriptableVariableValue, ns: D_Dev.PolymorphicValueSystem, asm: D-Dev.PolymorphicValueSystem}
       data:
@@ -57,7 +61,3 @@ MonoBehaviour:
           m_FallbackState: 0
           m_WaitForCompletion: 0
           m_LocalVariables: []
-    - rid: 568712066000000002
-      type: {class: CurrencyInfoConstantValue, ns: D_Dev.CurrencySystem.Extensions, asm: D-Dev.CurrencySystem.CurrencyInfoValue}
-      data:
-        _value: {fileID: 11400000, guid: 6f916130eddbf9845867e27e5e4e7a67, type: 2}

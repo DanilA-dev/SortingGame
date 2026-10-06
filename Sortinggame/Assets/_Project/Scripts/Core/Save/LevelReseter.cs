@@ -1,4 +1,5 @@
 using D_Dev.SaveSystem.SaveableData;
+using D_Dev.ScriptableVariables;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -9,6 +10,7 @@ namespace _Project.Scripts
         #region Fields
 
         [SerializeField] private SaveableDataHandler _saveableDataHandler;
+        [SerializeField] private IntScriptableVariable[] _runtimeVariables;
 
         public UnityEvent OnReset;
 
@@ -19,6 +21,13 @@ namespace _Project.Scripts
         public void ResetLevel()
         {
             _saveableDataHandler.ResetAll();
+
+            foreach (var variable in _runtimeVariables)
+            {
+                if (variable != null)
+                    variable.ResetValue();
+            }
+
             OnReset?.Invoke();
         }
 
