@@ -19,10 +19,12 @@ namespace D_Dev.SaveSystem.SaveableData
         [PropertyOrder(100)]
         [SerializeField] private bool _loadOnStart = true;
 
+        public event Action<BaseSaveableData> OnChanged;
+
         #endregion
 
         #region Properties
-        
+
         public PolymorphicValue<string> Key
         {
             get => _key;
@@ -50,6 +52,15 @@ namespace D_Dev.SaveSystem.SaveableData
         public abstract object SaveData();
         public abstract void LoadData(object data);
         public abstract object GetDefaultValue();
+
+        public virtual void Subscribe() {}
+        public virtual void Unsubscribe() {}
+
+        #endregion
+
+        #region Protected
+
+        protected void NotifyChanged() => OnChanged?.Invoke(this);
 
         #endregion
     }

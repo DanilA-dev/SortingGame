@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using Cysharp.Threading.Tasks;
 using D_Dev.PolymorphicValueSystem;
@@ -15,12 +16,20 @@ namespace D_Dev.SaveSystem.SaveableData
 
         [Title("Saveable Configs")]
         [SerializeReference] private BaseSaveableData[] _saveableDatas;
+        [Title("Save On Change")]
+        [SerializeField] private bool _saveOnChange;
+        [ShowIf(nameof(_saveOnChange)), SuffixLabel("sec")]
+        [SerializeField, Min(0f)] private float _saveOnChangeInterval = 2f;
         [PropertySpace(15)]
         [SerializeField] private bool _debug;
         [FoldoutGroup("Events"), PropertyOrder(100)]
         public UnityEvent OnLoaded;
 
+        private readonly List<BaseSaveableData> _changedDatas = new();
+        private readonly List<BaseSaveableData> _savingDatas = new();
         private bool _isSavingLocked;
+        private bool _isSubscribed;
+        private bool _isSaveScheduled;
 
         #endregion
 
@@ -33,7 +42,11 @@ namespace D_Dev.SaveSystem.SaveableData
         #region Monobehaviour
 
         private void Start() => LoadAllAsync(true).Forget();
-        private void OnDestroy() => SaveOnExit();
+        private void OnDestroy()
+        {
+            UnsubscribeAll();
+            SaveOnExit();
+        }
         private void OnApplicationFocus(bool hasFocus)
         {
             if(!hasFocus)
@@ -118,6 +131,10 @@ namespace D_Dev.SaveSystem.SaveableData
                 return;
 
             IsLoaded = true;
+
+            if (_saveOnChange)
+                SubscribeAll();
+
             OnLoaded?.Invoke();
 
             if (_debug)
@@ -126,9 +143,68 @@ namespace D_Dev.SaveSystem.SaveableData
 
         private void SaveOnExit()
         {
+            _changedDatas.Clear();
+
             foreach (var saveableData in _saveableDatas)
                 if (saveableData.SaveOnExit)
                     Save(saveableData, true);
+        }
+
+        private void SubscribeAll()
+        {
+            if (_isSubscribed || _saveableDatas == null)
+                return;
+
+            _isSubscribed = true;
+            foreach (var saveableData in _saveableDatas)
+            {
+                if (saveableData == null)
+                    continue;
+
+                saveableData.OnChanged += OnDataChanged;
+                saveableData.Subscribe();
+            }
+        }
+
+        private void UnsubscribeAll()
+        {
+            if (!_isSubscribed || _saveableDatas == null)
+                return;
+
+            _isSubscribed = false;
+            foreach (var saveableData in _saveableDatas)
+            {
+                if (saveableData == null)
+                    continue;
+
+                saveableData.Unsubscribe();
+                saveableData.OnChanged -= OnDataChanged;
+            }
+        }
+
+        private void SaveChanged()
+        {
+            _savingDatas.AddRange(_changedDatas);
+            _changedDatas.Clear();
+
+            foreach (var saveableData in _savingDatas)
+                Save(saveableData);
+
+            _savingDatas.Clear();
+        }
+
+        private async UniTaskVoid SaveChangedDelayed()
+        {
+            _isSaveScheduled = true;
+
+            bool isCanceled = await UniTask.Delay(TimeSpan.FromSeconds(_saveOnChangeInterval), DelayType.UnscaledDeltaTime,
+                    cancellationToken: destroyCancellationToken)
+                .SuppressCancellationThrow();
+
+            _isSaveScheduled = false;
+
+            if (!isCanceled)
+                SaveChanged();
         }
 
         private void Save(BaseSaveableData data, bool immediate = false)
@@ -176,6 +252,21 @@ namespace D_Dev.SaveSystem.SaveableData
             
             if(Application.isPlaying)
                 GlobalSaveService.Instance.DeleteKeyAsync(key);
+        }
+
+        #endregion
+
+        #region Listeners
+
+        private void OnDataChanged(BaseSaveableData data)
+        {
+            if (_isSavingLocked || _changedDatas.Contains(data))
+                return;
+
+            _changedDatas.Add(data);
+
+            if (!_isSaveScheduled)
+                SaveChangedDelayed().Forget();
         }
 
         #endregion
