@@ -5,7 +5,7 @@ using UnityEngine.InputSystem.OnScreen;
 
 namespace D_Dev.InputSystem
 {
-    public class OnScreenSwipeZone : OnScreenControl, IPointerDownHandler, IDragHandler, IPointerUpHandler
+    public class OnScreenSwipeZone : OnScreenControl, IBeginDragHandler, IDragHandler, IEndDragHandler
     {
         #region Fields
 
@@ -46,9 +46,9 @@ namespace D_Dev.InputSystem
 
         #endregion
 
-        #region IPointerHandler
+        #region IDragHandler
 
-        public void OnPointerDown(PointerEventData eventData)
+        public void OnBeginDrag(PointerEventData eventData)
         {
             if (_pointerId != int.MinValue)
                 return;
@@ -66,7 +66,7 @@ namespace D_Dev.InputSystem
             _hasValue = true;
         }
 
-        public void OnPointerUp(PointerEventData eventData)
+        public void OnEndDrag(PointerEventData eventData)
         {
             if (eventData.pointerId != _pointerId)
                 return;

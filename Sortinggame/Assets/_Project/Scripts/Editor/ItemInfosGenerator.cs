@@ -26,17 +26,17 @@ namespace _Project.Scripts.Editor
 
         private static readonly Dictionary<string, string> ItemCategories = new()
         {
-            { "Baguette", "Bakery" }, { "BlackBread", "Bakery" }, { "WhiteBread", "Bakery" },
-            { "YellowBread", "Bakery" }, { "BlackCookie", "Bakery" }, { "WhiteCookie", "Bakery" },
+            { "Baguette", "Bakery" }, { "Croissant", "Bakery" }, { "WhiteBread", "Bakery" },
+            { "Cheesecake", "Bakery" }, { "BlackCookie", "Bakery" }, { "WhiteCookie", "Bakery" },
             { "Donut", "Bakery" }, { "Pie", "Bakery" },
             { "Burger", "Fast Food" }, { "HotDog", "Fast Food" }, { "Pizza", "Fast Food" },
             { "Sandwich", "Fast Food" }, { "Taco", "Fast Food" }, { "Onigiri", "Fast Food" },
-            { "BlueSoda", "Drinks" }, { "OrangeSoda", "Drinks" }, { "RedSoda", "Drinks" },
+            { "GreenSoda", "Drinks" }, { "OrangeSoda", "Drinks" }, { "RedSoda", "Drinks" },
             { "StripedSoda", "Drinks" }, { "OrangeJuice", "Drinks" }, { "Milk", "Drinks" },
             { "BlueCreamyIceCream", "Ice Cream" }, { "GreenCreamyIceCream", "Ice Cream" },
             { "PinkCreamyIceCream", "Ice Cream" }, { "BlueFruitIce", "Ice Cream" },
             { "PinkFruitIce", "Ice Cream" }, { "RedFruitIce", "Ice Cream" },
-            { "Apple", "Fruits" }, { "Orange", "Fruits" }, { "Watermelon", "Fruits" },
+            { "Avacado", "Fruits" }, { "Orange", "Fruits" }, { "Watermelon", "Fruits" },
             { "Tomato", "Vegetables" }, { "Pumpkin", "Vegetables" }, { "Pepper", "Vegetables" },
             { "PinkSteak", "Meat" }, { "RedSteak", "Meat" }, { "Sausage", "Meat" },
             { "Sardine", "Seafood" }, { "Shrimp", "Seafood" },

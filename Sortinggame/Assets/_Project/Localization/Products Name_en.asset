@@ -19,7 +19,7 @@ MonoBehaviour:
     m_Items: []
   m_TableData:
   - m_Id: 7000000000000
-    m_Localized: Apple
+    m_Localized: Avocado
     m_Metadata:
       m_Items: []
   - m_Id: 7000004194304
@@ -27,7 +27,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 7000008388608
-    m_Localized: Black Bread
+    m_Localized: Croissant
     m_Metadata:
       m_Items: []
   - m_Id: 7000012582912
@@ -47,7 +47,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 7000029360128
-    m_Localized: Blue Soda
+    m_Localized: Green Soda
     m_Metadata:
       m_Items: []
   - m_Id: 7000033554432
@@ -207,7 +207,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 7000197132288
-    m_Localized: Yellow Bread
+    m_Localized: Cheesecake
     m_Metadata:
       m_Items: []
   - m_Id: 7000201326592
