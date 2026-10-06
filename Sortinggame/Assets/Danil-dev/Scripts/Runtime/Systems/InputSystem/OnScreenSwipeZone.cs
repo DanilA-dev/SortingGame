@@ -1,20 +1,25 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.Layouts;
 using UnityEngine.InputSystem.OnScreen;
+using UnityEngine.InputSystem.UI;
 
 namespace D_Dev.InputSystem
 {
-    public class OnScreenSwipeZone : OnScreenControl, IBeginDragHandler, IDragHandler, IEndDragHandler
+    public class OnScreenSwipeZone : OnScreenControl, IPointerDownHandler
     {
         #region Fields
 
         [InputControl(layout = "Vector2")]
         [SerializeField] private string _controlPath = "<Mouse>/delta";
         [SerializeField] private float _sensitivity = 1f;
+        [SerializeField] private float _referenceHeight = 1080f;
+        [SerializeField, Range(0f, 0.95f)] private float _smoothing = 0.5f;
 
-        private int _pointerId = int.MinValue;
-        private int _lastDragFrame = -1;
+        private Pointer _pointer;
+        private int _touchId = -1;
+        private Vector2 _smoothedDelta;
         private bool _hasValue;
 
         #endregion
@@ -33,54 +38,83 @@ namespace D_Dev.InputSystem
 
         private void Update()
         {
-            if (_hasValue && _lastDragFrame != Time.frameCount)
-                ResetValue();
+            if (!TryReadDelta(out var delta))
+            {
+                Release();
+                return;
+            }
+
+            if (Screen.height > 0)
+                delta *= _referenceHeight / Screen.height;
+
+            _smoothedDelta = Vector2.Lerp(delta, _smoothedDelta, _smoothing);
+            SendValueToControl(_smoothedDelta * _sensitivity);
+            _hasValue = true;
         }
 
         protected override void OnDisable()
         {
-            ResetValue();
-            _pointerId = int.MinValue;
+            Release();
             base.OnDisable();
         }
 
         #endregion
 
-        #region IDragHandler
+        #region IPointerDownHandler
 
-        public void OnBeginDrag(PointerEventData eventData)
+        public void OnPointerDown(PointerEventData eventData)
         {
-            if (_pointerId != int.MinValue)
+            if (_pointer != null)
                 return;
 
-            _pointerId = eventData.pointerId;
-        }
-
-        public void OnDrag(PointerEventData eventData)
-        {
-            if (eventData.pointerId != _pointerId)
+            if (eventData is not ExtendedPointerEventData extended || extended.device is not Pointer pointer)
                 return;
 
-            SendValueToControl(eventData.delta * _sensitivity);
-            _lastDragFrame = Time.frameCount;
-            _hasValue = true;
-        }
-
-        public void OnEndDrag(PointerEventData eventData)
-        {
-            if (eventData.pointerId != _pointerId)
-                return;
-
-            _pointerId = int.MinValue;
-            ResetValue();
+            _pointer = pointer;
+            _touchId = extended.pointerType == UIPointerType.Touch ? extended.touchId : -1;
+            _smoothedDelta = Vector2.zero;
         }
 
         #endregion
 
         #region Private
 
-        private void ResetValue()
+        private bool TryReadDelta(out Vector2 delta)
         {
+            delta = Vector2.zero;
+            if (_pointer == null || !_pointer.added)
+                return false;
+
+            if (_pointer is Touchscreen touchscreen)
+            {
+                foreach (var touch in touchscreen.touches)
+                {
+                    if (touch.touchId.ReadValue() != _touchId)
+                        continue;
+
+                    if (!touch.isInProgress)
+                        return false;
+
+                    delta = touch.delta.ReadValue();
+                    return true;
+                }
+
+                return false;
+            }
+
+            if (!_pointer.press.isPressed)
+                return false;
+
+            delta = _pointer.delta.ReadValue();
+            return true;
+        }
+
+        private void Release()
+        {
+            _pointer = null;
+            _touchId = -1;
+            _smoothedDelta = Vector2.zero;
+
             if (!_hasValue)
                 return;
 
