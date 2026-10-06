@@ -734,6 +734,9 @@ MonoBehaviour:
   _spawner: {fileID: 3358421487402490099}
   _shelvesRuntimeList: {fileID: 11400000, guid: bed0955162859c94e8b56c9e418e3363, type: 2}
   _pickedContainerWaitTimeout: 10
+  _sortedItemsVariable: {fileID: 11400000, guid: 4f5d8eb5ac38e85428271d3d97c40f58, type: 2}
+  _itemPickedEventName: {fileID: 11400000, guid: f0f67b96c95e1b04993d02fbb9a4772a, type: 2}
+  _itemDroppedEventName: {fileID: 11400000, guid: b2229797fc4127c498ff5eecaf96be9a, type: 2}
   _debug: 0
 --- !u!1 &2902112454564396192
 GameObject:
@@ -1729,7 +1732,7 @@ MonoBehaviour:
   - rid: 4718390265537720110
   - rid: 4718390265537720120
   - rid: 4718390265537720130
-  _saveOnChange: 0
+  _saveOnChange: 1
   _saveOnChangeInterval: 2
   _debug: 0
   OnLoaded:

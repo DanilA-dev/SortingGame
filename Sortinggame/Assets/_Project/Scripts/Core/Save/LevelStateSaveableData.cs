@@ -21,6 +21,18 @@ namespace _Project.Scripts
 
         #region Overrides
 
+        public override void Subscribe()
+        {
+            if (_controller != null)
+                _controller.OnStateChanged += NotifyChanged;
+        }
+
+        public override void Unsubscribe()
+        {
+            if (_controller != null)
+                _controller.OnStateChanged -= NotifyChanged;
+        }
+
         protected override LevelSaveData GetTypedSaveData() => _controller.Capture();
 
         protected override void SetTypedSaveData(LevelSaveData data)
