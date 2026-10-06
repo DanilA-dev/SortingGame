@@ -673,6 +673,7 @@ MonoBehaviour:
   - rid: 1932282358920643439
   - rid: 1932282381251117538
   - rid: 5687120579038549815
+  - rid: 5687120677430886482
   - rid: 5687120631951532687
   - rid: 5687120631951532690
   - rid: 5687120631951532692
@@ -759,6 +760,16 @@ MonoBehaviour:
       type: {class: BoolScriptableVariableValue, ns: D_Dev.PolymorphicValueSystem, asm: D-Dev.PolymorphicValueSystem}
       data:
         _variable: {fileID: 11400000, guid: a76fac6538c391446a5509e434ff8976, type: 2}
+    - rid: 5687120677430886482
+      type: {class: ButtonInputBinding, ns: D_Dev.PlayerStateController.InputBindings, asm: D-Dev.PlayerUtilities}
+      data:
+        _action: {fileID: 7720791620503798719, guid: 5874c51c9acab224ab9f2bff4257f317, type: 3}
+        _output:
+          rid: 5687120677430886483
+    - rid: 5687120677430886483
+      type: {class: BoolScriptableVariableValue, ns: D_Dev.PolymorphicValueSystem, asm: D-Dev.PolymorphicValueSystem}
+      data:
+        _variable: {fileID: 11400000, guid: 7a089637506d4d1428591c3ce5ba848c, type: 2}
 --- !u!4 &1067671697
 Transform:
   m_ObjectHideFlags: 0
