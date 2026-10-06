@@ -2,8 +2,11 @@ using System;
 using System.Collections.Generic;
 using System.Threading;
 using Cysharp.Threading.Tasks;
+using D_Dev.Base;
+using D_Dev.CustomEventManager;
 using D_Dev.EntityInfoBinder;
 using D_Dev.RuntimeLists;
+using D_Dev.ScriptableVariables;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
@@ -18,11 +21,18 @@ namespace _Project.Scripts
         [SerializeField] private GameObjectRuntimeList _shelvesRuntimeList;
         [Title("Settings")]
         [SerializeField, Min(0f)] private float _pickedContainerWaitTimeout = 10f;
+        [Title("Change Tracking")]
+        [SerializeField] private IntScriptableVariable _sortedItemsVariable;
+        [SerializeField] private StringScriptableVariable _itemPickedEventName;
+        [SerializeField] private StringScriptableVariable _itemDroppedEventName;
+        [PropertySpace(15)]
         [SerializeField] private bool _debug;
 
         private readonly Dictionary<string, ItemSlotsContainer> _shelvesById = new();
         private LevelSaveData _loadedData;
         private bool _isRestoreStarted;
+
+        public event Action OnStateChanged;
 
         #endregion
 
@@ -32,6 +42,34 @@ namespace _Project.Scripts
         public bool IsRestored { get; private set; }
 
         public bool CanCapture => IsRestored && AreSpawnedItemsAlive();
+
+        #endregion
+
+        #region Monobehaviour
+
+        private void OnEnable()
+        {
+            if (_sortedItemsVariable != null)
+                _sortedItemsVariable.OnValueUpdate += OnSortedItemsUpdate;
+
+            if (_itemPickedEventName != null)
+                EventManager.AddListener<IInteractable>(_itemPickedEventName.ToString(), OnItemInteracted);
+
+            if (_itemDroppedEventName != null)
+                EventManager.AddListener<IInteractable>(_itemDroppedEventName.ToString(), OnItemInteracted);
+        }
+
+        private void OnDisable()
+        {
+            if (_sortedItemsVariable != null)
+                _sortedItemsVariable.OnValueUpdate -= OnSortedItemsUpdate;
+
+            if (_itemPickedEventName != null)
+                EventManager.RemoveListener<IInteractable>(_itemPickedEventName.ToString(), OnItemInteracted);
+
+            if (_itemDroppedEventName != null)
+                EventManager.RemoveListener<IInteractable>(_itemDroppedEventName.ToString(), OnItemInteracted);
+        }
 
         #endregion
 
@@ -48,20 +86,26 @@ namespace _Project.Scripts
             RestoreAsync(destroyCancellationToken).Forget();
         }
 
+        public void MarkChanged()
+        {
+            if (IsRestored)
+                OnStateChanged?.Invoke();
+        }
+
         public LevelSaveData Capture()
         {
-            var data = new LevelSaveData();
+            var items = new List<ItemSaveData>(_spawner.SpawnedItems.Count);
 
             foreach (var item in _spawner.SpawnedItems)
             {
                 if (item != null && TryCaptureItem(item, out var itemData))
-                    data.Items.Add(itemData);
+                    items.Add(itemData);
             }
 
             if (_debug)
-                Debug.Log($"[LevelStateController] Captured {data.Items.Count} items");
+                Debug.Log($"[LevelStateController] Captured {items.Count} items");
 
-            return data;
+            return LevelSaveData.Pack(items);
         }
 
         #endregion
@@ -72,7 +116,7 @@ namespace _Project.Scripts
         {
             try
             {
-                var savedItems = _loadedData?.Items;
+                var savedItems = _loadedData?.Unpack();
 
                 if (savedItems == null || savedItems.Count == 0)
                 {
@@ -122,7 +166,9 @@ namespace _Project.Scripts
                 if (itemData.State == ItemSaveState.Sorted && TryRestoreSortedItem(item, itemData))
                     continue;
 
-                item.transform.SetPositionAndRotation(itemData.Position, itemData.Rotation);
+                if (itemData.HasTransform)
+                    item.transform.SetPositionAndRotation(itemData.Position, itemData.Rotation);
+
                 freeItems.Add(item);
             }
 
@@ -150,7 +196,9 @@ namespace _Project.Scripts
                     if (container != null && TryRestorePickedItem(item, container))
                         continue;
 
-                    item.transform.SetPositionAndRotation(itemData.Position, itemData.Rotation);
+                    if (itemData.HasTransform)
+                        item.transform.SetPositionAndRotation(itemData.Position, itemData.Rotation);
+
                     droppedItems.Add(item);
                 }
 
@@ -280,6 +328,14 @@ namespace _Project.Scripts
 
             return true;
         }
+
+        #endregion
+
+        #region Listeners
+
+        private void OnSortedItemsUpdate(int sortedItems) => MarkChanged();
+
+        private void OnItemInteracted(IInteractable item) => MarkChanged();
 
         #endregion
     }
