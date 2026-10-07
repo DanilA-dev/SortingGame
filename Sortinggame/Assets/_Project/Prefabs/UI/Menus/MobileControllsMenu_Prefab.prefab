@@ -659,8 +659,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 402.25586, y: 0}
-  m_SizeDelta: {x: 804.5116, y: 0}
+  m_AnchoredPosition: {x: 292.36353, y: 0}
+  m_SizeDelta: {x: 584.7269, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6656736408717475312
 CanvasRenderer:
@@ -830,7 +830,6 @@ GameObject:
   - component: {fileID: 833985047746415954}
   - component: {fileID: 2998294240985368828}
   - component: {fileID: 7116165659485548769}
-  - component: {fileID: 8061938788335838997}
   m_Layer: 0
   m_Name: SwipeZone
   m_TagString: Untagged
@@ -856,8 +855,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -737.74, y: 0}
-  m_SizeDelta: {x: 1475.5, y: 0}
+  m_AnchoredPosition: {x: -667.63, y: 0}
+  m_SizeDelta: {x: 1335.3, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &833985047746415954
 CanvasRenderer:
@@ -911,19 +910,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: D-Dev.InputSystem::D_Dev.InputSystem.OnScreenSwipeZone
   _controlPath: <Mouse>/delta
   _sensitivity: 1
---- !u!114 &8061938788335838997
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7347417459337968169}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6d54531977ecb194c95e2d3aa7a5d72a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Unity.InputSystem::UnityEngine.InputSystem.OnScreen.OnScreenButton
-  m_ControlPath: <Keyboard>/e
+  _referenceHeight: 1080
+  _smoothing: 0.5
 --- !u!1 &7554507459238384411
 GameObject:
   m_ObjectHideFlags: 0
