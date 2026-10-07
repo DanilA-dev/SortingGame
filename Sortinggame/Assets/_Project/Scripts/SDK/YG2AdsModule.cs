@@ -99,12 +99,24 @@ namespace _Project.Scripts.SDK
                 _rewardReceived = true;
         }
 
-        private void OnRewardedClose() => Complete(ref _rewardedCallback, _rewardReceived ? AdResult.Rewarded : AdResult.Skipped);
-        private void OnRewardedError() => Complete(ref _rewardedCallback, AdResult.Failed);
+        private void OnRewardedClose() => CompleteRewardedNextFrame(_rewardReceived ? AdResult.Rewarded : AdResult.Skipped).Forget();
+        private void OnRewardedError() => CompleteRewardedNextFrame(AdResult.Failed).Forget();
 
         private void OnInterstitialRequested() => _interstitialRequested = true;
-        private void OnInterstitialClose(bool wasShown) => Complete(ref _interstitialCallback, wasShown ? AdResult.Shown : AdResult.Skipped);
-        private void OnInterstitialError() => Complete(ref _interstitialCallback, AdResult.Failed);
+        private void OnInterstitialClose(bool wasShown) => CompleteInterstitialNextFrame(wasShown ? AdResult.Shown : AdResult.Skipped).Forget();
+        private void OnInterstitialError() => CompleteInterstitialNextFrame(AdResult.Failed).Forget();
+
+        private async UniTaskVoid CompleteRewardedNextFrame(AdResult result)
+        {
+            await UniTask.Yield();
+            Complete(ref _rewardedCallback, result);
+        }
+
+        private async UniTaskVoid CompleteInterstitialNextFrame(AdResult result)
+        {
+            await UniTask.Yield();
+            Complete(ref _interstitialCallback, result);
+        }
 
         private static void Complete(ref Action<AdResult> callback, AdResult result)
         {
