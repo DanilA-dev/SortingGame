@@ -57,6 +57,10 @@ MonoBehaviour:
     m_Key: Open
     m_Metadata:
       m_Items: []
+  - m_Id: 508148187742208
+    m_Key: Full hands
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

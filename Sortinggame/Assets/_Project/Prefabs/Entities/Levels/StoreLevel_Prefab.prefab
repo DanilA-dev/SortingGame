@@ -3687,8 +3687,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: D-Dev.SaveSystem.SaveableData::D_Dev.SaveSystem.SaveableData.SaveableDataHandler
   _saveableDatas:
   - rid: 5687120674305614448
-  _saveOnChange: 0
-  _saveOnChangeInterval: 2
+  _saveOnChange: 1
+  _saveOnChangeInterval: 1
   _debug: 0
   OnLoaded:
     m_PersistentCalls:
