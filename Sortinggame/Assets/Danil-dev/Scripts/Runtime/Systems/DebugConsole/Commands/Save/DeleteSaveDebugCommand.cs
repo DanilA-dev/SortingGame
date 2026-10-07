@@ -1,9 +1,9 @@
 using System;
 using Cysharp.Threading.Tasks;
+using D_Dev.CustomEventManager;
 using D_Dev.SaveSystem.SaveableData;
 using D_Dev.SaveSystem.Services;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using Object = UnityEngine.Object;
 
 namespace D_Dev.DebugConsole
@@ -29,7 +29,7 @@ namespace D_Dev.DebugConsole
 
         private async UniTaskVoid ExecuteAsync()
         {
-            foreach (var handler in Object.FindObjectsByType<SaveableDataHandler>(FindObjectsSortMode.None))
+            foreach (var handler in Object.FindObjectsByType<SaveableDataHandler>(FindObjectsInactive.Include, FindObjectsSortMode.None))
                 handler.ResetAll();
 
             if (GlobalSaveService.Instance != null)
@@ -38,7 +38,7 @@ namespace D_Dev.DebugConsole
             Debug.Log("[DeleteSaveDebugCommand] Save deleted");
 
             if (_reloadScene)
-                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+                EventManager.Invoke(EventNameConstants.SceneReload.ToString());
         }
 
         #endregion
