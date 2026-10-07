@@ -215,6 +215,10 @@ MonoBehaviour:
     m_Key: YellowCoffe
     m_Metadata:
       m_Items: []
+  - m_Id: 7000209715200
+    m_Key: Melon
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:
