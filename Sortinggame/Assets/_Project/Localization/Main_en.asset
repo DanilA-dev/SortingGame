@@ -62,6 +62,10 @@ MonoBehaviour:
     m_Localized: Full
     m_Metadata:
       m_Items: []
+  - m_Id: 2249607622508544
+    m_Localized: TAP
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

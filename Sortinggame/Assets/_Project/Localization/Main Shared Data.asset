@@ -61,6 +61,10 @@ MonoBehaviour:
     m_Key: Full hands
     m_Metadata:
       m_Items: []
+  - m_Id: 2249607622508544
+    m_Key: Tap
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:
