@@ -334,14 +334,14 @@ MonoBehaviour:
   _createInstanceIfNotFound: 0
   _loadAllTypesOnStart: 1
   _adsModules:
-  - rid: 5687120670664425734
+  - rid: 5687120809725001813
   references:
     version: 2
     RefIds:
-    - rid: 5687120670664425734
-      type: {class: YG2AdsModule, ns: _Project.Scripts.SDK, asm: Assembly-CSharp}
+    - rid: 5687120809725001813
+      type: {class: GamePushAdsModule, ns: _Project.Scripts.SDK, asm: Game.GamePush}
       data:
-        _rewardedId: reward
+        _showFullscreenCountdown: 0
 --- !u!4 &321780046
 Transform:
   m_ObjectHideFlags: 0
@@ -839,9 +839,10 @@ MonoBehaviour:
   references:
     version: 2
     RefIds:
+    - rid: -2
+      type: {class: , ns: , asm: }
     - rid: 5687120670664425731
       type: {class: YG2LocaleAutoAssigner, ns: _Project.Scripts.SDK, asm: Assembly-CSharp}
-      data: 
 --- !u!4 &1214066920
 Transform:
   m_ObjectHideFlags: 0
@@ -1111,7 +1112,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 59874416908739532, guid: e3142c9b72d8fb147ae2eb4db4a9847a, type: 3}
       propertyPath: _saveConfig
-      value: 5687120670664425730
+      value: 5687120809725001812
       objectReference: {fileID: 0}
     - target: {fileID: 59874416908739532, guid: e3142c9b72d8fb147ae2eb4db4a9847a, type: 3}
       propertyPath: _dontDestroyOnLoad
@@ -1136,6 +1137,14 @@ PrefabInstance:
     - target: {fileID: 59874416908739532, guid: e3142c9b72d8fb147ae2eb4db4a9847a, type: 3}
       propertyPath: 'managedReferences[5687120670664425730]'
       value: Assembly-CSharp _Project.Scripts.SDK.YG2SaveConfig
+      objectReference: {fileID: 0}
+    - target: {fileID: 59874416908739532, guid: e3142c9b72d8fb147ae2eb4db4a9847a, type: 3}
+      propertyPath: 'managedReferences[5687120809725001812]'
+      value: Game.GamePush _Project.Scripts.SDK.GamePushSaveConfig
+      objectReference: {fileID: 0}
+    - target: {fileID: 59874416908739532, guid: e3142c9b72d8fb147ae2eb4db4a9847a, type: 3}
+      propertyPath: managedReferences[5687120809725001812]._storage
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6197869098031699101, guid: e3142c9b72d8fb147ae2eb4db4a9847a, type: 3}
       propertyPath: m_Name

@@ -3,8 +3,8 @@ namespace GamePush.Data
     public static class ProjectData
     {
         public static string SDK_VERSION = "2.02.0";
-        public static string ID = "0";
-        public static string TOKEN = "";
+        public static string ID = "31278";
+        public static string TOKEN = "O4ZD4BoOyzetJUyjtxYTTS4ihtB3wrA6";
         public static bool SHOW_STICKY_ON_START = false;
         public static bool WAIT_PLAGIN_READY = true;
         public static bool AUTO_PAUSE_ON_ADS = true;

@@ -545,7 +545,10 @@ PlayerSettings:
   openGLRequireES31: 0
   openGLRequireES31AEP: 0
   openGLRequireES32: 0
-  m_TemplateCustomTags: {}
+  m_TemplateCustomTags:
+    PROJECT_ID: 31278
+    SHOW_PRELOADER_AD: True
+    TOKEN: O4ZD4BoOyzetJUyjtxYTTS4ihtB3wrA6
   mobileMTRendering:
     Android: 1
     iPhone: 1

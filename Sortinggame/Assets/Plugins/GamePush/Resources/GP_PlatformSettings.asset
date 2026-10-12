@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89dbd408fcef4c6c9ec88804ecf62a23, type: 3}
   m_Name: GP_PlatformSettings
   m_EditorClassIdentifier: 
-  PlatformToEmulate: 1
+  PlatformToEmulate: 3
   Language: 0
   IsMobile: 0
   IsPortrait: 0
