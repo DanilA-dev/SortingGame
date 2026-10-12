@@ -42,7 +42,7 @@ namespace _Project.Scripts.SDK
         {
             await WaitForSDK();
 
-            var json = GP_Player.GetString(key);
+            var json = GetField(key);
             if (string.IsNullOrEmpty(json))
                 return defaultValue;
 
@@ -60,7 +60,7 @@ namespace _Project.Scripts.SDK
         public async UniTask<bool> HasKeyAsync(string key)
         {
             await WaitForSDK();
-            return !string.IsNullOrEmpty(GP_Player.GetString(key));
+            return !string.IsNullOrEmpty(GetField(key));
         }
 
         public async UniTask DeleteKeyAsync(string key)
@@ -88,9 +88,18 @@ namespace _Project.Scripts.SDK
         private static string Serialize<T>(T value)
             => JsonConvert.SerializeObject(value, Formatting.None, SaveSerializer.Settings);
 
+        private static string GetField(string key)
+        {
+#if UNITY_EDITOR
+            if (!GamePush.Native.GamePushHost.UseNativeCore && !GP_Play2Web.Enabled && !GP_Prefs.HasKey(key))
+                return string.Empty;
+#endif
+            return GP_Player.GetString(key);
+        }
+
         private void SetField(string key, string json)
         {
-            if (GP_Player.GetString(key) == json)
+            if (GetField(key) == json)
                 return;
 
             GP_Player.Set(key, json);
