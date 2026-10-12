@@ -2006,6 +2006,77 @@ MonoBehaviour:
       type: {class: GameObjectScriptableVariableValue, ns: D_Dev.PolymorphicValueSystem, asm: D-Dev.PolymorphicValueSystem}
       data:
         _variable: {fileID: 11400000, guid: 2df0936c87ebd4741bc9a5422a28b436, type: 2}
+--- !u!1 &6236750343175657480
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8892238203494697255}
+  - component: {fileID: 5538954952578352165}
+  m_Layer: 3
+  m_Name: OnPauseStop
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8892238203494697255
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6236750343175657480}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2280727447611546628}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5538954952578352165
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6236750343175657480}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f668e1d2ccd84703abf3232383b61c35, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: D-Dev.EventBehaviours::D_Dev.CustomEventManager.Listeners.EventListener
+  _eventNameTypes:
+  - rid: 5687120826769342748
+  _raiseOnlyOnce: 0
+  _onRaised:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4794096811496763701}
+        m_TargetAssemblyTypeName: D_Dev.InteractableSystem.InteractableDetector.InteractableDetector,
+          D-Dev.InteractableDetector
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+  _debug: 0
+  references:
+    version: 2
+    RefIds:
+    - rid: 5687120826769342748
+      type: {class: StringVariableEventNameType, ns: D_Dev.CustomEventManager, asm: D-Dev.EventBehaviours}
+      data:
+        _variable: {fileID: 11400000, guid: 01996f6a006f9b74787beb1e31607d16, type: 2}
 --- !u!1 &6757496935446282390
 GameObject:
   m_ObjectHideFlags: 0
@@ -2108,6 +2179,77 @@ MonoBehaviour:
     _scheduledTime: 0
     _playOnAwake: 0
     _isLooping: 0
+--- !u!1 &7707390030744907262
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 43335298782605477}
+  - component: {fileID: 6463487397898382686}
+  m_Layer: 3
+  m_Name: OnPauseStart
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &43335298782605477
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7707390030744907262}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2280727447611546628}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6463487397898382686
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7707390030744907262}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f668e1d2ccd84703abf3232383b61c35, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: D-Dev.EventBehaviours::D_Dev.CustomEventManager.Listeners.EventListener
+  _eventNameTypes:
+  - rid: 5687120826769342747
+  _raiseOnlyOnce: 0
+  _onRaised:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4794096811496763701}
+        m_TargetAssemblyTypeName: D_Dev.InteractableSystem.InteractableDetector.InteractableDetector,
+          D-Dev.InteractableDetector
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  _debug: 0
+  references:
+    version: 2
+    RefIds:
+    - rid: 5687120826769342747
+      type: {class: StringVariableEventNameType, ns: D_Dev.CustomEventManager, asm: D-Dev.EventBehaviours}
+      data:
+        _variable: {fileID: 11400000, guid: ed4d3517d9a54dc4491b37ed0916b9ab, type: 2}
 --- !u!1 &8526762014091022092
 GameObject:
   m_ObjectHideFlags: 0
@@ -2436,5 +2578,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 9095527663083438919}
+  - {fileID: 43335298782605477}
+  - {fileID: 8892238203494697255}
   m_Father: {fileID: 3621044774616372212}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
