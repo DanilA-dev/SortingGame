@@ -48,6 +48,8 @@ namespace D_Dev.AudioSystem
         private int _sfxPoolIdx;
         private int _musicPoolIdx;
         private bool _isMuted;
+        private bool _isMusicMuted;
+        private bool _isSfxMuted;
 
         public static event Action<bool> OnMuteStateChanged;
 
@@ -127,12 +129,26 @@ namespace D_Dev.AudioSystem
         public void MuteAllAudioSources(bool isMute)
         {
             _isMuted = isMute;
-            SetMuteAllSources(_isMuted);
+            ApplyMute();
             OnMuteStateChanged?.Invoke(_isMuted);
             _onMuteAll?.Invoke(_isMuted);
         }
 
+        public void MuteMusic(bool isMute)
+        {
+            _isMusicMuted = isMute;
+            ApplyMute();
+        }
+
+        public void MuteSFX(bool isMute)
+        {
+            _isSfxMuted = isMute;
+            ApplyMute();
+        }
+
         public bool IsMuted => _isMuted;
+        public bool IsMusicMuted => _isMusicMuted;
+        public bool IsSFXMuted => _isSfxMuted;
 
         public void RequestSound(AudioConfig config, Vector3 worldPos)
         {
@@ -203,7 +219,7 @@ namespace D_Dev.AudioSystem
             _musicPoolIdx = (_musicPoolIdx + 1) % _musicPool.Length;
 
             config.SetAudioSource(ref src);
-            src.mute = _isMuted;
+            src.mute = _isMuted || _isMusicMuted;
             src.transform.position = worldPos;
             _activeSources[config] = src;
             src.Play();
@@ -226,21 +242,21 @@ namespace D_Dev.AudioSystem
             _sfxPoolIdx = (_sfxPoolIdx + 1) % _sfxPool.Length;
 
             config.SetAudioSource(ref src);
-            src.mute = _isMuted;
+            src.mute = _isMuted || _isSfxMuted;
             src.transform.position = worldPos;
             _activeSources[config] = src;
             src.Play();
         }
 
-        private void SetMuteAllSources(bool mute)
+        private void ApplyMute()
         {
             if (_sfxPool != null)
                 foreach (var src in _sfxPool)
-                    src.mute = mute;
+                    src.mute = _isMuted || _isSfxMuted;
 
             if (_musicPool != null)
                 foreach (var src in _musicPool)
-                    src.mute = mute;
+                    src.mute = _isMuted || _isMusicMuted;
         }
 
         private void InitPool()
