@@ -21,6 +21,7 @@ namespace D_Dev.SceneLoader
         public static UniTask InitializeScenesAsync()
         {
             Scenes = new();
+            SceneManager.sceneLoaded -= OnSceneLoadedAfterForeignStart;
             var path = "ProjectScenesConfig";
             var projectScenes = Resources.Load<ProjectScenesConfig>(path);
             if (projectScenes != null)
@@ -29,11 +30,12 @@ namespace D_Dev.SceneLoader
                     return UniTask.CompletedTask;
 
                 foreach (var scene in projectScenes.Scenes)
-                {
                     Scenes[scene.SceneName] = scene;
-                    if (scene.AddSceneOnStartup)
-                        LoadSceneAsync(scene.SceneName, LoadSceneMode.Additive).Forget();
-                }
+
+                if (IsForeignStartScene(SceneManager.GetActiveScene()))
+                    SceneManager.sceneLoaded += OnSceneLoadedAfterForeignStart;
+                else
+                    LoadStartupScenes();
             }
             else
                 Debug.LogError($"[SceneLoader] Failed to load project scenes config at path: Resources/{path}");
@@ -102,6 +104,35 @@ namespace D_Dev.SceneLoader
             }
 
             onComplete?.Invoke();
+        }
+
+        #endregion
+
+        #region Private
+
+        private static bool IsForeignStartScene(Scene scene)
+            => scene.IsValid() && scene.buildIndex >= 0 && !Scenes.ContainsKey(scene.name);
+
+        private static void LoadStartupScenes()
+        {
+            foreach (var scene in Scenes.Values)
+            {
+                if (scene.AddSceneOnStartup)
+                    LoadSceneAsync(scene.SceneName, LoadSceneMode.Additive).Forget();
+            }
+        }
+
+        #endregion
+
+        #region Listeners
+
+        private static void OnSceneLoadedAfterForeignStart(Scene scene, LoadSceneMode mode)
+        {
+            if (mode != LoadSceneMode.Single || !Scenes.ContainsKey(scene.name))
+                return;
+
+            SceneManager.sceneLoaded -= OnSceneLoadedAfterForeignStart;
+            LoadStartupScenes();
         }
 
         #endregion
