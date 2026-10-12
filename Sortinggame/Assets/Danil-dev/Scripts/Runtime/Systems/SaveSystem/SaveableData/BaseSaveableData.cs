@@ -18,6 +18,8 @@ namespace D_Dev.SaveSystem.SaveableData
         [SerializeField] private bool _saveOnExit = true;
         [PropertyOrder(100)]
         [SerializeField] private bool _loadOnStart = true;
+        [PropertyOrder(100)]
+        [SerializeField] private bool _trackChanges = true;
 
         public event Action<BaseSaveableData> OnChanged;
 
@@ -41,6 +43,12 @@ namespace D_Dev.SaveSystem.SaveableData
         {
             get => _loadOnStart;
             set => _loadOnStart = value;
+        }
+
+        public bool TrackChanges
+        {
+            get => _trackChanges;
+            set => _trackChanges = value;
         }
 
         public virtual bool CanSave => true;

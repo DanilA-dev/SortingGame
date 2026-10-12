@@ -65,6 +65,14 @@ namespace D_Dev.SaveSystem.SaveableData
                 Save(saveableData);
         }
 
+        public void SaveDataImmediate()
+        {
+            _changedDatas.Clear();
+
+            foreach (var saveableData in _saveableDatas)
+                Save(saveableData, true);
+        }
+
         public void LoadData() => LoadAllAsync(false).Forget();
 
         
@@ -158,7 +166,7 @@ namespace D_Dev.SaveSystem.SaveableData
             _isSubscribed = true;
             foreach (var saveableData in _saveableDatas)
             {
-                if (saveableData == null)
+                if (saveableData == null || !saveableData.TrackChanges)
                     continue;
 
                 saveableData.OnChanged += OnDataChanged;
@@ -174,7 +182,7 @@ namespace D_Dev.SaveSystem.SaveableData
             _isSubscribed = false;
             foreach (var saveableData in _saveableDatas)
             {
-                if (saveableData == null)
+                if (saveableData == null || !saveableData.TrackChanges)
                     continue;
 
                 saveableData.Unsubscribe();
