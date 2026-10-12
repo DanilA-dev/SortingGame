@@ -3,6 +3,7 @@ using Cysharp.Threading.Tasks;
 using D_Dev.SaveSystem;
 using GamePush;
 using Newtonsoft.Json;
+using Sirenix.OdinInspector;
 using UnityEngine;
 
 namespace _Project.Scripts.SDK
@@ -14,9 +15,14 @@ namespace _Project.Scripts.SDK
 
         [Tooltip("Storage used by GP_Player.Sync. Preferred uses the storage selected in the GamePush panel.")]
         [SerializeField] private SyncStorageType _storage = SyncStorageType.preferred;
+        [Tooltip("Minimum time between cloud syncs triggered by async saves. Immediate saves sync at the end of the frame.")]
+        [SuffixLabel("sec")]
+        [SerializeField, Min(0f)] private float _minSyncInterval = 60f;
 
         private bool _isDirty;
-        private bool _isSyncScheduled;
+        private bool _isFlushScheduled;
+        private bool _isTimedSyncScheduled;
+        private float _lastSyncTime;
 
         #endregion
 
@@ -28,14 +34,14 @@ namespace _Project.Scripts.SDK
                 Debug.LogWarning($"[GamePushSaveConfig] Save '{key}' called before SDK init");
 
             SetField(key, Serialize(value));
-            Sync();
+            ScheduleFlush();
         }
 
         public async UniTask SaveAsync<T>(string key, T value)
         {
             await WaitForSDK();
             SetField(key, Serialize(value));
-            ScheduleSync();
+            ScheduleTimedSync();
         }
 
         public async UniTask<T> LoadAsync<T>(string key, T defaultValue = default)
@@ -67,7 +73,7 @@ namespace _Project.Scripts.SDK
         {
             await WaitForSDK();
             SetField(key, string.Empty);
-            ScheduleSync();
+            ScheduleFlush();
         }
 
         public async UniTask DeleteAllAsync()
@@ -75,7 +81,7 @@ namespace _Project.Scripts.SDK
             await WaitForSDK();
             GP_Player.ResetPlayer();
             _isDirty = true;
-            ScheduleSync();
+            ScheduleFlush();
         }
 
         #endregion
@@ -106,19 +112,39 @@ namespace _Project.Scripts.SDK
             _isDirty = true;
         }
 
-        private void ScheduleSync()
+        private void ScheduleFlush()
         {
-            if (_isSyncScheduled || !_isDirty)
+            if (_isFlushScheduled || !_isDirty)
                 return;
 
-            _isSyncScheduled = true;
-            SyncAtEndOfFrame().Forget();
+            _isFlushScheduled = true;
+            FlushAtEndOfFrame().Forget();
         }
 
-        private async UniTaskVoid SyncAtEndOfFrame()
+        private async UniTaskVoid FlushAtEndOfFrame()
         {
             await UniTask.Yield(PlayerLoopTiming.LastPostLateUpdate);
-            _isSyncScheduled = false;
+            _isFlushScheduled = false;
+            Sync();
+        }
+
+        private void ScheduleTimedSync()
+        {
+            if (_isTimedSyncScheduled || !_isDirty)
+                return;
+
+            _isTimedSyncScheduled = true;
+            TimedSync().Forget();
+        }
+
+        private async UniTaskVoid TimedSync()
+        {
+            float wait;
+            while ((wait = _lastSyncTime + _minSyncInterval - Time.unscaledTime) > 0f)
+                await UniTask.Delay(TimeSpan.FromSeconds(wait), DelayType.UnscaledDeltaTime);
+
+            await UniTask.Yield(PlayerLoopTiming.LastPostLateUpdate);
+            _isTimedSyncScheduled = false;
             Sync();
         }
 
@@ -128,6 +154,7 @@ namespace _Project.Scripts.SDK
                 return;
 
             _isDirty = false;
+            _lastSyncTime = Time.unscaledTime;
             GP_Player.Sync(_storage);
         }
 

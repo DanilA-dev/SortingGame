@@ -1122,6 +1122,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 59874416908739532, guid: e3142c9b72d8fb147ae2eb4db4a9847a, type: 3}
+      propertyPath: _useSeparateConfigForEditor
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 59874416908739532, guid: e3142c9b72d8fb147ae2eb4db4a9847a, type: 3}
       propertyPath: 'managedReferences[1932282358920642813]'
       value: D-Dev.SaveSystem D_Dev.SaveSystem.PlayerPrefsSaveConfig
       objectReference: {fileID: 0}
@@ -1140,6 +1144,10 @@ PrefabInstance:
     - target: {fileID: 59874416908739532, guid: e3142c9b72d8fb147ae2eb4db4a9847a, type: 3}
       propertyPath: managedReferences[5687120809725001812]._storage
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 59874416908739532, guid: e3142c9b72d8fb147ae2eb4db4a9847a, type: 3}
+      propertyPath: managedReferences[5687120809725001812]._minSyncInterval
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 6197869098031699101, guid: e3142c9b72d8fb147ae2eb4db4a9847a, type: 3}
       propertyPath: m_Name
