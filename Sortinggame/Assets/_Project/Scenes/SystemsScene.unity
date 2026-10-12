@@ -282,16 +282,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 288741470}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8015ee6e8b8d38647a2610f916d54bf0, type: 3}
+  m_Script: {fileID: 11500000, guid: 60b20277f2afbb14bbcf4d1ab4a0b2b2, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: D-Dev.ScriptableVariables::D_Dev.ScriptableVariables.Listeners.FloatScriptableVariableListener
-  _variable: {fileID: 11400000, guid: f461f289454ef02498dae61e0d114b3e, type: 2}
+  m_EditorClassIdentifier: D-Dev.ScriptableVariables::D_Dev.ScriptableVariables.Listeners.BoolScriptableVariableListener
+  _variable: {fileID: 11400000, guid: b2d5f8c3ae6045479f13da82e4b9f062, type: 2}
   OnValueChanged:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1610477306}
         m_TargetAssemblyTypeName: D_Dev.AudioSystem.AudioManager, D-Dev.AudioSystem
-        m_MethodName: SetSFXVolume
+        m_MethodName: MuteSFX
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -398,16 +398,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 639588530}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8015ee6e8b8d38647a2610f916d54bf0, type: 3}
+  m_Script: {fileID: 11500000, guid: 60b20277f2afbb14bbcf4d1ab4a0b2b2, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: D-Dev.ScriptableVariables::D_Dev.ScriptableVariables.Listeners.FloatScriptableVariableListener
-  _variable: {fileID: 11400000, guid: 56bd940c94ac3684eb93941677840c40, type: 2}
+  m_EditorClassIdentifier: D-Dev.ScriptableVariables::D_Dev.ScriptableVariables.Listeners.BoolScriptableVariableListener
+  _variable: {fileID: 11400000, guid: a1c4e7b29d5f4836b0e2c9f71d3a8e51, type: 2}
   OnValueChanged:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1610477306}
         m_TargetAssemblyTypeName: D_Dev.AudioSystem.AudioManager, D-Dev.AudioSystem
-        m_MethodName: SetMusicVolume
+        m_MethodName: MuteMusic
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1348,6 +1348,122 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2045001001
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2045001002}
+  - component: {fileID: 2045001003}
+  m_Layer: 0
+  m_Name: SettingsSaveableDataHandler
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2045001002
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2045001001}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2045001003
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2045001001}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 326eb38365b542159b95145c061ca7d2, type: 3}
+  m_Name:
+  m_EditorClassIdentifier: D-Dev.SaveSystem.SaveableData::D_Dev.SaveSystem.SaveableData.SaveableDataHandler
+  _saveableDatas:
+  - rid: 5687120990000110
+  - rid: 5687120990000120
+  _saveOnChange: 1
+  _saveOnChangeInterval: 2
+  _debug: 0
+  OnLoaded:
+    m_PersistentCalls:
+      m_Calls: []
+  references:
+    version: 2
+    RefIds:
+    - rid: 5687120990000110
+      type: {class: BoolValueSaveableData, ns: D_Dev.PolymorphicValueSystem.Extensions.Saveables, asm: D-Dev.PolymorphicValueSystem.Extensions}
+      data:
+        _key:
+          rid: 5687120990000111
+        _saveOnExit: 1
+        _loadOnStart: 1
+        _trackChanges: 1
+        OnSaveData:
+          m_PersistentCalls:
+            m_Calls: []
+        OnLoadData:
+          m_PersistentCalls:
+            m_Calls: []
+        _value:
+          rid: 5687120990000112
+        _defaultValue:
+          rid: 5687120990000113
+    - rid: 5687120990000111
+      type: {class: StringConstantValue, ns: D_Dev.PolymorphicValueSystem, asm: D-Dev.PolymorphicValueSystem}
+      data:
+        _value: settings_music_muted
+    - rid: 5687120990000112
+      type: {class: BoolScriptableVariableValue, ns: D_Dev.PolymorphicValueSystem, asm: D-Dev.PolymorphicValueSystem}
+      data:
+        _variable: {fileID: 11400000, guid: a1c4e7b29d5f4836b0e2c9f71d3a8e51, type: 2}
+    - rid: 5687120990000113
+      type: {class: BoolConstantValue, ns: D_Dev.PolymorphicValueSystem, asm: D-Dev.PolymorphicValueSystem}
+      data:
+        _value: 0
+    - rid: 5687120990000120
+      type: {class: BoolValueSaveableData, ns: D_Dev.PolymorphicValueSystem.Extensions.Saveables, asm: D-Dev.PolymorphicValueSystem.Extensions}
+      data:
+        _key:
+          rid: 5687120990000121
+        _saveOnExit: 1
+        _loadOnStart: 1
+        _trackChanges: 1
+        OnSaveData:
+          m_PersistentCalls:
+            m_Calls: []
+        OnLoadData:
+          m_PersistentCalls:
+            m_Calls: []
+        _value:
+          rid: 5687120990000122
+        _defaultValue:
+          rid: 5687120990000123
+    - rid: 5687120990000121
+      type: {class: StringConstantValue, ns: D_Dev.PolymorphicValueSystem, asm: D-Dev.PolymorphicValueSystem}
+      data:
+        _value: settings_sfx_muted
+    - rid: 5687120990000122
+      type: {class: BoolScriptableVariableValue, ns: D_Dev.PolymorphicValueSystem, asm: D-Dev.PolymorphicValueSystem}
+      data:
+        _variable: {fileID: 11400000, guid: b2d5f8c3ae6045479f13da82e4b9f062, type: 2}
+    - rid: 5687120990000123
+      type: {class: BoolConstantValue, ns: D_Dev.PolymorphicValueSystem, asm: D-Dev.PolymorphicValueSystem}
+      data:
+        _value: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -1362,3 +1478,4 @@ SceneRoots:
   - {fileID: 1214066920}
   - {fileID: 1955150564}
   - {fileID: 2074464401}
+  - {fileID: 2045001002}
