@@ -839,10 +839,9 @@ MonoBehaviour:
   references:
     version: 2
     RefIds:
-    - rid: -2
-      type: {class: , ns: , asm: }
     - rid: 5687120670664425731
-      type: {class: YG2LocaleAutoAssigner, ns: _Project.Scripts.SDK, asm: Assembly-CSharp}
+      type: {class: GamePushLocaleAutoAssigner, ns: _Project.Scripts.SDK, asm: Game.GamePush}
+      data: 
 --- !u!4 &1214066920
 Transform:
   m_ObjectHideFlags: 0
@@ -1133,10 +1132,6 @@ PrefabInstance:
     - target: {fileID: 59874416908739532, guid: e3142c9b72d8fb147ae2eb4db4a9847a, type: 3}
       propertyPath: 'managedReferences[5687120665372794935]'
       value: D-Dev.SaveSystem D_Dev.SaveSystem.PlayerPrefsSaveConfig
-      objectReference: {fileID: 0}
-    - target: {fileID: 59874416908739532, guid: e3142c9b72d8fb147ae2eb4db4a9847a, type: 3}
-      propertyPath: 'managedReferences[5687120670664425730]'
-      value: Assembly-CSharp _Project.Scripts.SDK.YG2SaveConfig
       objectReference: {fileID: 0}
     - target: {fileID: 59874416908739532, guid: e3142c9b72d8fb147ae2eb4db4a9847a, type: 3}
       propertyPath: 'managedReferences[5687120809725001812]'

@@ -596,7 +596,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 13e01efb40941194481c3debce8f9579, type: 3}
-  m_Name:
+  m_Name: 
   m_EditorClassIdentifier: D-Dev.LocalizationSystem::D_Dev.LocalizationSystem.LocalizationInitializer
   _initializeOnStart: 1
   _onInitialized:
@@ -611,7 +611,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument:
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!1660057539 &9223372036854775807

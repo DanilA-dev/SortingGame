@@ -1,11 +1,10 @@
-#if D_DEV_YG2 && EnvirData_yg
 using System;
 using D_Dev.LocalizationSystem;
 using GamePush;
 using UnityEngine.Localization;
 using UnityEngine.Localization.Settings;
 
-namespace D_Dev.PluginYG2
+namespace _Project.Scripts.SDK
 {
     [Serializable]
     public class GamePushLocaleAutoAssigner : ILocaleAutoAssigner
@@ -34,4 +33,3 @@ namespace D_Dev.PluginYG2
         }
     }
 }
-#endif

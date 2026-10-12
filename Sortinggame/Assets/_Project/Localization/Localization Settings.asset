@@ -47,7 +47,7 @@ MonoBehaviour:
         m_LocaleId:
           m_Code: en
     - rid: 5687120668477104999
-      type: {class: YG2StartupLocaleSelector, ns: D_Dev.PluginYG2, asm: Assembly-CSharp}
+      type: {class: GamePushStartupLocaleSelector, ns: _Project.Scripts.SDK, asm: Game.GamePush}
       data:
     - rid: 5687120668477104909
       type: {class: LocalesProvider, ns: UnityEngine.Localization.Settings, asm: Unity.Localization}
