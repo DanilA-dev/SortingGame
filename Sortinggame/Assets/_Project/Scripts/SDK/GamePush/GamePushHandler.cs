@@ -18,6 +18,8 @@ namespace _Project.Scripts.SDK
         [SerializeField] private UnityEvent _onError;
 
         private bool _isSubscribed;
+        private bool _isGameplayStarted;
+        private bool _isGameplayActive;
 
         #endregion
 
@@ -49,12 +51,36 @@ namespace _Project.Scripts.SDK
         #region Public
 
         public void CallGameReady() => GP_Game.GameReady();
-        public void GameplayStart() => GP_Game.GameplayStart();
-        public void GameplayStop() => GP_Game.GameplayStop();
+        public void GameplayStart()
+        {
+            _isGameplayStarted = true;
+            SetGameplayActive(true);
+        }
+
+        public void GameplayResume()
+        {
+            if (_isGameplayStarted)
+                SetGameplayActive(true);
+        }
+
+        public void GameplayStop() => SetGameplayActive(false);
 
         #endregion
 
         #region Private
+
+        private void SetGameplayActive(bool isActive)
+        {
+            if (_isGameplayActive == isActive)
+                return;
+
+            _isGameplayActive = isActive;
+
+            if (isActive)
+                GP_Game.GameplayStart();
+            else
+                GP_Game.GameplayStop();
+        }
 
         private void Unsubscribe()
         {

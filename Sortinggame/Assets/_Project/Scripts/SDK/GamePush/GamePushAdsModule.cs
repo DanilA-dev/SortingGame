@@ -98,18 +98,15 @@ namespace _Project.Scripts.SDK
 
         private void OnRewardedReward(string tag) => _rewardReceived = true;
 
-        private void OnRewardedClose(bool success)
-        {
-            var result = _rewardReceived ? AdResult.Rewarded : success ? AdResult.Skipped : AdResult.Failed;
-            CompleteRewardedNextFrame(result).Forget();
-        }
+        private void OnRewardedClose(bool success) => CompleteRewardedNextFrame(success).Forget();
 
         private void OnFullscreenClose(bool success)
             => CompleteInterstitialNextFrame(success ? AdResult.Shown : AdResult.Failed).Forget();
 
-        private async UniTaskVoid CompleteRewardedNextFrame(AdResult result)
+        private async UniTaskVoid CompleteRewardedNextFrame(bool success)
         {
             await UniTask.Yield();
+            var result = _rewardReceived || success ? AdResult.Rewarded : AdResult.Skipped;
             Complete(ref _rewardedCallback, result);
         }
 
