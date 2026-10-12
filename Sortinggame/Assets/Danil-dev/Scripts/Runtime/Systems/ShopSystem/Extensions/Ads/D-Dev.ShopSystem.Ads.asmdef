@@ -1,0 +1,18 @@
+{
+    "name": "D-Dev.ShopSystem.Ads",
+    "rootNamespace": "",
+    "references": [
+        "GUID:ef53831c21d740639b70aa47bcc2153f",
+        "GUID:d8990287e1f62eb41ad3bef362bae147",
+        "GUID:a947a454b8df3474d81c9577867188ff"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

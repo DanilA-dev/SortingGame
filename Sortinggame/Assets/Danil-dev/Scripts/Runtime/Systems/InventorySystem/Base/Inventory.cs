@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using Sirenix.OdinInspector;
 using UnityEngine;
@@ -11,6 +12,9 @@ namespace D_Dev.InventorySystem
         [SerializeField] private int slotsCount;
 
         private readonly Dictionary<int, IInventoryCell> _cells = new();
+
+        public event Action<InventoryItemEntityInfo, int> OnItemAdded;
+        public event Action<InventoryItemEntityInfo, int> OnItemRemoved;
 
         #endregion
 
@@ -35,24 +39,21 @@ namespace D_Dev.InventorySystem
                 return false;
 
             var remainingAmount = amount;
-            foreach (var cell in Cells.Values)
-            {
-                if (!cell.CanBeOccupied())
-                    continue;
-                
-                var item = new InventoryItem(itemInfo, remainingAmount);
-                if(cell.TryAdd(item))
-                    remainingAmount -= cell.Data.CurrentAmount;
+            remainingAmount -= AddToCells(itemInfo, remainingAmount, onlyOccupied: true);
+            if (remainingAmount > 0)
+                remainingAmount -= AddToCells(itemInfo, remainingAmount, onlyOccupied: false);
 
-                if (remainingAmount <= 0)
-                    return true;
-            }
-            return remainingAmount < amount;
+            var addedAmount = amount - remainingAmount;
+            if (addedAmount <= 0)
+                return false;
+
+            OnItemAdded?.Invoke(itemInfo, addedAmount);
+            return true;
         }
 
         public bool RemoveItem(InventoryItemEntityInfo itemInfo, int amount)
         {
-            if (itemInfo == null || amount <= 0)
+            if (itemInfo == null || amount <= 0 || GetAmount(itemInfo) < amount)
                 return false;
 
             var remainingAmount = amount;
@@ -61,30 +62,29 @@ namespace D_Dev.InventorySystem
                 if(cell.IsEmpty || cell.Data.Info != itemInfo)
                     continue;
                 
-                if (cell.TryRemove(remainingAmount))
-                    remainingAmount -= cell.Data.CurrentAmount;
-
+                remainingAmount -= cell.Remove(remainingAmount);
                 if (remainingAmount <= 0)
-                    return true;
+                    break;
             }
 
-            return false;
+            OnItemRemoved?.Invoke(itemInfo, amount);
+            return true;
         }
 
-        public bool HasItem(InventoryItemEntityInfo itemInfo)
+        public bool HasItem(InventoryItemEntityInfo itemInfo) => GetAmount(itemInfo) > 0;
+
+        public int GetAmount(InventoryItemEntityInfo itemInfo)
         {
             if(itemInfo == null)
-                return false;
+                return 0;
 
+            var amount = 0;
             foreach (var cell in Cells.Values)
             {
-                if(cell.IsEmpty)
-                    continue;
-                
-                if (cell.Data.Info == itemInfo)
-                    return true;
+                if (!cell.IsEmpty && cell.Data.Info == itemInfo)
+                    amount += cell.Data.CurrentAmount;
             }
-            return false;
+            return amount;
         }
 
         #endregion
@@ -98,6 +98,21 @@ namespace D_Dev.InventorySystem
                 var cell = new InventoryCell { Index = i };
                 _cells[i] = cell;
             }
+        }
+
+        private int AddToCells(InventoryItemEntityInfo itemInfo, int amount, bool onlyOccupied)
+        {
+            var remainingAmount = amount;
+            foreach (var cell in Cells.Values)
+            {
+                if (cell.IsEmpty == onlyOccupied)
+                    continue;
+
+                remainingAmount -= cell.Add(itemInfo, remainingAmount);
+                if (remainingAmount <= 0)
+                    break;
+            }
+            return amount - remainingAmount;
         }
 
         #endregion

@@ -1,0 +1,24 @@
+{
+    "name": "D-Dev.PopupSystem",
+    "rootNamespace": "",
+    "references": [
+        "D-Dev.EntitySpawner",
+        "D-Dev.EntityInfo",
+        "D-Dev.EntityInfo.Extensions",
+        "D-Dev.PolymorphicValueSystem",
+        "D-Dev.TweenAnimations",
+        "D-Dev.ScriptableVariables",
+        "Unity.TextMeshPro",
+        "UnityEngine.UI",
+        "UniTask"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

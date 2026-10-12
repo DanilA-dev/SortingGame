@@ -19,7 +19,9 @@ namespace D_Dev.InventorySystem
         public InventoryItem(InventoryItemEntityInfo info, int amount)
         {
             Info = info;
-            CurrentAmount = info!= null ? Mathf.Clamp(amount, 0, info.MaxAmount) : 0;
+            CurrentAmount = info == null ? 0 
+                : info.IsStackLimited ? Mathf.Clamp(amount, 0, info.MaxAmount) 
+                : Mathf.Max(amount, 0);
         }
 
         #endregion

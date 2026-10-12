@@ -1,0 +1,19 @@
+{
+    "name": "D-Dev.ShopSystem.IAP",
+    "rootNamespace": "",
+    "references": [
+        "GUID:ef53831c21d740639b70aa47bcc2153f",
+        "GUID:cd3b72cee8da463bab6be4f10d1b3692",
+        "GUID:a947a454b8df3474d81c9577867188ff",
+        "GUID:ba7d088f93a8e1649b9edc0955fab802"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

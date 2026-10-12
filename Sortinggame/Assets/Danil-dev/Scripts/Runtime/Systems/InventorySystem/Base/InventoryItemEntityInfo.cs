@@ -1,5 +1,4 @@
 ﻿using D_Dev.Entity;
-using Sirenix.OdinInspector;
 using UnityEngine;
 
 namespace D_Dev.InventorySystem
@@ -9,21 +8,14 @@ namespace D_Dev.InventorySystem
     {
         #region Fields
 
-        [SerializeField] private string _name;
-        [PreviewField(75, ObjectFieldAlignment.Right)]
-        [SerializeField] private Sprite _icon;
-        [TextArea(3, 5)]
-        [SerializeField] private string _description;
-        [SerializeField] private int _maxAmount = 1;
+        [SerializeField] private int _maxAmount;
 
         #endregion
 
         #region Properties
 
-        public string Name => _name;
-        public Sprite Icon => _icon;
-        public string Description => _description;
         public int MaxAmount => _maxAmount;
+        public bool IsStackLimited => _maxAmount > 0;
 
         #endregion
     }

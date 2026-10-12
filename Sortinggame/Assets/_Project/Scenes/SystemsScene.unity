@@ -339,7 +339,7 @@ MonoBehaviour:
     version: 2
     RefIds:
     - rid: 5687120670664425734
-      type: {class: YG2AdsModule, ns: _Project.Scripts.SDK, asm: Assembly-CSharp}
+      type: {class: YG2AdsModule, ns: D_Dev.PluginYG2, asm: Assembly-CSharp}
       data:
         _rewardedId: reward
 --- !u!4 &321780046
@@ -840,7 +840,7 @@ MonoBehaviour:
     version: 2
     RefIds:
     - rid: 5687120670664425731
-      type: {class: YG2LocaleAutoAssigner, ns: _Project.Scripts.SDK, asm: Assembly-CSharp}
+      type: {class: YG2LocaleAutoAssigner, ns: D_Dev.PluginYG2, asm: Assembly-CSharp}
       data: 
 --- !u!4 &1214066920
 Transform:
@@ -1111,7 +1111,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 59874416908739532, guid: e3142c9b72d8fb147ae2eb4db4a9847a, type: 3}
       propertyPath: _saveConfig
-      value: 5687120670664425730
+      value: 5687120811829493964
       objectReference: {fileID: 0}
     - target: {fileID: 59874416908739532, guid: e3142c9b72d8fb147ae2eb4db4a9847a, type: 3}
       propertyPath: _dontDestroyOnLoad
@@ -1135,7 +1135,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 59874416908739532, guid: e3142c9b72d8fb147ae2eb4db4a9847a, type: 3}
       propertyPath: 'managedReferences[5687120670664425730]'
-      value: Assembly-CSharp _Project.Scripts.SDK.YG2SaveConfig
+      value: Assembly-CSharp D_Dev.PluginYG2.YG2SaveConfig
+      objectReference: {fileID: 0}
+    - target: {fileID: 59874416908739532, guid: e3142c9b72d8fb147ae2eb4db4a9847a, type: 3}
+      propertyPath: 'managedReferences[5687120811829493964]'
+      value: Assembly-CSharp D_Dev.PluginYG2.YG2SaveConfig
       objectReference: {fileID: 0}
     - target: {fileID: 6197869098031699101, guid: e3142c9b72d8fb147ae2eb4db4a9847a, type: 3}
       propertyPath: m_Name

@@ -103,4 +103,59 @@ namespace D_Dev.PolymorphicValueSystem
 
         #endregion
     }
+
+    [System.Serializable]
+    public sealed class FloatFromDoubleValue : PolymorphicValue<float>
+    {
+        #region Fields
+
+        [SerializeReference] private PolymorphicValue<double> _value = new DoubleConstantValue();
+
+        #endregion
+
+        #region Properties
+
+        public override float Value
+        {
+            get => _value != null ? (float)_value.Value : default;
+            set
+            {
+                if (_value != null)
+                    _value.Value = value;
+            }
+        }
+
+        #endregion
+
+        #region Overrides
+
+        protected override void SubscribeToSource()
+        {
+            if (_value != null)
+                _value.OnValueChanged += OnSourceChanged;
+        }
+
+        protected override void UnsubscribeFromSource()
+        {
+            if (_value != null)
+                _value.OnValueChanged -= OnSourceChanged;
+        }
+
+        #endregion
+
+        #region Cloning
+
+        public override PolymorphicValue<float> Clone()
+        {
+            return new FloatFromDoubleValue { _value = _value?.Clone() };
+        }
+
+        #endregion
+
+        #region Listeners
+
+        private void OnSourceChanged(double _) => RaiseValueChanged(Value);
+
+        #endregion
+    }
 }

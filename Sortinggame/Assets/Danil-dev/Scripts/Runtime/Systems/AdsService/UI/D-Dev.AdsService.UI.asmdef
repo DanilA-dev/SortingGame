@@ -1,0 +1,19 @@
+{
+    "name": "D-Dev.AdsService.UI",
+    "rootNamespace": "",
+    "references": [
+        "GUID:d8990287e1f62eb41ad3bef362bae147",
+        "GUID:6055be8ebefd69e48b49212b09b47b2f",
+        "GUID:2bafac87e7f4b9b418d9448d219b01ab",
+        "GUID:a947a454b8df3474d81c9577867188ff"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

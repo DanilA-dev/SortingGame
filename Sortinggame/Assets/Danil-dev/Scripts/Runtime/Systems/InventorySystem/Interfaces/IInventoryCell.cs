@@ -10,9 +10,9 @@ namespace D_Dev.InventorySystem
         
         public event Action<InventoryItem> OnContentChanged;
         public InventoryItem Data { get; }
-        public bool CanBeOccupied();
-        public bool TryAdd(InventoryItem item);
-        public bool TryRemove(int amount);
+        public bool CanAdd(InventoryItemEntityInfo itemInfo);
+        public int Add(InventoryItemEntityInfo itemInfo, int amount);
+        public int Remove(int amount);
         public void Clear();
 
     }

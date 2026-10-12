@@ -472,6 +472,7 @@ GameObject:
   - component: {fileID: 1076742433}
   - component: {fileID: 1076742432}
   - component: {fileID: 1076742434}
+  - component: {fileID: 1076742435}
   m_Layer: 0
   m_Name: Initializer
   m_TagString: Untagged
@@ -491,7 +492,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79e3e75a3703c754a865f4707bd33b44, type: 3}
   m_Name: 
   m_EditorClassIdentifier: D-Dev.ActionFlow::D_Dev.ActionFlow.ActionExecutorFlow
-  _executeOnStart: 1
+  _executeOnStart: 0
   _resetOnFinish: 0
   _saveState: 0
   _saveID: 
@@ -584,6 +585,34 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 1
+        m_CallState: 2
+--- !u!114 &1076742435
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1076742431}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13e01efb40941194481c3debce8f9579, type: 3}
+  m_Name:
+  m_EditorClassIdentifier: D-Dev.LocalizationSystem::D_Dev.LocalizationSystem.LocalizationInitializer
+  _initializeOnStart: 1
+  _onInitialized:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1076742432}
+        m_TargetAssemblyTypeName: D_Dev.ActionFlow.ActionExecutorFlow, D-Dev.ActionFlow
+        m_MethodName: StartExecution
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument:
+          m_BoolArgument: 0
         m_CallState: 2
 --- !u!1660057539 &9223372036854775807
 SceneRoots:

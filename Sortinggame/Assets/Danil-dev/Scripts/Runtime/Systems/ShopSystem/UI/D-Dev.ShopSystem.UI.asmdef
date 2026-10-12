@@ -1,0 +1,21 @@
+{
+    "name": "D-Dev.ShopSystem.UI",
+    "rootNamespace": "",
+    "references": [
+        "GUID:ef53831c21d740639b70aa47bcc2153f",
+        "GUID:ba7d088f93a8e1649b9edc0955fab802",
+        "GUID:0ce9d49e8045908448905aba67046949",
+        "GUID:d9b1239432653b14fb8118cc00de3702",
+        "GUID:6055be8ebefd69e48b49212b09b47b2f",
+        "GUID:2bafac87e7f4b9b418d9448d219b01ab"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
