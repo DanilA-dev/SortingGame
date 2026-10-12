@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.Events;
 
@@ -9,12 +9,16 @@ namespace D_Dev.AudioSystem
     {
         #region Fields
 
+        private const float MutedVolume = -80f;
+
         [SerializeField] private float _volume;
         [SerializeField] private MixerGroupType _type;
         [SerializeField] private AudioMixerGroup _mixerGroup;
         [SerializeField] private string _volumeProperty = "Volume";
 
         public UnityEvent<float> OnVolumeChanged;
+
+        private bool _isGroupMuted;
 
         #endregion
 
@@ -34,8 +38,23 @@ namespace D_Dev.AudioSystem
         {
             _volume = value;
             OnVolumeChanged?.Invoke(_volume);
-            MixerGroup.audioMixer.SetFloat(VolumeProperty, _volume);
-            IsMuted = Volume <= -80f;
+            Apply();
+        }
+
+        public void SetMuted(bool isMuted)
+        {
+            _isGroupMuted = isMuted;
+            Apply();
+        }
+
+        #endregion
+
+        #region Private
+
+        private void Apply()
+        {
+            MixerGroup.audioMixer.SetFloat(VolumeProperty, _isGroupMuted ? MutedVolume : _volume);
+            IsMuted = _isGroupMuted || _volume <= MutedVolume;
         }
 
         #endregion

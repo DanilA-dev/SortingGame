@@ -129,7 +129,7 @@ namespace D_Dev.AudioSystem
         public void MuteAllAudioSources(bool isMute)
         {
             _isMuted = isMute;
-            ApplyMute();
+            SetMuteAllSources(_isMuted);
             OnMuteStateChanged?.Invoke(_isMuted);
             _onMuteAll?.Invoke(_isMuted);
         }
@@ -137,13 +137,13 @@ namespace D_Dev.AudioSystem
         public void MuteMusic(bool isMute)
         {
             _isMusicMuted = isMute;
-            ApplyMute();
+            GetMixerGroup(MixerGroupType.Music)?.SetMuted(isMute);
         }
 
         public void MuteSFX(bool isMute)
         {
             _isSfxMuted = isMute;
-            ApplyMute();
+            GetMixerGroup(MixerGroupType.SFX)?.SetMuted(isMute);
         }
 
         public bool IsMuted => _isMuted;
@@ -219,7 +219,7 @@ namespace D_Dev.AudioSystem
             _musicPoolIdx = (_musicPoolIdx + 1) % _musicPool.Length;
 
             config.SetAudioSource(ref src);
-            src.mute = _isMuted || _isMusicMuted;
+            src.mute = _isMuted;
             src.transform.position = worldPos;
             _activeSources[config] = src;
             src.Play();
@@ -242,21 +242,21 @@ namespace D_Dev.AudioSystem
             _sfxPoolIdx = (_sfxPoolIdx + 1) % _sfxPool.Length;
 
             config.SetAudioSource(ref src);
-            src.mute = _isMuted || _isSfxMuted;
+            src.mute = _isMuted;
             src.transform.position = worldPos;
             _activeSources[config] = src;
             src.Play();
         }
 
-        private void ApplyMute()
+        private void SetMuteAllSources(bool mute)
         {
             if (_sfxPool != null)
                 foreach (var src in _sfxPool)
-                    src.mute = _isMuted || _isSfxMuted;
+                    src.mute = mute;
 
             if (_musicPool != null)
                 foreach (var src in _musicPool)
-                    src.mute = _isMuted || _isMusicMuted;
+                    src.mute = mute;
         }
 
         private void InitPool()

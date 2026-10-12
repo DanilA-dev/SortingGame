@@ -1241,9 +1241,9 @@ MonoBehaviour:
   _sfxButton: {fileID: 1147779498770853878}
   _musicButton: {fileID: 5417120209455056374}
   _lookSensSlider: {fileID: 1723936193259818338}
-  _sfxVolume:
+  _isSfxMuted:
     rid: 5687120665025708232
-  _musicVolume:
+  _isMusicMuted:
     rid: 5687120665025708233
   _lookSens:
     rid: 5687120665025708234
@@ -1387,13 +1387,13 @@ MonoBehaviour:
         _vibratoPunch: 10
         _elasticityPunch: 1
     - rid: 5687120665025708232
-      type: {class: FloatScriptableVariableValue, ns: D_Dev.PolymorphicValueSystem, asm: D-Dev.PolymorphicValueSystem}
+      type: {class: BoolScriptableVariableValue, ns: D_Dev.PolymorphicValueSystem, asm: D-Dev.PolymorphicValueSystem}
       data:
-        _variable: {fileID: 11400000, guid: f461f289454ef02498dae61e0d114b3e, type: 2}
+        _variable: {fileID: 11400000, guid: b2d5f8c3ae6045479f13da82e4b9f062, type: 2}
     - rid: 5687120665025708233
-      type: {class: FloatScriptableVariableValue, ns: D_Dev.PolymorphicValueSystem, asm: D-Dev.PolymorphicValueSystem}
+      type: {class: BoolScriptableVariableValue, ns: D_Dev.PolymorphicValueSystem, asm: D-Dev.PolymorphicValueSystem}
       data:
-        _variable: {fileID: 11400000, guid: 56bd940c94ac3684eb93941677840c40, type: 2}
+        _variable: {fileID: 11400000, guid: a1c4e7b29d5f4836b0e2c9f71d3a8e51, type: 2}
     - rid: 5687120665025708234
       type: {class: FloatScriptableVariableValue, ns: D_Dev.PolymorphicValueSystem, asm: D-Dev.PolymorphicValueSystem}
       data:

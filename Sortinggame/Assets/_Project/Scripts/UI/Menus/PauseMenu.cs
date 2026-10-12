@@ -17,41 +17,44 @@ namespace _Project.Scripts.UI
         [SerializeField] private Slider _lookSensSlider;
         [Space]
         [Title("Values")]
-        [SerializeReference] private PolymorphicValue<float> _sfxVolume = new FloatConstantValue();
-        [SerializeReference] private PolymorphicValue<float> _musicVolume = new FloatConstantValue();
+        [SerializeReference] private PolymorphicValue<bool> _isSfxMuted = new BoolConstantValue();
+        [SerializeReference] private PolymorphicValue<bool> _isMusicMuted = new BoolConstantValue();
         [SerializeReference] private PolymorphicValue<float> _lookSens = new FloatConstantValue();
 
-        [FoldoutGroup("Events")] 
+        [FoldoutGroup("Events")]
         [SerializeField] private UnityEvent _onSfxOn;
-        [FoldoutGroup("Events")] 
+        [FoldoutGroup("Events")]
         [SerializeField] private UnityEvent _onSfxOff;
-        [FoldoutGroup("Events")] 
+        [FoldoutGroup("Events")]
         [SerializeField] private UnityEvent _onMusicOn;
-        [FoldoutGroup("Events")] 
+        [FoldoutGroup("Events")]
         [SerializeField] private UnityEvent _onMusicOff;
 
-        
+
         #endregion
 
         #region Monobehaviour
 
         private void OnEnable()
         {
-            _sfxVolume.OnValueChanged += VolumeSfxChanged;
-            _musicVolume.OnValueChanged += VolumeMusicChanged;
+            _isSfxMuted.OnValueChanged += SfxMutedChanged;
+            _isMusicMuted.OnValueChanged += MusicMutedChanged;
             _lookSensSlider.onValueChanged.AddListener(UpdateLookSensValue);
-            
-            _musicButton.onClick.AddListener(ToggleMusicVolume);
-            _sfxButton.onClick.AddListener(ToggleSfxVolume);
+
+            _musicButton.onClick.AddListener(ToggleMusic);
+            _sfxButton.onClick.AddListener(ToggleSfx);
+
+            SfxMutedChanged(_isSfxMuted.Value);
+            MusicMutedChanged(_isMusicMuted.Value);
         }
         private void OnDisable()
         {
-            _sfxVolume.OnValueChanged -= VolumeSfxChanged;
-            _musicVolume.OnValueChanged -= VolumeMusicChanged;
-            
+            _isSfxMuted.OnValueChanged -= SfxMutedChanged;
+            _isMusicMuted.OnValueChanged -= MusicMutedChanged;
+
             _lookSensSlider.onValueChanged.RemoveListener(UpdateLookSensValue);
-            _musicButton.onClick.RemoveListener(ToggleMusicVolume);
-            _sfxButton.onClick.RemoveListener(ToggleSfxVolume);
+            _musicButton.onClick.RemoveListener(ToggleMusic);
+            _sfxButton.onClick.RemoveListener(ToggleSfx);
         }
 
         #endregion
@@ -64,53 +67,28 @@ namespace _Project.Scripts.UI
         }
 
         #endregion
-        
+
         #region Listeners
 
-        private void VolumeMusicChanged(float volume)
+        private void MusicMutedChanged(bool isMuted)
         {
-            if(volume >= 0)
-                _onMusicOn?.Invoke();
-            else
+            if (isMuted)
                 _onMusicOff?.Invoke();
+            else
+                _onMusicOn?.Invoke();
         }
 
-        private void VolumeSfxChanged(float volume)
+        private void SfxMutedChanged(bool isMuted)
         {
-            if(volume >= 0)
-                _onSfxOn?.Invoke();
-            else
+            if (isMuted)
                 _onSfxOff?.Invoke();
+            else
+                _onSfxOn?.Invoke();
         }
 
-        private void ToggleSfxVolume()
-        {
-            if (_sfxVolume.Value >= 0)
-            {
-                _sfxVolume.Value = -80;
-                VolumeSfxChanged(_sfxVolume.Value);
-            }
-            else
-            {
-                _sfxVolume.Value = 0;
-                VolumeSfxChanged(-_sfxVolume.Value);
-            }
-        }
+        private void ToggleSfx() => _isSfxMuted.Value = !_isSfxMuted.Value;
+        private void ToggleMusic() => _isMusicMuted.Value = !_isMusicMuted.Value;
 
-        private void ToggleMusicVolume()
-        {
-            if (_musicVolume.Value >= 0)
-            {
-                _musicVolume.Value = -80;
-                VolumeMusicChanged(_musicVolume.Value);
-            }
-            else
-            {
-                _musicVolume.Value = 0;
-                VolumeMusicChanged(_musicVolume.Value);
-            }
-        }
-        
         #endregion
     }
 }
