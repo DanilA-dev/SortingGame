@@ -1,3 +1,4 @@
+using D_Dev.PolymorphicValueSystem;
 using GamePush;
 using Sirenix.OdinInspector;
 using UnityEngine;
@@ -9,14 +10,15 @@ namespace _Project.Scripts.SDK
     {
         #region Fields
 
+        [Title("Values")]
+        [SerializeReference] private PolymorphicValue<bool> _isMusicMuted = new BoolConstantValue();
+        [SerializeReference] private PolymorphicValue<bool> _isSfxMuted = new BoolConstantValue();
+
         [FoldoutGroup("Events")]
         [SerializeField] private UnityEvent<bool> _onMuteChanged;
-        [FoldoutGroup("Events")]
-        [SerializeField] private UnityEvent<bool> _onMusicMuteChanged;
-        [FoldoutGroup("Events")]
-        [SerializeField] private UnityEvent<bool> _onSfxMuteChanged;
 
         private bool _isWaitingForSdk;
+        private bool _isApplyingFromSdk;
 
         #endregion
 
@@ -30,6 +32,9 @@ namespace _Project.Scripts.SDK
             GP_Sounds.OnUnmuteMusic += OnUnmuteMusic;
             GP_Sounds.OnMuteSFX += OnMuteSfx;
             GP_Sounds.OnUnmuteSFX += OnUnmuteSfx;
+
+            _isMusicMuted.OnValueChanged += OnMusicMutedChanged;
+            _isSfxMuted.OnValueChanged += OnSfxMutedChanged;
         }
 
         private void OnDisable()
@@ -40,6 +45,9 @@ namespace _Project.Scripts.SDK
             GP_Sounds.OnUnmuteMusic -= OnUnmuteMusic;
             GP_Sounds.OnMuteSFX -= OnMuteSfx;
             GP_Sounds.OnUnmuteSFX -= OnUnmuteSfx;
+
+            _isMusicMuted.OnValueChanged -= OnMusicMutedChanged;
+            _isSfxMuted.OnValueChanged -= OnSfxMutedChanged;
         }
 
         private void Start()
@@ -67,8 +75,26 @@ namespace _Project.Scripts.SDK
         private void ApplyCurrentState()
         {
             _onMuteChanged?.Invoke(GP_Sounds.IsMuted(SoundType.All));
-            _onMusicMuteChanged?.Invoke(GP_Sounds.IsMuted(SoundType.Music));
-            _onSfxMuteChanged?.Invoke(GP_Sounds.IsMuted(SoundType.SFX));
+            SetFromSdk(_isMusicMuted, GP_Sounds.IsMuted(SoundType.Music));
+            SetFromSdk(_isSfxMuted, GP_Sounds.IsMuted(SoundType.SFX));
+        }
+
+        private void SetFromSdk(PolymorphicValue<bool> value, bool isMuted)
+        {
+            _isApplyingFromSdk = true;
+            value.Value = isMuted;
+            _isApplyingFromSdk = false;
+        }
+
+        private void PushToSdk(SoundType type, bool isMuted)
+        {
+            if (_isApplyingFromSdk || !GP_Init.isReady || GP_Sounds.IsMuted(type) == isMuted)
+                return;
+
+            if (isMuted)
+                GP_Sounds.Mute(type);
+            else
+                GP_Sounds.Unmute(type);
         }
 
         #endregion
@@ -84,10 +110,13 @@ namespace _Project.Scripts.SDK
 
         private void OnMute() => _onMuteChanged?.Invoke(true);
         private void OnUnmute() => _onMuteChanged?.Invoke(false);
-        private void OnMuteMusic() => _onMusicMuteChanged?.Invoke(true);
-        private void OnUnmuteMusic() => _onMusicMuteChanged?.Invoke(false);
-        private void OnMuteSfx() => _onSfxMuteChanged?.Invoke(true);
-        private void OnUnmuteSfx() => _onSfxMuteChanged?.Invoke(false);
+        private void OnMuteMusic() => SetFromSdk(_isMusicMuted, true);
+        private void OnUnmuteMusic() => SetFromSdk(_isMusicMuted, false);
+        private void OnMuteSfx() => SetFromSdk(_isSfxMuted, true);
+        private void OnUnmuteSfx() => SetFromSdk(_isSfxMuted, false);
+
+        private void OnMusicMutedChanged(bool isMuted) => PushToSdk(SoundType.Music, isMuted);
+        private void OnSfxMutedChanged(bool isMuted) => PushToSdk(SoundType.SFX, isMuted);
 
         #endregion
     }
