@@ -14,12 +14,12 @@ namespace D_Dev.PlayerStateController
         [Title("Camera Settings")]
         [SerializeField] private InputRouter _inputRouter;
         [SerializeField] private InputActionReference _lookAction;
+        [SerializeReference] private PolymorphicValue<bool> _allowRotation = new BoolConstantValue() { Value = true};
         [SerializeReference] private PolymorphicValue<Transform> _cameraRoot = new TransformConstantValue();
         [SerializeReference] private PolymorphicValue<float> _topAngle = new FloatConstantValue() { Value = 80};
         [SerializeReference] private PolymorphicValue<float> _botAngle = new FloatConstantValue() { Value = -80};
         [SerializeReference] private PolymorphicValue<float> _stickRotationSpeed = new FloatConstantValue() { Value = 100};
         [SerializeReference] private PolymorphicValue<float> _mouseSensitivity = new FloatConstantValue() { Value = 3 };
-        [SerializeReference] private PolymorphicValue<bool> _isLocked = new BoolConstantValue();
 
         private InputAction _resolvedLook;
         private Vector2 _currentLookInput;
@@ -81,7 +81,7 @@ namespace D_Dev.PlayerStateController
 
         private void UpdateCameraRotation()
         {
-            if (_currentLookInput != Vector2.zero && !_isLocked.Value)
+            if (_currentLookInput != Vector2.zero && _allowRotation.Value)
             {
                 float multiplier = _isLookFromPointer
                     ? _mouseSensitivity.Value

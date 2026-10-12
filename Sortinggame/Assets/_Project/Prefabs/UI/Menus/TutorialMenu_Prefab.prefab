@@ -1251,14 +1251,16 @@ MonoBehaviour:
                 m_BoolArgument: 1
               m_CallState: 2
     - rid: 5687120651950753510
-      type: {class: WaitUntilGameObjectValueExists, ns: D_Dev.PolymorphicValueSystem.Actions, asm: D-Dev.PolymorphicValueSystem.Extensions}
+      type: {class: WaitUntilGameObjectValueActionExists, ns: D_Dev.PolymorphicValueSystem.Actions, asm: D-Dev.PolymorphicValueSystem.Extensions}
       data:
         _actionName: Wait Until Has Selected Item
         OnUndo:
           m_PersistentCalls:
             m_Calls: []
-        _value:
-          rid: 5687120651950753512
+        _condition:
+          _value:
+            rid: 5687120651950753512
+          _isExists: 1
     - rid: 5687120651950753512
       type: {class: GameObjectScriptableVariableValue, ns: D_Dev.PolymorphicValueSystem, asm: D-Dev.PolymorphicValueSystem}
       data:

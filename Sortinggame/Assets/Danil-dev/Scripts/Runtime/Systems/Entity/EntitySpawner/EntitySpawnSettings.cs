@@ -239,7 +239,7 @@ namespace D_Dev.EntitySpawner
             GameObject returnObj = null;
             if (_usePool)
             {
-                returnObj = _pool?.Get().gameObject;
+                returnObj = GetAlivePoolObject()?.gameObject;
                 if (returnObj != null && _applyPosConfigOnGet)
                 {
                     returnObj.transform.position = _positionSettings.GetPosition();
@@ -297,7 +297,10 @@ namespace D_Dev.EntitySpawner
                 },
                 actionOnGet: p =>
                 {
-                    if (p != null && p.gameObject != null && !p.gameObject.activeInHierarchy)
+                    if (p == null)
+                        return;
+
+                    if (!p.gameObject.activeInHierarchy)
                         p.gameObject.SetActive(true);
 
                     p.Get();
@@ -322,6 +325,7 @@ namespace D_Dev.EntitySpawner
             obj.transform.position = _positionSettings.GetPosition() + _positionOffset;
             obj.transform.rotation = _rotationSettings.GetRotation();
             Physics.SyncTransforms();
+            BindEntityInfo(obj);
             obj.SetActive(forceInactive ? false : _setActiveOnStart);
 
             if (obj.TryGetComponent(out RuntimeEntityVariablesContainer runtimeEntityVariablesContainer))
@@ -349,6 +353,7 @@ namespace D_Dev.EntitySpawner
             obj.transform.position = _positionSettings.GetPosition() + _positionOffset;
             obj.transform.rotation = _rotationSettings.GetRotation();
             Physics.SyncTransforms();
+            BindEntityInfo(obj);
             obj.SetActive(_setActiveOnStart);
 
             if (obj.TryGetComponent(out RuntimeEntityVariablesContainer runtimeEntityVariablesContainer))
@@ -364,12 +369,31 @@ namespace D_Dev.EntitySpawner
             return obj;
         }
 
+        private void BindEntityInfo(GameObject obj)
+        {
+            if (!obj.TryGetComponent(out EntityInfoRouter router))
+                router = obj.AddComponent<EntityInfoRouter>();
+
+            router.Bind(_data.Value);
+        }
+
         private void OnPoolableEntityDestroyed(PoolableObject poolableObject)
         {
             poolableObject.OnEntityRelease.RemoveListener(OnPoolableEntityReleased);
             poolableObject.OnEntityDestroy.RemoveListener(OnPoolableEntityDestroyed);
-            _pool.Release(poolableObject);
             _poolableEntities.TryRemove(poolableObject);
+        }
+
+        private PoolableObject GetAlivePoolObject()
+        {
+            if (_pool == null)
+                return null;
+
+            var poolableObject = _pool.Get();
+            while (poolableObject == null && _pool.CountInactive > 0)
+                poolableObject = _pool.Get();
+
+            return poolableObject != null ? poolableObject : _pool.Get();
         }
 
         private void OnPoolableEntityReleased(PoolableObject poolableObject)

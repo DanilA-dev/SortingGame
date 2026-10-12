@@ -17,46 +17,47 @@ namespace D_Dev.InventorySystem
         public int Index { get; set; }
         public InventoryItem Data => _data;
         public bool IsEmpty => Data.IsEmpty;
-        public bool IsFull => !IsEmpty && Data.CurrentAmount >= Data.Info.MaxAmount;
+        public bool IsFull => !IsEmpty && Data.Info.IsStackLimited && Data.CurrentAmount >= Data.Info.MaxAmount;
 
         #endregion
 
         #region Public
 
-        public bool CanBeOccupied()
+        public bool CanAdd(InventoryItemEntityInfo itemInfo)
         {
-            return IsEmpty || !IsFull;
+            if (itemInfo == null)
+                return false;
+
+            return IsEmpty || (Data.Info == itemInfo && !IsFull);
         }
 
-        public bool TryAdd(InventoryItem item)
+        public int Add(InventoryItemEntityInfo itemInfo, int amount)
         {
-            if (!CanBeOccupied())
-                return false;
+            if (amount <= 0 || !CanAdd(itemInfo))
+                return 0;
 
-            var canAddAmount = item.CurrentAmount;
-            if (canAddAmount == 0)
-                return false;
-            
-            _data = IsEmpty 
-                ? new InventoryItem(item.Info, canAddAmount) 
-                : new InventoryItem(Data.Info, Data.CurrentAmount + canAddAmount);
+            var currentAmount = IsEmpty ? 0 : Data.CurrentAmount;
+            var addedAmount = itemInfo.IsStackLimited ? Mathf.Min(amount, itemInfo.MaxAmount - currentAmount) : amount;
+            if (addedAmount <= 0)
+                return 0;
 
+            _data = new InventoryItem(itemInfo, currentAmount + addedAmount);
             OnContentChanged?.Invoke(Data);
-            return true;
+            return addedAmount;
         }
 
-        public bool TryRemove(int amount)
+        public int Remove(int amount)
         {
             if (IsEmpty || amount <= 0)
-                return false;
+                return 0;
 
-            var canTakeAmount = Mathf.Min(amount, Data.CurrentAmount);
-            _data = Data.CurrentAmount == canTakeAmount 
+            var removedAmount = Mathf.Min(amount, Data.CurrentAmount);
+            _data = Data.CurrentAmount == removedAmount 
                 ? new InventoryItem(null, 0) 
-                : new InventoryItem(Data.Info, Data.CurrentAmount - canTakeAmount);
+                : new InventoryItem(Data.Info, Data.CurrentAmount - removedAmount);
 
             OnContentChanged?.Invoke(Data);
-            return true;
+            return removedAmount;
         }
 
         public void Clear()

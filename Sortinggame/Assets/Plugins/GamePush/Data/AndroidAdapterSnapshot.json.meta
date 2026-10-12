@@ -1,6 +1,11 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Sortinggame/Assets/Plugins/GamePush/Data/AndroidAdapterSnapshot.json.meta
 guid: a4e9a3f0b72711848b23bce6cb089020
 TextScriptImporter:
+========
+guid: a695df29e06c46d2b3e439fd15e72875
+AssemblyDefinitionImporter:
+>>>>>>>> main:Sortinggame/Assets/Danil-dev/Scripts/Editor/Integrations/PluginYG2/D-Dev.PluginYG2.Editor.asmdef.meta
   externalObjects: {}
   userData: 
   assetBundleName: 

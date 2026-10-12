@@ -22,7 +22,7 @@ namespace D_Dev.MovementHandler
 
         public override void OnUpdate()
         {
-            if (_characterController == null)
+            if (_characterController == null || !_characterController.enabled)
                 return;
 
             if (Direction.magnitude > 0.1f)

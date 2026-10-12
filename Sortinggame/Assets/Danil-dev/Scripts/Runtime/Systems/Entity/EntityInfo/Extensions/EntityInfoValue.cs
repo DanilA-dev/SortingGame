@@ -20,6 +20,19 @@ namespace D_Dev.Entity.Extensions
     }
 
     [System.Serializable]
+    public sealed class EntityInfoScriptableVariableValue : ScriptableVariableValue<EntityInfoScriptableVariable, EntityInfo>
+    {
+        #region Cloning
+
+        public override PolymorphicValue<EntityInfo> Clone()
+        {
+            return new EntityInfoScriptableVariableValue { _variable = _variable };
+        }
+
+        #endregion
+    }
+
+    [System.Serializable]
     public class EntityInfoRuntimeVariableValue : EntityRuntimeVariableValue<EntityInfoEntityVariable, EntityInfo>
     {
         #region Clone

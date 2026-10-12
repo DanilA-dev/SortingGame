@@ -509,9 +509,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1682688368}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5d3878f8923c452cbbf15ea9112cd423, type: 3}
+  m_Script: {fileID: 11500000, guid: b1223df8329689241ba6a3cfe71a64c5, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::_Project.Scripts.SDK.YG2Handler
+  m_EditorClassIdentifier: Assembly-CSharp::D_Dev.PluginYG2.YG2Handler
 --- !u!4 &1682688370
 Transform:
   m_ObjectHideFlags: 0

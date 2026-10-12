@@ -1,0 +1,24 @@
+{
+    "name": "D-Dev.InventorySystem.UI",
+    "rootNamespace": "",
+    "references": [
+        "D-Dev.InventorySystem",
+        "D-Dev.InventorySystem.Extensions",
+        "D-Dev.PolymorphicValueSystem",
+        "D-Dev.Menu",
+        "D-Dev.EntityInfo",
+        "D-Dev.EntityInfo.Extensions",
+        "D-Dev.ScriptableVariables",
+        "Unity.TextMeshPro",
+        "UnityEngine.UI"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
