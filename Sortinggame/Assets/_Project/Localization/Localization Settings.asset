@@ -13,9 +13,8 @@ MonoBehaviour:
   m_Name: Localization Settings
   m_EditorClassIdentifier: Unity.Localization::UnityEngine.Localization.Settings.LocalizationSettings
   m_StartupSelectors:
-  - rid: 5687120668477104999
-  - rid: 5687120668477104906
   - rid: 5687120668477104907
+  - rid: 5687120668477104906
   - rid: 5687120668477104908
   m_AvailableLocales:
     rid: 5687120668477104909
@@ -46,9 +45,6 @@ MonoBehaviour:
       data:
         m_LocaleId:
           m_Code: en
-    - rid: 5687120668477104999
-      type: {class: YG2StartupLocaleSelector, ns: D_Dev.PluginYG2, asm: Assembly-CSharp}
-      data:
     - rid: 5687120668477104909
       type: {class: LocalesProvider, ns: UnityEngine.Localization.Settings, asm: Unity.Localization}
       data: 
