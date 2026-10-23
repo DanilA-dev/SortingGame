@@ -1898,7 +1898,6 @@ GameObject:
   - component: {fileID: 5760673000573380940}
   - component: {fileID: 5758621454218736506}
   - component: {fileID: 7412589630147852369}
-  - component: {fileID: 8812589630147852371}
   m_Layer: 0
   m_Name: BuyShopItemPanel_Prefab
   m_TagString: Untagged
@@ -1980,19 +1979,7 @@ MonoBehaviour:
   _adsButton: {fileID: 6532624607632429263}
   OnPurchased:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 8812589630147852371}
-        m_TargetAssemblyTypeName: D_Dev.CustomEventManager.EventInvoker, D-Dev.EventBehaviours
-        m_MethodName: Raise
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument:
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   OnNotEnoughCurrency:
     m_PersistentCalls:
       m_Calls:
@@ -2020,30 +2007,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &8812589630147852371
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5791617769570922583}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 55962e55d7934bfcaf9652b09ecb0f6f, type: 3}
-  m_Name:
-  m_EditorClassIdentifier: D-Dev.EventBehaviours::D_Dev.CustomEventManager.EventInvoker
-  _eventNameTypes:
-  - rid: 5687120651950760001
-  _invokeOnStart: 0
-  _invokeOnlyOnce: 0
-  _debug: 0
-  references:
-    version: 2
-    RefIds:
-    - rid: 5687120651950760001
-      type: {class: StringVariableEventNameType, ns: D_Dev.CustomEventManager, asm: D-Dev.EventBehaviours}
-      data:
-        _variable: {fileID: 11400000, guid: 7d3b9e1f2a6c4e58b0f41c9a8e2d6b73, type: 2}
 --- !u!1 &6071220412833568294
 GameObject:
   m_ObjectHideFlags: 0

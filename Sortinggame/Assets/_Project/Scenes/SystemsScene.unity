@@ -1147,7 +1147,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 59874416908739532, guid: e3142c9b72d8fb147ae2eb4db4a9847a, type: 3}
       propertyPath: managedReferences[5687120809725001812]._minSyncInterval
-      value: 15
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 6197869098031699101, guid: e3142c9b72d8fb147ae2eb4db4a9847a, type: 3}
       propertyPath: m_Name
