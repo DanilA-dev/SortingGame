@@ -41,7 +41,6 @@ namespace _Project.Scripts.SDK
 
             _isSubscribed = true;
             
-            GP_Ads.ShowSticky();
             GP_Init.OnReady += OnSdkReady;
             GP_Init.OnError += OnSdkError;
         }
@@ -105,6 +104,7 @@ namespace _Project.Scripts.SDK
             if (_callGameReadyOnInit)
                 CallGameReady();
 
+            GP_Ads.ShowSticky();
             _onReady?.Invoke();
         }
 
