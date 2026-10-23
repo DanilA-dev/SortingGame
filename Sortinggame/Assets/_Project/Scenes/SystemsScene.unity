@@ -334,10 +334,19 @@ MonoBehaviour:
   _createInstanceIfNotFound: 0
   _loadAllTypesOnStart: 1
   _adsModules:
+  - rid: 5687120990000501
   - rid: 5687121073549082708
   references:
     version: 2
     RefIds:
+    - rid: 5687120990000501
+      type: {class: YandexMobileAdsModule, ns: _Project.Scripts.SDK, asm: Assembly-CSharp}
+      data:
+        _rewardedAdUnitId: demo-rewarded-yandex
+        _interstitialAdUnitId: demo-interstitial-yandex
+        _bannerAdUnitId: demo-banner-yandex
+        _ageRestricted: 0
+        _reloadDelay: 10
     - rid: 5687121073549082708
       type: {class: DebugAdsModule, ns: D_Dev.AdsService, asm: D-Dev.AdsService}
       data:
