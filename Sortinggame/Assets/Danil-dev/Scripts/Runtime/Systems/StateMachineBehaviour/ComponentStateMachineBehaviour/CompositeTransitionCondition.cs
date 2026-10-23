@@ -5,7 +5,7 @@ using D_Dev.StateMachine;
 
 namespace D_Dev.StateMachineBehaviour
 {
-    public class CompositeTransitionCondition : IStateCondition, IFixedStateCondition
+    public class CompositeTransitionCondition : IStateCondition, IFixedStateCondition, IResettableStateCondition
     {
         #region Fields
 

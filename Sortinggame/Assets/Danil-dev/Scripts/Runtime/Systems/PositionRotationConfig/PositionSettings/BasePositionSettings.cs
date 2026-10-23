@@ -31,17 +31,22 @@ namespace D_Dev.PositionRotationConfig
     {
         #region Fields
 
-        [Title("Random")]
+        [FoldoutGroup("Random"), PropertyOrder(100)]
         [SerializeField] private RandomPositionMode _randomMode;
+        [FoldoutGroup("Random"), PropertyOrder(100)]
         [ShowIf(nameof(_randomMode), RandomPositionMode.Sphere)]
         [SerializeField] private float _radius;
+        [FoldoutGroup("Random"), PropertyOrder(100)]
         [ShowIf(nameof(_randomMode), RandomPositionMode.Box)]
         [SerializeField] private Vector3 _boxSize = Vector3.one;
+        [FoldoutGroup("Random"), PropertyOrder(100)]
         [ShowIf(nameof(IsRandom))]
         [SerializeField] private AxisUpdate _axis = AxisUpdate.All;
 
+        [FoldoutGroup("Random"), PropertyOrder(100)]
         [ShowIf(nameof(IsRandom))]
         [SerializeField] private bool _drawGizmos = true;
+        [FoldoutGroup("Random"), PropertyOrder(100)]
         [ShowIf(nameof(ShowGizmoColor))]
         [SerializeField] private Color _gizmoColor = new(0f, 1f, 0.5f, 0.8f);
 

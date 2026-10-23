@@ -61,8 +61,11 @@ namespace D_Dev.TransformFollower
         
         private bool _positionUpdatedOnce;
         private bool _rotationUpdatedOnce;
-        
+        private bool _hasTargetPosition;
+        private bool _hasStartPosition;
+
         private Vector3 _targetPosition;
+        private Vector3 _startPosition;
 
         #endregion
 
@@ -83,10 +86,11 @@ namespace D_Dev.TransformFollower
 
         protected virtual void OnUpdate()
         {
-            if (!IsObjectToFollowNull() && Time.time - _lastTickTime >= _tickInterval)
+            if (!IsObjectToFollowNull() && (!_hasTargetPosition || Time.time - _lastTickTime >= _tickInterval))
             {
                 _targetPosition = _objectToFollow.Value.position;
                 _lastTickTime = Time.time;
+                _hasTargetPosition = true;
             }
             
             UpdatePosition();
@@ -95,23 +99,34 @@ namespace D_Dev.TransformFollower
 
         private void UpdatePosition()
         {
-            if (!_updatePosition || IsFollowerNull())
+            if (!_updatePosition || IsFollowerNull() || !_hasTargetPosition)
                 return;
 
             if (_updatePositionOnceOnStart && _positionUpdatedOnce)
                 return;
 
-            Vector3 currentPos = _follower.Value.position;
-            Vector3 targetPos = FilterAxis(_targetPosition + _positionOffset, currentPos, _posAxisUpdate);
-            _follower.Value.position = Vector3.Lerp(currentPos, targetPos, _positionSpeed * Time.deltaTime);
+            var follower = _follower.Value;
+            if (!_hasStartPosition)
+            {
+                _startPosition = follower.position;
+                _hasStartPosition = true;
+            }
+
+            Vector3 targetPos = FilterAxis(_targetPosition, _startPosition, _posAxisUpdate) + _positionOffset;
 
             if (_updatePositionOnceOnStart)
+            {
+                follower.position = targetPos;
                 _positionUpdatedOnce = true;
+                return;
+            }
+
+            follower.position = Vector3.Lerp(follower.position, targetPos, _positionSpeed * Time.deltaTime);
         }
 
         private void UpdateRotation()
         {
-            if (!_updateRotation || IsFollowerNull() || IsObjectToFollowNull())
+            if (!_updateRotation || IsFollowerNull() || !_hasTargetPosition)
                 return;
 
             if (_updateRotationOnceOnStart && _rotationUpdatedOnce)
@@ -120,10 +135,17 @@ namespace D_Dev.TransformFollower
             Vector3 direction = _targetPosition - _follower.Value.position;
             Vector3 filteredDirection = FilterAxis(direction, _follower.Value.forward, _rotAxisUpdate);
             filteredDirection = Vector3.Scale(filteredDirection, _rotationMultiplier);
-            _rotationHandler?.RotateTowards(filteredDirection, _rotationSpeed, false);
 
             if (_updateRotationOnceOnStart)
+            {
+                if (filteredDirection.sqrMagnitude > 0.0001f)
+                    _rotationHandler?.SetRotation(Quaternion.LookRotation(filteredDirection, Vector3.up));
+
                 _rotationUpdatedOnce = true;
+                return;
+            }
+
+            _rotationHandler?.RotateTowards(filteredDirection, _rotationSpeed, false);
         }
 
         private Vector3 FilterAxis(Vector3 target, Vector3 current, AxisUpdate axisUpdate)

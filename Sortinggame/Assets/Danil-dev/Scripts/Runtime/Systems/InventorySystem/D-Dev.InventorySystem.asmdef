@@ -2,7 +2,8 @@
     "name": "D-Dev.InventorySystem",
     "rootNamespace": "",
     "references": [
-        "GUID:a0f06407a79e8734a94202f0d6b4d6b2"
+        "GUID:a0f06407a79e8734a94202f0d6b4d6b2",
+        "GUID:ba7d088f93a8e1649b9edc0955fab802"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],
@@ -13,4 +14,4 @@
     "defineConstraints": [],
     "versionDefines": [],
     "noEngineReferences": false
-}
+}

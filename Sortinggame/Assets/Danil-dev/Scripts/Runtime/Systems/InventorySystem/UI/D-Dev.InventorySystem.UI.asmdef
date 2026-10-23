@@ -8,6 +8,7 @@
         "D-Dev.Menu",
         "D-Dev.EntityInfo",
         "D-Dev.EntityInfo.Extensions",
+        "D-Dev.EntityVariable",
         "D-Dev.ScriptableVariables",
         "Unity.TextMeshPro",
         "UnityEngine.UI"

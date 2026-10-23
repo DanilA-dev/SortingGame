@@ -13,8 +13,10 @@ namespace D_Dev.PopupSystem
         #region Fields
 
         [Title("Components")]
-        [SerializeField] private TMP_Text _text;
-        [SerializeField] private Image _icon;
+        [SerializeField] private bool _hasDynamicText;
+        [SerializeField, ShowIf(nameof(_hasDynamicText))] private TMP_Text _text;
+        [SerializeField] private bool _hasDynamicSprite;
+        [SerializeField, ShowIf(nameof(_hasDynamicSprite))] private Image _icon;
         [SerializeField, Required] private TweenPlayer _showAnimation;
 
         private Transform _target;
@@ -36,18 +38,11 @@ namespace D_Dev.PopupSystem
 
         #region Public
 
-        public void Show(PopupData data, Vector3 position)
+        public void Show(PopupData data, Vector3 position, Quaternion rot = default)
         {
             _target = null;
             transform.position = position;
-            Play(data);
-        }
-
-        public void Show(PopupData data, Transform target, Vector3 offset)
-        {
-            _target = target;
-            _offset = offset;
-            transform.position = target != null ? target.position + offset : offset;
+            transform.rotation = rot;
             Play(data);
         }
 
@@ -73,19 +68,11 @@ namespace D_Dev.PopupSystem
 
         private void ApplyData(PopupData data)
         {
-            if (_text != null)
-            {
-                var hasText = !string.IsNullOrEmpty(data.Text);
-                _text.gameObject.SetActive(hasText);
+            if (_hasDynamicText && _text != null)
                 _text.text = data.Text;
-            }
 
-            if (_icon != null)
-            {
-                var hasIcon = data.Icon != null;
-                _icon.gameObject.SetActive(hasIcon);
+            if (_hasDynamicSprite && _icon != null)
                 _icon.sprite = data.Icon;
-            }
         }
 
         #endregion

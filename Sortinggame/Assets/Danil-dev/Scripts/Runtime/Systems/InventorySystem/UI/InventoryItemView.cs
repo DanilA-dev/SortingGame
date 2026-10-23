@@ -43,11 +43,13 @@ namespace D_Dev.InventorySystem.UI
             SetIcon(item.Info);
             SetName(item.Info);
             SetAmount(item.CurrentAmount);
+            OnSet(item);
         }
 
         public void Clear()
         {
             Item = default;
+            OnClear();
 
             if (_icon != null)
                 _icon.sprite = null;
@@ -93,6 +95,13 @@ namespace D_Dev.InventorySystem.UI
                 ? string.Format(_amountFormat, amount)
                 : string.Empty;
         }
+
+        #endregion
+
+        #region Virtual
+
+        protected virtual void OnSet(InventoryItem item) {}
+        protected virtual void OnClear() {}
 
         #endregion
     }

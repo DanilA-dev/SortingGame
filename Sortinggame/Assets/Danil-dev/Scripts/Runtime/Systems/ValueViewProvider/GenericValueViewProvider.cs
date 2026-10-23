@@ -1,5 +1,6 @@
 using System;
 using System.Globalization;
+using D_Dev.Extensions;
 using D_Dev.TweenAnimations;
 using Sirenix.OdinInspector;
 using TMPro;
@@ -14,6 +15,9 @@ namespace D_Dev.ValueViewProvider
 
         [SerializeField] protected TMP_Text _text;
         [SerializeField] protected string _format;
+        [SerializeField] protected bool _shortNumber;
+        [ShowIf(nameof(_shortNumber))]
+        [SerializeField] protected int _shortNumberDecimals = 1;
         [SerializeField] protected bool _isAnimated;
         [ShowIf(nameof(_isAnimated))]
         [PropertyOrder(100)]
@@ -74,6 +78,13 @@ namespace D_Dev.ValueViewProvider
             if (value == null)
                 return string.Empty;
 
+            if (_shortNumber && TryGetShortNumber(value, out var shortNumber))
+            {
+                return _format != null && _format.Contains("{0")
+                    ? string.Format(CultureInfo.InvariantCulture, _format, shortNumber)
+                    : shortNumber;
+            }
+
             if (string.IsNullOrEmpty(_format))
                 return value.ToString();
 
@@ -89,6 +100,20 @@ namespace D_Dev.ValueViewProvider
         #endregion
 
         #region Private
+
+        private bool TryGetShortNumber(TValue value, out string shortNumber)
+        {
+            shortNumber = value switch
+            {
+                int intValue => intValue.ToShortString(_shortNumberDecimals),
+                long longValue => longValue.ToShortString(_shortNumberDecimals),
+                float floatValue => floatValue.ToShortString(_shortNumberDecimals),
+                double doubleValue => doubleValue.ToShortString(_shortNumberDecimals),
+                _ => null
+            };
+
+            return shortNumber != null;
+        }
 
         private string OnAnimatedValueApplied(TValue value)
         {

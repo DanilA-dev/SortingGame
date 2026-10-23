@@ -15,8 +15,9 @@ namespace D_Dev.Utility
     {
         #region Fields
 
-        [SerializeField] private DebugMode _debugMode = DebugMode.All;
+        [SerializeField] private DebugMode _editorDebugMode = DebugMode.All;
         [SerializeField] private DebugMode _releaseDebugMode = DebugMode.OnlyExceptions;
+        [SerializeField] private UnityEvent _onReleaseBuild;
         [SerializeField] private UnityEvent _onDevelopmentBuild;
 
         #endregion
@@ -27,9 +28,10 @@ namespace D_Dev.Utility
         {
 #if !UNITY_EDITOR && !DEVELOPMENT_BUILD
             Apply(_releaseDebugMode);
+            _onReleaseBuild?.Invoke();
             return;
 #endif
-            Apply(_debugMode);
+            Apply(_editorDebugMode);
 
 #if DEVELOPMENT_BUILD
             _onDevelopmentBuild?.Invoke();
@@ -39,7 +41,7 @@ namespace D_Dev.Utility
 #if UNITY_EDITOR
         private void OnValidate()
         {
-            Apply(_debugMode);
+            Apply(_editorDebugMode);
         }
 #endif
 
@@ -49,7 +51,7 @@ namespace D_Dev.Utility
 
         public void SetMode(DebugMode mode)
         {
-            _debugMode = mode;
+            _editorDebugMode = mode;
             Apply(mode);
         }
 

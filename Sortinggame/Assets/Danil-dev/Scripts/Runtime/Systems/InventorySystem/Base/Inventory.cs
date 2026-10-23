@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using D_Dev.PolymorphicValueSystem;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
@@ -9,25 +10,30 @@ namespace D_Dev.InventorySystem
     {
         #region Fields
 
-        [SerializeField] private int slotsCount;
+        [SerializeReference] private PolymorphicValue<int> _slotsCount = new IntConstantValue();
 
         private readonly Dictionary<int, IInventoryCell> _cells = new();
 
         public event Action<InventoryItemEntityInfo, int> OnItemAdded;
         public event Action<InventoryItemEntityInfo, int> OnItemRemoved;
+        public event Action OnCellsChanged;
 
         #endregion
 
         #region Properties
 
         public Dictionary<int, IInventoryCell> Cells => _cells;
+        public bool IsFull => GetFreeCellsCount() == 0;
 
         #endregion
 
         #region Monobehaviour
 
-        private void Awake() => InitializeCells();
+        private void Awake() => ResizeCells(_slotsCount.Value);
 
+        private void OnEnable() => _slotsCount.OnValueChanged += OnSlotsCountChanged;
+
+        private void OnDisable() => _slotsCount.OnValueChanged -= OnSlotsCountChanged;
 
         #endregion
 
@@ -71,6 +77,53 @@ namespace D_Dev.InventorySystem
             return true;
         }
 
+        public bool TransferTo(Inventory target, InventoryItemEntityInfo itemInfo, int amount)
+        {
+            if (target == null || target == this || GetAmount(itemInfo) < amount || !target.CanAdd(itemInfo, amount))
+                return false;
+
+            return RemoveItem(itemInfo, amount) && target.AddItem(itemInfo, amount);
+        }
+
+        public bool CanAdd(InventoryItemEntityInfo itemInfo, int amount)
+        {
+            if (itemInfo == null || amount <= 0)
+                return false;
+
+            if (!itemInfo.IsStackLimited)
+            {
+                foreach (var cell in Cells.Values)
+                {
+                    if (cell.CanAdd(itemInfo))
+                        return true;
+                }
+                return false;
+            }
+
+            var freeSpace = 0;
+            foreach (var cell in Cells.Values)
+            {
+                if (!cell.CanAdd(itemInfo))
+                    continue;
+
+                freeSpace += itemInfo.MaxAmount - (cell.IsEmpty ? 0 : cell.Data.CurrentAmount);
+                if (freeSpace >= amount)
+                    return true;
+            }
+            return false;
+        }
+
+        public int GetFreeCellsCount()
+        {
+            var count = 0;
+            foreach (var cell in Cells.Values)
+            {
+                if (cell.IsEmpty)
+                    count++;
+            }
+            return count;
+        }
+
         public bool HasItem(InventoryItemEntityInfo itemInfo) => GetAmount(itemInfo) > 0;
 
         public int GetAmount(InventoryItemEntityInfo itemInfo)
@@ -91,13 +144,26 @@ namespace D_Dev.InventorySystem
 
         #region Private
 
-        private void InitializeCells()
+        private bool ResizeCells(int count)
         {
-            for (int i = 0; i < slotsCount; i++)
+            var changed = false;
+
+            for (int i = _cells.Count; i < count; i++)
             {
-                var cell = new InventoryCell { Index = i };
-                _cells[i] = cell;
+                _cells[i] = new InventoryCell { Index = i };
+                changed = true;
             }
+
+            for (int i = _cells.Count - 1; i >= Mathf.Max(count, 0); i--)
+            {
+                if (!_cells[i].IsEmpty)
+                    break;
+
+                _cells.Remove(i);
+                changed = true;
+            }
+
+            return changed;
         }
 
         private int AddToCells(InventoryItemEntityInfo itemInfo, int amount, bool onlyOccupied)
@@ -113,6 +179,16 @@ namespace D_Dev.InventorySystem
                     break;
             }
             return amount - remainingAmount;
+        }
+
+        #endregion
+
+        #region Listeners
+
+        private void OnSlotsCountChanged(int count)
+        {
+            if (ResizeCells(count))
+                OnCellsChanged?.Invoke();
         }
 
         #endregion

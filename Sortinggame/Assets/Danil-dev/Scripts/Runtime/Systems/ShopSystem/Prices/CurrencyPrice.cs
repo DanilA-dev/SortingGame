@@ -1,6 +1,7 @@
 using System;
 using D_Dev.CurrencySystem;
 using D_Dev.CurrencySystem.Extensions;
+using D_Dev.Extensions;
 using D_Dev.PolymorphicValueSystem;
 using UnityEngine;
 
@@ -14,6 +15,7 @@ namespace D_Dev.ShopSystem.Prices
         [SerializeReference] private PolymorphicValue<CurrencyInfo> _currency = new CurrencyInfoConstantValue();
         [Tooltip("Amount per price index. For upgrades the index is the next level, the last element is used when the array is shorter.")]
         [SerializeField] private long[] _amounts = { 0 };
+        [SerializeField] private bool _shortFormat = true;
 
         private Action _onChanged;
         private Currency _subscribedCurrency;
@@ -52,7 +54,11 @@ namespace D_Dev.ShopSystem.Prices
             onComplete?.Invoke(amount == 0 || (amount > 0 && Currency != null && Currency.TryWithdraw(amount)));
         }
 
-        public override string GetLabel(ShopItemInfo item) => GetAmount(item).ToString();
+        public override string GetLabel(ShopItemInfo item)
+        {
+            var amount = GetAmount(item);
+            return _shortFormat ? amount.ToShortString() : amount.ToString();
+        }
 
         public override Sprite GetIcon(ShopItemInfo item) => CurrencyInfo != null ? CurrencyInfo.CurrencyIcon : null;
 

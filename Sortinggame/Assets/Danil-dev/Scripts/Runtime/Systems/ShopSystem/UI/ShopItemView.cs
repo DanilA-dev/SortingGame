@@ -86,6 +86,7 @@ namespace D_Dev.ShopSystem.UI
             foreach (var buyButton in _buyButtons)
                 buyButton.Init(_info);
 
+            OnInit(_info);
             Refresh();
         }
 
@@ -110,6 +111,8 @@ namespace D_Dev.ShopSystem.UI
             else
                 _onNotMaxed?.Invoke();
 
+            OnRefresh(_info);
+
             var shouldShow = (!_hideWhenUnavailable || _info.IsAvailable) && (!_hideWhenMaxed || !_info.IsMaxed);
             if (IsShown == shouldShow)
                 return;
@@ -120,9 +123,20 @@ namespace D_Dev.ShopSystem.UI
 
         private void Unsubscribe()
         {
-            if (_info != null)
-                _info.OnChanged -= Refresh;
+            if (_info == null)
+                return;
+
+            _info.OnChanged -= Refresh;
+            OnDeinit(_info);
         }
+
+        #endregion
+
+        #region Virtual
+
+        protected virtual void OnInit(ShopItemInfo info) {}
+        protected virtual void OnRefresh(ShopItemInfo info) {}
+        protected virtual void OnDeinit(ShopItemInfo info) {}
 
         #endregion
 

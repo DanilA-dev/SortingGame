@@ -9,7 +9,7 @@ namespace D_Dev.AudioSystem
     {
         #region Fields
 
-        private const float MutedVolume = -80f;
+        private const float MUTED_VOLUME = -80f;
 
         [SerializeField] private float _volume;
         [SerializeField] private MixerGroupType _type;
@@ -53,8 +53,8 @@ namespace D_Dev.AudioSystem
 
         private void Apply()
         {
-            MixerGroup.audioMixer.SetFloat(VolumeProperty, _isGroupMuted ? MutedVolume : _volume);
-            IsMuted = _isGroupMuted || _volume <= MutedVolume;
+            MixerGroup.audioMixer.SetFloat(VolumeProperty, _isGroupMuted ? MUTED_VOLUME : _volume);
+            IsMuted = _isGroupMuted || _volume <= MUTED_VOLUME;
         }
 
         #endregion

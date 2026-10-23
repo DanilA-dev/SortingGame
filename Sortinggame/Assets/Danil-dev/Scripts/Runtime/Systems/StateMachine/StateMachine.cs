@@ -130,6 +130,7 @@ namespace D_Dev.StateMachine
 
                 _current = state;
                 _currentState = newState;
+                ResetTransitions(newState);
                 _current.OnEnter();
                 OnStateEnter?.Invoke(newState);
             }
@@ -142,6 +143,27 @@ namespace D_Dev.StateMachine
         #endregion
 
         #region Private
+
+        private void ResetTransitions(string fromState)
+        {
+            if (_statesConditions.TryGetValue(fromState, out var transitions))
+            {
+                foreach (var transition in transitions)
+                {
+                    if (transition.Condition is IResettableStateCondition resettable)
+                        resettable.Reset();
+                }
+            }
+
+            if (_fixedStatesConditions.TryGetValue(fromState, out var fixedTransitions))
+            {
+                foreach (var transition in fixedTransitions)
+                {
+                    if (transition.Condition is IResettableStateCondition resettable)
+                        resettable.Reset();
+                }
+            }
+        }
 
         private void UpdateTransitions()
         {

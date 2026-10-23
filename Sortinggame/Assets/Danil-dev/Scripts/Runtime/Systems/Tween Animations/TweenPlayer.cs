@@ -97,7 +97,10 @@ namespace D_Dev.TweenAnimations
 
             IsComplete = false;
 
+            _tweenPlayer.OnStart -= OnTweenPlayableStart;
             _tweenPlayer.OnStart += OnTweenPlayableStart;
+
+            _tweenPlayer.OnComplete -= OnTweenPlayableComplete;
             _tweenPlayer.OnComplete += OnTweenPlayableComplete;
             _tweenPlayer.Play(index);
         }
