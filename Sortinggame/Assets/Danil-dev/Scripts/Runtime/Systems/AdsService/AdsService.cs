@@ -32,6 +32,7 @@ namespace D_Dev.AdsService
         #region Fields
 
         [SerializeField] private bool _loadAllTypesOnStart = true;
+        [SerializeField] private bool _showBannerOnStart;
         [SerializeReference] private List<IAdsModule> _adsModules = new();
 
         private Dictionary<AdType, bool> _adTypes = new Dictionary<AdType, bool>
@@ -61,6 +62,8 @@ namespace D_Dev.AdsService
             foreach (var adType in _adTypes.Keys.ToList())
                 SetAdTypeLoadState(adType, true);
         }
+
+        public void ShowBanner() => ShowBanner(null);
 
         public void ShowBanner(Action<AdResult> callback)
         {
@@ -158,6 +161,9 @@ namespace D_Dev.AdsService
             
             if(_loadAllTypesOnStart)
                 LoadAllAdTypes();
+
+            if (_showBannerOnStart)
+                ShowBanner();
         }
 
         private void DisposeAdsModules()
