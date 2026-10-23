@@ -40,6 +40,8 @@ namespace _Project.Scripts.SDK
             }
 
             _isSubscribed = true;
+            
+            GP_Ads.ShowSticky();
             GP_Init.OnReady += OnSdkReady;
             GP_Init.OnError += OnSdkError;
         }
