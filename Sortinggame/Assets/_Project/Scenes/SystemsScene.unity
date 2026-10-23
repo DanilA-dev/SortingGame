@@ -521,6 +521,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1021484301}
   - component: {fileID: 1021484302}
+  - component: {fileID: 1021484303}
   m_Layer: 0
   m_Name: CloseLoader
   m_TagString: Untagged
@@ -567,7 +568,19 @@ MonoBehaviour:
       m_Calls: []
   _onFinished:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1021484303}
+        m_TargetAssemblyTypeName: D_Dev.CustomEventManager.EventInvoker, D-Dev.EventBehaviours
+        m_MethodName: Raise
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   _onPaused:
     m_PersistentCalls:
       m_Calls: []
@@ -636,6 +649,30 @@ MonoBehaviour:
           m_PersistentCalls:
             m_Calls: []
         _delay: 0.5
+--- !u!114 &1021484303
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1021484300}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55962e55d7934bfcaf9652b09ecb0f6f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: D-Dev.EventBehaviours::D_Dev.CustomEventManager.EventInvoker
+  _eventNameTypes:
+  - rid: 5687120990000401
+  _invokeOnStart: 0
+  _invokeOnlyOnce: 0
+  _debug: 0
+  references:
+    version: 2
+    RefIds:
+    - rid: 5687120990000401
+      type: {class: StringVariableEventNameType, ns: D_Dev.CustomEventManager, asm: D-Dev.EventBehaviours}
+      data:
+        _variable: {fileID: 11400000, guid: 3e8a1c5d7b9f4a26b4c0d2e6f8a1b3c5, type: 2}
 --- !u!1 &1067671695
 GameObject:
   m_ObjectHideFlags: 0
@@ -1141,6 +1178,10 @@ PrefabInstance:
       propertyPath: 'managedReferences[5687120811829493964]'
       value: Assembly-CSharp D_Dev.PluginYG2.YG2SaveConfig
       objectReference: {fileID: 0}
+    - target: {fileID: 59874416908739532, guid: e3142c9b72d8fb147ae2eb4db4a9847a, type: 3}
+      propertyPath: managedReferences[5687120811829493964]._minSaveInterval
+      value: 60
+      objectReference: {fileID: 0}
     - target: {fileID: 6197869098031699101, guid: e3142c9b72d8fb147ae2eb4db4a9847a, type: 3}
       propertyPath: m_Name
       value: GlobalSaveService_Prefab
@@ -1293,61 +1334,6 @@ Transform:
   - {fileID: 140930067}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &2074464399
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2074464401}
-  - component: {fileID: 2074464400}
-  m_Layer: 0
-  m_Name: Debugger
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &2074464400
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2074464399}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3576cbe7c24ed6c448f6653d1c817735, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: D-Dev.DebugConsole::D_Dev.DebugConsole.DebugCommands
-  _commands:
-  - rid: 5687120698884759741
-  references:
-    version: 2
-    RefIds:
-    - rid: 5687120698884759741
-      type: {class: DeleteSaveDebugCommand, ns: D_Dev.DebugConsole, asm: D-Dev.DebugConsole.Save}
-      data:
-        _command: data_clear
-        _description: Delete all saves
-        _reloadScene: 1
---- !u!4 &2074464401
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2074464399}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2045001001
 GameObject:
   m_ObjectHideFlags: 0
@@ -1390,7 +1376,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 326eb38365b542159b95145c061ca7d2, type: 3}
-  m_Name:
+  m_Name: 
   m_EditorClassIdentifier: D-Dev.SaveSystem.SaveableData::D_Dev.SaveSystem.SaveableData.SaveableDataHandler
   _saveableDatas:
   - rid: 5687120990000110
@@ -1464,6 +1450,61 @@ MonoBehaviour:
       type: {class: BoolConstantValue, ns: D_Dev.PolymorphicValueSystem, asm: D-Dev.PolymorphicValueSystem}
       data:
         _value: 0
+--- !u!1 &2074464399
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2074464401}
+  - component: {fileID: 2074464400}
+  m_Layer: 0
+  m_Name: Debugger
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2074464400
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2074464399}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3576cbe7c24ed6c448f6653d1c817735, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: D-Dev.DebugConsole::D_Dev.DebugConsole.DebugCommands
+  _commands:
+  - rid: 5687120698884759741
+  references:
+    version: 2
+    RefIds:
+    - rid: 5687120698884759741
+      type: {class: DeleteSaveDebugCommand, ns: D_Dev.DebugConsole, asm: D-Dev.DebugConsole.Save}
+      data:
+        _command: data_clear
+        _description: Delete all saves
+        _reloadScene: 1
+--- !u!4 &2074464401
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2074464399}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

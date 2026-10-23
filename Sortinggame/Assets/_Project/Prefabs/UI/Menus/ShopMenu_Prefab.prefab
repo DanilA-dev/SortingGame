@@ -659,6 +659,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: D-Dev.EventBehaviours::D_Dev.CustomEventManager.EventInvoker
   _eventNameTypes:
   - rid: 5687120578894888966
+  - rid: 5687120990000301
   _invokeOnStart: 0
   _invokeOnlyOnce: 0
   _debug: 0
@@ -669,6 +670,10 @@ MonoBehaviour:
       type: {class: StringVariableEventNameType, ns: D_Dev.CustomEventManager, asm: D-Dev.EventBehaviours}
       data:
         _variable: {fileID: 11400000, guid: 01996f6a006f9b74787beb1e31607d16, type: 2}
+    - rid: 5687120990000301
+      type: {class: StringVariableEventNameType, ns: D_Dev.CustomEventManager, asm: D-Dev.EventBehaviours}
+      data:
+        _variable: {fileID: 11400000, guid: 7d3b9e1f2a6c4e58b0f41c9a8e2d6b73, type: 2}
 --- !u!1 &3064829591040760284
 GameObject:
   m_ObjectHideFlags: 0

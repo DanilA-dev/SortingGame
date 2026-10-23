@@ -1,18 +1,27 @@
 #if D_DEV_YG2 && Storage_yg
+using System;
 using Cysharp.Threading.Tasks;
 using D_Dev.SaveSystem;
 using Newtonsoft.Json;
+using Sirenix.OdinInspector;
 using UnityEngine;
 using YG;
 
 namespace D_Dev.PluginYG2
 {
+    [Serializable]
     public class YG2SaveConfig : ISaveConfig
     {
         #region Fields
 
+        [Tooltip("Minimum time between cloud saves triggered by async saves. Immediate saves are sent at the end of the frame.")]
+        [SuffixLabel("sec")]
+        [SerializeField, Min(0f)] private float _minSaveInterval = 60f;
+
         private bool _isDirty;
         private bool _isFlushScheduled;
+        private bool _isTimedFlushScheduled;
+        private float _lastFlushTime;
 
         #endregion
 
@@ -24,14 +33,14 @@ namespace D_Dev.PluginYG2
                 Debug.LogWarning($"[YG2SaveConfig] Save '{key}' called before SDK init, data may be overwritten by cloud load");
 
             SetEntry(key, Serialize(value));
-            Flush();
+            ScheduleFlush();
         }
 
         public async UniTask SaveAsync<T>(string key, T value)
         {
             await WaitForSDK();
             SetEntry(key, Serialize(value));
-            ScheduleFlush();
+            ScheduleTimedFlush();
         }
 
         public async UniTask<T> LoadAsync<T>(string key, T defaultValue = default)
@@ -113,12 +122,33 @@ namespace D_Dev.PluginYG2
             Flush();
         }
 
+        private void ScheduleTimedFlush()
+        {
+            if (_isTimedFlushScheduled || !_isDirty)
+                return;
+
+            _isTimedFlushScheduled = true;
+            TimedFlush().Forget();
+        }
+
+        private async UniTaskVoid TimedFlush()
+        {
+            float wait;
+            while ((wait = _lastFlushTime + _minSaveInterval - Time.unscaledTime) > 0f)
+                await UniTask.Delay(TimeSpan.FromSeconds(wait), DelayType.UnscaledDeltaTime);
+
+            await UniTask.Yield(PlayerLoopTiming.LastPostLateUpdate);
+            _isTimedFlushScheduled = false;
+            Flush();
+        }
+
         private void Flush()
         {
             if (!_isDirty || !YG2.isSDKEnabled)
                 return;
 
             _isDirty = false;
+            _lastFlushTime = Time.unscaledTime;
             YG2.SaveProgress();
         }
 
