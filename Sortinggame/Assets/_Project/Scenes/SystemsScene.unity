@@ -333,6 +333,7 @@ MonoBehaviour:
   _dontDestroyOnLoad: 0
   _createInstanceIfNotFound: 0
   _loadAllTypesOnStart: 1
+  _showBannerOnStart: 0
   _adsModules:
   - rid: 5687120990000501
   - rid: 5687121073549082708
@@ -342,7 +343,7 @@ MonoBehaviour:
     - rid: 5687120990000501
       type: {class: YandexMobileAdsModule, ns: _Project.Scripts.SDK, asm: Assembly-CSharp}
       data:
-        _rewardedAdUnitId: demo-rewarded-yandex
+        _rewardedAdUnitId: 20270313
         _interstitialAdUnitId: demo-interstitial-yandex
         _bannerAdUnitId: demo-banner-yandex
         _ageRestricted: 0
