@@ -1038,9 +1038,9 @@ MonoBehaviour:
       data:
         _variable: {fileID: 11400000, guid: b7fb52aaa5665f04e80a9075c3dc1604, type: 2}
     - rid: 5687120674620449523
-      type: {class: IntScriptableVariableValue, ns: D_Dev.PolymorphicValueSystem, asm: D-Dev.PolymorphicValueSystem}
+      type: {class: IntConstantValue, ns: D_Dev.PolymorphicValueSystem, asm: D-Dev.PolymorphicValueSystem}
       data:
-        _variable: {fileID: 11400000, guid: 5320ddf586519e145a1165c3222657f9, type: 2}
+        _value: 15
 --- !u!114 &4094382501324063925
 MonoBehaviour:
   m_ObjectHideFlags: 0
